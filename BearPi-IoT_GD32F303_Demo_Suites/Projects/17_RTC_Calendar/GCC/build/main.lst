@@ -1,0 +1,383 @@
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cclU9PhU.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.main,"ax",%progbits
+  18              		.align	1
+  19              		.global	main
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv4-sp-d16
+  25              	main:
+  26              	.LFB119:
+  27              		.file 1 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT
+   1:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** /*!
+   2:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     \file  main.c
+   3:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     \brief RTC calendar 
+   4:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+   5:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     \version 2019-10-30, V1.0.0, demo for BearPi-IoT_GD32F30x
+   6:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+   7:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** */
+   8:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+   9:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** /*
+  10:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     Copyright (c) 2019, BearPi LIMITED.
+  11:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+  12:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     All rights reserved.
+  13:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+  14:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     Redistribution and use in source and binary forms, with or without modification, 
+  15:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** are permitted provided that the following conditions are met:
+  16:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+  17:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     1. Redistributions of source code must retain the above copyright notice, this 
+  18:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****        list of conditions and the following disclaimer.
+  19:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     2. Redistributions in binary form must reproduce the above copyright notice, 
+  20:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****        this list of conditions and the following disclaimer in the documentation 
+  21:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****        and/or other materials provided with the distribution.
+  22:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     3. Neither the name of the copyright holder nor the names of its contributors 
+  23:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****        may be used to endorse or promote products derived from this software without 
+  24:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****        specific prior written permission.
+  25:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+  26:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+  27:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  28:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  29:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  30:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  31:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cclU9PhU.s 			page 2
+
+
+  32:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+  33:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  34:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+  35:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** OF SUCH DAMAGE.
+  36:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** */
+  37:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+  38:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** #include "gd32f30x.h"
+  39:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** #include "BearPi-IoT_gd32f303.h"
+  40:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** #include "rtc.h"
+  41:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** #include <stdio.h>
+  42:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+  43:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** /*!
+  44:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     \brief      main function
+  45:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     \param[in]  none
+  46:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     \param[out] none
+  47:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     \retval     none
+  48:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** */
+  49:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** int main(void)
+  50:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** {
+  28              		.loc 1 50 0
+  29              		.cfi_startproc
+  30              		@ Volatile: function does not return.
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 08B5     		push	{r3, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 3, -8
+  37              		.cfi_offset 14, -4
+  51:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     /* COM1 config */
+  52:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     gd_eval_com_init(EVAL_COM0);
+  38              		.loc 1 52 0
+  39 0002 2448     		ldr	r0, .L8
+  40 0004 FFF7FEFF 		bl	gd_eval_com_init
+  41              	.LVL0:
+  53:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+  54:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     /* NVIC config */
+  55:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     nvic_configuration();
+  42              		.loc 1 55 0
+  43 0008 FFF7FEFF 		bl	nvic_configuration
+  44              	.LVL1:
+  56:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+  57:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     printf( "\r\n This is a RTC demo...... \r\n" );
+  45              		.loc 1 57 0
+  46 000c 2248     		ldr	r0, .L8+4
+  47 000e FFF7FEFF 		bl	puts
+  48              	.LVL2:
+  58:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+  59:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     if (bkp_read_data(BKP_DATA_0) != 0xA5A5){
+  49              		.loc 1 59 0
+  50 0012 0120     		movs	r0, #1
+  51 0014 FFF7FEFF 		bl	bkp_read_data
+  52              	.LVL3:
+  53 0018 4AF2A553 		movw	r3, #42405
+  54 001c 9842     		cmp	r0, r3
+  55 001e 16D0     		beq	.L2
+  60:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         /* backup data register value is not correct or not yet programmed
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cclU9PhU.s 			page 3
+
+
+  61:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         (when the first time the program is executed) */
+  62:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         printf("\r\nThis is a RTC demo!\r\n");
+  56              		.loc 1 62 0
+  57 0020 1E48     		ldr	r0, .L8+8
+  58 0022 FFF7FEFF 		bl	puts
+  59              	.LVL4:
+  63:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         printf("\r\n\n RTC not yet configured....");
+  60              		.loc 1 63 0
+  61 0026 1E48     		ldr	r0, .L8+12
+  62 0028 FFF7FEFF 		bl	printf
+  63              	.LVL5:
+  64:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+  65:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         /* RTC configuration */
+  66:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         rtc_configuration();
+  64              		.loc 1 66 0
+  65 002c FFF7FEFF 		bl	rtc_configuration
+  66              	.LVL6:
+  67:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+  68:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         printf("\r\n RTC configured....");
+  67              		.loc 1 68 0
+  68 0030 1C48     		ldr	r0, .L8+16
+  69 0032 FFF7FEFF 		bl	printf
+  70              	.LVL7:
+  69:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+  70:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         /* adjust time by values entred by the user on the hyperterminal */
+  71:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         time_adjust();
+  71              		.loc 1 71 0
+  72 0036 FFF7FEFF 		bl	time_adjust
+  73              	.LVL8:
+  72:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+  73:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         bkp_write_data(BKP_DATA_0, 0xA5A5);
+  74              		.loc 1 73 0
+  75 003a 4AF2A551 		movw	r1, #42405
+  76 003e 0120     		movs	r0, #1
+  77 0040 FFF7FEFF 		bl	bkp_write_data
+  78              	.LVL9:
+  79              	.L3:
+  74:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     }else{
+  75:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         /* check if the power on reset flag is set */
+  76:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         if (rcu_flag_get(RCU_FLAG_PORRST) != RESET){
+  77:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****             printf("\r\n\n Power On Reset occurred....");
+  78:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         }else if (rcu_flag_get(RCU_FLAG_SWRST) != RESET){
+  79:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****             /* check if the pin reset flag is set */
+  80:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****             printf("\r\n\n External Reset occurred....");
+  81:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         }
+  82:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+  83:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         /* allow access to BKP domain */
+  84:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         rcu_periph_clock_enable(RCU_PMU);
+  85:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         pmu_backup_write_enable();
+  86:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+  87:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         printf("\r\n No need to configure RTC....");
+  88:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         /* wait for RTC registers synchronization */
+  89:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         rtc_register_sync_wait();
+  90:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+  91:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         /* enable the RTC second */
+  92:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         rtc_interrupt_enable(RTC_INT_SECOND);
+  93:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cclU9PhU.s 			page 4
+
+
+  94:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         /* wait until last write operation on RTC registers has finished */
+  95:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         rtc_lwoff_wait();
+  96:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     }
+  97:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+  98:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** #ifdef RTCCLOCKOUTPUT_ENABLE
+  99:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     /* enable PMU and BKPI clocks */
+ 100:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     rcu_periph_clock_enable(RCU_BKPI);
+ 101:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     rcu_periph_clock_enable(RCU_PMU);
+ 102:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     /* allow access to BKP domain */
+ 103:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     pmu_backup_write_enable();
+ 104:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+ 105:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     /* disable the tamper pin */
+ 106:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     bkp_tamper_detection_disable();
+ 107:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+ 108:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     /* enable RTC clock output on tamper Pin */
+ 109:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     bkp_rtc_calibration_output_enable();
+ 110:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** #endif
+ 111:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+ 112:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     /* clear reset flags */
+ 113:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     rcu_all_reset_flag_clear();
+  80              		.loc 1 113 0
+  81 0044 FFF7FEFF 		bl	rcu_all_reset_flag_clear
+  82              	.LVL10:
+ 114:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+ 115:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     /* display time in infinite loop */
+ 116:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     time_show();
+  83              		.loc 1 116 0
+  84 0048 FFF7FEFF 		bl	time_show
+  85              	.LVL11:
+  86              	.L6:
+  87 004c FEE7     		b	.L6
+  88              	.L2:
+  76:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****             printf("\r\n\n Power On Reset occurred....");
+  89              		.loc 1 76 0
+  90 004e 40F61B10 		movw	r0, #2331
+  91 0052 FFF7FEFF 		bl	rcu_flag_get
+  92              	.LVL12:
+  93 0056 98B1     		cbz	r0, .L4
+  77:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         }else if (rcu_flag_get(RCU_FLAG_SWRST) != RESET){
+  94              		.loc 1 77 0
+  95 0058 1348     		ldr	r0, .L8+20
+  96 005a FFF7FEFF 		bl	printf
+  97              	.LVL13:
+  98              	.L5:
+  84:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         pmu_backup_write_enable();
+  99              		.loc 1 84 0
+ 100 005e 40F21C70 		movw	r0, #1820
+ 101 0062 FFF7FEFF 		bl	rcu_periph_clock_enable
+ 102              	.LVL14:
+  85:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+ 103              		.loc 1 85 0
+ 104 0066 FFF7FEFF 		bl	pmu_backup_write_enable
+ 105              	.LVL15:
+  87:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         /* wait for RTC registers synchronization */
+ 106              		.loc 1 87 0
+ 107 006a 1048     		ldr	r0, .L8+24
+ 108 006c FFF7FEFF 		bl	printf
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cclU9PhU.s 			page 5
+
+
+ 109              	.LVL16:
+  89:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+ 110              		.loc 1 89 0
+ 111 0070 FFF7FEFF 		bl	rtc_register_sync_wait
+ 112              	.LVL17:
+  92:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c **** 
+ 113              		.loc 1 92 0
+ 114 0074 0120     		movs	r0, #1
+ 115 0076 FFF7FEFF 		bl	rtc_interrupt_enable
+ 116              	.LVL18:
+  95:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****     }
+ 117              		.loc 1 95 0
+ 118 007a FFF7FEFF 		bl	rtc_lwoff_wait
+ 119              	.LVL19:
+ 120 007e E1E7     		b	.L3
+ 121              	.L4:
+  78:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****             /* check if the pin reset flag is set */
+ 122              		.loc 1 78 0
+ 123 0080 40F61C10 		movw	r0, #2332
+ 124 0084 FFF7FEFF 		bl	rcu_flag_get
+ 125              	.LVL20:
+ 126 0088 0028     		cmp	r0, #0
+ 127 008a E8D0     		beq	.L5
+  80:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/20_RTC_Calendar\main.c ****         }
+ 128              		.loc 1 80 0
+ 129 008c 0848     		ldr	r0, .L8+28
+ 130 008e FFF7FEFF 		bl	printf
+ 131              	.LVL21:
+ 132 0092 E4E7     		b	.L5
+ 133              	.L9:
+ 134              		.align	2
+ 135              	.L8:
+ 136 0094 00380140 		.word	1073821696
+ 137 0098 00000000 		.word	.LC0
+ 138 009c 20000000 		.word	.LC1
+ 139 00a0 38000000 		.word	.LC2
+ 140 00a4 58000000 		.word	.LC3
+ 141 00a8 70000000 		.word	.LC4
+ 142 00ac B0000000 		.word	.LC6
+ 143 00b0 90000000 		.word	.LC5
+ 144              		.cfi_endproc
+ 145              	.LFE119:
+ 147              		.section	.rodata.main.str1.4,"aMS",%progbits,1
+ 148              		.align	2
+ 149              	.LC0:
+ 150 0000 0D0A2054 		.ascii	"\015\012 This is a RTC demo...... \015\000"
+ 150      68697320 
+ 150      69732061 
+ 150      20525443 
+ 150      2064656D 
+ 151 001e 0000     		.space	2
+ 152              	.LC1:
+ 153 0020 0D0A5468 		.ascii	"\015\012This is a RTC demo!\015\000"
+ 153      69732069 
+ 153      73206120 
+ 153      52544320 
+ 153      64656D6F 
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cclU9PhU.s 			page 6
+
+
+ 154 0037 00       		.space	1
+ 155              	.LC2:
+ 156 0038 0D0A0A20 		.ascii	"\015\012\012 RTC not yet configured....\000"
+ 156      52544320 
+ 156      6E6F7420 
+ 156      79657420 
+ 156      636F6E66 
+ 157 0057 00       		.space	1
+ 158              	.LC3:
+ 159 0058 0D0A2052 		.ascii	"\015\012 RTC configured....\000"
+ 159      54432063 
+ 159      6F6E6669 
+ 159      67757265 
+ 159      642E2E2E 
+ 160 006e 0000     		.space	2
+ 161              	.LC4:
+ 162 0070 0D0A0A20 		.ascii	"\015\012\012 Power On Reset occurred....\000"
+ 162      506F7765 
+ 162      72204F6E 
+ 162      20526573 
+ 162      6574206F 
+ 163              	.LC5:
+ 164 0090 0D0A0A20 		.ascii	"\015\012\012 External Reset occurred....\000"
+ 164      45787465 
+ 164      726E616C 
+ 164      20526573 
+ 164      6574206F 
+ 165              	.LC6:
+ 166 00b0 0D0A204E 		.ascii	"\015\012 No need to configure RTC....\000"
+ 166      6F206E65 
+ 166      65642074 
+ 166      6F20636F 
+ 166      6E666967 
+ 167              		.text
+ 168              	.Letext0:
+ 169              		.file 2 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 170              		.file 3 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 171              		.file 4 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 172              		.file 5 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 173              		.file 6 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 174              		.file 7 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 175              		.file 8 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 176              		.file 9 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 177              		.file 10 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ 178              		.file 11 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\lib\\gcc\\a
+ 179              		.file 12 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ 180              		.file 13 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ 181              		.file 14 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-Io
+ 182              		.file 15 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-Io
+ 183              		.file 16 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ 184              		.file 17 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_
+ 185              		.file 18 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_
+ 186              		.file 19 "<built-in>"
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cclU9PhU.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\49542\AppData\Local\Temp\cclU9PhU.s:18     .text.main:00000000 $t
+C:\Users\49542\AppData\Local\Temp\cclU9PhU.s:25     .text.main:00000000 main
+C:\Users\49542\AppData\Local\Temp\cclU9PhU.s:136    .text.main:00000094 $d
+C:\Users\49542\AppData\Local\Temp\cclU9PhU.s:148    .rodata.main.str1.4:00000000 $d
+
+UNDEFINED SYMBOLS
+gd_eval_com_init
+nvic_configuration
+puts
+bkp_read_data
+printf
+rtc_configuration
+time_adjust
+bkp_write_data
+rcu_all_reset_flag_clear
+time_show
+rcu_flag_get
+rcu_periph_clock_enable
+pmu_backup_write_enable
+rtc_register_sync_wait
+rtc_interrupt_enable
+rtc_lwoff_wait

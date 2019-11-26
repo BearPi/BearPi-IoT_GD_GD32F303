@@ -1,0 +1,481 @@
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gd32f30x_fwdgt.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.fwdgt_write_enable,"ax",%progbits
+  18              		.align	1
+  19              		.global	fwdgt_write_enable
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv4-sp-d16
+  25              	fwdgt_write_enable:
+  26              	.LFB116:
+  27              		.file 1 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+   1:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** /*!
+   2:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \file  gd32f30x_fwdgt.c
+   3:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \brief FWDGT driver
+   4:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** 
+   5:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \version 2017-02-10, V1.0.0, firmware for GD32F30x
+   6:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \version 2018-10-10, V1.1.0, firmware for GD32F30x
+   7:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \version 2018-12-25, V2.0.0, firmware for GD32F30x
+   8:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** */
+   9:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** 
+  10:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** /*
+  11:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     Copyright (c) 2018, GigaDevice Semiconductor Inc.
+  12:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** 
+  13:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     All rights reserved.
+  14:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** 
+  15:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     Redistribution and use in source and binary forms, with or without modification, 
+  16:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** are permitted provided that the following conditions are met:
+  17:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** 
+  18:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     1. Redistributions of source code must retain the above copyright notice, this 
+  19:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****        list of conditions and the following disclaimer.
+  20:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     2. Redistributions in binary form must reproduce the above copyright notice, 
+  21:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****        this list of conditions and the following disclaimer in the documentation 
+  22:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****        and/or other materials provided with the distribution.
+  23:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     3. Neither the name of the copyright holder nor the names of its contributors 
+  24:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****        may be used to endorse or promote products derived from this software without 
+  25:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****        specific prior written permission.
+  26:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** 
+  27:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+  28:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  29:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  30:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  31:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s 			page 2
+
+
+  32:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+  33:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+  34:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  35:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+  36:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** OF SUCH DAMAGE.
+  37:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** */
+  38:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** 
+  39:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** #include "gd32f30x_fwdgt.h"
+  40:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** 
+  41:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** /* write value to FWDGT_CTL_CMD bit field */
+  42:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** #define CTL_CMD(regval)             (BITS(0,15) & ((uint32_t)(regval) << 0))
+  43:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** /* write value to FWDGT_RLD_RLD bit field */
+  44:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** #define RLD_RLD(regval)             (BITS(0,11) & ((uint32_t)(regval) << 0))
+  45:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** 
+  46:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** /*!
+  47:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \brief      enable write access to FWDGT_PSC and FWDGT_RLD
+  48:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \param[in]  none
+  49:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \param[out] none
+  50:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \retval     none
+  51:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** */
+  52:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** void fwdgt_write_enable(void)
+  53:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** {
+  28              		.loc 1 53 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  54:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     FWDGT_CTL = FWDGT_WRITEACCESS_ENABLE;
+  33              		.loc 1 54 0
+  34 0000 024B     		ldr	r3, .L2
+  35 0002 45F25552 		movw	r2, #21845
+  36 0006 1A60     		str	r2, [r3]
+  55:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** }
+  37              		.loc 1 55 0
+  38 0008 7047     		bx	lr
+  39              	.L3:
+  40 000a 00BF     		.align	2
+  41              	.L2:
+  42 000c 00300040 		.word	1073754112
+  43              		.cfi_endproc
+  44              	.LFE116:
+  46              		.section	.text.fwdgt_write_disable,"ax",%progbits
+  47              		.align	1
+  48              		.global	fwdgt_write_disable
+  49              		.syntax unified
+  50              		.thumb
+  51              		.thumb_func
+  52              		.fpu fpv4-sp-d16
+  54              	fwdgt_write_disable:
+  55              	.LFB117:
+  56:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** 
+  57:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** /*!
+  58:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \brief      disable write access to FWDGT_PSC and FWDGT_RLD
+  59:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \param[in]  none
+  60:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \param[out] none
+  61:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \retval     none
+  62:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** */
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s 			page 3
+
+
+  63:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** void fwdgt_write_disable(void)
+  64:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** {
+  56              		.loc 1 64 0
+  57              		.cfi_startproc
+  58              		@ args = 0, pretend = 0, frame = 0
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60              		@ link register save eliminated.
+  65:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     FWDGT_CTL = FWDGT_WRITEACCESS_DISABLE;
+  61              		.loc 1 65 0
+  62 0000 014B     		ldr	r3, .L5
+  63 0002 0022     		movs	r2, #0
+  64 0004 1A60     		str	r2, [r3]
+  66:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** }
+  65              		.loc 1 66 0
+  66 0006 7047     		bx	lr
+  67              	.L6:
+  68              		.align	2
+  69              	.L5:
+  70 0008 00300040 		.word	1073754112
+  71              		.cfi_endproc
+  72              	.LFE117:
+  74              		.section	.text.fwdgt_enable,"ax",%progbits
+  75              		.align	1
+  76              		.global	fwdgt_enable
+  77              		.syntax unified
+  78              		.thumb
+  79              		.thumb_func
+  80              		.fpu fpv4-sp-d16
+  82              	fwdgt_enable:
+  83              	.LFB118:
+  67:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** 
+  68:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** /*!
+  69:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \brief      start the free watchdog timer counter
+  70:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \param[in]  none
+  71:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \param[out] none
+  72:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \retval     none
+  73:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** */
+  74:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** void fwdgt_enable(void)
+  75:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** {
+  84              		.loc 1 75 0
+  85              		.cfi_startproc
+  86              		@ args = 0, pretend = 0, frame = 0
+  87              		@ frame_needed = 0, uses_anonymous_args = 0
+  88              		@ link register save eliminated.
+  76:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     FWDGT_CTL = FWDGT_KEY_ENABLE;
+  89              		.loc 1 76 0
+  90 0000 024B     		ldr	r3, .L8
+  91 0002 4CF6CC42 		movw	r2, #52428
+  92 0006 1A60     		str	r2, [r3]
+  77:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** }
+  93              		.loc 1 77 0
+  94 0008 7047     		bx	lr
+  95              	.L9:
+  96 000a 00BF     		.align	2
+  97              	.L8:
+  98 000c 00300040 		.word	1073754112
+  99              		.cfi_endproc
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s 			page 4
+
+
+ 100              	.LFE118:
+ 102              		.section	.text.fwdgt_counter_reload,"ax",%progbits
+ 103              		.align	1
+ 104              		.global	fwdgt_counter_reload
+ 105              		.syntax unified
+ 106              		.thumb
+ 107              		.thumb_func
+ 108              		.fpu fpv4-sp-d16
+ 110              	fwdgt_counter_reload:
+ 111              	.LFB119:
+  78:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** 
+  79:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** /*!
+  80:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \brief      reload the counter of FWDGT
+  81:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \param[in]  none
+  82:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \param[out] none
+  83:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \retval     none
+  84:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** */
+  85:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** void fwdgt_counter_reload(void)
+  86:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** {
+ 112              		.loc 1 86 0
+ 113              		.cfi_startproc
+ 114              		@ args = 0, pretend = 0, frame = 0
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116              		@ link register save eliminated.
+  87:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     FWDGT_CTL = FWDGT_KEY_RELOAD;
+ 117              		.loc 1 87 0
+ 118 0000 024B     		ldr	r3, .L11
+ 119 0002 4AF6AA22 		movw	r2, #43690
+ 120 0006 1A60     		str	r2, [r3]
+  88:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** }
+ 121              		.loc 1 88 0
+ 122 0008 7047     		bx	lr
+ 123              	.L12:
+ 124 000a 00BF     		.align	2
+ 125              	.L11:
+ 126 000c 00300040 		.word	1073754112
+ 127              		.cfi_endproc
+ 128              	.LFE119:
+ 130              		.section	.text.fwdgt_config,"ax",%progbits
+ 131              		.align	1
+ 132              		.global	fwdgt_config
+ 133              		.syntax unified
+ 134              		.thumb
+ 135              		.thumb_func
+ 136              		.fpu fpv4-sp-d16
+ 138              	fwdgt_config:
+ 139              	.LFB120:
+  89:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** 
+  90:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** /*!
+  91:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \brief      configure counter reload value, and prescaler divider value
+  92:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \param[in]  reload_value: specify reload value(0x0000 - 0x0FFF)
+  93:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \param[in]  prescaler_div: FWDGT prescaler value
+  94:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****                 only one parameter can be selected which is shown as below:
+  95:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****       \arg        FWDGT_PSC_DIV4: FWDGT prescaler set to 4
+  96:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****       \arg        FWDGT_PSC_DIV8: FWDGT prescaler set to 8
+  97:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****       \arg        FWDGT_PSC_DIV16: FWDGT prescaler set to 16
+  98:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****       \arg        FWDGT_PSC_DIV32: FWDGT prescaler set to 32
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s 			page 5
+
+
+  99:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****       \arg        FWDGT_PSC_DIV64: FWDGT prescaler set to 64
+ 100:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****       \arg        FWDGT_PSC_DIV128: FWDGT prescaler set to 128
+ 101:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****       \arg        FWDGT_PSC_DIV256: FWDGT prescaler set to 256
+ 102:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \param[out] none
+ 103:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \retval     ErrStatus: ERROR or SUCCESS
+ 104:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** */
+ 105:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** ErrStatus fwdgt_config(uint16_t reload_value, uint8_t prescaler_div)
+ 106:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** {
+ 140              		.loc 1 106 0
+ 141              		.cfi_startproc
+ 142              		@ args = 0, pretend = 0, frame = 0
+ 143              		@ frame_needed = 0, uses_anonymous_args = 0
+ 144              		@ link register save eliminated.
+ 145              	.LVL0:
+ 107:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     uint32_t timeout = FWDGT_PSC_TIMEOUT;
+ 108:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     uint32_t flag_status = RESET;
+ 109:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****   
+ 110:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     /* enable write access to FWDGT_PSC,and FWDGT_RLD */
+ 111:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     FWDGT_CTL = FWDGT_WRITEACCESS_ENABLE;
+ 146              		.loc 1 111 0
+ 147 0000 134B     		ldr	r3, .L21
+ 148 0002 45F25552 		movw	r2, #21845
+ 149 0006 1A60     		str	r2, [r3]
+ 107:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     uint32_t timeout = FWDGT_PSC_TIMEOUT;
+ 150              		.loc 1 107 0
+ 151 0008 124A     		ldr	r2, .L21+4
+ 152              	.LVL1:
+ 153              	.L15:
+ 112:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****   
+ 113:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     /* wait until the PUD flag to be reset */
+ 114:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     do{
+ 115:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****        flag_status = FWDGT_STAT & FWDGT_STAT_PUD;
+ 154              		.loc 1 115 0 discriminator 2
+ 155 000a 134B     		ldr	r3, .L21+8
+ 156 000c 1B68     		ldr	r3, [r3]
+ 157 000e 03F00103 		and	r3, r3, #1
+ 158              	.LVL2:
+ 116:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     }while((--timeout > 0U) && ((uint32_t)RESET != flag_status));
+ 159              		.loc 1 116 0 discriminator 2
+ 160 0012 013A     		subs	r2, r2, #1
+ 161              	.LVL3:
+ 162 0014 01D0     		beq	.L14
+ 163              		.loc 1 116 0 is_stmt 0 discriminator 1
+ 164 0016 002B     		cmp	r3, #0
+ 165 0018 F7D1     		bne	.L15
+ 166              	.L14:
+ 117:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     
+ 118:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     if ((uint32_t)RESET != flag_status){
+ 167              		.loc 1 118 0 is_stmt 1
+ 168 001a ABB9     		cbnz	r3, .L19
+ 119:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****         return ERROR;
+ 120:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     }
+ 121:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** 
+ 122:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     /* configure FWDGT */
+ 123:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     FWDGT_PSC = (uint32_t)prescaler_div;
+ 169              		.loc 1 123 0
+ 170 001c 0F4B     		ldr	r3, .L21+12
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s 			page 6
+
+
+ 171              	.LVL4:
+ 172 001e 1960     		str	r1, [r3]
+ 173              	.LVL5:
+ 124:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** 
+ 125:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     timeout = FWDGT_RLD_TIMEOUT;
+ 174              		.loc 1 125 0
+ 175 0020 0C4A     		ldr	r2, .L21+4
+ 176              	.LVL6:
+ 177              	.L18:
+ 126:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     /* wait until the RUD flag to be reset */
+ 127:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     do{
+ 128:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****        flag_status = FWDGT_STAT & FWDGT_STAT_RUD;
+ 178              		.loc 1 128 0 discriminator 2
+ 179 0022 0D4B     		ldr	r3, .L21+8
+ 180 0024 1B68     		ldr	r3, [r3]
+ 181 0026 03F00203 		and	r3, r3, #2
+ 182              	.LVL7:
+ 129:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     }while((--timeout > 0U) && ((uint32_t)RESET != flag_status));
+ 183              		.loc 1 129 0 discriminator 2
+ 184 002a 013A     		subs	r2, r2, #1
+ 185              	.LVL8:
+ 186 002c 01D0     		beq	.L17
+ 187              		.loc 1 129 0 is_stmt 0 discriminator 1
+ 188 002e 002B     		cmp	r3, #0
+ 189 0030 F7D1     		bne	.L18
+ 190              	.L17:
+ 130:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****    
+ 131:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     if ((uint32_t)RESET != flag_status){
+ 191              		.loc 1 131 0 is_stmt 1
+ 192 0032 5BB9     		cbnz	r3, .L20
+ 132:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****         return ERROR;
+ 133:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     }
+ 134:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     
+ 135:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     FWDGT_RLD = RLD_RLD(reload_value);
+ 193              		.loc 1 135 0
+ 194 0034 C0F30B00 		ubfx	r0, r0, #0, #12
+ 195              	.LVL9:
+ 196 0038 094B     		ldr	r3, .L21+16
+ 197              	.LVL10:
+ 198 003a 1860     		str	r0, [r3]
+ 136:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     
+ 137:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     /* reload the counter */
+ 138:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     FWDGT_CTL = FWDGT_KEY_RELOAD;
+ 199              		.loc 1 138 0
+ 200 003c 083B     		subs	r3, r3, #8
+ 201 003e 4AF6AA22 		movw	r2, #43690
+ 202              	.LVL11:
+ 203 0042 1A60     		str	r2, [r3]
+ 139:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** 
+ 140:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     return SUCCESS;
+ 204              		.loc 1 140 0
+ 205 0044 0120     		movs	r0, #1
+ 206 0046 7047     		bx	lr
+ 207              	.LVL12:
+ 208              	.L19:
+ 119:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     }
+ 209              		.loc 1 119 0
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s 			page 7
+
+
+ 210 0048 0020     		movs	r0, #0
+ 211              	.LVL13:
+ 212 004a 7047     		bx	lr
+ 213              	.LVL14:
+ 214              	.L20:
+ 132:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     }
+ 215              		.loc 1 132 0
+ 216 004c 0020     		movs	r0, #0
+ 217              	.LVL15:
+ 141:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** }
+ 218              		.loc 1 141 0
+ 219 004e 7047     		bx	lr
+ 220              	.L22:
+ 221              		.align	2
+ 222              	.L21:
+ 223 0050 00300040 		.word	1073754112
+ 224 0054 FFFF0F00 		.word	1048575
+ 225 0058 0C300040 		.word	1073754124
+ 226 005c 04300040 		.word	1073754116
+ 227 0060 08300040 		.word	1073754120
+ 228              		.cfi_endproc
+ 229              	.LFE120:
+ 231              		.section	.text.fwdgt_flag_get,"ax",%progbits
+ 232              		.align	1
+ 233              		.global	fwdgt_flag_get
+ 234              		.syntax unified
+ 235              		.thumb
+ 236              		.thumb_func
+ 237              		.fpu fpv4-sp-d16
+ 239              	fwdgt_flag_get:
+ 240              	.LFB121:
+ 142:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** 
+ 143:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** /*!
+ 144:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \brief      get flag state of FWDGT
+ 145:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \param[in]  flag: flag to get
+ 146:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****                 only one parameter can be selected which is shown as below:
+ 147:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****       \arg        FWDGT_FLAG_PUD: a write operation to FWDGT_PSC register is on going
+ 148:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****       \arg        FWDGT_FLAG_RUD: a write operation to FWDGT_RLD register is on going
+ 149:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \param[out] none
+ 150:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     \retval     FlagStatus: SET or RESET
+ 151:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** */
+ 152:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** FlagStatus fwdgt_flag_get(uint16_t flag)
+ 153:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** {
+ 241              		.loc 1 153 0
+ 242              		.cfi_startproc
+ 243              		@ args = 0, pretend = 0, frame = 0
+ 244              		@ frame_needed = 0, uses_anonymous_args = 0
+ 245              		@ link register save eliminated.
+ 246              	.LVL16:
+ 154:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****   if(RESET != (FWDGT_STAT & flag)){
+ 247              		.loc 1 154 0
+ 248 0000 034B     		ldr	r3, .L27
+ 249 0002 1B68     		ldr	r3, [r3]
+ 250 0004 1842     		tst	r0, r3
+ 251 0006 01D1     		bne	.L26
+ 155:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****         return SET;
+ 156:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****   }
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s 			page 8
+
+
+ 157:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** 
+ 158:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****     return RESET;
+ 252              		.loc 1 158 0
+ 253 0008 0020     		movs	r0, #0
+ 254              	.LVL17:
+ 159:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c **** }
+ 255              		.loc 1 159 0
+ 256 000a 7047     		bx	lr
+ 257              	.LVL18:
+ 258              	.L26:
+ 155:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_fwdgt.c ****         return SET;
+ 259              		.loc 1 155 0
+ 260 000c 0120     		movs	r0, #1
+ 261              	.LVL19:
+ 262 000e 7047     		bx	lr
+ 263              	.L28:
+ 264              		.align	2
+ 265              	.L27:
+ 266 0010 0C300040 		.word	1073754124
+ 267              		.cfi_endproc
+ 268              	.LFE121:
+ 270              		.text
+ 271              	.Letext0:
+ 272              		.file 2 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 273              		.file 3 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 274              		.file 4 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 275              		.file 5 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 276              		.file 6 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 277              		.file 7 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 278              		.file 8 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 279              		.file 9 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\lib\\gcc\\ar
+ 280              		.file 10 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ 281              		.file 11 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gd32f30x_fwdgt.c
+C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s:18     .text.fwdgt_write_enable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s:25     .text.fwdgt_write_enable:00000000 fwdgt_write_enable
+C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s:42     .text.fwdgt_write_enable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s:47     .text.fwdgt_write_disable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s:54     .text.fwdgt_write_disable:00000000 fwdgt_write_disable
+C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s:70     .text.fwdgt_write_disable:00000008 $d
+C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s:75     .text.fwdgt_enable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s:82     .text.fwdgt_enable:00000000 fwdgt_enable
+C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s:98     .text.fwdgt_enable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s:103    .text.fwdgt_counter_reload:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s:110    .text.fwdgt_counter_reload:00000000 fwdgt_counter_reload
+C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s:126    .text.fwdgt_counter_reload:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s:131    .text.fwdgt_config:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s:138    .text.fwdgt_config:00000000 fwdgt_config
+C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s:223    .text.fwdgt_config:00000050 $d
+C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s:232    .text.fwdgt_flag_get:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s:239    .text.fwdgt_flag_get:00000000 fwdgt_flag_get
+C:\Users\49542\AppData\Local\Temp\ccTrdDAv.s:266    .text.fwdgt_flag_get:00000010 $d
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,1629 @@
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gd32f30x_pmu.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.pmu_deinit,"ax",%progbits
+  18              		.align	1
+  19              		.global	pmu_deinit
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv4-sp-d16
+  25              	pmu_deinit:
+  26              	.LFB116:
+  27              		.file 1 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+   1:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+   2:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \file  gd32f30x_pmu.c
+   3:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief PMU driver
+   4:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+   5:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****    \version 2017-02-10, V1.0.0, firmware for GD32F30x
+   6:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****    \version 2018-10-10, V1.1.0, firmware for GD32F30x
+   7:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****    \version 2018-12-25, V2.0.0, firmware for GD32F30x
+   8:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+   9:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+  10:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*
+  11:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     Copyright (c) 2018, GigaDevice Semiconductor Inc.
+  12:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+  13:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     All rights reserved.
+  14:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+  15:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     Redistribution and use in source and binary forms, with or without modification, 
+  16:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** are permitted provided that the following conditions are met:
+  17:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+  18:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     1. Redistributions of source code must retain the above copyright notice, this 
+  19:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****        list of conditions and the following disclaimer.
+  20:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     2. Redistributions in binary form must reproduce the above copyright notice, 
+  21:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****        this list of conditions and the following disclaimer in the documentation 
+  22:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****        and/or other materials provided with the distribution.
+  23:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     3. Neither the name of the copyright holder nor the names of its contributors 
+  24:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****        may be used to endorse or promote products derived from this software without 
+  25:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****        specific prior written permission.
+  26:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+  27:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+  28:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  29:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  30:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  31:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 2
+
+
+  32:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+  33:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+  34:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  35:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+  36:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** OF SUCH DAMAGE.
+  37:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+  38:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+  39:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+  40:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** #include "gd32f30x_pmu.h"
+  41:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+  42:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+  43:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      reset PMU register
+  44:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  none
+  45:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+  46:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+  47:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+  48:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_deinit(void)
+  49:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+  28              		.loc 1 49 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 3, -8
+  36              		.cfi_offset 14, -4
+  50:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* reset PMU */
+  51:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     rcu_periph_reset_enable(RCU_PMURST);
+  37              		.loc 1 51 0
+  38 0002 40F21C40 		movw	r0, #1052
+  39 0006 FFF7FEFF 		bl	rcu_periph_reset_enable
+  40              	.LVL0:
+  52:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     rcu_periph_reset_disable(RCU_PMURST);
+  41              		.loc 1 52 0
+  42 000a 40F21C40 		movw	r0, #1052
+  43 000e FFF7FEFF 		bl	rcu_periph_reset_disable
+  44              	.LVL1:
+  53:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+  45              		.loc 1 53 0
+  46 0012 08BD     		pop	{r3, pc}
+  47              		.cfi_endproc
+  48              	.LFE116:
+  50              		.section	.text.pmu_lvd_select,"ax",%progbits
+  51              		.align	1
+  52              		.global	pmu_lvd_select
+  53              		.syntax unified
+  54              		.thumb
+  55              		.thumb_func
+  56              		.fpu fpv4-sp-d16
+  58              	pmu_lvd_select:
+  59              	.LFB117:
+  54:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+  55:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+  56:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      select low voltage detector threshold
+  57:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  lvdt_n:
+  58:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_LVDT_0: voltage threshold is 2.1V
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 3
+
+
+  59:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_LVDT_1: voltage threshold is 2.3V
+  60:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_LVDT_2: voltage threshold is 2.4V
+  61:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_LVDT_3: voltage threshold is 2.6V
+  62:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_LVDT_4: voltage threshold is 2.7V
+  63:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_LVDT_5: voltage threshold is 2.9V
+  64:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_LVDT_6: voltage threshold is 3.0V
+  65:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_LVDT_7: voltage threshold is 3.1V
+  66:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+  67:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+  68:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+  69:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_lvd_select(uint32_t lvdt_n)
+  70:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+  60              		.loc 1 70 0
+  61              		.cfi_startproc
+  62              		@ args = 0, pretend = 0, frame = 0
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64              		@ link register save eliminated.
+  65              	.LVL2:
+  71:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* disable LVD */
+  72:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL &= ~PMU_CTL_LVDEN;
+  66              		.loc 1 72 0
+  67 0000 084B     		ldr	r3, .L4
+  68 0002 1A68     		ldr	r2, [r3]
+  69 0004 22F01002 		bic	r2, r2, #16
+  70 0008 1A60     		str	r2, [r3]
+  73:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* clear LVDT bits */
+  74:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL &= ~PMU_CTL_LVDT;
+  71              		.loc 1 74 0
+  72 000a 1A68     		ldr	r2, [r3]
+  73 000c 22F0E002 		bic	r2, r2, #224
+  74 0010 1A60     		str	r2, [r3]
+  75:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* set LVDT bits according to lvdt_n */
+  76:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL |= lvdt_n;
+  75              		.loc 1 76 0
+  76 0012 1A68     		ldr	r2, [r3]
+  77 0014 1043     		orrs	r0, r0, r2
+  78              	.LVL3:
+  79 0016 1860     		str	r0, [r3]
+  77:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* enable LVD */
+  78:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL |= PMU_CTL_LVDEN;
+  80              		.loc 1 78 0
+  81 0018 1A68     		ldr	r2, [r3]
+  82 001a 42F01002 		orr	r2, r2, #16
+  83 001e 1A60     		str	r2, [r3]
+  79:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+  84              		.loc 1 79 0
+  85 0020 7047     		bx	lr
+  86              	.L5:
+  87 0022 00BF     		.align	2
+  88              	.L4:
+  89 0024 00700040 		.word	1073770496
+  90              		.cfi_endproc
+  91              	.LFE117:
+  93              		.section	.text.pmu_ldo_output_select,"ax",%progbits
+  94              		.align	1
+  95              		.global	pmu_ldo_output_select
+  96              		.syntax unified
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 4
+
+
+  97              		.thumb
+  98              		.thumb_func
+  99              		.fpu fpv4-sp-d16
+ 101              	pmu_ldo_output_select:
+ 102              	.LFB118:
+  80:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+  81:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+  82:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      select LDO output voltage
+  83:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****                 this bit set by software when the main PLL closed, before closing PLL, change the s
+  84:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  ldo_output:
+  85:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_LDOVS_LOW: LDO output voltage low mode
+  86:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_LDOVS_MID: LDO output voltage mid mode
+  87:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_LDOVS_HIGH: LDO output voltage high mode
+  88:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+  89:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+  90:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+  91:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_ldo_output_select(uint32_t ldo_output)
+  92:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+ 103              		.loc 1 92 0
+ 104              		.cfi_startproc
+ 105              		@ args = 0, pretend = 0, frame = 0
+ 106              		@ frame_needed = 0, uses_anonymous_args = 0
+ 107              		@ link register save eliminated.
+ 108              	.LVL4:
+  93:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL &= ~PMU_CTL_LDOVS;
+ 109              		.loc 1 93 0
+ 110 0000 044B     		ldr	r3, .L7
+ 111 0002 1A68     		ldr	r2, [r3]
+ 112 0004 22F44042 		bic	r2, r2, #49152
+ 113 0008 1A60     		str	r2, [r3]
+  94:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL |= ldo_output;
+ 114              		.loc 1 94 0
+ 115 000a 1A68     		ldr	r2, [r3]
+ 116 000c 1043     		orrs	r0, r0, r2
+ 117              	.LVL5:
+ 118 000e 1860     		str	r0, [r3]
+  95:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ 119              		.loc 1 95 0
+ 120 0010 7047     		bx	lr
+ 121              	.L8:
+ 122 0012 00BF     		.align	2
+ 123              	.L7:
+ 124 0014 00700040 		.word	1073770496
+ 125              		.cfi_endproc
+ 126              	.LFE118:
+ 128              		.section	.text.pmu_lvd_disable,"ax",%progbits
+ 129              		.align	1
+ 130              		.global	pmu_lvd_disable
+ 131              		.syntax unified
+ 132              		.thumb
+ 133              		.thumb_func
+ 134              		.fpu fpv4-sp-d16
+ 136              	pmu_lvd_disable:
+ 137              	.LFB119:
+  96:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+  97:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+  98:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      disable PMU lvd
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 5
+
+
+  99:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  none
+ 100:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+ 101:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+ 102:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+ 103:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_lvd_disable(void)
+ 104:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+ 138              		.loc 1 104 0
+ 139              		.cfi_startproc
+ 140              		@ args = 0, pretend = 0, frame = 0
+ 141              		@ frame_needed = 0, uses_anonymous_args = 0
+ 142              		@ link register save eliminated.
+ 105:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* disable LVD */
+ 106:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL &= ~PMU_CTL_LVDEN;
+ 143              		.loc 1 106 0
+ 144 0000 024A     		ldr	r2, .L10
+ 145 0002 1368     		ldr	r3, [r2]
+ 146 0004 23F01003 		bic	r3, r3, #16
+ 147 0008 1360     		str	r3, [r2]
+ 107:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ 148              		.loc 1 107 0
+ 149 000a 7047     		bx	lr
+ 150              	.L11:
+ 151              		.align	2
+ 152              	.L10:
+ 153 000c 00700040 		.word	1073770496
+ 154              		.cfi_endproc
+ 155              	.LFE119:
+ 157              		.section	.text.pmu_highdriver_mode_enable,"ax",%progbits
+ 158              		.align	1
+ 159              		.global	pmu_highdriver_mode_enable
+ 160              		.syntax unified
+ 161              		.thumb
+ 162              		.thumb_func
+ 163              		.fpu fpv4-sp-d16
+ 165              	pmu_highdriver_mode_enable:
+ 166              	.LFB121:
+ 108:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+ 109:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+ 110:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      switch high-driver mode
+ 111:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****                 this bit set by software only when IRC16M or HXTAL used as system clock
+ 112:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  highdr_switch:
+ 113:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_HIGHDR_SWITCH_NONE: disable high-driver mode switch
+ 114:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_HIGHDR_SWITCH_EN: enable high-driver mode switch
+ 115:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+ 116:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+ 117:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+ 118:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_highdriver_switch_select(uint32_t highdr_switch)
+ 119:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+ 120:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* wait for HDRF flag set */
+ 121:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     while(SET != pmu_flag_get(PMU_FLAG_HDRF)){
+ 122:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     }
+ 123:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL &= ~PMU_CTL_HDS;
+ 124:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL |= highdr_switch;
+ 125:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ 126:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+ 127:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+ 128:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      enable high-driver mode
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 6
+
+
+ 129:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****                 this bit set by software only when IRC16M or HXTAL used as system clock
+ 130:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  none
+ 131:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+ 132:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+ 133:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+ 134:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_highdriver_mode_enable(void)
+ 135:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+ 167              		.loc 1 135 0
+ 168              		.cfi_startproc
+ 169              		@ args = 0, pretend = 0, frame = 0
+ 170              		@ frame_needed = 0, uses_anonymous_args = 0
+ 171              		@ link register save eliminated.
+ 136:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL |= PMU_CTL_HDEN;
+ 172              		.loc 1 136 0
+ 173 0000 024A     		ldr	r2, .L13
+ 174 0002 1368     		ldr	r3, [r2]
+ 175 0004 43F48033 		orr	r3, r3, #65536
+ 176 0008 1360     		str	r3, [r2]
+ 137:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ 177              		.loc 1 137 0
+ 178 000a 7047     		bx	lr
+ 179              	.L14:
+ 180              		.align	2
+ 181              	.L13:
+ 182 000c 00700040 		.word	1073770496
+ 183              		.cfi_endproc
+ 184              	.LFE121:
+ 186              		.section	.text.pmu_highdriver_mode_disable,"ax",%progbits
+ 187              		.align	1
+ 188              		.global	pmu_highdriver_mode_disable
+ 189              		.syntax unified
+ 190              		.thumb
+ 191              		.thumb_func
+ 192              		.fpu fpv4-sp-d16
+ 194              	pmu_highdriver_mode_disable:
+ 195              	.LFB122:
+ 138:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+ 139:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+ 140:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      disable high-driver mode
+ 141:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  none
+ 142:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+ 143:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+ 144:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+ 145:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_highdriver_mode_disable(void)
+ 146:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+ 196              		.loc 1 146 0
+ 197              		.cfi_startproc
+ 198              		@ args = 0, pretend = 0, frame = 0
+ 199              		@ frame_needed = 0, uses_anonymous_args = 0
+ 200              		@ link register save eliminated.
+ 147:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL &= ~PMU_CTL_HDEN;
+ 201              		.loc 1 147 0
+ 202 0000 024A     		ldr	r2, .L16
+ 203 0002 1368     		ldr	r3, [r2]
+ 204 0004 23F48033 		bic	r3, r3, #65536
+ 205 0008 1360     		str	r3, [r2]
+ 148:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 7
+
+
+ 206              		.loc 1 148 0
+ 207 000a 7047     		bx	lr
+ 208              	.L17:
+ 209              		.align	2
+ 210              	.L16:
+ 211 000c 00700040 		.word	1073770496
+ 212              		.cfi_endproc
+ 213              	.LFE122:
+ 215              		.section	.text.pmu_lowdriver_mode_enable,"ax",%progbits
+ 216              		.align	1
+ 217              		.global	pmu_lowdriver_mode_enable
+ 218              		.syntax unified
+ 219              		.thumb
+ 220              		.thumb_func
+ 221              		.fpu fpv4-sp-d16
+ 223              	pmu_lowdriver_mode_enable:
+ 224              	.LFB123:
+ 149:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+ 150:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+ 151:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      enable low-driver mode in deep-sleep mode
+ 152:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  none
+ 153:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+ 154:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+ 155:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+ 156:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_lowdriver_mode_enable(void)
+ 157:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+ 225              		.loc 1 157 0
+ 226              		.cfi_startproc
+ 227              		@ args = 0, pretend = 0, frame = 0
+ 228              		@ frame_needed = 0, uses_anonymous_args = 0
+ 229              		@ link register save eliminated.
+ 158:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL |= PMU_CTL_LDEN;
+ 230              		.loc 1 158 0
+ 231 0000 024A     		ldr	r2, .L19
+ 232 0002 1368     		ldr	r3, [r2]
+ 233 0004 43F44023 		orr	r3, r3, #786432
+ 234 0008 1360     		str	r3, [r2]
+ 159:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ 235              		.loc 1 159 0
+ 236 000a 7047     		bx	lr
+ 237              	.L20:
+ 238              		.align	2
+ 239              	.L19:
+ 240 000c 00700040 		.word	1073770496
+ 241              		.cfi_endproc
+ 242              	.LFE123:
+ 244              		.section	.text.pmu_lowdriver_mode_disable,"ax",%progbits
+ 245              		.align	1
+ 246              		.global	pmu_lowdriver_mode_disable
+ 247              		.syntax unified
+ 248              		.thumb
+ 249              		.thumb_func
+ 250              		.fpu fpv4-sp-d16
+ 252              	pmu_lowdriver_mode_disable:
+ 253              	.LFB124:
+ 160:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+ 161:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 8
+
+
+ 162:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      disable low-driver mode in deep-sleep mode
+ 163:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  none
+ 164:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+ 165:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+ 166:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+ 167:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_lowdriver_mode_disable(void)
+ 168:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+ 254              		.loc 1 168 0
+ 255              		.cfi_startproc
+ 256              		@ args = 0, pretend = 0, frame = 0
+ 257              		@ frame_needed = 0, uses_anonymous_args = 0
+ 258              		@ link register save eliminated.
+ 169:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL &= ~PMU_CTL_LDEN;
+ 259              		.loc 1 169 0
+ 260 0000 024A     		ldr	r2, .L22
+ 261 0002 1368     		ldr	r3, [r2]
+ 262 0004 23F44023 		bic	r3, r3, #786432
+ 263 0008 1360     		str	r3, [r2]
+ 170:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ 264              		.loc 1 170 0
+ 265 000a 7047     		bx	lr
+ 266              	.L23:
+ 267              		.align	2
+ 268              	.L22:
+ 269 000c 00700040 		.word	1073770496
+ 270              		.cfi_endproc
+ 271              	.LFE124:
+ 273              		.section	.text.pmu_lowpower_driver_config,"ax",%progbits
+ 274              		.align	1
+ 275              		.global	pmu_lowpower_driver_config
+ 276              		.syntax unified
+ 277              		.thumb
+ 278              		.thumb_func
+ 279              		.fpu fpv4-sp-d16
+ 281              	pmu_lowpower_driver_config:
+ 282              	.LFB125:
+ 171:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+ 172:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+ 173:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      driver mode when use low power LDO
+ 174:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  mode:
+ 175:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_NORMALDR_LOWPWR:  normal driver when use low power LDO
+ 176:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_LOWDR_LOWPWR:  low-driver mode enabled when LDEN is 11 and use low power LDO
+ 177:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+ 178:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+ 179:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+ 180:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_lowpower_driver_config(uint32_t mode)
+ 181:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+ 283              		.loc 1 181 0
+ 284              		.cfi_startproc
+ 285              		@ args = 0, pretend = 0, frame = 0
+ 286              		@ frame_needed = 0, uses_anonymous_args = 0
+ 287              		@ link register save eliminated.
+ 288              	.LVL6:
+ 182:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL &= ~PMU_CTL_LDLP;
+ 289              		.loc 1 182 0
+ 290 0000 044B     		ldr	r3, .L25
+ 291 0002 1A68     		ldr	r2, [r3]
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 9
+
+
+ 292 0004 22F48062 		bic	r2, r2, #1024
+ 293 0008 1A60     		str	r2, [r3]
+ 183:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL |= mode;
+ 294              		.loc 1 183 0
+ 295 000a 1A68     		ldr	r2, [r3]
+ 296 000c 1043     		orrs	r0, r0, r2
+ 297              	.LVL7:
+ 298 000e 1860     		str	r0, [r3]
+ 184:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ 299              		.loc 1 184 0
+ 300 0010 7047     		bx	lr
+ 301              	.L26:
+ 302 0012 00BF     		.align	2
+ 303              	.L25:
+ 304 0014 00700040 		.word	1073770496
+ 305              		.cfi_endproc
+ 306              	.LFE125:
+ 308              		.section	.text.pmu_normalpower_driver_config,"ax",%progbits
+ 309              		.align	1
+ 310              		.global	pmu_normalpower_driver_config
+ 311              		.syntax unified
+ 312              		.thumb
+ 313              		.thumb_func
+ 314              		.fpu fpv4-sp-d16
+ 316              	pmu_normalpower_driver_config:
+ 317              	.LFB126:
+ 185:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+ 186:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+ 187:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      driver mode when use normal power LDO
+ 188:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  mode:
+ 189:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_NORMALDR_NORMALPWR:  normal driver when use normal power LDO
+ 190:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_LOWDR_NORMALPWR:  low-driver mode enabled when LDEN is 11 and use normal powe
+ 191:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+ 192:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+ 193:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+ 194:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_normalpower_driver_config(uint32_t mode)
+ 195:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+ 318              		.loc 1 195 0
+ 319              		.cfi_startproc
+ 320              		@ args = 0, pretend = 0, frame = 0
+ 321              		@ frame_needed = 0, uses_anonymous_args = 0
+ 322              		@ link register save eliminated.
+ 323              	.LVL8:
+ 196:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL &= ~PMU_CTL_LDNP;
+ 324              		.loc 1 196 0
+ 325 0000 044B     		ldr	r3, .L28
+ 326 0002 1A68     		ldr	r2, [r3]
+ 327 0004 22F40062 		bic	r2, r2, #2048
+ 328 0008 1A60     		str	r2, [r3]
+ 197:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL |= mode;
+ 329              		.loc 1 197 0
+ 330 000a 1A68     		ldr	r2, [r3]
+ 331 000c 1043     		orrs	r0, r0, r2
+ 332              	.LVL9:
+ 333 000e 1860     		str	r0, [r3]
+ 198:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ 334              		.loc 1 198 0
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 10
+
+
+ 335 0010 7047     		bx	lr
+ 336              	.L29:
+ 337 0012 00BF     		.align	2
+ 338              	.L28:
+ 339 0014 00700040 		.word	1073770496
+ 340              		.cfi_endproc
+ 341              	.LFE126:
+ 343              		.section	.text.pmu_to_sleepmode,"ax",%progbits
+ 344              		.align	1
+ 345              		.global	pmu_to_sleepmode
+ 346              		.syntax unified
+ 347              		.thumb
+ 348              		.thumb_func
+ 349              		.fpu fpv4-sp-d16
+ 351              	pmu_to_sleepmode:
+ 352              	.LFB127:
+ 199:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+ 200:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+ 201:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      PMU work at sleep mode
+ 202:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  sleepmodecmd:
+ 203:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        WFI_CMD: use WFI command
+ 204:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        WFE_CMD: use WFE command
+ 205:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+ 206:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+ 207:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+ 208:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_to_sleepmode(uint8_t sleepmodecmd)
+ 209:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+ 353              		.loc 1 209 0
+ 354              		.cfi_startproc
+ 355              		@ args = 0, pretend = 0, frame = 0
+ 356              		@ frame_needed = 0, uses_anonymous_args = 0
+ 357              		@ link register save eliminated.
+ 358              	.LVL10:
+ 210:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* clear sleepdeep bit of Cortex-M4 system control register */
+ 211:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     SCB->SCR &= ~((uint32_t)SCB_SCR_SLEEPDEEP_Msk);
+ 359              		.loc 1 211 0
+ 360 0000 044A     		ldr	r2, .L34
+ 361 0002 1369     		ldr	r3, [r2, #16]
+ 362 0004 23F00403 		bic	r3, r3, #4
+ 363 0008 1361     		str	r3, [r2, #16]
+ 212:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     
+ 213:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* select WFI or WFE command to enter sleep mode */
+ 214:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     if(WFI_CMD == sleepmodecmd){
+ 364              		.loc 1 214 0
+ 365 000a 08B1     		cbz	r0, .L33
+ 366              	.LBB18:
+ 367              	.LBB19:
+ 368              		.file 2 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+   1:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /**************************************************************************//**
+   2:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  * @file     core_cmInstr.h
+   3:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  * @brief    CMSIS Cortex-M Core Instruction Access Header File
+   4:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  * @version  V3.01
+   5:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  * @date     06. March 2012
+   6:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  *
+   7:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  * @note
+   8:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  * Copyright (C) 2009-2012 ARM Limited. All rights reserved.
+   9:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  *
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 11
+
+
+  10:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  * @par
+  11:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  * ARM Limited (ARM) is supplying this software for use with Cortex-M
+  12:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  * processor based microcontrollers.  This file can be freely distributed
+  13:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  * within development tools that are supporting such ARM based processors.
+  14:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  *
+  15:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  * @par
+  16:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  * THIS SOFTWARE IS PROVIDED "AS IS".  NO WARRANTIES, WHETHER EXPRESS, IMPLIED
+  17:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  * OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
+  18:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE.
+  19:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  * ARM SHALL NOT, IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL, OR
+  20:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  * CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
+  21:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  *
+  22:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  ******************************************************************************/
+  23:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  24:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #ifndef __CORE_CMINSTR_H
+  25:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __CORE_CMINSTR_H
+  26:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  27:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  28:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /* ##########################  Core Instruction Access  ######################### */
+  29:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \defgroup CMSIS_Core_InstructionInterface CMSIS Core Instruction Interface
+  30:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****   Access to dedicated instructions
+  31:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****   @{
+  32:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** */
+  33:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  34:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #if   defined ( __CC_ARM ) /*------------------RealView Compiler -----------------*/
+  35:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /* ARM armcc specific functions */
+  36:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  37:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #if (__ARMCC_VERSION < 400677)
+  38:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****   #error "Please use ARM Compiler Toolchain V4.0.677 or later!"
+  39:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #endif
+  40:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  41:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  42:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  No Operation
+  43:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  44:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     No Operation does nothing. This instruction can be used for code alignment purposes.
+  45:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+  46:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __NOP                             __nop
+  47:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  48:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  49:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  Wait For Interrupt
+  50:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  51:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     Wait For Interrupt is a hint instruction that suspends execution
+  52:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     until one of a number of events occurs.
+  53:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+  54:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __WFI                             __wfi
+  55:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  56:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  57:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  Wait For Event
+  58:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  59:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     Wait For Event is a hint instruction that permits the processor to enter
+  60:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     a low-power state until one of a number of events occurs.
+  61:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+  62:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __WFE                             __wfe
+  63:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  64:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  65:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  Send Event
+  66:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 12
+
+
+  67:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     Send Event is a hint instruction. It causes an event to be signaled to the CPU.
+  68:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+  69:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __SEV                             __sev
+  70:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  71:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  72:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  Instruction Synchronization Barrier
+  73:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  74:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     Instruction Synchronization Barrier flushes the pipeline in the processor,
+  75:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     so that all instructions following the ISB are fetched from cache or
+  76:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     memory, after the instruction has been completed.
+  77:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+  78:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __ISB()                           __isb(0xF)
+  79:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  80:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  81:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  Data Synchronization Barrier
+  82:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  83:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     This function acts as a special kind of Data Memory Barrier.
+  84:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     It completes when all explicit memory accesses before this instruction complete.
+  85:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+  86:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __DSB()                           __dsb(0xF)
+  87:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  88:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  89:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  Data Memory Barrier
+  90:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  91:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     This function ensures the apparent order of the explicit memory operations before
+  92:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     and after the instruction, without ensuring their completion.
+  93:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+  94:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __DMB()                           __dmb(0xF)
+  95:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  96:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  97:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  Reverse byte order (32 bit)
+  98:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+  99:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     This function reverses the byte order in integer value.
+ 100:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 101:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]    value  Value to reverse
+ 102:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \return               Reversed value
+ 103:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 104:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __REV                             __rev
+ 105:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 106:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 107:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  Reverse byte order (16 bit)
+ 108:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 109:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     This function reverses the byte order in two unsigned short values.
+ 110:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 111:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]    value  Value to reverse
+ 112:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \return               Reversed value
+ 113:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 114:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** __attribute__((section(".rev16_text"))) __STATIC_INLINE __ASM uint32_t __REV16(uint32_t value)
+ 115:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** {
+ 116:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****   rev16 r0, r0
+ 117:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****   bx lr
+ 118:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** }
+ 119:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 120:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 121:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  Reverse byte order in signed short value
+ 122:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 123:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     This function reverses the byte order in a signed short value with sign extension to integer.
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 13
+
+
+ 124:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 125:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]    value  Value to reverse
+ 126:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \return               Reversed value
+ 127:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 128:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** __attribute__((section(".revsh_text"))) __STATIC_INLINE __ASM int32_t __REVSH(int32_t value)
+ 129:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** {
+ 130:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****   revsh r0, r0
+ 131:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****   bx lr
+ 132:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** }
+ 133:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 134:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 135:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  Rotate Right in unsigned value (32 bit)
+ 136:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 137:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     This function Rotate Right (immediate) provides the value of the contents of a register rotated
+ 138:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 139:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]    value  Value to rotate
+ 140:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]    value  Number of Bits to rotate
+ 141:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \return               Rotated value
+ 142:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 143:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __ROR                             __ror
+ 144:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 145:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 146:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #if       (__CORTEX_M >= 0x03)
+ 147:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 148:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  Reverse bit order of value
+ 149:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 150:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     This function reverses the bit order of the given value.
+ 151:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 152:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]    value  Value to reverse
+ 153:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \return               Reversed value
+ 154:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 155:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __RBIT                            __rbit
+ 156:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 157:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 158:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  LDR Exclusive (8 bit)
+ 159:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 160:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     This function performs a exclusive LDR command for 8 bit value.
+ 161:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 162:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]    ptr  Pointer to data
+ 163:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \return             value of type uint8_t at (*ptr)
+ 164:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 165:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __LDREXB(ptr)                     ((uint8_t ) __ldrex(ptr))
+ 166:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 167:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 168:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  LDR Exclusive (16 bit)
+ 169:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 170:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     This function performs a exclusive LDR command for 16 bit values.
+ 171:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 172:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]    ptr  Pointer to data
+ 173:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \return        value of type uint16_t at (*ptr)
+ 174:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 175:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __LDREXH(ptr)                     ((uint16_t) __ldrex(ptr))
+ 176:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 177:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 178:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  LDR Exclusive (32 bit)
+ 179:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 180:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     This function performs a exclusive LDR command for 32 bit values.
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 14
+
+
+ 181:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 182:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]    ptr  Pointer to data
+ 183:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \return        value of type uint32_t at (*ptr)
+ 184:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 185:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __LDREXW(ptr)                     ((uint32_t ) __ldrex(ptr))
+ 186:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 187:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 188:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  STR Exclusive (8 bit)
+ 189:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 190:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     This function performs a exclusive STR command for 8 bit values.
+ 191:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 192:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]  value  Value to store
+ 193:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]    ptr  Pointer to location
+ 194:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \return          0  Function succeeded
+ 195:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \return          1  Function failed
+ 196:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 197:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __STREXB(value, ptr)              __strex(value, ptr)
+ 198:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 199:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 200:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  STR Exclusive (16 bit)
+ 201:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 202:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     This function performs a exclusive STR command for 16 bit values.
+ 203:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 204:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]  value  Value to store
+ 205:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]    ptr  Pointer to location
+ 206:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \return          0  Function succeeded
+ 207:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \return          1  Function failed
+ 208:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 209:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __STREXH(value, ptr)              __strex(value, ptr)
+ 210:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 211:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 212:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  STR Exclusive (32 bit)
+ 213:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 214:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     This function performs a exclusive STR command for 32 bit values.
+ 215:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 216:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]  value  Value to store
+ 217:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]    ptr  Pointer to location
+ 218:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \return          0  Function succeeded
+ 219:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \return          1  Function failed
+ 220:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 221:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __STREXW(value, ptr)              __strex(value, ptr)
+ 222:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 223:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 224:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  Remove the exclusive lock
+ 225:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 226:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     This function removes the exclusive lock which is created by LDREX.
+ 227:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 228:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 229:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __CLREX                           __clrex
+ 230:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 231:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 232:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  Signed Saturate
+ 233:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 234:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     This function saturates a signed value.
+ 235:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 236:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]  value  Value to be saturated
+ 237:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]    sat  Bit position to saturate to (1..32)
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 15
+
+
+ 238:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \return             Saturated value
+ 239:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 240:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __SSAT                            __ssat
+ 241:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 242:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 243:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  Unsigned Saturate
+ 244:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 245:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     This function saturates an unsigned value.
+ 246:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 247:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]  value  Value to be saturated
+ 248:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]    sat  Bit position to saturate to (0..31)
+ 249:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \return             Saturated value
+ 250:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 251:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __USAT                            __usat
+ 252:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 253:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 254:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  Count leading zeros
+ 255:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 256:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     This function counts the number of leading zeros of a data value.
+ 257:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 258:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \param [in]  value  Value to count the leading zeros
+ 259:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     \return             number of leading zeros in value
+ 260:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 261:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #define __CLZ                             __clz
+ 262:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 263:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #endif /* (__CORTEX_M >= 0x03) */
+ 264:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 265:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 266:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 267:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #elif defined ( __ICCARM__ ) /*------------------ ICC Compiler -------------------*/
+ 268:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /* IAR iccarm specific functions */
+ 269:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 270:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #include <cmsis_iar.h>
+ 271:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 272:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 273:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #elif defined ( __TMS470__ ) /*---------------- TI CCS Compiler ------------------*/
+ 274:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /* TI CCS specific functions */
+ 275:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 276:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #include <cmsis_ccs.h>
+ 277:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 278:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 279:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** #elif defined ( __GNUC__ ) /*------------------ GNU Compiler ---------------------*/
+ 280:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /* GNU gcc specific functions */
+ 281:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 282:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  No Operation
+ 283:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 284:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     No Operation does nothing. This instruction can be used for code alignment purposes.
+ 285:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 286:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __NOP(void)
+ 287:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** {
+ 288:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****   __ASM volatile ("nop");
+ 289:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** }
+ 290:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 291:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 292:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  Wait For Interrupt
+ 293:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 294:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     Wait For Interrupt is a hint instruction that suspends execution
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 16
+
+
+ 295:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     until one of a number of events occurs.
+ 296:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 297:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __WFI(void)
+ 298:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** {
+ 299:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****   __ASM volatile ("wfi");
+ 300:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** }
+ 301:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 302:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 303:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  Wait For Event
+ 304:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 305:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     Wait For Event is a hint instruction that permits the processor to enter
+ 306:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     a low-power state until one of a number of events occurs.
+ 307:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 308:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __WFE(void)
+ 309:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** {
+ 310:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****   __ASM volatile ("wfe");
+ 369              		.loc 2 310 0
+ 370              		.syntax unified
+ 371              	@ 310 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firm
+ 372 000c 20BF     		wfe
+ 373              	@ 0 "" 2
+ 374              		.thumb
+ 375              		.syntax unified
+ 376              	.LBE19:
+ 377              	.LBE18:
+ 215:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         __WFI();
+ 216:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     }else{
+ 217:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         __WFE();
+ 218:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     }
+ 219:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ 378              		.loc 1 219 0
+ 379 000e 7047     		bx	lr
+ 380              	.L33:
+ 381              	.LBB20:
+ 382              	.LBB21:
+ 299:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** }
+ 383              		.loc 2 299 0
+ 384              		.syntax unified
+ 385              	@ 299 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firm
+ 386 0010 30BF     		wfi
+ 387              	@ 0 "" 2
+ 388              		.thumb
+ 389              		.syntax unified
+ 390 0012 7047     		bx	lr
+ 391              	.L35:
+ 392              		.align	2
+ 393              	.L34:
+ 394 0014 00ED00E0 		.word	-536810240
+ 395              	.LBE21:
+ 396              	.LBE20:
+ 397              		.cfi_endproc
+ 398              	.LFE127:
+ 400              		.section	.text.pmu_to_deepsleepmode,"ax",%progbits
+ 401              		.align	1
+ 402              		.global	pmu_to_deepsleepmode
+ 403              		.syntax unified
+ 404              		.thumb
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 17
+
+
+ 405              		.thumb_func
+ 406              		.fpu fpv4-sp-d16
+ 408              	pmu_to_deepsleepmode:
+ 409              	.LFB128:
+ 220:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+ 221:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+ 222:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      PMU work at deepsleep mode
+ 223:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  ldo
+ 224:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_LDO_NORMAL: LDO normal work when pmu enter deepsleep mode
+ 225:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_LDO_LOWPOWER: LDO work at low power mode when pmu enter deepsleep mode
+ 226:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  deepsleepmodecmd: 
+ 227:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        WFI_CMD: use WFI command
+ 228:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        WFE_CMD: use WFE command
+ 229:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+ 230:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+ 231:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+ 232:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_to_deepsleepmode(uint32_t ldo,uint8_t deepsleepmodecmd)
+ 233:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+ 410              		.loc 1 233 0
+ 411              		.cfi_startproc
+ 412              		@ args = 0, pretend = 0, frame = 0
+ 413              		@ frame_needed = 0, uses_anonymous_args = 0
+ 414              		@ link register save eliminated.
+ 415              	.LVL11:
+ 234:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* clear stbmod and ldolp bits */
+ 235:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL &= ~((uint32_t)(PMU_CTL_STBMOD | PMU_CTL_LDOLP));
+ 416              		.loc 1 235 0
+ 417 0000 0C4B     		ldr	r3, .L40
+ 418 0002 1A68     		ldr	r2, [r3]
+ 419 0004 22F00302 		bic	r2, r2, #3
+ 420 0008 1A60     		str	r2, [r3]
+ 236:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     
+ 237:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* set ldolp bit according to pmu_ldo */
+ 238:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL |= ldo;
+ 421              		.loc 1 238 0
+ 422 000a 1A68     		ldr	r2, [r3]
+ 423 000c 1043     		orrs	r0, r0, r2
+ 424              	.LVL12:
+ 425 000e 1860     		str	r0, [r3]
+ 239:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     
+ 240:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* set sleepdeep bit of Cortex-M4 system control register */
+ 241:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk;
+ 426              		.loc 1 241 0
+ 427 0010 094A     		ldr	r2, .L40+4
+ 428 0012 1369     		ldr	r3, [r2, #16]
+ 429 0014 43F00403 		orr	r3, r3, #4
+ 430 0018 1361     		str	r3, [r2, #16]
+ 242:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     
+ 243:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* select WFI or WFE command to enter deepsleep mode */
+ 244:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     if(WFI_CMD == deepsleepmodecmd){
+ 431              		.loc 1 244 0
+ 432 001a 41B1     		cbz	r1, .L39
+ 433              	.LBB22:
+ 434              	.LBB23:
+ 311:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** }
+ 312:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 313:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 18
+
+
+ 314:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** /** \brief  Send Event
+ 315:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** 
+ 316:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****     Send Event is a hint instruction. It causes an event to be signaled to the CPU.
+ 317:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****  */
+ 318:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __SEV(void)
+ 319:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** {
+ 320:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h ****   __ASM volatile ("sev");
+ 435              		.loc 2 320 0
+ 436              		.syntax unified
+ 437              	@ 320 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firm
+ 438 001c 40BF     		sev
+ 439              	@ 0 "" 2
+ 440              		.thumb
+ 441              		.syntax unified
+ 442              	.LBE23:
+ 443              	.LBE22:
+ 444              	.LBB24:
+ 445              	.LBB25:
+ 310:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** }
+ 446              		.loc 2 310 0
+ 447              		.syntax unified
+ 448              	@ 310 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firm
+ 449 001e 20BF     		wfe
+ 450              	@ 0 "" 2
+ 451              		.thumb
+ 452              		.syntax unified
+ 453              	.LBE25:
+ 454              	.LBE24:
+ 455              	.LBB26:
+ 456              	.LBB27:
+ 457              		.syntax unified
+ 458              	@ 310 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firm
+ 459 0020 20BF     		wfe
+ 460              	@ 0 "" 2
+ 461              		.thumb
+ 462              		.syntax unified
+ 463              	.L38:
+ 464              	.LBE27:
+ 465              	.LBE26:
+ 245:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         __WFI();
+ 246:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     }else{
+ 247:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         __SEV();
+ 248:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         __WFE();
+ 249:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         __WFE();
+ 250:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     }
+ 251:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* reset sleepdeep bit of Cortex-M4 system control register */
+ 252:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     SCB->SCR &= ~((uint32_t)SCB_SCR_SLEEPDEEP_Msk);
+ 466              		.loc 1 252 0
+ 467 0022 054A     		ldr	r2, .L40+4
+ 468 0024 1369     		ldr	r3, [r2, #16]
+ 469 0026 23F00403 		bic	r3, r3, #4
+ 470 002a 1361     		str	r3, [r2, #16]
+ 253:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ 471              		.loc 1 253 0
+ 472 002c 7047     		bx	lr
+ 473              	.L39:
+ 474              	.LBB28:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 19
+
+
+ 475              	.LBB29:
+ 299:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** }
+ 476              		.loc 2 299 0
+ 477              		.syntax unified
+ 478              	@ 299 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firm
+ 479 002e 30BF     		wfi
+ 480              	@ 0 "" 2
+ 481              		.thumb
+ 482              		.syntax unified
+ 483 0030 F7E7     		b	.L38
+ 484              	.L41:
+ 485 0032 00BF     		.align	2
+ 486              	.L40:
+ 487 0034 00700040 		.word	1073770496
+ 488 0038 00ED00E0 		.word	-536810240
+ 489              	.LBE29:
+ 490              	.LBE28:
+ 491              		.cfi_endproc
+ 492              	.LFE128:
+ 494              		.section	.text.pmu_to_standbymode,"ax",%progbits
+ 495              		.align	1
+ 496              		.global	pmu_to_standbymode
+ 497              		.syntax unified
+ 498              		.thumb
+ 499              		.thumb_func
+ 500              		.fpu fpv4-sp-d16
+ 502              	pmu_to_standbymode:
+ 503              	.LFB129:
+ 254:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+ 255:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+ 256:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      pmu work at standby mode
+ 257:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  standbymodecmd:
+ 258:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        WFI_CMD: use WFI command
+ 259:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        WFE_CMD: use WFE command
+ 260:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+ 261:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+ 262:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+ 263:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_to_standbymode(uint8_t standbymodecmd)
+ 264:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+ 504              		.loc 1 264 0
+ 505              		.cfi_startproc
+ 506              		@ args = 0, pretend = 0, frame = 0
+ 507              		@ frame_needed = 0, uses_anonymous_args = 0
+ 508              		@ link register save eliminated.
+ 509              	.LVL13:
+ 265:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* set sleepdeep bit of Cortex-M4 system control register */
+ 266:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk;
+ 510              		.loc 1 266 0
+ 511 0000 094A     		ldr	r2, .L46
+ 512 0002 1369     		ldr	r3, [r2, #16]
+ 513 0004 43F00403 		orr	r3, r3, #4
+ 514 0008 1361     		str	r3, [r2, #16]
+ 267:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+ 268:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* set stbmod bit */
+ 269:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL |= PMU_CTL_STBMOD;
+ 515              		.loc 1 269 0
+ 516 000a 084B     		ldr	r3, .L46+4
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 20
+
+
+ 517 000c 1A68     		ldr	r2, [r3]
+ 518 000e 42F00202 		orr	r2, r2, #2
+ 519 0012 1A60     		str	r2, [r3]
+ 270:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         
+ 271:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* reset wakeup flag */
+ 272:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL |= PMU_CTL_WURST;
+ 520              		.loc 1 272 0
+ 521 0014 1A68     		ldr	r2, [r3]
+ 522 0016 42F00402 		orr	r2, r2, #4
+ 523 001a 1A60     		str	r2, [r3]
+ 273:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     
+ 274:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* select WFI or WFE command to enter standby mode */
+ 275:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     if(WFI_CMD == standbymodecmd){
+ 524              		.loc 1 275 0
+ 525 001c 08B1     		cbz	r0, .L45
+ 526              	.LBB30:
+ 527              	.LBB31:
+ 310:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** }
+ 528              		.loc 2 310 0
+ 529              		.syntax unified
+ 530              	@ 310 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firm
+ 531 001e 20BF     		wfe
+ 532              	@ 0 "" 2
+ 533              		.thumb
+ 534              		.syntax unified
+ 535              	.LBE31:
+ 536              	.LBE30:
+ 276:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         __WFI();
+ 277:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     }else{
+ 278:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         __WFE();
+ 279:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     }
+ 280:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ 537              		.loc 1 280 0
+ 538 0020 7047     		bx	lr
+ 539              	.L45:
+ 540              	.LBB32:
+ 541              	.LBB33:
+ 299:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/CMSIS\core_cmInstr.h **** }
+ 542              		.loc 2 299 0
+ 543              		.syntax unified
+ 544              	@ 299 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firm
+ 545 0022 30BF     		wfi
+ 546              	@ 0 "" 2
+ 547              		.thumb
+ 548              		.syntax unified
+ 549 0024 7047     		bx	lr
+ 550              	.L47:
+ 551 0026 00BF     		.align	2
+ 552              	.L46:
+ 553 0028 00ED00E0 		.word	-536810240
+ 554 002c 00700040 		.word	1073770496
+ 555              	.LBE33:
+ 556              	.LBE32:
+ 557              		.cfi_endproc
+ 558              	.LFE129:
+ 560              		.section	.text.pmu_backup_write_enable,"ax",%progbits
+ 561              		.align	1
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 21
+
+
+ 562              		.global	pmu_backup_write_enable
+ 563              		.syntax unified
+ 564              		.thumb
+ 565              		.thumb_func
+ 566              		.fpu fpv4-sp-d16
+ 568              	pmu_backup_write_enable:
+ 569              	.LFB130:
+ 281:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+ 282:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+ 283:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      enable backup domain write
+ 284:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  none
+ 285:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+ 286:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+ 287:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+ 288:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_backup_write_enable(void)
+ 289:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+ 570              		.loc 1 289 0
+ 571              		.cfi_startproc
+ 572              		@ args = 0, pretend = 0, frame = 0
+ 573              		@ frame_needed = 0, uses_anonymous_args = 0
+ 574              		@ link register save eliminated.
+ 290:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL |= PMU_CTL_BKPWEN;
+ 575              		.loc 1 290 0
+ 576 0000 024A     		ldr	r2, .L49
+ 577 0002 1368     		ldr	r3, [r2]
+ 578 0004 43F48073 		orr	r3, r3, #256
+ 579 0008 1360     		str	r3, [r2]
+ 291:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ 580              		.loc 1 291 0
+ 581 000a 7047     		bx	lr
+ 582              	.L50:
+ 583              		.align	2
+ 584              	.L49:
+ 585 000c 00700040 		.word	1073770496
+ 586              		.cfi_endproc
+ 587              	.LFE130:
+ 589              		.section	.text.pmu_backup_write_disable,"ax",%progbits
+ 590              		.align	1
+ 591              		.global	pmu_backup_write_disable
+ 592              		.syntax unified
+ 593              		.thumb
+ 594              		.thumb_func
+ 595              		.fpu fpv4-sp-d16
+ 597              	pmu_backup_write_disable:
+ 598              	.LFB131:
+ 292:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+ 293:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+ 294:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      disable backup domain write
+ 295:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  none
+ 296:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+ 297:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+ 298:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+ 299:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_backup_write_disable(void)
+ 300:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+ 599              		.loc 1 300 0
+ 600              		.cfi_startproc
+ 601              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 22
+
+
+ 602              		@ frame_needed = 0, uses_anonymous_args = 0
+ 603              		@ link register save eliminated.
+ 301:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL &= ~PMU_CTL_BKPWEN;
+ 604              		.loc 1 301 0
+ 605 0000 024A     		ldr	r2, .L52
+ 606 0002 1368     		ldr	r3, [r2]
+ 607 0004 23F48073 		bic	r3, r3, #256
+ 608 0008 1360     		str	r3, [r2]
+ 302:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ 609              		.loc 1 302 0
+ 610 000a 7047     		bx	lr
+ 611              	.L53:
+ 612              		.align	2
+ 613              	.L52:
+ 614 000c 00700040 		.word	1073770496
+ 615              		.cfi_endproc
+ 616              	.LFE131:
+ 618              		.section	.text.pmu_wakeup_pin_enable,"ax",%progbits
+ 619              		.align	1
+ 620              		.global	pmu_wakeup_pin_enable
+ 621              		.syntax unified
+ 622              		.thumb
+ 623              		.thumb_func
+ 624              		.fpu fpv4-sp-d16
+ 626              	pmu_wakeup_pin_enable:
+ 627              	.LFB132:
+ 303:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+ 304:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+ 305:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      enable wakeup pin
+ 306:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  none
+ 307:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+ 308:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+ 309:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+ 310:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_wakeup_pin_enable(void)
+ 311:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+ 628              		.loc 1 311 0
+ 629              		.cfi_startproc
+ 630              		@ args = 0, pretend = 0, frame = 0
+ 631              		@ frame_needed = 0, uses_anonymous_args = 0
+ 632              		@ link register save eliminated.
+ 312:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CS |= PMU_CS_WUPEN;
+ 633              		.loc 1 312 0
+ 634 0000 024A     		ldr	r2, .L55
+ 635 0002 1368     		ldr	r3, [r2]
+ 636 0004 43F48073 		orr	r3, r3, #256
+ 637 0008 1360     		str	r3, [r2]
+ 313:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ 638              		.loc 1 313 0
+ 639 000a 7047     		bx	lr
+ 640              	.L56:
+ 641              		.align	2
+ 642              	.L55:
+ 643 000c 04700040 		.word	1073770500
+ 644              		.cfi_endproc
+ 645              	.LFE132:
+ 647              		.section	.text.pmu_wakeup_pin_disable,"ax",%progbits
+ 648              		.align	1
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 23
+
+
+ 649              		.global	pmu_wakeup_pin_disable
+ 650              		.syntax unified
+ 651              		.thumb
+ 652              		.thumb_func
+ 653              		.fpu fpv4-sp-d16
+ 655              	pmu_wakeup_pin_disable:
+ 656              	.LFB133:
+ 314:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+ 315:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+ 316:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      disable wakeup pin
+ 317:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  none
+ 318:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+ 319:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+ 320:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+ 321:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_wakeup_pin_disable(void)
+ 322:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+ 657              		.loc 1 322 0
+ 658              		.cfi_startproc
+ 659              		@ args = 0, pretend = 0, frame = 0
+ 660              		@ frame_needed = 0, uses_anonymous_args = 0
+ 661              		@ link register save eliminated.
+ 323:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CS &= ~PMU_CS_WUPEN;
+ 662              		.loc 1 323 0
+ 663 0000 024A     		ldr	r2, .L58
+ 664 0002 1368     		ldr	r3, [r2]
+ 665 0004 23F48073 		bic	r3, r3, #256
+ 666 0008 1360     		str	r3, [r2]
+ 324:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ 667              		.loc 1 324 0
+ 668 000a 7047     		bx	lr
+ 669              	.L59:
+ 670              		.align	2
+ 671              	.L58:
+ 672 000c 04700040 		.word	1073770500
+ 673              		.cfi_endproc
+ 674              	.LFE133:
+ 676              		.section	.text.pmu_flag_clear,"ax",%progbits
+ 677              		.align	1
+ 678              		.global	pmu_flag_clear
+ 679              		.syntax unified
+ 680              		.thumb
+ 681              		.thumb_func
+ 682              		.fpu fpv4-sp-d16
+ 684              	pmu_flag_clear:
+ 685              	.LFB134:
+ 325:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+ 326:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+ 327:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      clear flag bit
+ 328:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  flag_reset:
+ 329:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_FLAG_RESET_WAKEUP: reset wakeup flag
+ 330:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_FLAG_RESET_STANDBY: reset standby flag
+ 331:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+ 332:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     none
+ 333:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+ 334:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** void pmu_flag_clear(uint32_t flag_reset)
+ 335:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+ 686              		.loc 1 335 0
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 24
+
+
+ 687              		.cfi_startproc
+ 688              		@ args = 0, pretend = 0, frame = 0
+ 689              		@ frame_needed = 0, uses_anonymous_args = 0
+ 690              		@ link register save eliminated.
+ 691              	.LVL14:
+ 336:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     switch(flag_reset){
+ 692              		.loc 1 336 0
+ 693 0000 10B1     		cbz	r0, .L62
+ 694 0002 0128     		cmp	r0, #1
+ 695 0004 06D0     		beq	.L63
+ 696 0006 7047     		bx	lr
+ 697              	.L62:
+ 337:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     case PMU_FLAG_RESET_WAKEUP:
+ 338:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         /* reset wakeup flag */
+ 339:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         PMU_CTL |= PMU_CTL_WURST;
+ 698              		.loc 1 339 0
+ 699 0008 054A     		ldr	r2, .L64
+ 700 000a 1368     		ldr	r3, [r2]
+ 701 000c 43F00403 		orr	r3, r3, #4
+ 702 0010 1360     		str	r3, [r2]
+ 340:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         break;
+ 703              		.loc 1 340 0
+ 704 0012 7047     		bx	lr
+ 705              	.L63:
+ 341:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     case PMU_FLAG_RESET_STANDBY:
+ 342:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         /* reset standby flag */
+ 343:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         PMU_CTL |= PMU_CTL_STBRST;
+ 706              		.loc 1 343 0
+ 707 0014 024A     		ldr	r2, .L64
+ 708 0016 1368     		ldr	r3, [r2]
+ 709 0018 43F00803 		orr	r3, r3, #8
+ 710 001c 1360     		str	r3, [r2]
+ 344:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         break;
+ 345:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     default :
+ 346:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         break;
+ 347:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     }
+ 348:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ 711              		.loc 1 348 0
+ 712 001e 7047     		bx	lr
+ 713              	.L65:
+ 714              		.align	2
+ 715              	.L64:
+ 716 0020 00700040 		.word	1073770496
+ 717              		.cfi_endproc
+ 718              	.LFE134:
+ 720              		.section	.text.pmu_flag_get,"ax",%progbits
+ 721              		.align	1
+ 722              		.global	pmu_flag_get
+ 723              		.syntax unified
+ 724              		.thumb
+ 725              		.thumb_func
+ 726              		.fpu fpv4-sp-d16
+ 728              	pmu_flag_get:
+ 729              	.LFB135:
+ 349:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+ 350:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** /*!
+ 351:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \brief      get flag state
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 25
+
+
+ 352:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[in]  flag:
+ 353:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_FLAG_WAKEUP: wakeup flag
+ 354:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_FLAG_STANDBY: standby flag
+ 355:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_FLAG_LVD: lvd flag
+ 356:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_FLAG_LDOVSRF: LDO voltage select ready flag
+ 357:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_FLAG_HDRF: high-driver ready flag
+ 358:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_FLAG_HDSRF: high-driver switch ready flag
+ 359:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****       \arg        PMU_FLAG_LDRF: low-driver mode ready flag 
+ 360:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \param[out] none
+ 361:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     \retval     FlagStatus SET or RESET
+ 362:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** */
+ 363:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** FlagStatus pmu_flag_get(uint32_t flag)
+ 364:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** {
+ 730              		.loc 1 364 0
+ 731              		.cfi_startproc
+ 732              		@ args = 0, pretend = 0, frame = 0
+ 733              		@ frame_needed = 0, uses_anonymous_args = 0
+ 734              		@ link register save eliminated.
+ 735              	.LVL15:
+ 365:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     if(PMU_CS & flag){
+ 736              		.loc 1 365 0
+ 737 0000 034B     		ldr	r3, .L70
+ 738 0002 1B68     		ldr	r3, [r3]
+ 739 0004 0342     		tst	r3, r0
+ 740 0006 01D1     		bne	.L69
+ 366:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         return  SET;
+ 367:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     }else{
+ 368:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         return  RESET;
+ 741              		.loc 1 368 0
+ 742 0008 0020     		movs	r0, #0
+ 743              	.LVL16:
+ 369:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     }
+ 370:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ 744              		.loc 1 370 0
+ 745 000a 7047     		bx	lr
+ 746              	.LVL17:
+ 747              	.L69:
+ 366:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****         return  SET;
+ 748              		.loc 1 366 0
+ 749 000c 0120     		movs	r0, #1
+ 750              	.LVL18:
+ 751 000e 7047     		bx	lr
+ 752              	.L71:
+ 753              		.align	2
+ 754              	.L70:
+ 755 0010 04700040 		.word	1073770500
+ 756              		.cfi_endproc
+ 757              	.LFE135:
+ 759              		.section	.text.pmu_highdriver_switch_select,"ax",%progbits
+ 760              		.align	1
+ 761              		.global	pmu_highdriver_switch_select
+ 762              		.syntax unified
+ 763              		.thumb
+ 764              		.thumb_func
+ 765              		.fpu fpv4-sp-d16
+ 767              	pmu_highdriver_switch_select:
+ 768              	.LFB120:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 26
+
+
+ 119:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     /* wait for HDRF flag set */
+ 769              		.loc 1 119 0
+ 770              		.cfi_startproc
+ 771              		@ args = 0, pretend = 0, frame = 0
+ 772              		@ frame_needed = 0, uses_anonymous_args = 0
+ 773              	.LVL19:
+ 774 0000 10B5     		push	{r4, lr}
+ 775              	.LCFI1:
+ 776              		.cfi_def_cfa_offset 8
+ 777              		.cfi_offset 4, -8
+ 778              		.cfi_offset 14, -4
+ 779 0002 0446     		mov	r4, r0
+ 780              	.LVL20:
+ 781              	.L73:
+ 121:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     }
+ 782              		.loc 1 121 0 discriminator 1
+ 783 0004 4FF48030 		mov	r0, #65536
+ 784 0008 FFF7FEFF 		bl	pmu_flag_get
+ 785              	.LVL21:
+ 786 000c 0128     		cmp	r0, #1
+ 787 000e F9D1     		bne	.L73
+ 123:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c ****     PMU_CTL |= highdr_switch;
+ 788              		.loc 1 123 0
+ 789 0010 044B     		ldr	r3, .L75
+ 790 0012 1A68     		ldr	r2, [r3]
+ 791 0014 22F40032 		bic	r2, r2, #131072
+ 792 0018 1A60     		str	r2, [r3]
+ 124:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** }
+ 793              		.loc 1 124 0
+ 794 001a 1868     		ldr	r0, [r3]
+ 795 001c 2043     		orrs	r0, r0, r4
+ 796 001e 1860     		str	r0, [r3]
+ 125:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_pmu.c **** 
+ 797              		.loc 1 125 0
+ 798 0020 10BD     		pop	{r4, pc}
+ 799              	.LVL22:
+ 800              	.L76:
+ 801 0022 00BF     		.align	2
+ 802              	.L75:
+ 803 0024 00700040 		.word	1073770496
+ 804              		.cfi_endproc
+ 805              	.LFE120:
+ 807              		.text
+ 808              	.Letext0:
+ 809              		.file 3 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 810              		.file 4 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 811              		.file 5 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 812              		.file 6 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 813              		.file 7 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 814              		.file 8 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 815              		.file 9 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 816              		.file 10 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ 817              		.file 11 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\lib\\gcc\\a
+ 818              		.file 12 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ 819              		.file 13 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 27
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gd32f30x_pmu.c
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:18     .text.pmu_deinit:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:25     .text.pmu_deinit:00000000 pmu_deinit
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:51     .text.pmu_lvd_select:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:58     .text.pmu_lvd_select:00000000 pmu_lvd_select
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:89     .text.pmu_lvd_select:00000024 $d
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:94     .text.pmu_ldo_output_select:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:101    .text.pmu_ldo_output_select:00000000 pmu_ldo_output_select
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:124    .text.pmu_ldo_output_select:00000014 $d
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:129    .text.pmu_lvd_disable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:136    .text.pmu_lvd_disable:00000000 pmu_lvd_disable
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:153    .text.pmu_lvd_disable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:158    .text.pmu_highdriver_mode_enable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:165    .text.pmu_highdriver_mode_enable:00000000 pmu_highdriver_mode_enable
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:182    .text.pmu_highdriver_mode_enable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:187    .text.pmu_highdriver_mode_disable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:194    .text.pmu_highdriver_mode_disable:00000000 pmu_highdriver_mode_disable
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:211    .text.pmu_highdriver_mode_disable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:216    .text.pmu_lowdriver_mode_enable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:223    .text.pmu_lowdriver_mode_enable:00000000 pmu_lowdriver_mode_enable
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:240    .text.pmu_lowdriver_mode_enable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:245    .text.pmu_lowdriver_mode_disable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:252    .text.pmu_lowdriver_mode_disable:00000000 pmu_lowdriver_mode_disable
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:269    .text.pmu_lowdriver_mode_disable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:274    .text.pmu_lowpower_driver_config:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:281    .text.pmu_lowpower_driver_config:00000000 pmu_lowpower_driver_config
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:304    .text.pmu_lowpower_driver_config:00000014 $d
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:309    .text.pmu_normalpower_driver_config:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:316    .text.pmu_normalpower_driver_config:00000000 pmu_normalpower_driver_config
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:339    .text.pmu_normalpower_driver_config:00000014 $d
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:344    .text.pmu_to_sleepmode:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:351    .text.pmu_to_sleepmode:00000000 pmu_to_sleepmode
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:394    .text.pmu_to_sleepmode:00000014 $d
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:401    .text.pmu_to_deepsleepmode:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:408    .text.pmu_to_deepsleepmode:00000000 pmu_to_deepsleepmode
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:487    .text.pmu_to_deepsleepmode:00000034 $d
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:495    .text.pmu_to_standbymode:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:502    .text.pmu_to_standbymode:00000000 pmu_to_standbymode
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:553    .text.pmu_to_standbymode:00000028 $d
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:561    .text.pmu_backup_write_enable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:568    .text.pmu_backup_write_enable:00000000 pmu_backup_write_enable
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:585    .text.pmu_backup_write_enable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:590    .text.pmu_backup_write_disable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:597    .text.pmu_backup_write_disable:00000000 pmu_backup_write_disable
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:614    .text.pmu_backup_write_disable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:619    .text.pmu_wakeup_pin_enable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:626    .text.pmu_wakeup_pin_enable:00000000 pmu_wakeup_pin_enable
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:643    .text.pmu_wakeup_pin_enable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:648    .text.pmu_wakeup_pin_disable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:655    .text.pmu_wakeup_pin_disable:00000000 pmu_wakeup_pin_disable
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:672    .text.pmu_wakeup_pin_disable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:677    .text.pmu_flag_clear:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:684    .text.pmu_flag_clear:00000000 pmu_flag_clear
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:716    .text.pmu_flag_clear:00000020 $d
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:721    .text.pmu_flag_get:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:728    .text.pmu_flag_get:00000000 pmu_flag_get
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccABuF5n.s 			page 28
+
+
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:755    .text.pmu_flag_get:00000010 $d
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:760    .text.pmu_highdriver_switch_select:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:767    .text.pmu_highdriver_switch_select:00000000 pmu_highdriver_switch_select
+C:\Users\49542\AppData\Local\Temp\ccABuF5n.s:803    .text.pmu_highdriver_switch_select:00000024 $d
+
+UNDEFINED SYMBOLS
+rcu_periph_reset_enable
+rcu_periph_reset_disable

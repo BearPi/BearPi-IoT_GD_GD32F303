@@ -1,0 +1,1266 @@
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gd32f30x_ctc.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.ctc_deinit,"ax",%progbits
+  18              		.align	1
+  19              		.global	ctc_deinit
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv4-sp-d16
+  25              	ctc_deinit:
+  26              	.LFB116:
+  27              		.file 1 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+   1:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+   2:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \file  gd32f30x_ctc.c
+   3:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief CTC driver
+   4:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+   5:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \version 2017-02-10, V1.0.0, firmware for GD32F30x
+   6:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \version 2018-10-10, V1.1.0, firmware for GD32F30x
+   7:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \version 2018-12-25, V2.0.0, firmware for GD32F30x
+   8:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+   9:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+  10:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*
+  11:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     Copyright (c) 2018, GigaDevice Semiconductor Inc.
+  12:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+  13:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     All rights reserved.
+  14:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+  15:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     Redistribution and use in source and binary forms, with or without modification, 
+  16:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** are permitted provided that the following conditions are met:
+  17:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+  18:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     1. Redistributions of source code must retain the above copyright notice, this 
+  19:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****        list of conditions and the following disclaimer.
+  20:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     2. Redistributions in binary form must reproduce the above copyright notice, 
+  21:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****        this list of conditions and the following disclaimer in the documentation 
+  22:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****        and/or other materials provided with the distribution.
+  23:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     3. Neither the name of the copyright holder nor the names of its contributors 
+  24:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****        may be used to endorse or promote products derived from this software without 
+  25:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****        specific prior written permission.
+  26:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+  27:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+  28:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  29:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  30:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  31:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 2
+
+
+  32:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+  33:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+  34:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  35:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+  36:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** OF SUCH DAMAGE.
+  37:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+  38:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+  39:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** #include "gd32f30x_ctc.h"
+  40:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+  41:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** #define CTC_FLAG_MASK            ((uint32_t)0x00000700U)
+  42:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+  43:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /* CTC register bit offset */
+  44:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** #define CTC_TRIMVALUE_OFFSET     ((uint32_t)8U)
+  45:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** #define CTC_TRIM_VALUE_OFFSET    ((uint32_t)8U)
+  46:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** #define CTC_REFCAP_OFFSET        ((uint32_t)16U)
+  47:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** #define CTC_LIMIT_VALUE_OFFSET   ((uint32_t)16U)
+  48:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+  49:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+  50:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      reset CTC clock trim controller
+  51:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  none
+  52:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+  53:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     none
+  54:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+  55:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** void ctc_deinit(void)
+  56:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+  28              		.loc 1 56 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 3, -8
+  36              		.cfi_offset 14, -4
+  57:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     /* reset CTC */
+  58:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     rcu_periph_reset_enable(RCU_CTCRST);
+  37              		.loc 1 58 0
+  38 0002 43F61B00 		movw	r0, #14363
+  39 0006 FFF7FEFF 		bl	rcu_periph_reset_enable
+  40              	.LVL0:
+  59:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     rcu_periph_reset_disable(RCU_CTCRST);
+  41              		.loc 1 59 0
+  42 000a 43F61B00 		movw	r0, #14363
+  43 000e FFF7FEFF 		bl	rcu_periph_reset_disable
+  44              	.LVL1:
+  60:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+  45              		.loc 1 60 0
+  46 0012 08BD     		pop	{r3, pc}
+  47              		.cfi_endproc
+  48              	.LFE116:
+  50              		.section	.text.ctc_counter_enable,"ax",%progbits
+  51              		.align	1
+  52              		.global	ctc_counter_enable
+  53              		.syntax unified
+  54              		.thumb
+  55              		.thumb_func
+  56              		.fpu fpv4-sp-d16
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 3
+
+
+  58              	ctc_counter_enable:
+  59              	.LFB117:
+  61:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+  62:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+  63:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+  64:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+  65:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      enable CTC trim counter
+  66:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  none
+  67:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+  68:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     none
+  69:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+  70:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** void ctc_counter_enable(void)
+  71:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+  60              		.loc 1 71 0
+  61              		.cfi_startproc
+  62              		@ args = 0, pretend = 0, frame = 0
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64              		@ link register save eliminated.
+  72:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL0 |= (uint32_t)CTC_CTL0_CNTEN;
+  65              		.loc 1 72 0
+  66 0000 024A     		ldr	r2, .L4
+  67 0002 1368     		ldr	r3, [r2]
+  68 0004 43F02003 		orr	r3, r3, #32
+  69 0008 1360     		str	r3, [r2]
+  73:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+  70              		.loc 1 73 0
+  71 000a 7047     		bx	lr
+  72              	.L5:
+  73              		.align	2
+  74              	.L4:
+  75 000c 00C80040 		.word	1073793024
+  76              		.cfi_endproc
+  77              	.LFE117:
+  79              		.section	.text.ctc_counter_disable,"ax",%progbits
+  80              		.align	1
+  81              		.global	ctc_counter_disable
+  82              		.syntax unified
+  83              		.thumb
+  84              		.thumb_func
+  85              		.fpu fpv4-sp-d16
+  87              	ctc_counter_disable:
+  88              	.LFB118:
+  74:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+  75:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+  76:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      disable CTC trim counter
+  77:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  none
+  78:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+  79:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     none
+  80:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+  81:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** void ctc_counter_disable(void)
+  82:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+  89              		.loc 1 82 0
+  90              		.cfi_startproc
+  91              		@ args = 0, pretend = 0, frame = 0
+  92              		@ frame_needed = 0, uses_anonymous_args = 0
+  93              		@ link register save eliminated.
+  83:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL0 &= (uint32_t)(~CTC_CTL0_CNTEN);
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 4
+
+
+  94              		.loc 1 83 0
+  95 0000 024A     		ldr	r2, .L7
+  96 0002 1368     		ldr	r3, [r2]
+  97 0004 23F02003 		bic	r3, r3, #32
+  98 0008 1360     		str	r3, [r2]
+  84:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+  99              		.loc 1 84 0
+ 100 000a 7047     		bx	lr
+ 101              	.L8:
+ 102              		.align	2
+ 103              	.L7:
+ 104 000c 00C80040 		.word	1073793024
+ 105              		.cfi_endproc
+ 106              	.LFE118:
+ 108              		.section	.text.ctc_irc48m_trim_value_config,"ax",%progbits
+ 109              		.align	1
+ 110              		.global	ctc_irc48m_trim_value_config
+ 111              		.syntax unified
+ 112              		.thumb
+ 113              		.thumb_func
+ 114              		.fpu fpv4-sp-d16
+ 116              	ctc_irc48m_trim_value_config:
+ 117              	.LFB119:
+  85:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+  86:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+  87:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      configure the IRC48M trim value
+  88:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  ctc_trim_value: 8-bit IRC48M trim value
+  89:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        0x00 - 0x3F
+  90:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+  91:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     none
+  92:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+  93:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** void ctc_irc48m_trim_value_config(uint8_t trim_value)
+  94:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+ 118              		.loc 1 94 0
+ 119              		.cfi_startproc
+ 120              		@ args = 0, pretend = 0, frame = 0
+ 121              		@ frame_needed = 0, uses_anonymous_args = 0
+ 122              		@ link register save eliminated.
+ 123              	.LVL2:
+  95:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     /* clear TRIMVALUE bits */
+  96:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL0 &= (~(uint32_t)CTC_CTL0_TRIMVALUE);
+ 124              		.loc 1 96 0
+ 125 0000 044B     		ldr	r3, .L10
+ 126 0002 1A68     		ldr	r2, [r3]
+ 127 0004 22F47C52 		bic	r2, r2, #16128
+ 128 0008 1A60     		str	r2, [r3]
+  97:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     /* set TRIMVALUE bits */
+  98:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL0 |= ((uint32_t)trim_value << CTC_TRIM_VALUE_OFFSET);
+ 129              		.loc 1 98 0
+ 130 000a 1A68     		ldr	r2, [r3]
+ 131 000c 42EA0020 		orr	r0, r2, r0, lsl #8
+ 132              	.LVL3:
+ 133 0010 1860     		str	r0, [r3]
+  99:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+ 134              		.loc 1 99 0
+ 135 0012 7047     		bx	lr
+ 136              	.L11:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 5
+
+
+ 137              		.align	2
+ 138              	.L10:
+ 139 0014 00C80040 		.word	1073793024
+ 140              		.cfi_endproc
+ 141              	.LFE119:
+ 143              		.section	.text.ctc_software_refsource_pulse_generate,"ax",%progbits
+ 144              		.align	1
+ 145              		.global	ctc_software_refsource_pulse_generate
+ 146              		.syntax unified
+ 147              		.thumb
+ 148              		.thumb_func
+ 149              		.fpu fpv4-sp-d16
+ 151              	ctc_software_refsource_pulse_generate:
+ 152              	.LFB120:
+ 100:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+ 101:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+ 102:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      generate software reference source sync pulse
+ 103:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  none
+ 104:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+ 105:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     none
+ 106:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+ 107:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** void ctc_software_refsource_pulse_generate(void)
+ 108:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+ 153              		.loc 1 108 0
+ 154              		.cfi_startproc
+ 155              		@ args = 0, pretend = 0, frame = 0
+ 156              		@ frame_needed = 0, uses_anonymous_args = 0
+ 157              		@ link register save eliminated.
+ 109:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL0 |= (uint32_t)CTC_CTL0_SWREFPUL;
+ 158              		.loc 1 109 0
+ 159 0000 024A     		ldr	r2, .L13
+ 160 0002 1368     		ldr	r3, [r2]
+ 161 0004 43F08003 		orr	r3, r3, #128
+ 162 0008 1360     		str	r3, [r2]
+ 110:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+ 163              		.loc 1 110 0
+ 164 000a 7047     		bx	lr
+ 165              	.L14:
+ 166              		.align	2
+ 167              	.L13:
+ 168 000c 00C80040 		.word	1073793024
+ 169              		.cfi_endproc
+ 170              	.LFE120:
+ 172              		.section	.text.ctc_hardware_trim_mode_config,"ax",%progbits
+ 173              		.align	1
+ 174              		.global	ctc_hardware_trim_mode_config
+ 175              		.syntax unified
+ 176              		.thumb
+ 177              		.thumb_func
+ 178              		.fpu fpv4-sp-d16
+ 180              	ctc_hardware_trim_mode_config:
+ 181              	.LFB121:
+ 111:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+ 112:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+ 113:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      configure hardware automatically trim mode
+ 114:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  hardmode:
+ 115:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****                 only one parameter can be selected which is shown as below:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 6
+
+
+ 116:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_HARDWARE_TRIM_MODE_ENABLE: hardware automatically trim mode enable
+ 117:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_HARDWARE_TRIM_MODE_DISABLE: hardware automatically trim mode disable
+ 118:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+ 119:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     none
+ 120:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+ 121:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** void ctc_hardware_trim_mode_config(uint32_t hardmode)
+ 122:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+ 182              		.loc 1 122 0
+ 183              		.cfi_startproc
+ 184              		@ args = 0, pretend = 0, frame = 0
+ 185              		@ frame_needed = 0, uses_anonymous_args = 0
+ 186              		@ link register save eliminated.
+ 187              	.LVL4:
+ 123:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL0 &= (uint32_t)(~CTC_CTL0_AUTOTRIM);
+ 188              		.loc 1 123 0
+ 189 0000 044B     		ldr	r3, .L16
+ 190 0002 1A68     		ldr	r2, [r3]
+ 191 0004 22F04002 		bic	r2, r2, #64
+ 192 0008 1A60     		str	r2, [r3]
+ 124:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL0 |= (uint32_t)hardmode;
+ 193              		.loc 1 124 0
+ 194 000a 1A68     		ldr	r2, [r3]
+ 195 000c 1043     		orrs	r0, r0, r2
+ 196              	.LVL5:
+ 197 000e 1860     		str	r0, [r3]
+ 125:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+ 198              		.loc 1 125 0
+ 199 0010 7047     		bx	lr
+ 200              	.L17:
+ 201 0012 00BF     		.align	2
+ 202              	.L16:
+ 203 0014 00C80040 		.word	1073793024
+ 204              		.cfi_endproc
+ 205              	.LFE121:
+ 207              		.section	.text.ctc_refsource_polarity_config,"ax",%progbits
+ 208              		.align	1
+ 209              		.global	ctc_refsource_polarity_config
+ 210              		.syntax unified
+ 211              		.thumb
+ 212              		.thumb_func
+ 213              		.fpu fpv4-sp-d16
+ 215              	ctc_refsource_polarity_config:
+ 216              	.LFB122:
+ 126:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+ 127:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      configure reference signal source polarity
+ 128:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  polarity:
+ 129:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****                 only one parameter can be selected which is shown as below:
+ 130:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_REFSOURCE_POLARITY_FALLING: reference signal source polarity is falling edge
+ 131:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_REFSOURCE_POLARITY_RISING: reference signal source polarity is rising edge
+ 132:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+ 133:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     none
+ 134:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+ 135:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** void ctc_refsource_polarity_config(uint32_t polarity)
+ 136:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+ 217              		.loc 1 136 0
+ 218              		.cfi_startproc
+ 219              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 7
+
+
+ 220              		@ frame_needed = 0, uses_anonymous_args = 0
+ 221              		@ link register save eliminated.
+ 222              	.LVL6:
+ 137:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL1 &= (uint32_t)(~CTC_CTL1_REFPOL);
+ 223              		.loc 1 137 0
+ 224 0000 044B     		ldr	r3, .L19
+ 225 0002 1A68     		ldr	r2, [r3]
+ 226 0004 22F00042 		bic	r2, r2, #-2147483648
+ 227 0008 1A60     		str	r2, [r3]
+ 138:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL1 |= (uint32_t)polarity;
+ 228              		.loc 1 138 0
+ 229 000a 1A68     		ldr	r2, [r3]
+ 230 000c 1043     		orrs	r0, r0, r2
+ 231              	.LVL7:
+ 232 000e 1860     		str	r0, [r3]
+ 139:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+ 233              		.loc 1 139 0
+ 234 0010 7047     		bx	lr
+ 235              	.L20:
+ 236 0012 00BF     		.align	2
+ 237              	.L19:
+ 238 0014 04C80040 		.word	1073793028
+ 239              		.cfi_endproc
+ 240              	.LFE122:
+ 242              		.section	.text.ctc_refsource_signal_select,"ax",%progbits
+ 243              		.align	1
+ 244              		.global	ctc_refsource_signal_select
+ 245              		.syntax unified
+ 246              		.thumb
+ 247              		.thumb_func
+ 248              		.fpu fpv4-sp-d16
+ 250              	ctc_refsource_signal_select:
+ 251              	.LFB123:
+ 140:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+ 141:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+ 142:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      select reference signal source
+ 143:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  refs:
+ 144:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****                 only one parameter can be selected which is shown as below:
+ 145:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_REFSOURCE_GPIO: GPIO is selected
+ 146:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_REFSOURCE_LXTAL: LXTAL is selected
+ 147:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_REFSOURCE_USBSOF: USBD_SOF or USBFS_SOF is selected
+ 148:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+ 149:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     none
+ 150:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+ 151:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** void ctc_refsource_signal_select(uint32_t refs)
+ 152:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+ 252              		.loc 1 152 0
+ 253              		.cfi_startproc
+ 254              		@ args = 0, pretend = 0, frame = 0
+ 255              		@ frame_needed = 0, uses_anonymous_args = 0
+ 256              		@ link register save eliminated.
+ 257              	.LVL8:
+ 153:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL1 &= (uint32_t)(~CTC_CTL1_REFSEL);
+ 258              		.loc 1 153 0
+ 259 0000 044B     		ldr	r3, .L22
+ 260 0002 1A68     		ldr	r2, [r3]
+ 261 0004 22F04052 		bic	r2, r2, #805306368
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 8
+
+
+ 262 0008 1A60     		str	r2, [r3]
+ 154:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL1 |= (uint32_t)refs;
+ 263              		.loc 1 154 0
+ 264 000a 1A68     		ldr	r2, [r3]
+ 265 000c 1043     		orrs	r0, r0, r2
+ 266              	.LVL9:
+ 267 000e 1860     		str	r0, [r3]
+ 155:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+ 268              		.loc 1 155 0
+ 269 0010 7047     		bx	lr
+ 270              	.L23:
+ 271 0012 00BF     		.align	2
+ 272              	.L22:
+ 273 0014 04C80040 		.word	1073793028
+ 274              		.cfi_endproc
+ 275              	.LFE123:
+ 277              		.section	.text.ctc_refsource_prescaler_config,"ax",%progbits
+ 278              		.align	1
+ 279              		.global	ctc_refsource_prescaler_config
+ 280              		.syntax unified
+ 281              		.thumb
+ 282              		.thumb_func
+ 283              		.fpu fpv4-sp-d16
+ 285              	ctc_refsource_prescaler_config:
+ 286              	.LFB124:
+ 156:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+ 157:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+ 158:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      configure reference signal source prescaler
+ 159:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  prescaler:
+ 160:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****                 only one parameter can be selected which is shown as below:
+ 161:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_REFSOURCE_PSC_OFF: reference signal not divided
+ 162:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_REFSOURCE_PSC_DIV2: reference signal divided by 2
+ 163:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_REFSOURCE_PSC_DIV4: reference signal divided by 4
+ 164:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_REFSOURCE_PSC_DIV8: reference signal divided by 8
+ 165:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_REFSOURCE_PSC_DIV16: reference signal divided by 16
+ 166:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_REFSOURCE_PSC_DIV32: reference signal divided by 32
+ 167:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_REFSOURCE_PSC_DIV64: reference signal divided by 64
+ 168:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_REFSOURCE_PSC_DIV128: reference signal divided by 128
+ 169:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+ 170:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     none
+ 171:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+ 172:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** void ctc_refsource_prescaler_config(uint32_t prescaler)
+ 173:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+ 287              		.loc 1 173 0
+ 288              		.cfi_startproc
+ 289              		@ args = 0, pretend = 0, frame = 0
+ 290              		@ frame_needed = 0, uses_anonymous_args = 0
+ 291              		@ link register save eliminated.
+ 292              	.LVL10:
+ 174:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL1 &= (uint32_t)(~CTC_CTL1_REFPSC);
+ 293              		.loc 1 174 0
+ 294 0000 044B     		ldr	r3, .L25
+ 295 0002 1A68     		ldr	r2, [r3]
+ 296 0004 22F0E062 		bic	r2, r2, #117440512
+ 297 0008 1A60     		str	r2, [r3]
+ 175:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL1 |= (uint32_t)prescaler;
+ 298              		.loc 1 175 0
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 9
+
+
+ 299 000a 1A68     		ldr	r2, [r3]
+ 300 000c 1043     		orrs	r0, r0, r2
+ 301              	.LVL11:
+ 302 000e 1860     		str	r0, [r3]
+ 176:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+ 303              		.loc 1 176 0
+ 304 0010 7047     		bx	lr
+ 305              	.L26:
+ 306 0012 00BF     		.align	2
+ 307              	.L25:
+ 308 0014 04C80040 		.word	1073793028
+ 309              		.cfi_endproc
+ 310              	.LFE124:
+ 312              		.section	.text.ctc_clock_limit_value_config,"ax",%progbits
+ 313              		.align	1
+ 314              		.global	ctc_clock_limit_value_config
+ 315              		.syntax unified
+ 316              		.thumb
+ 317              		.thumb_func
+ 318              		.fpu fpv4-sp-d16
+ 320              	ctc_clock_limit_value_config:
+ 321              	.LFB125:
+ 177:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+ 178:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+ 179:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      configure clock trim base limit value
+ 180:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  limit_value: 8-bit clock trim base limit value
+ 181:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        0x00 - 0xFF
+ 182:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+ 183:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     none
+ 184:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+ 185:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** void ctc_clock_limit_value_config(uint8_t limit_value)
+ 186:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+ 322              		.loc 1 186 0
+ 323              		.cfi_startproc
+ 324              		@ args = 0, pretend = 0, frame = 0
+ 325              		@ frame_needed = 0, uses_anonymous_args = 0
+ 326              		@ link register save eliminated.
+ 327              	.LVL12:
+ 187:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL1 &= (uint32_t)(~CTC_CTL1_CKLIM);
+ 328              		.loc 1 187 0
+ 329 0000 044B     		ldr	r3, .L28
+ 330 0002 1A68     		ldr	r2, [r3]
+ 331 0004 22F47F02 		bic	r2, r2, #16711680
+ 332 0008 1A60     		str	r2, [r3]
+ 188:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL1 |= (uint32_t)((uint32_t)limit_value << CTC_LIMIT_VALUE_OFFSET);
+ 333              		.loc 1 188 0
+ 334 000a 1A68     		ldr	r2, [r3]
+ 335 000c 42EA0040 		orr	r0, r2, r0, lsl #16
+ 336              	.LVL13:
+ 337 0010 1860     		str	r0, [r3]
+ 189:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+ 338              		.loc 1 189 0
+ 339 0012 7047     		bx	lr
+ 340              	.L29:
+ 341              		.align	2
+ 342              	.L28:
+ 343 0014 04C80040 		.word	1073793028
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 10
+
+
+ 344              		.cfi_endproc
+ 345              	.LFE125:
+ 347              		.section	.text.ctc_counter_reload_value_config,"ax",%progbits
+ 348              		.align	1
+ 349              		.global	ctc_counter_reload_value_config
+ 350              		.syntax unified
+ 351              		.thumb
+ 352              		.thumb_func
+ 353              		.fpu fpv4-sp-d16
+ 355              	ctc_counter_reload_value_config:
+ 356              	.LFB126:
+ 190:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+ 191:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+ 192:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      configure CTC counter reload value
+ 193:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  reload_value: 16-bit CTC counter reload value
+ 194:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        0x0000 - 0xFFFF
+ 195:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+ 196:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     none
+ 197:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+ 198:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** void ctc_counter_reload_value_config(uint16_t reload_value)
+ 199:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+ 357              		.loc 1 199 0
+ 358              		.cfi_startproc
+ 359              		@ args = 0, pretend = 0, frame = 0
+ 360              		@ frame_needed = 0, uses_anonymous_args = 0
+ 361              		@ link register save eliminated.
+ 362              	.LVL14:
+ 200:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL1 &= (uint32_t)(~CTC_CTL1_RLVALUE);
+ 363              		.loc 1 200 0
+ 364 0000 044A     		ldr	r2, .L31
+ 365 0002 1368     		ldr	r3, [r2]
+ 366 0004 1B0C     		lsrs	r3, r3, #16
+ 367 0006 1B04     		lsls	r3, r3, #16
+ 368 0008 1360     		str	r3, [r2]
+ 201:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL1 |= (uint32_t)reload_value;
+ 369              		.loc 1 201 0
+ 370 000a 1368     		ldr	r3, [r2]
+ 371 000c 1843     		orrs	r0, r0, r3
+ 372              	.LVL15:
+ 373 000e 1060     		str	r0, [r2]
+ 202:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+ 374              		.loc 1 202 0
+ 375 0010 7047     		bx	lr
+ 376              	.L32:
+ 377 0012 00BF     		.align	2
+ 378              	.L31:
+ 379 0014 04C80040 		.word	1073793028
+ 380              		.cfi_endproc
+ 381              	.LFE126:
+ 383              		.section	.text.ctc_counter_capture_value_read,"ax",%progbits
+ 384              		.align	1
+ 385              		.global	ctc_counter_capture_value_read
+ 386              		.syntax unified
+ 387              		.thumb
+ 388              		.thumb_func
+ 389              		.fpu fpv4-sp-d16
+ 391              	ctc_counter_capture_value_read:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 11
+
+
+ 392              	.LFB127:
+ 203:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+ 204:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+ 205:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      read CTC counter capture value when reference sync pulse occurred
+ 206:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  none
+ 207:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+ 208:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     the 16-bit CTC counter capture value
+ 209:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+ 210:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** uint16_t ctc_counter_capture_value_read(void)
+ 211:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+ 393              		.loc 1 211 0
+ 394              		.cfi_startproc
+ 395              		@ args = 0, pretend = 0, frame = 0
+ 396              		@ frame_needed = 0, uses_anonymous_args = 0
+ 397              		@ link register save eliminated.
+ 398              	.LVL16:
+ 212:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     uint16_t capture_value = 0U;
+ 213:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     capture_value = (uint16_t)((CTC_STAT & CTC_STAT_REFCAP)>> CTC_REFCAP_OFFSET);
+ 399              		.loc 1 213 0
+ 400 0000 014B     		ldr	r3, .L34
+ 401 0002 1868     		ldr	r0, [r3]
+ 402              	.LVL17:
+ 214:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     return (capture_value);
+ 215:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+ 403              		.loc 1 215 0
+ 404 0004 000C     		lsrs	r0, r0, #16
+ 405              	.LVL18:
+ 406 0006 7047     		bx	lr
+ 407              	.L35:
+ 408              		.align	2
+ 409              	.L34:
+ 410 0008 08C80040 		.word	1073793032
+ 411              		.cfi_endproc
+ 412              	.LFE127:
+ 414              		.section	.text.ctc_counter_direction_read,"ax",%progbits
+ 415              		.align	1
+ 416              		.global	ctc_counter_direction_read
+ 417              		.syntax unified
+ 418              		.thumb
+ 419              		.thumb_func
+ 420              		.fpu fpv4-sp-d16
+ 422              	ctc_counter_direction_read:
+ 423              	.LFB128:
+ 216:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+ 217:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+ 218:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      read CTC trim counter direction when reference sync pulse occurred
+ 219:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  none
+ 220:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+ 221:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     FlagStatus: SET or RESET
+ 222:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        SET: CTC trim counter direction is down-counting
+ 223:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        RESET: CTC trim counter direction is up-counting
+ 224:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+ 225:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** FlagStatus ctc_counter_direction_read(void)
+ 226:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+ 424              		.loc 1 226 0
+ 425              		.cfi_startproc
+ 426              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 12
+
+
+ 427              		@ frame_needed = 0, uses_anonymous_args = 0
+ 428              		@ link register save eliminated.
+ 227:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     if(RESET != (CTC_STAT & CTC_STAT_REFDIR)){
+ 429              		.loc 1 227 0
+ 430 0000 044B     		ldr	r3, .L40
+ 431 0002 1B68     		ldr	r3, [r3]
+ 432 0004 13F4004F 		tst	r3, #32768
+ 433 0008 01D1     		bne	.L39
+ 228:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****         return SET;
+ 229:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     }else{
+ 230:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****         return RESET;
+ 434              		.loc 1 230 0
+ 435 000a 0020     		movs	r0, #0
+ 231:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     }
+ 232:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+ 436              		.loc 1 232 0
+ 437 000c 7047     		bx	lr
+ 438              	.L39:
+ 228:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****         return SET;
+ 439              		.loc 1 228 0
+ 440 000e 0120     		movs	r0, #1
+ 441 0010 7047     		bx	lr
+ 442              	.L41:
+ 443 0012 00BF     		.align	2
+ 444              	.L40:
+ 445 0014 08C80040 		.word	1073793032
+ 446              		.cfi_endproc
+ 447              	.LFE128:
+ 449              		.section	.text.ctc_counter_reload_value_read,"ax",%progbits
+ 450              		.align	1
+ 451              		.global	ctc_counter_reload_value_read
+ 452              		.syntax unified
+ 453              		.thumb
+ 454              		.thumb_func
+ 455              		.fpu fpv4-sp-d16
+ 457              	ctc_counter_reload_value_read:
+ 458              	.LFB129:
+ 233:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+ 234:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+ 235:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      read CTC counter reload value
+ 236:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  none
+ 237:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+ 238:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     the 16-bit CTC counter reload value
+ 239:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+ 240:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** uint16_t ctc_counter_reload_value_read(void)
+ 241:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+ 459              		.loc 1 241 0
+ 460              		.cfi_startproc
+ 461              		@ args = 0, pretend = 0, frame = 0
+ 462              		@ frame_needed = 0, uses_anonymous_args = 0
+ 463              		@ link register save eliminated.
+ 464              	.LVL19:
+ 242:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     uint16_t reload_value = 0U;
+ 243:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     reload_value = (uint16_t)(CTC_CTL1 & CTC_CTL1_RLVALUE);
+ 465              		.loc 1 243 0
+ 466 0000 014B     		ldr	r3, .L43
+ 467 0002 1868     		ldr	r0, [r3]
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 13
+
+
+ 468              	.LVL20:
+ 244:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     return (reload_value);
+ 245:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+ 469              		.loc 1 245 0
+ 470 0004 80B2     		uxth	r0, r0
+ 471 0006 7047     		bx	lr
+ 472              	.L44:
+ 473              		.align	2
+ 474              	.L43:
+ 475 0008 04C80040 		.word	1073793028
+ 476              		.cfi_endproc
+ 477              	.LFE129:
+ 479              		.section	.text.ctc_irc48m_trim_value_read,"ax",%progbits
+ 480              		.align	1
+ 481              		.global	ctc_irc48m_trim_value_read
+ 482              		.syntax unified
+ 483              		.thumb
+ 484              		.thumb_func
+ 485              		.fpu fpv4-sp-d16
+ 487              	ctc_irc48m_trim_value_read:
+ 488              	.LFB130:
+ 246:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+ 247:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+ 248:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      read the IRC48M trim value
+ 249:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  none
+ 250:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+ 251:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     the 8-bit IRC48M trim value
+ 252:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+ 253:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** uint8_t ctc_irc48m_trim_value_read(void)
+ 254:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+ 489              		.loc 1 254 0
+ 490              		.cfi_startproc
+ 491              		@ args = 0, pretend = 0, frame = 0
+ 492              		@ frame_needed = 0, uses_anonymous_args = 0
+ 493              		@ link register save eliminated.
+ 494              	.LVL21:
+ 255:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     uint8_t trim_value = 0U;
+ 256:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     trim_value = (uint8_t)((CTC_CTL0 & CTC_CTL0_TRIMVALUE) >> CTC_TRIMVALUE_OFFSET);
+ 495              		.loc 1 256 0
+ 496 0000 024B     		ldr	r3, .L46
+ 497 0002 1868     		ldr	r0, [r3]
+ 498              	.LVL22:
+ 257:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     return (trim_value);
+ 258:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+ 499              		.loc 1 258 0
+ 500 0004 C0F30520 		ubfx	r0, r0, #8, #6
+ 501              	.LVL23:
+ 502 0008 7047     		bx	lr
+ 503              	.L47:
+ 504 000a 00BF     		.align	2
+ 505              	.L46:
+ 506 000c 00C80040 		.word	1073793024
+ 507              		.cfi_endproc
+ 508              	.LFE130:
+ 510              		.section	.text.ctc_interrupt_enable,"ax",%progbits
+ 511              		.align	1
+ 512              		.global	ctc_interrupt_enable
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 14
+
+
+ 513              		.syntax unified
+ 514              		.thumb
+ 515              		.thumb_func
+ 516              		.fpu fpv4-sp-d16
+ 518              	ctc_interrupt_enable:
+ 519              	.LFB131:
+ 259:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+ 260:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+ 261:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      enable the CTC interrupt
+ 262:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  interrupt: CTC interrupt enable
+ 263:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****                 one or more parameters can be selected which are shown as below:
+ 264:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_CKOK: clock trim OK interrupt enable
+ 265:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_CKWARN: clock trim warning interrupt enable
+ 266:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_ERR: error interrupt enable
+ 267:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_EREF: expect reference interrupt enable
+ 268:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+ 269:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     none
+ 270:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+ 271:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** void ctc_interrupt_enable(uint32_t interrupt)
+ 272:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+ 520              		.loc 1 272 0
+ 521              		.cfi_startproc
+ 522              		@ args = 0, pretend = 0, frame = 0
+ 523              		@ frame_needed = 0, uses_anonymous_args = 0
+ 524              		@ link register save eliminated.
+ 525              	.LVL24:
+ 273:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL0 |= (uint32_t)interrupt; 
+ 526              		.loc 1 273 0
+ 527 0000 024A     		ldr	r2, .L49
+ 528 0002 1368     		ldr	r3, [r2]
+ 529 0004 1843     		orrs	r0, r0, r3
+ 530              	.LVL25:
+ 531 0006 1060     		str	r0, [r2]
+ 274:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+ 532              		.loc 1 274 0
+ 533 0008 7047     		bx	lr
+ 534              	.L50:
+ 535 000a 00BF     		.align	2
+ 536              	.L49:
+ 537 000c 00C80040 		.word	1073793024
+ 538              		.cfi_endproc
+ 539              	.LFE131:
+ 541              		.section	.text.ctc_interrupt_disable,"ax",%progbits
+ 542              		.align	1
+ 543              		.global	ctc_interrupt_disable
+ 544              		.syntax unified
+ 545              		.thumb
+ 546              		.thumb_func
+ 547              		.fpu fpv4-sp-d16
+ 549              	ctc_interrupt_disable:
+ 550              	.LFB132:
+ 275:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+ 276:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+ 277:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      disable the CTC interrupt
+ 278:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  interrupt: CTC interrupt enable source
+ 279:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****                 one or more parameters can be selected which are shown as below:
+ 280:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_CKOK: clock trim OK interrupt enable
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 15
+
+
+ 281:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_CKWARN: clock trim warning interrupt enable
+ 282:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_ERR: error interrupt enable
+ 283:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_EREF: expect reference interrupt enable
+ 284:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+ 285:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     none
+ 286:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+ 287:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** void ctc_interrupt_disable(uint32_t interrupt)
+ 288:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+ 551              		.loc 1 288 0
+ 552              		.cfi_startproc
+ 553              		@ args = 0, pretend = 0, frame = 0
+ 554              		@ frame_needed = 0, uses_anonymous_args = 0
+ 555              		@ link register save eliminated.
+ 556              	.LVL26:
+ 289:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     CTC_CTL0 &= (uint32_t)(~interrupt); 
+ 557              		.loc 1 289 0
+ 558 0000 024A     		ldr	r2, .L52
+ 559 0002 1368     		ldr	r3, [r2]
+ 560 0004 23EA0000 		bic	r0, r3, r0
+ 561              	.LVL27:
+ 562 0008 1060     		str	r0, [r2]
+ 290:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+ 563              		.loc 1 290 0
+ 564 000a 7047     		bx	lr
+ 565              	.L53:
+ 566              		.align	2
+ 567              	.L52:
+ 568 000c 00C80040 		.word	1073793024
+ 569              		.cfi_endproc
+ 570              	.LFE132:
+ 572              		.section	.text.ctc_interrupt_flag_get,"ax",%progbits
+ 573              		.align	1
+ 574              		.global	ctc_interrupt_flag_get
+ 575              		.syntax unified
+ 576              		.thumb
+ 577              		.thumb_func
+ 578              		.fpu fpv4-sp-d16
+ 580              	ctc_interrupt_flag_get:
+ 581              	.LFB133:
+ 291:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+ 292:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+ 293:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      get CTC interrupt flag
+ 294:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  int_flag: the CTC interrupt flag
+ 295:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****                 only one parameter can be selected which is shown as below:
+ 296:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_FLAG_CKOK: clock trim OK interrupt
+ 297:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_FLAG_CKWARN: clock trim warning interrupt 
+ 298:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_FLAG_ERR: error interrupt 
+ 299:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_FLAG_EREF: expect reference interrupt
+ 300:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_FLAG_CKERR: clock trim error bit interrupt
+ 301:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_FLAG_REFMISS: reference sync pulse miss interrupt 
+ 302:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_FLAG_TRIMERR: trim value error interrupt
+ 303:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+ 304:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     FlagStatus: SET or RESET
+ 305:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+ 306:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** FlagStatus ctc_interrupt_flag_get(uint32_t int_flag)
+ 307:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+ 582              		.loc 1 307 0
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 16
+
+
+ 583              		.cfi_startproc
+ 584              		@ args = 0, pretend = 0, frame = 0
+ 585              		@ frame_needed = 0, uses_anonymous_args = 0
+ 586              		@ link register save eliminated.
+ 587              	.LVL28:
+ 308:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     uint32_t interrupt_flag = 0U, intenable = 0U;
+ 309:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     
+ 310:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     /* check whether the interrupt is enabled */
+ 311:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     if(RESET != (int_flag & CTC_FLAG_MASK)){
+ 588              		.loc 1 311 0
+ 589 0000 10F4E06F 		tst	r0, #1792
+ 590 0004 0AD0     		beq	.L55
+ 312:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****         intenable = CTC_CTL0 & CTC_CTL0_ERRIE;
+ 591              		.loc 1 312 0
+ 592 0006 094B     		ldr	r3, .L60
+ 593 0008 1B68     		ldr	r3, [r3]
+ 594 000a 03F00403 		and	r3, r3, #4
+ 595              	.LVL29:
+ 596              	.L56:
+ 313:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     }else{
+ 314:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****         intenable = CTC_CTL0 & int_flag;
+ 315:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     }
+ 316:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     
+ 317:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     /* get interrupt flag status */
+ 318:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     interrupt_flag = CTC_STAT & int_flag;
+ 597              		.loc 1 318 0
+ 598 000e 084A     		ldr	r2, .L60+4
+ 599 0010 1268     		ldr	r2, [r2]
+ 600              	.LVL30:
+ 319:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+ 320:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     if(interrupt_flag && intenable){
+ 601              		.loc 1 320 0
+ 602 0012 0242     		tst	r2, r0
+ 603 0014 06D0     		beq	.L58
+ 604              		.loc 1 320 0 is_stmt 0 discriminator 1
+ 605 0016 3BB9     		cbnz	r3, .L59
+ 321:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****         return SET;
+ 322:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     }else{
+ 323:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****         return RESET;
+ 606              		.loc 1 323 0 is_stmt 1
+ 607 0018 0020     		movs	r0, #0
+ 608              	.LVL31:
+ 609 001a 7047     		bx	lr
+ 610              	.LVL32:
+ 611              	.L55:
+ 314:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     }
+ 612              		.loc 1 314 0
+ 613 001c 034B     		ldr	r3, .L60
+ 614 001e 1B68     		ldr	r3, [r3]
+ 615 0020 0340     		ands	r3, r3, r0
+ 616              	.LVL33:
+ 617 0022 F4E7     		b	.L56
+ 618              	.LVL34:
+ 619              	.L58:
+ 620              		.loc 1 323 0
+ 621 0024 0020     		movs	r0, #0
+ 622              	.LVL35:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 17
+
+
+ 623 0026 7047     		bx	lr
+ 624              	.LVL36:
+ 625              	.L59:
+ 321:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****         return SET;
+ 626              		.loc 1 321 0
+ 627 0028 0120     		movs	r0, #1
+ 628              	.LVL37:
+ 324:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     }
+ 325:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+ 629              		.loc 1 325 0
+ 630 002a 7047     		bx	lr
+ 631              	.L61:
+ 632              		.align	2
+ 633              	.L60:
+ 634 002c 00C80040 		.word	1073793024
+ 635 0030 08C80040 		.word	1073793032
+ 636              		.cfi_endproc
+ 637              	.LFE133:
+ 639              		.section	.text.ctc_interrupt_flag_clear,"ax",%progbits
+ 640              		.align	1
+ 641              		.global	ctc_interrupt_flag_clear
+ 642              		.syntax unified
+ 643              		.thumb
+ 644              		.thumb_func
+ 645              		.fpu fpv4-sp-d16
+ 647              	ctc_interrupt_flag_clear:
+ 648              	.LFB134:
+ 326:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+ 327:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+ 328:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      clear CTC interrupt flag
+ 329:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  int_flag: the CTC interrupt flag
+ 330:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****                 only one parameter can be selected which is shown as below:
+ 331:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_FLAG_CKOK: clock trim OK interrupt
+ 332:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_FLAG_CKWARN: clock trim warning interrupt 
+ 333:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_FLAG_ERR: error interrupt 
+ 334:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_FLAG_EREF: expect reference interrupt 
+ 335:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_FLAG_CKERR: clock trim error bit interrupt
+ 336:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_FLAG_REFMISS: reference sync pulse miss interrupt 
+ 337:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_INT_FLAG_TRIMERR: trim value error interrupt
+ 338:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+ 339:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     none
+ 340:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */ 
+ 341:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** void ctc_interrupt_flag_clear(uint32_t int_flag)
+ 342:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+ 649              		.loc 1 342 0
+ 650              		.cfi_startproc
+ 651              		@ args = 0, pretend = 0, frame = 0
+ 652              		@ frame_needed = 0, uses_anonymous_args = 0
+ 653              		@ link register save eliminated.
+ 654              	.LVL38:
+ 343:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     if(RESET != (int_flag & CTC_FLAG_MASK)){
+ 655              		.loc 1 343 0
+ 656 0000 10F4E06F 		tst	r0, #1792
+ 657 0004 04D1     		bne	.L65
+ 344:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****         CTC_INTC |= CTC_INTC_ERRIC;
+ 345:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     }else{
+ 346:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****         CTC_INTC |= int_flag;
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 18
+
+
+ 658              		.loc 1 346 0
+ 659 0006 054A     		ldr	r2, .L66
+ 660 0008 1368     		ldr	r3, [r2]
+ 661 000a 1843     		orrs	r0, r0, r3
+ 662              	.LVL39:
+ 663 000c 1060     		str	r0, [r2]
+ 347:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     }
+ 348:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+ 664              		.loc 1 348 0
+ 665 000e 7047     		bx	lr
+ 666              	.LVL40:
+ 667              	.L65:
+ 344:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****         CTC_INTC |= CTC_INTC_ERRIC;
+ 668              		.loc 1 344 0
+ 669 0010 024A     		ldr	r2, .L66
+ 670 0012 1368     		ldr	r3, [r2]
+ 671 0014 43F00403 		orr	r3, r3, #4
+ 672 0018 1360     		str	r3, [r2]
+ 673 001a 7047     		bx	lr
+ 674              	.L67:
+ 675              		.align	2
+ 676              	.L66:
+ 677 001c 0CC80040 		.word	1073793036
+ 678              		.cfi_endproc
+ 679              	.LFE134:
+ 681              		.section	.text.ctc_flag_get,"ax",%progbits
+ 682              		.align	1
+ 683              		.global	ctc_flag_get
+ 684              		.syntax unified
+ 685              		.thumb
+ 686              		.thumb_func
+ 687              		.fpu fpv4-sp-d16
+ 689              	ctc_flag_get:
+ 690              	.LFB135:
+ 349:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+ 350:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+ 351:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      get CTC flag
+ 352:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  flag: the CTC flag
+ 353:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****                 only one parameter can be selected which is shown as below: 
+ 354:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_FLAG_CKOK: clock trim OK flag
+ 355:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_FLAG_CKWARN: clock trim warning flag 
+ 356:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_FLAG_ERR: error flag 
+ 357:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_FLAG_EREF: expect reference flag
+ 358:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_FLAG_CKERR: clock trim error bit
+ 359:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_FLAG_REFMISS: reference sync pulse miss
+ 360:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_FLAG_TRIMERR: trim value error bit
+ 361:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+ 362:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     FlagStatus: SET or RESET
+ 363:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+ 364:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** FlagStatus ctc_flag_get(uint32_t flag)
+ 365:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+ 691              		.loc 1 365 0
+ 692              		.cfi_startproc
+ 693              		@ args = 0, pretend = 0, frame = 0
+ 694              		@ frame_needed = 0, uses_anonymous_args = 0
+ 695              		@ link register save eliminated.
+ 696              	.LVL41:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 19
+
+
+ 366:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     if(RESET != (CTC_STAT & flag)){
+ 697              		.loc 1 366 0
+ 698 0000 034B     		ldr	r3, .L72
+ 699 0002 1B68     		ldr	r3, [r3]
+ 700 0004 0342     		tst	r3, r0
+ 701 0006 01D1     		bne	.L71
+ 367:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****         return SET;
+ 368:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     }else{
+ 369:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****         return RESET;
+ 702              		.loc 1 369 0
+ 703 0008 0020     		movs	r0, #0
+ 704              	.LVL42:
+ 370:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     }
+ 371:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+ 705              		.loc 1 371 0
+ 706 000a 7047     		bx	lr
+ 707              	.LVL43:
+ 708              	.L71:
+ 367:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****         return SET;
+ 709              		.loc 1 367 0
+ 710 000c 0120     		movs	r0, #1
+ 711              	.LVL44:
+ 712 000e 7047     		bx	lr
+ 713              	.L73:
+ 714              		.align	2
+ 715              	.L72:
+ 716 0010 08C80040 		.word	1073793032
+ 717              		.cfi_endproc
+ 718              	.LFE135:
+ 720              		.section	.text.ctc_flag_clear,"ax",%progbits
+ 721              		.align	1
+ 722              		.global	ctc_flag_clear
+ 723              		.syntax unified
+ 724              		.thumb
+ 725              		.thumb_func
+ 726              		.fpu fpv4-sp-d16
+ 728              	ctc_flag_clear:
+ 729              	.LFB136:
+ 372:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** 
+ 373:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** /*!
+ 374:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \brief      clear CTC flag
+ 375:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[in]  flag: the CTC flag
+ 376:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****                 only one parameter can be selected which is shown as below:
+ 377:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_FLAG_CKOK: clock trim OK flag
+ 378:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_FLAG_CKWARN: clock trim warning flag 
+ 379:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_FLAG_ERR: error flag 
+ 380:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_FLAG_EREF: expect reference flag
+ 381:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_FLAG_CKERR: clock trim error bit
+ 382:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_FLAG_REFMISS: reference sync pulse miss
+ 383:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****       \arg        CTC_FLAG_TRIMERR: trim value error bit
+ 384:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \param[out] none
+ 385:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     \retval     none
+ 386:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** */
+ 387:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** void ctc_flag_clear(uint32_t flag)
+ 388:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** {
+ 730              		.loc 1 388 0
+ 731              		.cfi_startproc
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 20
+
+
+ 732              		@ args = 0, pretend = 0, frame = 0
+ 733              		@ frame_needed = 0, uses_anonymous_args = 0
+ 734              		@ link register save eliminated.
+ 735              	.LVL45:
+ 389:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     if(RESET != (flag & CTC_FLAG_MASK)){
+ 736              		.loc 1 389 0
+ 737 0000 10F4E06F 		tst	r0, #1792
+ 738 0004 04D1     		bne	.L77
+ 390:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****         CTC_INTC |= CTC_INTC_ERRIC;
+ 391:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     }else{
+ 392:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****         CTC_INTC |= flag;
+ 739              		.loc 1 392 0
+ 740 0006 054A     		ldr	r2, .L78
+ 741 0008 1368     		ldr	r3, [r2]
+ 742 000a 1843     		orrs	r0, r0, r3
+ 743              	.LVL46:
+ 744 000c 1060     		str	r0, [r2]
+ 393:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****     }
+ 394:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c **** }
+ 745              		.loc 1 394 0
+ 746 000e 7047     		bx	lr
+ 747              	.LVL47:
+ 748              	.L77:
+ 390:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_ctc.c ****         CTC_INTC |= CTC_INTC_ERRIC;
+ 749              		.loc 1 390 0
+ 750 0010 024A     		ldr	r2, .L78
+ 751 0012 1368     		ldr	r3, [r2]
+ 752 0014 43F00403 		orr	r3, r3, #4
+ 753 0018 1360     		str	r3, [r2]
+ 754 001a 7047     		bx	lr
+ 755              	.L79:
+ 756              		.align	2
+ 757              	.L78:
+ 758 001c 0CC80040 		.word	1073793036
+ 759              		.cfi_endproc
+ 760              	.LFE136:
+ 762              		.text
+ 763              	.Letext0:
+ 764              		.file 2 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 765              		.file 3 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 766              		.file 4 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 767              		.file 5 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 768              		.file 6 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 769              		.file 7 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 770              		.file 8 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 771              		.file 9 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 772              		.file 10 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\lib\\gcc\\a
+ 773              		.file 11 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ 774              		.file 12 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 21
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gd32f30x_ctc.c
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:18     .text.ctc_deinit:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:25     .text.ctc_deinit:00000000 ctc_deinit
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:51     .text.ctc_counter_enable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:58     .text.ctc_counter_enable:00000000 ctc_counter_enable
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:75     .text.ctc_counter_enable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:80     .text.ctc_counter_disable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:87     .text.ctc_counter_disable:00000000 ctc_counter_disable
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:104    .text.ctc_counter_disable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:109    .text.ctc_irc48m_trim_value_config:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:116    .text.ctc_irc48m_trim_value_config:00000000 ctc_irc48m_trim_value_config
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:139    .text.ctc_irc48m_trim_value_config:00000014 $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:144    .text.ctc_software_refsource_pulse_generate:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:151    .text.ctc_software_refsource_pulse_generate:00000000 ctc_software_refsource_pulse_generate
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:168    .text.ctc_software_refsource_pulse_generate:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:173    .text.ctc_hardware_trim_mode_config:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:180    .text.ctc_hardware_trim_mode_config:00000000 ctc_hardware_trim_mode_config
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:203    .text.ctc_hardware_trim_mode_config:00000014 $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:208    .text.ctc_refsource_polarity_config:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:215    .text.ctc_refsource_polarity_config:00000000 ctc_refsource_polarity_config
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:238    .text.ctc_refsource_polarity_config:00000014 $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:243    .text.ctc_refsource_signal_select:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:250    .text.ctc_refsource_signal_select:00000000 ctc_refsource_signal_select
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:273    .text.ctc_refsource_signal_select:00000014 $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:278    .text.ctc_refsource_prescaler_config:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:285    .text.ctc_refsource_prescaler_config:00000000 ctc_refsource_prescaler_config
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:308    .text.ctc_refsource_prescaler_config:00000014 $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:313    .text.ctc_clock_limit_value_config:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:320    .text.ctc_clock_limit_value_config:00000000 ctc_clock_limit_value_config
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:343    .text.ctc_clock_limit_value_config:00000014 $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:348    .text.ctc_counter_reload_value_config:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:355    .text.ctc_counter_reload_value_config:00000000 ctc_counter_reload_value_config
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:379    .text.ctc_counter_reload_value_config:00000014 $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:384    .text.ctc_counter_capture_value_read:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:391    .text.ctc_counter_capture_value_read:00000000 ctc_counter_capture_value_read
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:410    .text.ctc_counter_capture_value_read:00000008 $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:415    .text.ctc_counter_direction_read:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:422    .text.ctc_counter_direction_read:00000000 ctc_counter_direction_read
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:445    .text.ctc_counter_direction_read:00000014 $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:450    .text.ctc_counter_reload_value_read:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:457    .text.ctc_counter_reload_value_read:00000000 ctc_counter_reload_value_read
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:475    .text.ctc_counter_reload_value_read:00000008 $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:480    .text.ctc_irc48m_trim_value_read:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:487    .text.ctc_irc48m_trim_value_read:00000000 ctc_irc48m_trim_value_read
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:506    .text.ctc_irc48m_trim_value_read:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:511    .text.ctc_interrupt_enable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:518    .text.ctc_interrupt_enable:00000000 ctc_interrupt_enable
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:537    .text.ctc_interrupt_enable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:542    .text.ctc_interrupt_disable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:549    .text.ctc_interrupt_disable:00000000 ctc_interrupt_disable
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:568    .text.ctc_interrupt_disable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:573    .text.ctc_interrupt_flag_get:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:580    .text.ctc_interrupt_flag_get:00000000 ctc_interrupt_flag_get
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:634    .text.ctc_interrupt_flag_get:0000002c $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:640    .text.ctc_interrupt_flag_clear:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:647    .text.ctc_interrupt_flag_clear:00000000 ctc_interrupt_flag_clear
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s 			page 22
+
+
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:677    .text.ctc_interrupt_flag_clear:0000001c $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:682    .text.ctc_flag_get:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:689    .text.ctc_flag_get:00000000 ctc_flag_get
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:716    .text.ctc_flag_get:00000010 $d
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:721    .text.ctc_flag_clear:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:728    .text.ctc_flag_clear:00000000 ctc_flag_clear
+C:\Users\49542\AppData\Local\Temp\ccsz0wfd.s:758    .text.ctc_flag_clear:0000001c $d
+
+UNDEFINED SYMBOLS
+rcu_periph_reset_enable
+rcu_periph_reset_disable

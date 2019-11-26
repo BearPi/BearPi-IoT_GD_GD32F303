@@ -1,0 +1,2339 @@
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gd32f30x_gpio.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.gpio_deinit,"ax",%progbits
+  18              		.align	1
+  19              		.global	gpio_deinit
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv4-sp-d16
+  25              	gpio_deinit:
+  26              	.LFB116:
+  27              		.file 1 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+   1:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+   2:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \file  gd32f30x_gpio.c
+   3:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief GPIO driver
+   4:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+   5:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \version 2017-02-10, V1.0.0, firmware for GD32F30x
+   6:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \version 2018-10-10, V1.1.0, firmware for GD32F30x
+   7:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \version 2018-12-25, V2.0.0, firmware for GD32F30x
+   8:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+   9:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+  10:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*
+  11:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     Copyright (c) 2018, GigaDevice Semiconductor Inc.
+  12:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+  13:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     All rights reserved.
+  14:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+  15:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     Redistribution and use in source and binary forms, with or without modification, 
+  16:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** are permitted provided that the following conditions are met:
+  17:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+  18:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     1. Redistributions of source code must retain the above copyright notice, this 
+  19:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****        list of conditions and the following disclaimer.
+  20:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     2. Redistributions in binary form must reproduce the above copyright notice, 
+  21:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****        this list of conditions and the following disclaimer in the documentation 
+  22:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****        and/or other materials provided with the distribution.
+  23:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     3. Neither the name of the copyright holder nor the names of its contributors 
+  24:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****        may be used to endorse or promote products derived from this software without 
+  25:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****        specific prior written permission.
+  26:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+  27:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+  28:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  29:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  30:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  31:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 2
+
+
+  32:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+  33:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+  34:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  35:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+  36:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** OF SUCH DAMAGE.
+  37:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+  38:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+  39:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** #include "gd32f30x_gpio.h"
+  40:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+  41:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** #define AFIO_EXTI_SOURCE_MASK              ((uint8_t)0x03U)         /*!< AFIO exti source selection
+  42:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** #define AFIO_EXTI_SOURCE_FIELDS            ((uint8_t)0x04U)         /*!< select AFIO exti source re
+  43:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** #define LSB_16BIT_MASK                     ((uint16_t)0xFFFFU)      /*!< LSB 16-bit mask */
+  44:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** #define PCF_POSITION_MASK                  ((uint32_t)0x000F0000U)  /*!< AFIO_PCF register position
+  45:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** #define PCF_SWJCFG_MASK                    ((uint32_t)0xF8FFFFFFU)  /*!< AFIO_PCF register SWJCFG m
+  46:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** #define PCF_LOCATION1_MASK                 ((uint32_t)0x00200000U)  /*!< AFIO_PCF register location
+  47:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** #define PCF_LOCATION2_MASK                 ((uint32_t)0x00100000U)  /*!< AFIO_PCF register location
+  48:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** #define AFIO_PCF1_FIELDS                   ((uint32_t)0x80000000U)  /*!< select AFIO_PCF1 register 
+  49:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** #define GPIO_OUTPUT_PORT_OFFSET            ((uint32_t)4U)           /*!< GPIO event output port off
+  50:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+  51:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+  52:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      reset GPIO port
+  53:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  gpio_periph: GPIOx(x = A,B,C,D,E,F,G)
+  54:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+  55:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     none
+  56:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+  57:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** void gpio_deinit(uint32_t gpio_periph)
+  58:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+  28              		.loc 1 58 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 1, uses_anonymous_args = 0
+  32 0000 80B5     		push	{r7, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 7, -8
+  36              		.cfi_offset 14, -4
+  37 0002 82B0     		sub	sp, sp, #8
+  38              	.LCFI1:
+  39              		.cfi_def_cfa_offset 16
+  40 0004 00AF     		add	r7, sp, #0
+  41              	.LCFI2:
+  42              		.cfi_def_cfa_register 7
+  43 0006 7860     		str	r0, [r7, #4]
+  59:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     switch(gpio_periph){
+  44              		.loc 1 59 0
+  45 0008 7B68     		ldr	r3, [r7, #4]
+  46 000a 2E4A     		ldr	r2, .L12
+  47 000c 9342     		cmp	r3, r2
+  48 000e 31D0     		beq	.L3
+  49 0010 2C4A     		ldr	r2, .L12
+  50 0012 9342     		cmp	r3, r2
+  51 0014 09D8     		bhi	.L4
+  52 0016 2C4A     		ldr	r2, .L12+4
+  53 0018 9342     		cmp	r3, r2
+  54 001a 19D0     		beq	.L5
+  55 001c 2B4A     		ldr	r2, .L12+8
+  56 001e 9342     		cmp	r3, r2
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 3
+
+
+  57 0020 1FD0     		beq	.L6
+  58 0022 2B4A     		ldr	r2, .L12+12
+  59 0024 9342     		cmp	r3, r2
+  60 0026 0AD0     		beq	.L7
+  60:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     case GPIOA:
+  61:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         /* reset GPIOA */
+  62:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_enable(RCU_GPIOARST);
+  63:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_disable(RCU_GPIOARST);
+  64:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         break;
+  65:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     case GPIOB:
+  66:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         /* reset GPIOB */
+  67:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_enable(RCU_GPIOBRST);
+  68:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_disable(RCU_GPIOBRST);
+  69:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         break;
+  70:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     case GPIOC:
+  71:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         /* reset GPIOC */
+  72:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_enable(RCU_GPIOCRST);
+  73:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_disable(RCU_GPIOCRST);
+  74:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         break;
+  75:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     case GPIOD:
+  76:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         /* reset GPIOD */
+  77:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_enable(RCU_GPIODRST);
+  78:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_disable(RCU_GPIODRST);
+  79:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         break;
+  80:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     case GPIOE:
+  81:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         /* reset GPIOE */
+  82:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_enable(RCU_GPIOERST);
+  83:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_disable(RCU_GPIOERST);
+  84:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         break;
+  85:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     case GPIOF:
+  86:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         /* reset GPIOF */
+  87:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_enable(RCU_GPIOFRST);
+  88:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_disable(RCU_GPIOFRST);
+  89:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         break;
+  90:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     case GPIOG:
+  91:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         /* reset GPIOG */
+  92:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_enable(RCU_GPIOGRST);
+  93:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_disable(RCU_GPIOGRST);
+  94:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         break;
+  95:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     default:
+  96:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         break;
+  61              		.loc 1 96 0
+  62 0028 48E0     		b	.L11
+  63              	.L4:
+  59:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     switch(gpio_periph){
+  64              		.loc 1 59 0
+  65 002a 2A4A     		ldr	r2, .L12+16
+  66 002c 9342     		cmp	r3, r2
+  67 002e 33D0     		beq	.L8
+  68 0030 294A     		ldr	r2, .L12+20
+  69 0032 9342     		cmp	r3, r2
+  70 0034 39D0     		beq	.L9
+  71 0036 294A     		ldr	r2, .L12+24
+  72 0038 9342     		cmp	r3, r2
+  73 003a 24D0     		beq	.L10
+  74              		.loc 1 96 0
+  75 003c 3EE0     		b	.L11
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 4
+
+
+  76              	.L7:
+  62:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_disable(RCU_GPIOARST);
+  77              		.loc 1 62 0
+  78 003e 40F20230 		movw	r0, #770
+  79 0042 FFF7FEFF 		bl	rcu_periph_reset_enable
+  63:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         break;
+  80              		.loc 1 63 0
+  81 0046 40F20230 		movw	r0, #770
+  82 004a FFF7FEFF 		bl	rcu_periph_reset_disable
+  64:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     case GPIOB:
+  83              		.loc 1 64 0
+  84 004e 35E0     		b	.L11
+  85              	.L5:
+  67:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_disable(RCU_GPIOBRST);
+  86              		.loc 1 67 0
+  87 0050 40F20330 		movw	r0, #771
+  88 0054 FFF7FEFF 		bl	rcu_periph_reset_enable
+  68:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         break;
+  89              		.loc 1 68 0
+  90 0058 40F20330 		movw	r0, #771
+  91 005c FFF7FEFF 		bl	rcu_periph_reset_disable
+  69:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     case GPIOC:
+  92              		.loc 1 69 0
+  93 0060 2CE0     		b	.L11
+  94              	.L6:
+  72:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_disable(RCU_GPIOCRST);
+  95              		.loc 1 72 0
+  96 0062 4FF44170 		mov	r0, #772
+  97 0066 FFF7FEFF 		bl	rcu_periph_reset_enable
+  73:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         break;
+  98              		.loc 1 73 0
+  99 006a 4FF44170 		mov	r0, #772
+ 100 006e FFF7FEFF 		bl	rcu_periph_reset_disable
+  74:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     case GPIOD:
+ 101              		.loc 1 74 0
+ 102 0072 23E0     		b	.L11
+ 103              	.L3:
+  77:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_disable(RCU_GPIODRST);
+ 104              		.loc 1 77 0
+ 105 0074 40F20530 		movw	r0, #773
+ 106 0078 FFF7FEFF 		bl	rcu_periph_reset_enable
+  78:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         break;
+ 107              		.loc 1 78 0
+ 108 007c 40F20530 		movw	r0, #773
+ 109 0080 FFF7FEFF 		bl	rcu_periph_reset_disable
+  79:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     case GPIOE:
+ 110              		.loc 1 79 0
+ 111 0084 1AE0     		b	.L11
+ 112              	.L10:
+  82:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_disable(RCU_GPIOERST);
+ 113              		.loc 1 82 0
+ 114 0086 40F20630 		movw	r0, #774
+ 115 008a FFF7FEFF 		bl	rcu_periph_reset_enable
+  83:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         break;
+ 116              		.loc 1 83 0
+ 117 008e 40F20630 		movw	r0, #774
+ 118 0092 FFF7FEFF 		bl	rcu_periph_reset_disable
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 5
+
+
+  84:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     case GPIOF:
+ 119              		.loc 1 84 0
+ 120 0096 11E0     		b	.L11
+ 121              	.L8:
+  87:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_disable(RCU_GPIOFRST);
+ 122              		.loc 1 87 0
+ 123 0098 40F20730 		movw	r0, #775
+ 124 009c FFF7FEFF 		bl	rcu_periph_reset_enable
+  88:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         break;
+ 125              		.loc 1 88 0
+ 126 00a0 40F20730 		movw	r0, #775
+ 127 00a4 FFF7FEFF 		bl	rcu_periph_reset_disable
+  89:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     case GPIOG:
+ 128              		.loc 1 89 0
+ 129 00a8 08E0     		b	.L11
+ 130              	.L9:
+  92:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         rcu_periph_reset_disable(RCU_GPIOGRST);
+ 131              		.loc 1 92 0
+ 132 00aa 4FF44270 		mov	r0, #776
+ 133 00ae FFF7FEFF 		bl	rcu_periph_reset_enable
+  93:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         break;
+ 134              		.loc 1 93 0
+ 135 00b2 4FF44270 		mov	r0, #776
+ 136 00b6 FFF7FEFF 		bl	rcu_periph_reset_disable
+  94:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     default:
+ 137              		.loc 1 94 0
+ 138 00ba 00BF     		nop
+ 139              	.L11:
+  97:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }
+  98:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 140              		.loc 1 98 0
+ 141 00bc 00BF     		nop
+ 142 00be 0837     		adds	r7, r7, #8
+ 143              	.LCFI3:
+ 144              		.cfi_def_cfa_offset 8
+ 145 00c0 BD46     		mov	sp, r7
+ 146              	.LCFI4:
+ 147              		.cfi_def_cfa_register 13
+ 148              		@ sp needed
+ 149 00c2 80BD     		pop	{r7, pc}
+ 150              	.L13:
+ 151              		.align	2
+ 152              	.L12:
+ 153 00c4 00140140 		.word	1073812480
+ 154 00c8 000C0140 		.word	1073810432
+ 155 00cc 00100140 		.word	1073811456
+ 156 00d0 00080140 		.word	1073809408
+ 157 00d4 001C0140 		.word	1073814528
+ 158 00d8 00200140 		.word	1073815552
+ 159 00dc 00180140 		.word	1073813504
+ 160              		.cfi_endproc
+ 161              	.LFE116:
+ 163              		.section	.text.gpio_afio_deinit,"ax",%progbits
+ 164              		.align	1
+ 165              		.global	gpio_afio_deinit
+ 166              		.syntax unified
+ 167              		.thumb
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 6
+
+
+ 168              		.thumb_func
+ 169              		.fpu fpv4-sp-d16
+ 171              	gpio_afio_deinit:
+ 172              	.LFB117:
+  99:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 100:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 101:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      reset alternate function I/O(AFIO)
+ 102:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  none
+ 103:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 104:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     none
+ 105:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+ 106:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** void gpio_afio_deinit(void)
+ 107:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 173              		.loc 1 107 0
+ 174              		.cfi_startproc
+ 175              		@ args = 0, pretend = 0, frame = 0
+ 176              		@ frame_needed = 1, uses_anonymous_args = 0
+ 177 0000 80B5     		push	{r7, lr}
+ 178              	.LCFI5:
+ 179              		.cfi_def_cfa_offset 8
+ 180              		.cfi_offset 7, -8
+ 181              		.cfi_offset 14, -4
+ 182 0002 00AF     		add	r7, sp, #0
+ 183              	.LCFI6:
+ 184              		.cfi_def_cfa_register 7
+ 108:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     rcu_periph_reset_enable(RCU_AFRST);
+ 185              		.loc 1 108 0
+ 186 0004 4FF44070 		mov	r0, #768
+ 187 0008 FFF7FEFF 		bl	rcu_periph_reset_enable
+ 109:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     rcu_periph_reset_disable(RCU_AFRST);
+ 188              		.loc 1 109 0
+ 189 000c 4FF44070 		mov	r0, #768
+ 190 0010 FFF7FEFF 		bl	rcu_periph_reset_disable
+ 110:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 191              		.loc 1 110 0
+ 192 0014 00BF     		nop
+ 193 0016 80BD     		pop	{r7, pc}
+ 194              		.cfi_endproc
+ 195              	.LFE117:
+ 197              		.section	.text.gpio_init,"ax",%progbits
+ 198              		.align	1
+ 199              		.global	gpio_init
+ 200              		.syntax unified
+ 201              		.thumb
+ 202              		.thumb_func
+ 203              		.fpu fpv4-sp-d16
+ 205              	gpio_init:
+ 206              	.LFB118:
+ 111:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 112:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 113:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      GPIO parameter initialization
+ 114:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  gpio_periph: GPIOx(x = A,B,C,D,E,F,G) 
+ 115:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  mode: gpio pin mode
+ 116:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 only one parameter can be selected which is shown as below:
+ 117:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_MODE_AIN: analog input mode
+ 118:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_MODE_IN_FLOATING: floating input mode
+ 119:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_MODE_IPD: pull-down input mode
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 7
+
+
+ 120:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_MODE_IPU: pull-up input mode
+ 121:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_MODE_OUT_OD: GPIO output with open-drain
+ 122:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_MODE_OUT_PP: GPIO output with push-pull
+ 123:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_MODE_AF_OD: AFIO output with open-drain
+ 124:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_MODE_AF_PP: AFIO output with push-pull
+ 125:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  speed: gpio output max speed value
+ 126:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 only one parameter can be selected which is shown as below:
+ 127:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_OSPEED_10MHZ: output max speed 10MHz
+ 128:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_OSPEED_2MHZ: output max speed 2MHz
+ 129:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_OSPEED_50MHZ: output max speed 50MHz
+ 130:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_OSPEED_MAX: output max speed more than 50MHz
+ 131:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  pin: GPIO pin
+ 132:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 one or more parameters can be selected which are shown as below:
+ 133:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_PIN_x(x=0..15), GPIO_PIN_ALL
+ 134:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 135:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     none
+ 136:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+ 137:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** void gpio_init(uint32_t gpio_periph, uint32_t mode, uint32_t speed, uint32_t pin)
+ 138:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 207              		.loc 1 138 0
+ 208              		.cfi_startproc
+ 209              		@ args = 0, pretend = 0, frame = 32
+ 210              		@ frame_needed = 1, uses_anonymous_args = 0
+ 211              		@ link register save eliminated.
+ 212 0000 80B4     		push	{r7}
+ 213              	.LCFI7:
+ 214              		.cfi_def_cfa_offset 4
+ 215              		.cfi_offset 7, -4
+ 216 0002 89B0     		sub	sp, sp, #36
+ 217              	.LCFI8:
+ 218              		.cfi_def_cfa_offset 40
+ 219 0004 00AF     		add	r7, sp, #0
+ 220              	.LCFI9:
+ 221              		.cfi_def_cfa_register 7
+ 222 0006 F860     		str	r0, [r7, #12]
+ 223 0008 B960     		str	r1, [r7, #8]
+ 224 000a 7A60     		str	r2, [r7, #4]
+ 225 000c 3B60     		str	r3, [r7]
+ 139:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     uint16_t i;
+ 140:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     uint32_t temp_mode = 0U;
+ 226              		.loc 1 140 0
+ 227 000e 0023     		movs	r3, #0
+ 228 0010 BB61     		str	r3, [r7, #24]
+ 141:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     uint32_t reg = 0U;
+ 229              		.loc 1 141 0
+ 230 0012 0023     		movs	r3, #0
+ 231 0014 7B61     		str	r3, [r7, #20]
+ 142:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 143:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     /* GPIO mode configuration */
+ 144:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     temp_mode = (uint32_t)(mode & ((uint32_t)0x0FU));
+ 232              		.loc 1 144 0
+ 233 0016 BB68     		ldr	r3, [r7, #8]
+ 234 0018 03F00F03 		and	r3, r3, #15
+ 235 001c BB61     		str	r3, [r7, #24]
+ 145:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     
+ 146:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     /* GPIO speed configuration */
+ 147:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     if(((uint32_t)0x00U) != ((uint32_t)mode & ((uint32_t)0x10U))){
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 8
+
+
+ 236              		.loc 1 147 0
+ 237 001e BB68     		ldr	r3, [r7, #8]
+ 238 0020 03F01003 		and	r3, r3, #16
+ 239 0024 002B     		cmp	r3, #0
+ 240 0026 14D0     		beq	.L16
+ 148:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         /* output mode max speed */
+ 149:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         if(GPIO_OSPEED_MAX == (uint32_t)speed){
+ 241              		.loc 1 149 0
+ 242 0028 7B68     		ldr	r3, [r7, #4]
+ 243 002a 042B     		cmp	r3, #4
+ 244 002c 0DD1     		bne	.L17
+ 150:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             temp_mode |= (uint32_t)0x03U;
+ 245              		.loc 1 150 0
+ 246 002e BB69     		ldr	r3, [r7, #24]
+ 247 0030 43F00303 		orr	r3, r3, #3
+ 248 0034 BB61     		str	r3, [r7, #24]
+ 151:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             /* set the corresponding SPD bit */
+ 152:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             GPIOx_SPD(gpio_periph) |= (uint32_t)pin ;
+ 249              		.loc 1 152 0
+ 250 0036 FB68     		ldr	r3, [r7, #12]
+ 251 0038 3C33     		adds	r3, r3, #60
+ 252 003a 1A68     		ldr	r2, [r3]
+ 253 003c FB68     		ldr	r3, [r7, #12]
+ 254 003e 3C33     		adds	r3, r3, #60
+ 255 0040 1946     		mov	r1, r3
+ 256 0042 3B68     		ldr	r3, [r7]
+ 257 0044 1343     		orrs	r3, r3, r2
+ 258 0046 0B60     		str	r3, [r1]
+ 259 0048 03E0     		b	.L16
+ 260              	.L17:
+ 153:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         }else{
+ 154:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             /* output mode max speed:10MHz,2MHz,50MHz */
+ 155:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             temp_mode |= (uint32_t)speed;
+ 261              		.loc 1 155 0
+ 262 004a BA69     		ldr	r2, [r7, #24]
+ 263 004c 7B68     		ldr	r3, [r7, #4]
+ 264 004e 1343     		orrs	r3, r3, r2
+ 265 0050 BB61     		str	r3, [r7, #24]
+ 266              	.L16:
+ 156:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         }
+ 157:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }
+ 158:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 159:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     /* configure the eight low port pins with GPIO_CTL0 */
+ 160:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     for(i = 0U;i < 8U;i++){
+ 267              		.loc 1 160 0
+ 268 0052 0023     		movs	r3, #0
+ 269 0054 FB83     		strh	r3, [r7, #30]	@ movhi
+ 270 0056 39E0     		b	.L18
+ 271              	.L22:
+ 161:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         if((1U << i) & pin){
+ 272              		.loc 1 161 0
+ 273 0058 FB8B     		ldrh	r3, [r7, #30]
+ 274 005a 0122     		movs	r2, #1
+ 275 005c 9A40     		lsls	r2, r2, r3
+ 276 005e 3B68     		ldr	r3, [r7]
+ 277 0060 1340     		ands	r3, r3, r2
+ 278 0062 002B     		cmp	r3, #0
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 9
+
+
+ 279 0064 2FD0     		beq	.L19
+ 162:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             reg = GPIO_CTL0(gpio_periph);
+ 280              		.loc 1 162 0
+ 281 0066 FB68     		ldr	r3, [r7, #12]
+ 282 0068 1B68     		ldr	r3, [r3]
+ 283 006a 7B61     		str	r3, [r7, #20]
+ 163:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             
+ 164:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             /* clear the specified pin mode bits */
+ 165:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             reg &= ~GPIO_MODE_MASK(i);
+ 284              		.loc 1 165 0
+ 285 006c FB8B     		ldrh	r3, [r7, #30]
+ 286 006e 9B00     		lsls	r3, r3, #2
+ 287 0070 0F22     		movs	r2, #15
+ 288 0072 02FA03F3 		lsl	r3, r2, r3
+ 289 0076 DB43     		mvns	r3, r3
+ 290 0078 7A69     		ldr	r2, [r7, #20]
+ 291 007a 1340     		ands	r3, r3, r2
+ 292 007c 7B61     		str	r3, [r7, #20]
+ 166:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             /* set the specified pin mode bits */
+ 167:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             reg |= GPIO_MODE_SET(i, temp_mode);
+ 293              		.loc 1 167 0
+ 294 007e FB8B     		ldrh	r3, [r7, #30]
+ 295 0080 9B00     		lsls	r3, r3, #2
+ 296 0082 BA69     		ldr	r2, [r7, #24]
+ 297 0084 02FA03F3 		lsl	r3, r2, r3
+ 298 0088 7A69     		ldr	r2, [r7, #20]
+ 299 008a 1343     		orrs	r3, r3, r2
+ 300 008c 7B61     		str	r3, [r7, #20]
+ 168:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             
+ 169:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             /* set IPD or IPU */
+ 170:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             if(GPIO_MODE_IPD == mode){
+ 301              		.loc 1 170 0
+ 302 008e BB68     		ldr	r3, [r7, #8]
+ 303 0090 282B     		cmp	r3, #40
+ 304 0092 09D1     		bne	.L20
+ 171:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 /* reset the corresponding OCTL bit */
+ 172:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 GPIO_BC(gpio_periph) = (uint32_t)((1U << i) & pin);
+ 305              		.loc 1 172 0
+ 306 0094 FB8B     		ldrh	r3, [r7, #30]
+ 307 0096 0122     		movs	r2, #1
+ 308 0098 9A40     		lsls	r2, r2, r3
+ 309 009a FB68     		ldr	r3, [r7, #12]
+ 310 009c 1433     		adds	r3, r3, #20
+ 311 009e 1946     		mov	r1, r3
+ 312 00a0 3B68     		ldr	r3, [r7]
+ 313 00a2 1340     		ands	r3, r3, r2
+ 314 00a4 0B60     		str	r3, [r1]
+ 315 00a6 0BE0     		b	.L21
+ 316              	.L20:
+ 173:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             }else{
+ 174:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 /* set the corresponding OCTL bit */
+ 175:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 if(GPIO_MODE_IPU == mode){
+ 317              		.loc 1 175 0
+ 318 00a8 BB68     		ldr	r3, [r7, #8]
+ 319 00aa 482B     		cmp	r3, #72
+ 320 00ac 08D1     		bne	.L21
+ 176:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                     GPIO_BOP(gpio_periph) = (uint32_t)((1U << i) & pin);
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 10
+
+
+ 321              		.loc 1 176 0
+ 322 00ae FB8B     		ldrh	r3, [r7, #30]
+ 323 00b0 0122     		movs	r2, #1
+ 324 00b2 9A40     		lsls	r2, r2, r3
+ 325 00b4 FB68     		ldr	r3, [r7, #12]
+ 326 00b6 1033     		adds	r3, r3, #16
+ 327 00b8 1946     		mov	r1, r3
+ 328 00ba 3B68     		ldr	r3, [r7]
+ 329 00bc 1340     		ands	r3, r3, r2
+ 330 00be 0B60     		str	r3, [r1]
+ 331              	.L21:
+ 177:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 }
+ 178:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             }
+ 179:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             /* set GPIO_CTL0 register */
+ 180:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             GPIO_CTL0(gpio_periph) = reg;
+ 332              		.loc 1 180 0
+ 333 00c0 FB68     		ldr	r3, [r7, #12]
+ 334 00c2 7A69     		ldr	r2, [r7, #20]
+ 335 00c4 1A60     		str	r2, [r3]
+ 336              	.L19:
+ 160:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         if((1U << i) & pin){
+ 337              		.loc 1 160 0 discriminator 2
+ 338 00c6 FB8B     		ldrh	r3, [r7, #30]
+ 339 00c8 0133     		adds	r3, r3, #1
+ 340 00ca FB83     		strh	r3, [r7, #30]	@ movhi
+ 341              	.L18:
+ 160:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         if((1U << i) & pin){
+ 342              		.loc 1 160 0 is_stmt 0 discriminator 1
+ 343 00cc FB8B     		ldrh	r3, [r7, #30]
+ 344 00ce 072B     		cmp	r3, #7
+ 345 00d0 C2D9     		bls	.L22
+ 181:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         }
+ 182:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }
+ 183:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     /* configure the eight high port pins with GPIO_CTL1 */
+ 184:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     for(i = 8U;i < 16U;i++){
+ 346              		.loc 1 184 0 is_stmt 1
+ 347 00d2 0823     		movs	r3, #8
+ 348 00d4 FB83     		strh	r3, [r7, #30]	@ movhi
+ 349 00d6 42E0     		b	.L23
+ 350              	.L27:
+ 185:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         if((1U << i) & pin){
+ 351              		.loc 1 185 0
+ 352 00d8 FB8B     		ldrh	r3, [r7, #30]
+ 353 00da 0122     		movs	r2, #1
+ 354 00dc 9A40     		lsls	r2, r2, r3
+ 355 00de 3B68     		ldr	r3, [r7]
+ 356 00e0 1340     		ands	r3, r3, r2
+ 357 00e2 002B     		cmp	r3, #0
+ 358 00e4 38D0     		beq	.L24
+ 186:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             reg = GPIO_CTL1(gpio_periph);
+ 359              		.loc 1 186 0
+ 360 00e6 FB68     		ldr	r3, [r7, #12]
+ 361 00e8 0433     		adds	r3, r3, #4
+ 362 00ea 1B68     		ldr	r3, [r3]
+ 363 00ec 7B61     		str	r3, [r7, #20]
+ 187:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             
+ 188:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             /* clear the specified pin mode bits */
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 11
+
+
+ 189:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             reg &= ~GPIO_MODE_MASK(i - 8U);
+ 364              		.loc 1 189 0
+ 365 00ee FB8B     		ldrh	r3, [r7, #30]
+ 366 00f0 03F18043 		add	r3, r3, #1073741824
+ 367 00f4 083B     		subs	r3, r3, #8
+ 368 00f6 9B00     		lsls	r3, r3, #2
+ 369 00f8 0F22     		movs	r2, #15
+ 370 00fa 02FA03F3 		lsl	r3, r2, r3
+ 371 00fe DB43     		mvns	r3, r3
+ 372 0100 7A69     		ldr	r2, [r7, #20]
+ 373 0102 1340     		ands	r3, r3, r2
+ 374 0104 7B61     		str	r3, [r7, #20]
+ 190:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             /* set the specified pin mode bits */
+ 191:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             reg |= GPIO_MODE_SET(i - 8U, temp_mode);
+ 375              		.loc 1 191 0
+ 376 0106 FB8B     		ldrh	r3, [r7, #30]
+ 377 0108 03F18043 		add	r3, r3, #1073741824
+ 378 010c 083B     		subs	r3, r3, #8
+ 379 010e 9B00     		lsls	r3, r3, #2
+ 380 0110 BA69     		ldr	r2, [r7, #24]
+ 381 0112 02FA03F3 		lsl	r3, r2, r3
+ 382 0116 7A69     		ldr	r2, [r7, #20]
+ 383 0118 1343     		orrs	r3, r3, r2
+ 384 011a 7B61     		str	r3, [r7, #20]
+ 192:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             
+ 193:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             /* set IPD or IPU */
+ 194:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             if(GPIO_MODE_IPD == mode){
+ 385              		.loc 1 194 0
+ 386 011c BB68     		ldr	r3, [r7, #8]
+ 387 011e 282B     		cmp	r3, #40
+ 388 0120 09D1     		bne	.L25
+ 195:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 /* reset the corresponding OCTL bit */
+ 196:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 GPIO_BC(gpio_periph) = (uint32_t)((1U << i) & pin);
+ 389              		.loc 1 196 0
+ 390 0122 FB8B     		ldrh	r3, [r7, #30]
+ 391 0124 0122     		movs	r2, #1
+ 392 0126 9A40     		lsls	r2, r2, r3
+ 393 0128 FB68     		ldr	r3, [r7, #12]
+ 394 012a 1433     		adds	r3, r3, #20
+ 395 012c 1946     		mov	r1, r3
+ 396 012e 3B68     		ldr	r3, [r7]
+ 397 0130 1340     		ands	r3, r3, r2
+ 398 0132 0B60     		str	r3, [r1]
+ 399 0134 0BE0     		b	.L26
+ 400              	.L25:
+ 197:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             }else{
+ 198:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 /* set the corresponding OCTL bit */
+ 199:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 if(GPIO_MODE_IPU == mode){
+ 401              		.loc 1 199 0
+ 402 0136 BB68     		ldr	r3, [r7, #8]
+ 403 0138 482B     		cmp	r3, #72
+ 404 013a 08D1     		bne	.L26
+ 200:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                     GPIO_BOP(gpio_periph) = (uint32_t)((1U << i) & pin);
+ 405              		.loc 1 200 0
+ 406 013c FB8B     		ldrh	r3, [r7, #30]
+ 407 013e 0122     		movs	r2, #1
+ 408 0140 9A40     		lsls	r2, r2, r3
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 12
+
+
+ 409 0142 FB68     		ldr	r3, [r7, #12]
+ 410 0144 1033     		adds	r3, r3, #16
+ 411 0146 1946     		mov	r1, r3
+ 412 0148 3B68     		ldr	r3, [r7]
+ 413 014a 1340     		ands	r3, r3, r2
+ 414 014c 0B60     		str	r3, [r1]
+ 415              	.L26:
+ 201:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 }
+ 202:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             }
+ 203:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             /* set GPIO_CTL1 register */
+ 204:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****             GPIO_CTL1(gpio_periph) = reg;
+ 416              		.loc 1 204 0
+ 417 014e FB68     		ldr	r3, [r7, #12]
+ 418 0150 0433     		adds	r3, r3, #4
+ 419 0152 1A46     		mov	r2, r3
+ 420 0154 7B69     		ldr	r3, [r7, #20]
+ 421 0156 1360     		str	r3, [r2]
+ 422              	.L24:
+ 184:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         if((1U << i) & pin){
+ 423              		.loc 1 184 0 discriminator 2
+ 424 0158 FB8B     		ldrh	r3, [r7, #30]
+ 425 015a 0133     		adds	r3, r3, #1
+ 426 015c FB83     		strh	r3, [r7, #30]	@ movhi
+ 427              	.L23:
+ 184:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         if((1U << i) & pin){
+ 428              		.loc 1 184 0 is_stmt 0 discriminator 1
+ 429 015e FB8B     		ldrh	r3, [r7, #30]
+ 430 0160 0F2B     		cmp	r3, #15
+ 431 0162 B9D9     		bls	.L27
+ 205:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         }
+ 206:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }
+ 207:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 432              		.loc 1 207 0 is_stmt 1
+ 433 0164 00BF     		nop
+ 434 0166 2437     		adds	r7, r7, #36
+ 435              	.LCFI10:
+ 436              		.cfi_def_cfa_offset 4
+ 437 0168 BD46     		mov	sp, r7
+ 438              	.LCFI11:
+ 439              		.cfi_def_cfa_register 13
+ 440              		@ sp needed
+ 441 016a 5DF8047B 		ldr	r7, [sp], #4
+ 442              	.LCFI12:
+ 443              		.cfi_restore 7
+ 444              		.cfi_def_cfa_offset 0
+ 445 016e 7047     		bx	lr
+ 446              		.cfi_endproc
+ 447              	.LFE118:
+ 449              		.section	.text.gpio_bit_set,"ax",%progbits
+ 450              		.align	1
+ 451              		.global	gpio_bit_set
+ 452              		.syntax unified
+ 453              		.thumb
+ 454              		.thumb_func
+ 455              		.fpu fpv4-sp-d16
+ 457              	gpio_bit_set:
+ 458              	.LFB119:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 13
+
+
+ 208:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 209:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 210:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      set GPIO pin
+ 211:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  gpio_periph: GPIOx(x = A,B,C,D,E,F,G) 
+ 212:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  pin: GPIO pin
+ 213:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 one or more parameters can be selected which are shown as below:
+ 214:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_PIN_x(x=0..15), GPIO_PIN_ALL
+ 215:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 216:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     none
+ 217:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+ 218:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** void gpio_bit_set(uint32_t gpio_periph,uint32_t pin)
+ 219:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 459              		.loc 1 219 0
+ 460              		.cfi_startproc
+ 461              		@ args = 0, pretend = 0, frame = 8
+ 462              		@ frame_needed = 1, uses_anonymous_args = 0
+ 463              		@ link register save eliminated.
+ 464 0000 80B4     		push	{r7}
+ 465              	.LCFI13:
+ 466              		.cfi_def_cfa_offset 4
+ 467              		.cfi_offset 7, -4
+ 468 0002 83B0     		sub	sp, sp, #12
+ 469              	.LCFI14:
+ 470              		.cfi_def_cfa_offset 16
+ 471 0004 00AF     		add	r7, sp, #0
+ 472              	.LCFI15:
+ 473              		.cfi_def_cfa_register 7
+ 474 0006 7860     		str	r0, [r7, #4]
+ 475 0008 3960     		str	r1, [r7]
+ 220:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     GPIO_BOP(gpio_periph) = (uint32_t)pin;
+ 476              		.loc 1 220 0
+ 477 000a 7B68     		ldr	r3, [r7, #4]
+ 478 000c 1033     		adds	r3, r3, #16
+ 479 000e 1A46     		mov	r2, r3
+ 480 0010 3B68     		ldr	r3, [r7]
+ 481 0012 1360     		str	r3, [r2]
+ 221:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 482              		.loc 1 221 0
+ 483 0014 00BF     		nop
+ 484 0016 0C37     		adds	r7, r7, #12
+ 485              	.LCFI16:
+ 486              		.cfi_def_cfa_offset 4
+ 487 0018 BD46     		mov	sp, r7
+ 488              	.LCFI17:
+ 489              		.cfi_def_cfa_register 13
+ 490              		@ sp needed
+ 491 001a 5DF8047B 		ldr	r7, [sp], #4
+ 492              	.LCFI18:
+ 493              		.cfi_restore 7
+ 494              		.cfi_def_cfa_offset 0
+ 495 001e 7047     		bx	lr
+ 496              		.cfi_endproc
+ 497              	.LFE119:
+ 499              		.section	.text.gpio_bit_reset,"ax",%progbits
+ 500              		.align	1
+ 501              		.global	gpio_bit_reset
+ 502              		.syntax unified
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 14
+
+
+ 503              		.thumb
+ 504              		.thumb_func
+ 505              		.fpu fpv4-sp-d16
+ 507              	gpio_bit_reset:
+ 508              	.LFB120:
+ 222:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 223:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 224:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      reset GPIO pin
+ 225:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  gpio_periph: GPIOx(x = A,B,C,D,E,F,G)
+ 226:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  pin: GPIO pin
+ 227:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 one or more parameters can be selected which are shown as below:
+ 228:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_PIN_x(x=0..15), GPIO_PIN_ALL
+ 229:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 230:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     none
+ 231:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+ 232:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** void gpio_bit_reset(uint32_t gpio_periph,uint32_t pin)
+ 233:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 509              		.loc 1 233 0
+ 510              		.cfi_startproc
+ 511              		@ args = 0, pretend = 0, frame = 8
+ 512              		@ frame_needed = 1, uses_anonymous_args = 0
+ 513              		@ link register save eliminated.
+ 514 0000 80B4     		push	{r7}
+ 515              	.LCFI19:
+ 516              		.cfi_def_cfa_offset 4
+ 517              		.cfi_offset 7, -4
+ 518 0002 83B0     		sub	sp, sp, #12
+ 519              	.LCFI20:
+ 520              		.cfi_def_cfa_offset 16
+ 521 0004 00AF     		add	r7, sp, #0
+ 522              	.LCFI21:
+ 523              		.cfi_def_cfa_register 7
+ 524 0006 7860     		str	r0, [r7, #4]
+ 525 0008 3960     		str	r1, [r7]
+ 234:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     GPIO_BC(gpio_periph) = (uint32_t)pin;
+ 526              		.loc 1 234 0
+ 527 000a 7B68     		ldr	r3, [r7, #4]
+ 528 000c 1433     		adds	r3, r3, #20
+ 529 000e 1A46     		mov	r2, r3
+ 530 0010 3B68     		ldr	r3, [r7]
+ 531 0012 1360     		str	r3, [r2]
+ 235:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 532              		.loc 1 235 0
+ 533 0014 00BF     		nop
+ 534 0016 0C37     		adds	r7, r7, #12
+ 535              	.LCFI22:
+ 536              		.cfi_def_cfa_offset 4
+ 537 0018 BD46     		mov	sp, r7
+ 538              	.LCFI23:
+ 539              		.cfi_def_cfa_register 13
+ 540              		@ sp needed
+ 541 001a 5DF8047B 		ldr	r7, [sp], #4
+ 542              	.LCFI24:
+ 543              		.cfi_restore 7
+ 544              		.cfi_def_cfa_offset 0
+ 545 001e 7047     		bx	lr
+ 546              		.cfi_endproc
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 15
+
+
+ 547              	.LFE120:
+ 549              		.section	.text.gpio_bit_write,"ax",%progbits
+ 550              		.align	1
+ 551              		.global	gpio_bit_write
+ 552              		.syntax unified
+ 553              		.thumb
+ 554              		.thumb_func
+ 555              		.fpu fpv4-sp-d16
+ 557              	gpio_bit_write:
+ 558              	.LFB121:
+ 236:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 237:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 238:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      write data to the specified GPIO pin
+ 239:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  gpio_periph: GPIOx(x = A,B,C,D,E,F,G)
+ 240:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  pin: GPIO pin
+ 241:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 one or more parameters can be selected which are shown as below:
+ 242:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_PIN_x(x=0..15), GPIO_PIN_ALL
+ 243:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  bit_value: SET or RESET
+ 244:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        RESET: clear the port pin
+ 245:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        SET: set the port pin
+ 246:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 247:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     none
+ 248:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+ 249:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** void gpio_bit_write(uint32_t gpio_periph,uint32_t pin,bit_status bit_value)
+ 250:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 559              		.loc 1 250 0
+ 560              		.cfi_startproc
+ 561              		@ args = 0, pretend = 0, frame = 16
+ 562              		@ frame_needed = 1, uses_anonymous_args = 0
+ 563              		@ link register save eliminated.
+ 564 0000 80B4     		push	{r7}
+ 565              	.LCFI25:
+ 566              		.cfi_def_cfa_offset 4
+ 567              		.cfi_offset 7, -4
+ 568 0002 85B0     		sub	sp, sp, #20
+ 569              	.LCFI26:
+ 570              		.cfi_def_cfa_offset 24
+ 571 0004 00AF     		add	r7, sp, #0
+ 572              	.LCFI27:
+ 573              		.cfi_def_cfa_register 7
+ 574 0006 F860     		str	r0, [r7, #12]
+ 575 0008 B960     		str	r1, [r7, #8]
+ 576 000a 1346     		mov	r3, r2
+ 577 000c FB71     		strb	r3, [r7, #7]
+ 251:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     if(RESET != bit_value){
+ 578              		.loc 1 251 0
+ 579 000e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 580 0010 002B     		cmp	r3, #0
+ 581 0012 05D0     		beq	.L31
+ 252:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         GPIO_BOP(gpio_periph) = (uint32_t)pin;
+ 582              		.loc 1 252 0
+ 583 0014 FB68     		ldr	r3, [r7, #12]
+ 584 0016 1033     		adds	r3, r3, #16
+ 585 0018 1A46     		mov	r2, r3
+ 586 001a BB68     		ldr	r3, [r7, #8]
+ 587 001c 1360     		str	r3, [r2]
+ 253:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }else{
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 16
+
+
+ 254:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         GPIO_BC(gpio_periph) = (uint32_t)pin;
+ 255:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }
+ 256:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 588              		.loc 1 256 0
+ 589 001e 04E0     		b	.L33
+ 590              	.L31:
+ 254:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }
+ 591              		.loc 1 254 0
+ 592 0020 FB68     		ldr	r3, [r7, #12]
+ 593 0022 1433     		adds	r3, r3, #20
+ 594 0024 1A46     		mov	r2, r3
+ 595 0026 BB68     		ldr	r3, [r7, #8]
+ 596 0028 1360     		str	r3, [r2]
+ 597              	.L33:
+ 598              		.loc 1 256 0
+ 599 002a 00BF     		nop
+ 600 002c 1437     		adds	r7, r7, #20
+ 601              	.LCFI28:
+ 602              		.cfi_def_cfa_offset 4
+ 603 002e BD46     		mov	sp, r7
+ 604              	.LCFI29:
+ 605              		.cfi_def_cfa_register 13
+ 606              		@ sp needed
+ 607 0030 5DF8047B 		ldr	r7, [sp], #4
+ 608              	.LCFI30:
+ 609              		.cfi_restore 7
+ 610              		.cfi_def_cfa_offset 0
+ 611 0034 7047     		bx	lr
+ 612              		.cfi_endproc
+ 613              	.LFE121:
+ 615              		.section	.text.gpio_port_write,"ax",%progbits
+ 616              		.align	1
+ 617              		.global	gpio_port_write
+ 618              		.syntax unified
+ 619              		.thumb
+ 620              		.thumb_func
+ 621              		.fpu fpv4-sp-d16
+ 623              	gpio_port_write:
+ 624              	.LFB122:
+ 257:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 258:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 259:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      write data to the specified GPIO port
+ 260:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  gpio_periph: GPIOx(x = A,B,C,D,E,F,G) 
+ 261:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  data: specify the value to be written to the port output data register
+ 262:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 263:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     none
+ 264:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+ 265:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** void gpio_port_write(uint32_t gpio_periph,uint16_t data)
+ 266:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 625              		.loc 1 266 0
+ 626              		.cfi_startproc
+ 627              		@ args = 0, pretend = 0, frame = 8
+ 628              		@ frame_needed = 1, uses_anonymous_args = 0
+ 629              		@ link register save eliminated.
+ 630 0000 80B4     		push	{r7}
+ 631              	.LCFI31:
+ 632              		.cfi_def_cfa_offset 4
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 17
+
+
+ 633              		.cfi_offset 7, -4
+ 634 0002 83B0     		sub	sp, sp, #12
+ 635              	.LCFI32:
+ 636              		.cfi_def_cfa_offset 16
+ 637 0004 00AF     		add	r7, sp, #0
+ 638              	.LCFI33:
+ 639              		.cfi_def_cfa_register 7
+ 640 0006 7860     		str	r0, [r7, #4]
+ 641 0008 0B46     		mov	r3, r1
+ 642 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 267:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     GPIO_OCTL(gpio_periph) = (uint32_t)data;
+ 643              		.loc 1 267 0
+ 644 000c 7B68     		ldr	r3, [r7, #4]
+ 645 000e 0C33     		adds	r3, r3, #12
+ 646 0010 1A46     		mov	r2, r3
+ 647 0012 7B88     		ldrh	r3, [r7, #2]
+ 648 0014 1360     		str	r3, [r2]
+ 268:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 649              		.loc 1 268 0
+ 650 0016 00BF     		nop
+ 651 0018 0C37     		adds	r7, r7, #12
+ 652              	.LCFI34:
+ 653              		.cfi_def_cfa_offset 4
+ 654 001a BD46     		mov	sp, r7
+ 655              	.LCFI35:
+ 656              		.cfi_def_cfa_register 13
+ 657              		@ sp needed
+ 658 001c 5DF8047B 		ldr	r7, [sp], #4
+ 659              	.LCFI36:
+ 660              		.cfi_restore 7
+ 661              		.cfi_def_cfa_offset 0
+ 662 0020 7047     		bx	lr
+ 663              		.cfi_endproc
+ 664              	.LFE122:
+ 666              		.section	.text.gpio_input_bit_get,"ax",%progbits
+ 667              		.align	1
+ 668              		.global	gpio_input_bit_get
+ 669              		.syntax unified
+ 670              		.thumb
+ 671              		.thumb_func
+ 672              		.fpu fpv4-sp-d16
+ 674              	gpio_input_bit_get:
+ 675              	.LFB123:
+ 269:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 270:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 271:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      get GPIO pin input status
+ 272:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  gpio_periph: GPIOx(x = A,B,C,D,E,F,G)
+ 273:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  pin: GPIO pin
+ 274:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 only one parameter can be selected which are shown as below:
+ 275:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_PIN_x(x=0..15), GPIO_PIN_ALL
+ 276:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 277:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     input status of gpio pin: SET or RESET
+ 278:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+ 279:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** FlagStatus gpio_input_bit_get(uint32_t gpio_periph,uint32_t pin)
+ 280:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 676              		.loc 1 280 0
+ 677              		.cfi_startproc
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 18
+
+
+ 678              		@ args = 0, pretend = 0, frame = 8
+ 679              		@ frame_needed = 1, uses_anonymous_args = 0
+ 680              		@ link register save eliminated.
+ 681 0000 80B4     		push	{r7}
+ 682              	.LCFI37:
+ 683              		.cfi_def_cfa_offset 4
+ 684              		.cfi_offset 7, -4
+ 685 0002 83B0     		sub	sp, sp, #12
+ 686              	.LCFI38:
+ 687              		.cfi_def_cfa_offset 16
+ 688 0004 00AF     		add	r7, sp, #0
+ 689              	.LCFI39:
+ 690              		.cfi_def_cfa_register 7
+ 691 0006 7860     		str	r0, [r7, #4]
+ 692 0008 3960     		str	r1, [r7]
+ 281:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     if((uint32_t)RESET != (GPIO_ISTAT(gpio_periph)&(pin))){
+ 693              		.loc 1 281 0
+ 694 000a 7B68     		ldr	r3, [r7, #4]
+ 695 000c 0833     		adds	r3, r3, #8
+ 696 000e 1A68     		ldr	r2, [r3]
+ 697 0010 3B68     		ldr	r3, [r7]
+ 698 0012 1340     		ands	r3, r3, r2
+ 699 0014 002B     		cmp	r3, #0
+ 700 0016 01D0     		beq	.L36
+ 282:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         return SET; 
+ 701              		.loc 1 282 0
+ 702 0018 0123     		movs	r3, #1
+ 703 001a 00E0     		b	.L37
+ 704              	.L36:
+ 283:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }else{
+ 284:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         return RESET;
+ 705              		.loc 1 284 0
+ 706 001c 0023     		movs	r3, #0
+ 707              	.L37:
+ 285:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }
+ 286:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 708              		.loc 1 286 0
+ 709 001e 1846     		mov	r0, r3
+ 710 0020 0C37     		adds	r7, r7, #12
+ 711              	.LCFI40:
+ 712              		.cfi_def_cfa_offset 4
+ 713 0022 BD46     		mov	sp, r7
+ 714              	.LCFI41:
+ 715              		.cfi_def_cfa_register 13
+ 716              		@ sp needed
+ 717 0024 5DF8047B 		ldr	r7, [sp], #4
+ 718              	.LCFI42:
+ 719              		.cfi_restore 7
+ 720              		.cfi_def_cfa_offset 0
+ 721 0028 7047     		bx	lr
+ 722              		.cfi_endproc
+ 723              	.LFE123:
+ 725              		.section	.text.gpio_input_port_get,"ax",%progbits
+ 726              		.align	1
+ 727              		.global	gpio_input_port_get
+ 728              		.syntax unified
+ 729              		.thumb
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 19
+
+
+ 730              		.thumb_func
+ 731              		.fpu fpv4-sp-d16
+ 733              	gpio_input_port_get:
+ 734              	.LFB124:
+ 287:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 288:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 289:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      get GPIO port input status
+ 290:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  gpio_periph: GPIOx(x = A,B,C,D,E,F,G) 
+ 291:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 292:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     input status of gpio all pins
+ 293:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+ 294:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** uint16_t gpio_input_port_get(uint32_t gpio_periph)
+ 295:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 735              		.loc 1 295 0
+ 736              		.cfi_startproc
+ 737              		@ args = 0, pretend = 0, frame = 8
+ 738              		@ frame_needed = 1, uses_anonymous_args = 0
+ 739              		@ link register save eliminated.
+ 740 0000 80B4     		push	{r7}
+ 741              	.LCFI43:
+ 742              		.cfi_def_cfa_offset 4
+ 743              		.cfi_offset 7, -4
+ 744 0002 83B0     		sub	sp, sp, #12
+ 745              	.LCFI44:
+ 746              		.cfi_def_cfa_offset 16
+ 747 0004 00AF     		add	r7, sp, #0
+ 748              	.LCFI45:
+ 749              		.cfi_def_cfa_register 7
+ 750 0006 7860     		str	r0, [r7, #4]
+ 296:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     return (uint16_t)(GPIO_ISTAT(gpio_periph));
+ 751              		.loc 1 296 0
+ 752 0008 7B68     		ldr	r3, [r7, #4]
+ 753 000a 0833     		adds	r3, r3, #8
+ 754 000c 1B68     		ldr	r3, [r3]
+ 755 000e 9BB2     		uxth	r3, r3
+ 297:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 756              		.loc 1 297 0
+ 757 0010 1846     		mov	r0, r3
+ 758 0012 0C37     		adds	r7, r7, #12
+ 759              	.LCFI46:
+ 760              		.cfi_def_cfa_offset 4
+ 761 0014 BD46     		mov	sp, r7
+ 762              	.LCFI47:
+ 763              		.cfi_def_cfa_register 13
+ 764              		@ sp needed
+ 765 0016 5DF8047B 		ldr	r7, [sp], #4
+ 766              	.LCFI48:
+ 767              		.cfi_restore 7
+ 768              		.cfi_def_cfa_offset 0
+ 769 001a 7047     		bx	lr
+ 770              		.cfi_endproc
+ 771              	.LFE124:
+ 773              		.section	.text.gpio_output_bit_get,"ax",%progbits
+ 774              		.align	1
+ 775              		.global	gpio_output_bit_get
+ 776              		.syntax unified
+ 777              		.thumb
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 20
+
+
+ 778              		.thumb_func
+ 779              		.fpu fpv4-sp-d16
+ 781              	gpio_output_bit_get:
+ 782              	.LFB125:
+ 298:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 299:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 300:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      get GPIO pin output status
+ 301:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  gpio_periph: GPIOx(x = A,B,C,D,E,F,G)
+ 302:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  pin: GPIO pin
+ 303:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 only one parameter can be selected which are shown as below:
+ 304:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_PIN_x(x=0..15), GPIO_PIN_ALL
+ 305:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 306:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     output status of gpio pin: SET or RESET
+ 307:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+ 308:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** FlagStatus gpio_output_bit_get(uint32_t gpio_periph,uint32_t pin)
+ 309:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 783              		.loc 1 309 0
+ 784              		.cfi_startproc
+ 785              		@ args = 0, pretend = 0, frame = 8
+ 786              		@ frame_needed = 1, uses_anonymous_args = 0
+ 787              		@ link register save eliminated.
+ 788 0000 80B4     		push	{r7}
+ 789              	.LCFI49:
+ 790              		.cfi_def_cfa_offset 4
+ 791              		.cfi_offset 7, -4
+ 792 0002 83B0     		sub	sp, sp, #12
+ 793              	.LCFI50:
+ 794              		.cfi_def_cfa_offset 16
+ 795 0004 00AF     		add	r7, sp, #0
+ 796              	.LCFI51:
+ 797              		.cfi_def_cfa_register 7
+ 798 0006 7860     		str	r0, [r7, #4]
+ 799 0008 3960     		str	r1, [r7]
+ 310:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     if((uint32_t)RESET !=(GPIO_OCTL(gpio_periph)&(pin))){
+ 800              		.loc 1 310 0
+ 801 000a 7B68     		ldr	r3, [r7, #4]
+ 802 000c 0C33     		adds	r3, r3, #12
+ 803 000e 1A68     		ldr	r2, [r3]
+ 804 0010 3B68     		ldr	r3, [r7]
+ 805 0012 1340     		ands	r3, r3, r2
+ 806 0014 002B     		cmp	r3, #0
+ 807 0016 01D0     		beq	.L41
+ 311:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         return SET;
+ 808              		.loc 1 311 0
+ 809 0018 0123     		movs	r3, #1
+ 810 001a 00E0     		b	.L42
+ 811              	.L41:
+ 312:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }else{
+ 313:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         return RESET;
+ 812              		.loc 1 313 0
+ 813 001c 0023     		movs	r3, #0
+ 814              	.L42:
+ 314:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }
+ 315:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 815              		.loc 1 315 0
+ 816 001e 1846     		mov	r0, r3
+ 817 0020 0C37     		adds	r7, r7, #12
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 21
+
+
+ 818              	.LCFI52:
+ 819              		.cfi_def_cfa_offset 4
+ 820 0022 BD46     		mov	sp, r7
+ 821              	.LCFI53:
+ 822              		.cfi_def_cfa_register 13
+ 823              		@ sp needed
+ 824 0024 5DF8047B 		ldr	r7, [sp], #4
+ 825              	.LCFI54:
+ 826              		.cfi_restore 7
+ 827              		.cfi_def_cfa_offset 0
+ 828 0028 7047     		bx	lr
+ 829              		.cfi_endproc
+ 830              	.LFE125:
+ 832              		.section	.text.gpio_output_port_get,"ax",%progbits
+ 833              		.align	1
+ 834              		.global	gpio_output_port_get
+ 835              		.syntax unified
+ 836              		.thumb
+ 837              		.thumb_func
+ 838              		.fpu fpv4-sp-d16
+ 840              	gpio_output_port_get:
+ 841              	.LFB126:
+ 316:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 317:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 318:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      get GPIO port output status
+ 319:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  gpio_periph: GPIOx(x = A,B,C,D,E,F,G) 
+ 320:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 321:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     output status of gpio all pins
+ 322:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+ 323:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** uint16_t gpio_output_port_get(uint32_t gpio_periph)
+ 324:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 842              		.loc 1 324 0
+ 843              		.cfi_startproc
+ 844              		@ args = 0, pretend = 0, frame = 8
+ 845              		@ frame_needed = 1, uses_anonymous_args = 0
+ 846              		@ link register save eliminated.
+ 847 0000 80B4     		push	{r7}
+ 848              	.LCFI55:
+ 849              		.cfi_def_cfa_offset 4
+ 850              		.cfi_offset 7, -4
+ 851 0002 83B0     		sub	sp, sp, #12
+ 852              	.LCFI56:
+ 853              		.cfi_def_cfa_offset 16
+ 854 0004 00AF     		add	r7, sp, #0
+ 855              	.LCFI57:
+ 856              		.cfi_def_cfa_register 7
+ 857 0006 7860     		str	r0, [r7, #4]
+ 325:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     return ((uint16_t)GPIO_OCTL(gpio_periph));
+ 858              		.loc 1 325 0
+ 859 0008 7B68     		ldr	r3, [r7, #4]
+ 860 000a 0C33     		adds	r3, r3, #12
+ 861 000c 1B68     		ldr	r3, [r3]
+ 862 000e 9BB2     		uxth	r3, r3
+ 326:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 863              		.loc 1 326 0
+ 864 0010 1846     		mov	r0, r3
+ 865 0012 0C37     		adds	r7, r7, #12
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 22
+
+
+ 866              	.LCFI58:
+ 867              		.cfi_def_cfa_offset 4
+ 868 0014 BD46     		mov	sp, r7
+ 869              	.LCFI59:
+ 870              		.cfi_def_cfa_register 13
+ 871              		@ sp needed
+ 872 0016 5DF8047B 		ldr	r7, [sp], #4
+ 873              	.LCFI60:
+ 874              		.cfi_restore 7
+ 875              		.cfi_def_cfa_offset 0
+ 876 001a 7047     		bx	lr
+ 877              		.cfi_endproc
+ 878              	.LFE126:
+ 880              		.section	.text.gpio_pin_remap_config,"ax",%progbits
+ 881              		.align	1
+ 882              		.global	gpio_pin_remap_config
+ 883              		.syntax unified
+ 884              		.thumb
+ 885              		.thumb_func
+ 886              		.fpu fpv4-sp-d16
+ 888              	gpio_pin_remap_config:
+ 889              	.LFB127:
+ 327:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 328:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 329:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      configure GPIO pin remap
+ 330:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  gpio_remap: select the pin to remap
+ 331:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 only one parameter can be selected which are shown as below:
+ 332:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_SPI0_REMAP: SPI0 remapping
+ 333:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_I2C0_REMAP: I2C0 remapping
+ 334:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_USART0_REMAP: USART0 remapping
+ 335:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_USART1_REMAP: USART1 remapping
+ 336:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_USART2_PARTIAL_REMAP: USART2 partial remapping
+ 337:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_USART2_FULL_REMAP: USART2 full remapping
+ 338:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_TIMER0_PARTIAL_REMAP: TIMER0 partial remapping 
+ 339:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_TIMER0_FULL_REMAP: TIMER0 full remapping
+ 340:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_TIMER1_PARTIAL_REMAP0: TIMER1 partial remapping
+ 341:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_TIMER1_PARTIAL_REMAP1: TIMER1 partial remapping
+ 342:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_TIMER1_FULL_REMAP: TIMER1 full remapping
+ 343:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_TIMER2_PARTIAL_REMAP: TIMER2 partial remapping
+ 344:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_TIMER2_FULL_REMAP: TIMER2 full remapping
+ 345:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_TIMER3_REMAP: TIMER3 remapping
+ 346:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_CAN_PARTIAL_REMAP: CAN partial remapping(only for GD32F30X_HD devices and GD
+ 347:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_CAN_FULL_REMAP: CAN full remapping(only for GD32F30X_HD devices and GD32F30X
+ 348:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_CAN0_PARTIAL_REMAP: CAN0 partial remapping(only for GD32F30X_CL devices)
+ 349:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_CAN0_FULL_REMAP: CAN0 full remapping(only for GD32F30X_CL devices)
+ 350:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_PD01_REMAP: PD01 remapping
+ 351:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_TIMER4CH3_IREMAP: TIMER4 channel3 internal remapping(only for GD32F30X_CL de
+ 352:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_ADC0_ETRGINS_REMAP: ADC0 external trigger inserted conversion remapping(only
+ 353:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_ADC0_ETRGREG_REMAP: ADC0 external trigger regular conversion remapping(only 
+ 354:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_ADC1_ETRGINS_REMAP: ADC1 external trigger inserted conversion remapping(only
+ 355:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_ADC1_ETRGREG_REMAP: ADC1 external trigger regular conversion remapping(only 
+ 356:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_ENET_REMAP: ENET remapping(only for GD32F30X_CL devices) 
+ 357:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_CAN1_REMAP: CAN1 remapping(only for GD32F30X_CL devices)
+ 358:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_SWJ_NONJTRST_REMAP: full SWJ(JTAG-DP + SW-DP),but without NJTRST
+ 359:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_SWJ_SWDPENABLE_REMAP: JTAG-DP disabled and SW-DP enabled
+ 360:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_SWJ_DISABLE_REMAP: JTAG-DP disabled and SW-DP disabled
+ 361:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_SPI2_REMAP: SPI2 remapping(only for GD32F30X_CL devices) 
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 23
+
+
+ 362:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_TIMER1ITR0_REMAP: TIMER1 internal trigger 0 remapping(only for GD32F30X_CL d
+ 363:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_PTP_PPS_REMAP: ethernet PTP PPS remapping(only for GD32F30X_CL devices) 
+ 364:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_TIMER8_REMAP: TIMER8 remapping
+ 365:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_TIMER9_REMAP: TIMER9 remapping
+ 366:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_TIMER10_REMAP: TIMER10 remapping
+ 367:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_TIMER12_REMAP: TIMER12 remapping
+ 368:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_TIMER13_REMAP: TIMER13 remapping
+ 369:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_EXMC_NADV_REMAP: EXMC_NADV connect/disconnect
+ 370:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_CTC_REMAP0: CTC remapping(PD15)
+ 371:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_CTC_REMAP1: CTC remapping(PF0)
+ 372:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  newvalue: ENABLE or DISABLE
+ 373:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 374:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     none
+ 375:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+ 376:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** void gpio_pin_remap_config(uint32_t remap, ControlStatus newvalue)
+ 377:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 890              		.loc 1 377 0
+ 891              		.cfi_startproc
+ 892              		@ args = 0, pretend = 0, frame = 24
+ 893              		@ frame_needed = 1, uses_anonymous_args = 0
+ 894              		@ link register save eliminated.
+ 895 0000 80B4     		push	{r7}
+ 896              	.LCFI61:
+ 897              		.cfi_def_cfa_offset 4
+ 898              		.cfi_offset 7, -4
+ 899 0002 87B0     		sub	sp, sp, #28
+ 900              	.LCFI62:
+ 901              		.cfi_def_cfa_offset 32
+ 902 0004 00AF     		add	r7, sp, #0
+ 903              	.LCFI63:
+ 904              		.cfi_def_cfa_register 7
+ 905 0006 7860     		str	r0, [r7, #4]
+ 906 0008 0B46     		mov	r3, r1
+ 907 000a FB70     		strb	r3, [r7, #3]
+ 378:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     uint32_t remap1 = 0U, remap2 = 0U, temp_reg = 0U, temp_mask = 0U;
+ 908              		.loc 1 378 0
+ 909 000c 0023     		movs	r3, #0
+ 910 000e 3B61     		str	r3, [r7, #16]
+ 911 0010 0023     		movs	r3, #0
+ 912 0012 FB60     		str	r3, [r7, #12]
+ 913 0014 0023     		movs	r3, #0
+ 914 0016 7B61     		str	r3, [r7, #20]
+ 915 0018 0023     		movs	r3, #0
+ 916 001a BB60     		str	r3, [r7, #8]
+ 379:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 380:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     if(((uint32_t)0x80000000U) == (remap & 0x80000000U)){
+ 917              		.loc 1 380 0
+ 918 001c 7B68     		ldr	r3, [r7, #4]
+ 919 001e 002B     		cmp	r3, #0
+ 920 0020 03DA     		bge	.L46
+ 381:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         /* get AFIO_PCF1 regiter value */
+ 382:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         temp_reg = AFIO_PCF1;
+ 921              		.loc 1 382 0
+ 922 0022 2F4B     		ldr	r3, .L55
+ 923 0024 1B68     		ldr	r3, [r3]
+ 924 0026 7B61     		str	r3, [r7, #20]
+ 925 0028 02E0     		b	.L47
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 24
+
+
+ 926              	.L46:
+ 383:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }else{
+ 384:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         /* get AFIO_PCF0 regiter value */
+ 385:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         temp_reg = AFIO_PCF0;
+ 927              		.loc 1 385 0
+ 928 002a 2E4B     		ldr	r3, .L55+4
+ 929 002c 1B68     		ldr	r3, [r3]
+ 930 002e 7B61     		str	r3, [r7, #20]
+ 931              	.L47:
+ 386:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }
+ 387:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 388:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     temp_mask = (remap & PCF_POSITION_MASK) >> 0x10U;
+ 932              		.loc 1 388 0
+ 933 0030 7B68     		ldr	r3, [r7, #4]
+ 934 0032 1B0C     		lsrs	r3, r3, #16
+ 935 0034 03F00F03 		and	r3, r3, #15
+ 936 0038 BB60     		str	r3, [r7, #8]
+ 389:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     remap1 = remap & LSB_16BIT_MASK;
+ 937              		.loc 1 389 0
+ 938 003a 7B68     		ldr	r3, [r7, #4]
+ 939 003c 9BB2     		uxth	r3, r3
+ 940 003e 3B61     		str	r3, [r7, #16]
+ 390:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 391:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     /* judge pin remap type */
+ 392:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     if((PCF_LOCATION1_MASK | PCF_LOCATION2_MASK) == (remap & (PCF_LOCATION1_MASK | PCF_LOCATION2_MA
+ 941              		.loc 1 392 0
+ 942 0040 7B68     		ldr	r3, [r7, #4]
+ 943 0042 03F44013 		and	r3, r3, #3145728
+ 944 0046 B3F5401F 		cmp	r3, #3145728
+ 945 004a 0AD1     		bne	.L48
+ 393:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         temp_reg &= PCF_SWJCFG_MASK;
+ 946              		.loc 1 393 0
+ 947 004c 7B69     		ldr	r3, [r7, #20]
+ 948 004e 23F0E063 		bic	r3, r3, #117440512
+ 949 0052 7B61     		str	r3, [r7, #20]
+ 394:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         AFIO_PCF0 &= PCF_SWJCFG_MASK;
+ 950              		.loc 1 394 0
+ 951 0054 234B     		ldr	r3, .L55+4
+ 952 0056 1B68     		ldr	r3, [r3]
+ 953 0058 224A     		ldr	r2, .L55+4
+ 954 005a 23F0E063 		bic	r3, r3, #117440512
+ 955 005e 1360     		str	r3, [r2]
+ 956 0060 21E0     		b	.L49
+ 957              	.L48:
+ 395:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }else if(PCF_LOCATION2_MASK == (remap & PCF_LOCATION2_MASK)){
+ 958              		.loc 1 395 0
+ 959 0062 7B68     		ldr	r3, [r7, #4]
+ 960 0064 03F48013 		and	r3, r3, #1048576
+ 961 0068 002B     		cmp	r3, #0
+ 962 006a 0ED0     		beq	.L50
+ 396:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         remap2 = ((uint32_t)0x03U) << temp_mask;
+ 963              		.loc 1 396 0
+ 964 006c 0322     		movs	r2, #3
+ 965 006e BB68     		ldr	r3, [r7, #8]
+ 966 0070 02FA03F3 		lsl	r3, r2, r3
+ 967 0074 FB60     		str	r3, [r7, #12]
+ 397:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         temp_reg &= ~remap2;
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 25
+
+
+ 968              		.loc 1 397 0
+ 969 0076 FB68     		ldr	r3, [r7, #12]
+ 970 0078 DB43     		mvns	r3, r3
+ 971 007a 7A69     		ldr	r2, [r7, #20]
+ 972 007c 1340     		ands	r3, r3, r2
+ 973 007e 7B61     		str	r3, [r7, #20]
+ 398:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         temp_reg |= ~PCF_SWJCFG_MASK;
+ 974              		.loc 1 398 0
+ 975 0080 7B69     		ldr	r3, [r7, #20]
+ 976 0082 43F0E063 		orr	r3, r3, #117440512
+ 977 0086 7B61     		str	r3, [r7, #20]
+ 978 0088 0DE0     		b	.L49
+ 979              	.L50:
+ 399:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }else{
+ 400:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         temp_reg &= ~(remap1 << ((remap >> 0x15U)*0x10U));
+ 980              		.loc 1 400 0
+ 981 008a 7B68     		ldr	r3, [r7, #4]
+ 982 008c 5B0D     		lsrs	r3, r3, #21
+ 983 008e 1B01     		lsls	r3, r3, #4
+ 984 0090 3A69     		ldr	r2, [r7, #16]
+ 985 0092 02FA03F3 		lsl	r3, r2, r3
+ 986 0096 DB43     		mvns	r3, r3
+ 987 0098 7A69     		ldr	r2, [r7, #20]
+ 988 009a 1340     		ands	r3, r3, r2
+ 989 009c 7B61     		str	r3, [r7, #20]
+ 401:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         temp_reg |= ~PCF_SWJCFG_MASK;
+ 990              		.loc 1 401 0
+ 991 009e 7B69     		ldr	r3, [r7, #20]
+ 992 00a0 43F0E063 		orr	r3, r3, #117440512
+ 993 00a4 7B61     		str	r3, [r7, #20]
+ 994              	.L49:
+ 402:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }
+ 403:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     
+ 404:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     /* set pin remap value */
+ 405:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     if(DISABLE != newvalue){
+ 995              		.loc 1 405 0
+ 996 00a6 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 997 00a8 002B     		cmp	r3, #0
+ 998 00aa 08D0     		beq	.L51
+ 406:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         temp_reg |= (remap1 << ((remap >> 0x15U)*0x10U));
+ 999              		.loc 1 406 0
+ 1000 00ac 7B68     		ldr	r3, [r7, #4]
+ 1001 00ae 5B0D     		lsrs	r3, r3, #21
+ 1002 00b0 1B01     		lsls	r3, r3, #4
+ 1003 00b2 3A69     		ldr	r2, [r7, #16]
+ 1004 00b4 02FA03F3 		lsl	r3, r2, r3
+ 1005 00b8 7A69     		ldr	r2, [r7, #20]
+ 1006 00ba 1343     		orrs	r3, r3, r2
+ 1007 00bc 7B61     		str	r3, [r7, #20]
+ 1008              	.L51:
+ 407:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }
+ 408:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     
+ 409:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     if(AFIO_PCF1_FIELDS == (remap & AFIO_PCF1_FIELDS)){
+ 1009              		.loc 1 409 0
+ 1010 00be 7B68     		ldr	r3, [r7, #4]
+ 1011 00c0 002B     		cmp	r3, #0
+ 1012 00c2 03DA     		bge	.L52
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 26
+
+
+ 410:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         /* set AFIO_PCF1 regiter value */
+ 411:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         AFIO_PCF1 = temp_reg;
+ 1013              		.loc 1 411 0
+ 1014 00c4 064A     		ldr	r2, .L55
+ 1015 00c6 7B69     		ldr	r3, [r7, #20]
+ 1016 00c8 1360     		str	r3, [r2]
+ 412:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }else{
+ 413:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         /* set AFIO_PCF0 regiter value */
+ 414:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         AFIO_PCF0 = temp_reg;
+ 415:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }
+ 416:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 1017              		.loc 1 416 0
+ 1018 00ca 02E0     		b	.L54
+ 1019              	.L52:
+ 414:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }
+ 1020              		.loc 1 414 0
+ 1021 00cc 054A     		ldr	r2, .L55+4
+ 1022 00ce 7B69     		ldr	r3, [r7, #20]
+ 1023 00d0 1360     		str	r3, [r2]
+ 1024              	.L54:
+ 1025              		.loc 1 416 0
+ 1026 00d2 00BF     		nop
+ 1027 00d4 1C37     		adds	r7, r7, #28
+ 1028              	.LCFI64:
+ 1029              		.cfi_def_cfa_offset 4
+ 1030 00d6 BD46     		mov	sp, r7
+ 1031              	.LCFI65:
+ 1032              		.cfi_def_cfa_register 13
+ 1033              		@ sp needed
+ 1034 00d8 5DF8047B 		ldr	r7, [sp], #4
+ 1035              	.LCFI66:
+ 1036              		.cfi_restore 7
+ 1037              		.cfi_def_cfa_offset 0
+ 1038 00dc 7047     		bx	lr
+ 1039              	.L56:
+ 1040 00de 00BF     		.align	2
+ 1041              	.L55:
+ 1042 00e0 1C000140 		.word	1073807388
+ 1043 00e4 04000140 		.word	1073807364
+ 1044              		.cfi_endproc
+ 1045              	.LFE127:
+ 1047              		.section	.text.gpio_exti_source_select,"ax",%progbits
+ 1048              		.align	1
+ 1049              		.global	gpio_exti_source_select
+ 1050              		.syntax unified
+ 1051              		.thumb
+ 1052              		.thumb_func
+ 1053              		.fpu fpv4-sp-d16
+ 1055              	gpio_exti_source_select:
+ 1056              	.LFB128:
+ 417:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 418:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** #ifdef GD32F30X_CL
+ 419:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 420:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      select ethernet MII or RMII PHY
+ 421:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  enet_sel: ethernet MII or RMII PHY selection
+ 422:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_ENET_PHY_MII: configure ethernet MAC for connection with an MII PHY
+ 423:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_ENET_PHY_RMII: configure ethernet MAC for connection with an RMII PHY
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 27
+
+
+ 424:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 425:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     none
+ 426:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+ 427:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** void gpio_ethernet_phy_select(uint32_t enet_sel)
+ 428:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 429:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     /* clear AFIO_PCF0_ENET_PHY_SEL bit */
+ 430:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     AFIO_PCF0 &= (uint32_t)(~AFIO_PCF0_ENET_PHY_SEL);
+ 431:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 432:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     /* select MII or RMII PHY */
+ 433:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     AFIO_PCF0 |= (uint32_t)enet_sel;
+ 434:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 435:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** #endif /* GD32F30X_CL */
+ 436:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 437:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 438:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      select GPIO pin exti sources
+ 439:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  output_port: gpio event output port
+ 440:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 only one parameter can be selected which are shown as below:
+ 441:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_PORT_SOURCE_GPIOA: output port source A
+ 442:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_PORT_SOURCE_GPIOB: output port source B
+ 443:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_PORT_SOURCE_GPIOC: output port source C
+ 444:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_PORT_SOURCE_GPIOD: output port source D
+ 445:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_PORT_SOURCE_GPIOE: output port source E 
+ 446:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_PORT_SOURCE_GPIOF: output port source F
+ 447:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_PORT_SOURCE_GPIOG: output port source G
+ 448:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  output_pin: GPIO output pin source
+ 449:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 only one parameter can be selected which are shown as below:
+ 450:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_PIN_SOURCE_x(x=0..15)
+ 451:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 452:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     none
+ 453:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+ 454:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** void gpio_exti_source_select(uint8_t output_port, uint8_t output_pin)
+ 455:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 1057              		.loc 1 455 0
+ 1058              		.cfi_startproc
+ 1059              		@ args = 0, pretend = 0, frame = 16
+ 1060              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1061              		@ link register save eliminated.
+ 1062 0000 80B4     		push	{r7}
+ 1063              	.LCFI67:
+ 1064              		.cfi_def_cfa_offset 4
+ 1065              		.cfi_offset 7, -4
+ 1066 0002 85B0     		sub	sp, sp, #20
+ 1067              	.LCFI68:
+ 1068              		.cfi_def_cfa_offset 24
+ 1069 0004 00AF     		add	r7, sp, #0
+ 1070              	.LCFI69:
+ 1071              		.cfi_def_cfa_register 7
+ 1072 0006 0346     		mov	r3, r0
+ 1073 0008 0A46     		mov	r2, r1
+ 1074 000a FB71     		strb	r3, [r7, #7]
+ 1075 000c 1346     		mov	r3, r2
+ 1076 000e BB71     		strb	r3, [r7, #6]
+ 456:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     uint32_t source = 0U;
+ 1077              		.loc 1 456 0
+ 1078 0010 0023     		movs	r3, #0
+ 1079 0012 FB60     		str	r3, [r7, #12]
+ 457:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     source = ((uint32_t)0x0FU) << (AFIO_EXTI_SOURCE_FIELDS * (output_pin & AFIO_EXTI_SOURCE_MASK));
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 28
+
+
+ 1080              		.loc 1 457 0
+ 1081 0014 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 1082 0016 03F00303 		and	r3, r3, #3
+ 1083 001a 9B00     		lsls	r3, r3, #2
+ 1084 001c 0F22     		movs	r2, #15
+ 1085 001e 02FA03F3 		lsl	r3, r2, r3
+ 1086 0022 FB60     		str	r3, [r7, #12]
+ 458:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 459:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     /* select EXTI sources */
+ 460:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     if(GPIO_PIN_SOURCE_4 > output_pin){
+ 1087              		.loc 1 460 0
+ 1088 0024 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 1089 0026 032B     		cmp	r3, #3
+ 1090 0028 13D8     		bhi	.L58
+ 461:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         /* select EXTI0/EXTI1/EXTI2/EXTI3 */
+ 462:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         AFIO_EXTISS0 &= ~source;
+ 1091              		.loc 1 462 0
+ 1092 002a 2D4B     		ldr	r3, .L63
+ 1093 002c 1A68     		ldr	r2, [r3]
+ 1094 002e FB68     		ldr	r3, [r7, #12]
+ 1095 0030 DB43     		mvns	r3, r3
+ 1096 0032 2B49     		ldr	r1, .L63
+ 1097 0034 1340     		ands	r3, r3, r2
+ 1098 0036 0B60     		str	r3, [r1]
+ 463:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         AFIO_EXTISS0 |= (((uint32_t)output_port) << (AFIO_EXTI_SOURCE_FIELDS * (output_pin & AFIO_E
+ 1099              		.loc 1 463 0
+ 1100 0038 294B     		ldr	r3, .L63
+ 1101 003a 1A68     		ldr	r2, [r3]
+ 1102 003c F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 1103 003e BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 1104 0040 03F00303 		and	r3, r3, #3
+ 1105 0044 9B00     		lsls	r3, r3, #2
+ 1106 0046 01FA03F3 		lsl	r3, r1, r3
+ 1107 004a 2549     		ldr	r1, .L63
+ 1108 004c 1343     		orrs	r3, r3, r2
+ 1109 004e 0B60     		str	r3, [r1]
+ 464:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }else if(GPIO_PIN_SOURCE_8 > output_pin){
+ 465:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         /* select EXTI4/EXTI5/EXTI6/EXTI7 */
+ 466:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         AFIO_EXTISS1 &= ~source;
+ 467:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         AFIO_EXTISS1 |= (((uint32_t)output_port) << (AFIO_EXTI_SOURCE_FIELDS * (output_pin & AFIO_E
+ 468:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }else if(GPIO_PIN_SOURCE_12 > output_pin){
+ 469:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         /* select EXTI8/EXTI9/EXTI10/EXTI11 */
+ 470:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         AFIO_EXTISS2 &= ~source;
+ 471:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         AFIO_EXTISS2 |= (((uint32_t)output_port) << (AFIO_EXTI_SOURCE_FIELDS * (output_pin & AFIO_E
+ 472:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }else{
+ 473:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         /* select EXTI12/EXTI13/EXTI14/EXTI15 */
+ 474:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         AFIO_EXTISS3 &= ~source;
+ 475:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         AFIO_EXTISS3 |= (((uint32_t)output_port) << (AFIO_EXTI_SOURCE_FIELDS * (output_pin & AFIO_E
+ 476:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }
+ 477:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 1110              		.loc 1 477 0
+ 1111 0050 40E0     		b	.L62
+ 1112              	.L58:
+ 464:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }else if(GPIO_PIN_SOURCE_8 > output_pin){
+ 1113              		.loc 1 464 0
+ 1114 0052 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 1115 0054 072B     		cmp	r3, #7
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 29
+
+
+ 1116 0056 13D8     		bhi	.L60
+ 466:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         AFIO_EXTISS1 |= (((uint32_t)output_port) << (AFIO_EXTI_SOURCE_FIELDS * (output_pin & AFIO_E
+ 1117              		.loc 1 466 0
+ 1118 0058 224B     		ldr	r3, .L63+4
+ 1119 005a 1A68     		ldr	r2, [r3]
+ 1120 005c FB68     		ldr	r3, [r7, #12]
+ 1121 005e DB43     		mvns	r3, r3
+ 1122 0060 2049     		ldr	r1, .L63+4
+ 1123 0062 1340     		ands	r3, r3, r2
+ 1124 0064 0B60     		str	r3, [r1]
+ 467:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }else if(GPIO_PIN_SOURCE_12 > output_pin){
+ 1125              		.loc 1 467 0
+ 1126 0066 1F4B     		ldr	r3, .L63+4
+ 1127 0068 1A68     		ldr	r2, [r3]
+ 1128 006a F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 1129 006c BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 1130 006e 03F00303 		and	r3, r3, #3
+ 1131 0072 9B00     		lsls	r3, r3, #2
+ 1132 0074 01FA03F3 		lsl	r3, r1, r3
+ 1133 0078 1A49     		ldr	r1, .L63+4
+ 1134 007a 1343     		orrs	r3, r3, r2
+ 1135 007c 0B60     		str	r3, [r1]
+ 1136              		.loc 1 477 0
+ 1137 007e 29E0     		b	.L62
+ 1138              	.L60:
+ 468:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         /* select EXTI8/EXTI9/EXTI10/EXTI11 */
+ 1139              		.loc 1 468 0
+ 1140 0080 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 1141 0082 0B2B     		cmp	r3, #11
+ 1142 0084 13D8     		bhi	.L61
+ 470:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         AFIO_EXTISS2 |= (((uint32_t)output_port) << (AFIO_EXTI_SOURCE_FIELDS * (output_pin & AFIO_E
+ 1143              		.loc 1 470 0
+ 1144 0086 184B     		ldr	r3, .L63+8
+ 1145 0088 1A68     		ldr	r2, [r3]
+ 1146 008a FB68     		ldr	r3, [r7, #12]
+ 1147 008c DB43     		mvns	r3, r3
+ 1148 008e 1649     		ldr	r1, .L63+8
+ 1149 0090 1340     		ands	r3, r3, r2
+ 1150 0092 0B60     		str	r3, [r1]
+ 471:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }else{
+ 1151              		.loc 1 471 0
+ 1152 0094 144B     		ldr	r3, .L63+8
+ 1153 0096 1A68     		ldr	r2, [r3]
+ 1154 0098 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 1155 009a BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 1156 009c 03F00303 		and	r3, r3, #3
+ 1157 00a0 9B00     		lsls	r3, r3, #2
+ 1158 00a2 01FA03F3 		lsl	r3, r1, r3
+ 1159 00a6 1049     		ldr	r1, .L63+8
+ 1160 00a8 1343     		orrs	r3, r3, r2
+ 1161 00aa 0B60     		str	r3, [r1]
+ 1162              		.loc 1 477 0
+ 1163 00ac 12E0     		b	.L62
+ 1164              	.L61:
+ 474:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         AFIO_EXTISS3 |= (((uint32_t)output_port) << (AFIO_EXTI_SOURCE_FIELDS * (output_pin & AFIO_E
+ 1165              		.loc 1 474 0
+ 1166 00ae 0F4B     		ldr	r3, .L63+12
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 30
+
+
+ 1167 00b0 1A68     		ldr	r2, [r3]
+ 1168 00b2 FB68     		ldr	r3, [r7, #12]
+ 1169 00b4 DB43     		mvns	r3, r3
+ 1170 00b6 0D49     		ldr	r1, .L63+12
+ 1171 00b8 1340     		ands	r3, r3, r2
+ 1172 00ba 0B60     		str	r3, [r1]
+ 475:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }
+ 1173              		.loc 1 475 0
+ 1174 00bc 0B4B     		ldr	r3, .L63+12
+ 1175 00be 1A68     		ldr	r2, [r3]
+ 1176 00c0 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 1177 00c2 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 1178 00c4 03F00303 		and	r3, r3, #3
+ 1179 00c8 9B00     		lsls	r3, r3, #2
+ 1180 00ca 01FA03F3 		lsl	r3, r1, r3
+ 1181 00ce 0749     		ldr	r1, .L63+12
+ 1182 00d0 1343     		orrs	r3, r3, r2
+ 1183 00d2 0B60     		str	r3, [r1]
+ 1184              	.L62:
+ 1185              		.loc 1 477 0
+ 1186 00d4 00BF     		nop
+ 1187 00d6 1437     		adds	r7, r7, #20
+ 1188              	.LCFI70:
+ 1189              		.cfi_def_cfa_offset 4
+ 1190 00d8 BD46     		mov	sp, r7
+ 1191              	.LCFI71:
+ 1192              		.cfi_def_cfa_register 13
+ 1193              		@ sp needed
+ 1194 00da 5DF8047B 		ldr	r7, [sp], #4
+ 1195              	.LCFI72:
+ 1196              		.cfi_restore 7
+ 1197              		.cfi_def_cfa_offset 0
+ 1198 00de 7047     		bx	lr
+ 1199              	.L64:
+ 1200              		.align	2
+ 1201              	.L63:
+ 1202 00e0 08000140 		.word	1073807368
+ 1203 00e4 0C000140 		.word	1073807372
+ 1204 00e8 10000140 		.word	1073807376
+ 1205 00ec 14000140 		.word	1073807380
+ 1206              		.cfi_endproc
+ 1207              	.LFE128:
+ 1209              		.section	.text.gpio_event_output_config,"ax",%progbits
+ 1210              		.align	1
+ 1211              		.global	gpio_event_output_config
+ 1212              		.syntax unified
+ 1213              		.thumb
+ 1214              		.thumb_func
+ 1215              		.fpu fpv4-sp-d16
+ 1217              	gpio_event_output_config:
+ 1218              	.LFB129:
+ 478:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 479:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 480:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      configure GPIO pin event output
+ 481:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  output_port: gpio event output port
+ 482:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 only one parameter can be selected which are shown as below:
+ 483:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_EVENT_PORT_GPIOA: event output port A
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 31
+
+
+ 484:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_EVENT_PORT_GPIOB: event output port B
+ 485:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_EVENT_PORT_GPIOC: event output port C
+ 486:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_EVENT_PORT_GPIOD: event output port D
+ 487:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_EVENT_PORT_GPIOE: event output port E
+ 488:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  output_pin: GPIO event output pin
+ 489:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 only one parameter can be selected which are shown as below:
+ 490:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_EVENT_PIN_x(x=0..15)
+ 491:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 492:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     none
+ 493:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+ 494:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** void gpio_event_output_config(uint8_t output_port, uint8_t output_pin)
+ 495:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 1219              		.loc 1 495 0
+ 1220              		.cfi_startproc
+ 1221              		@ args = 0, pretend = 0, frame = 16
+ 1222              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1223              		@ link register save eliminated.
+ 1224 0000 80B4     		push	{r7}
+ 1225              	.LCFI73:
+ 1226              		.cfi_def_cfa_offset 4
+ 1227              		.cfi_offset 7, -4
+ 1228 0002 85B0     		sub	sp, sp, #20
+ 1229              	.LCFI74:
+ 1230              		.cfi_def_cfa_offset 24
+ 1231 0004 00AF     		add	r7, sp, #0
+ 1232              	.LCFI75:
+ 1233              		.cfi_def_cfa_register 7
+ 1234 0006 0346     		mov	r3, r0
+ 1235 0008 0A46     		mov	r2, r1
+ 1236 000a FB71     		strb	r3, [r7, #7]
+ 1237 000c 1346     		mov	r3, r2
+ 1238 000e BB71     		strb	r3, [r7, #6]
+ 496:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     uint32_t reg = 0U;
+ 1239              		.loc 1 496 0
+ 1240 0010 0023     		movs	r3, #0
+ 1241 0012 FB60     		str	r3, [r7, #12]
+ 497:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     reg = AFIO_EC;
+ 1242              		.loc 1 497 0
+ 1243 0014 0C4B     		ldr	r3, .L66
+ 1244 0016 1B68     		ldr	r3, [r3]
+ 1245 0018 FB60     		str	r3, [r7, #12]
+ 498:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     
+ 499:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     /* clear AFIO_EC_PORT and AFIO_EC_PIN bits */
+ 500:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     reg &= (uint32_t)(~(AFIO_EC_PORT|AFIO_EC_PIN));
+ 1246              		.loc 1 500 0
+ 1247 001a FB68     		ldr	r3, [r7, #12]
+ 1248 001c 23F07F03 		bic	r3, r3, #127
+ 1249 0020 FB60     		str	r3, [r7, #12]
+ 501:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     
+ 502:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     reg |= (uint32_t)((uint32_t)output_port << GPIO_OUTPUT_PORT_OFFSET);
+ 1250              		.loc 1 502 0
+ 1251 0022 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1252 0024 1B01     		lsls	r3, r3, #4
+ 1253 0026 FA68     		ldr	r2, [r7, #12]
+ 1254 0028 1343     		orrs	r3, r3, r2
+ 1255 002a FB60     		str	r3, [r7, #12]
+ 503:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     reg |= (uint32_t)output_pin;
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 32
+
+
+ 1256              		.loc 1 503 0
+ 1257 002c BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 1258 002e FA68     		ldr	r2, [r7, #12]
+ 1259 0030 1343     		orrs	r3, r3, r2
+ 1260 0032 FB60     		str	r3, [r7, #12]
+ 504:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     
+ 505:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     AFIO_EC = reg;
+ 1261              		.loc 1 505 0
+ 1262 0034 044A     		ldr	r2, .L66
+ 1263 0036 FB68     		ldr	r3, [r7, #12]
+ 1264 0038 1360     		str	r3, [r2]
+ 506:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 1265              		.loc 1 506 0
+ 1266 003a 00BF     		nop
+ 1267 003c 1437     		adds	r7, r7, #20
+ 1268              	.LCFI76:
+ 1269              		.cfi_def_cfa_offset 4
+ 1270 003e BD46     		mov	sp, r7
+ 1271              	.LCFI77:
+ 1272              		.cfi_def_cfa_register 13
+ 1273              		@ sp needed
+ 1274 0040 5DF8047B 		ldr	r7, [sp], #4
+ 1275              	.LCFI78:
+ 1276              		.cfi_restore 7
+ 1277              		.cfi_def_cfa_offset 0
+ 1278 0044 7047     		bx	lr
+ 1279              	.L67:
+ 1280 0046 00BF     		.align	2
+ 1281              	.L66:
+ 1282 0048 00000140 		.word	1073807360
+ 1283              		.cfi_endproc
+ 1284              	.LFE129:
+ 1286              		.section	.text.gpio_event_output_enable,"ax",%progbits
+ 1287              		.align	1
+ 1288              		.global	gpio_event_output_enable
+ 1289              		.syntax unified
+ 1290              		.thumb
+ 1291              		.thumb_func
+ 1292              		.fpu fpv4-sp-d16
+ 1294              	gpio_event_output_enable:
+ 1295              	.LFB130:
+ 507:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 508:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 509:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      enable GPIO pin event output
+ 510:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  none
+ 511:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 512:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     none
+ 513:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+ 514:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** void gpio_event_output_enable(void)
+ 515:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 1296              		.loc 1 515 0
+ 1297              		.cfi_startproc
+ 1298              		@ args = 0, pretend = 0, frame = 0
+ 1299              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1300              		@ link register save eliminated.
+ 1301 0000 80B4     		push	{r7}
+ 1302              	.LCFI79:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 33
+
+
+ 1303              		.cfi_def_cfa_offset 4
+ 1304              		.cfi_offset 7, -4
+ 1305 0002 00AF     		add	r7, sp, #0
+ 1306              	.LCFI80:
+ 1307              		.cfi_def_cfa_register 7
+ 516:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     AFIO_EC |= AFIO_EC_EOE;
+ 1308              		.loc 1 516 0
+ 1309 0004 054B     		ldr	r3, .L69
+ 1310 0006 1B68     		ldr	r3, [r3]
+ 1311 0008 044A     		ldr	r2, .L69
+ 1312 000a 43F08003 		orr	r3, r3, #128
+ 1313 000e 1360     		str	r3, [r2]
+ 517:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 1314              		.loc 1 517 0
+ 1315 0010 00BF     		nop
+ 1316 0012 BD46     		mov	sp, r7
+ 1317              	.LCFI81:
+ 1318              		.cfi_def_cfa_register 13
+ 1319              		@ sp needed
+ 1320 0014 5DF8047B 		ldr	r7, [sp], #4
+ 1321              	.LCFI82:
+ 1322              		.cfi_restore 7
+ 1323              		.cfi_def_cfa_offset 0
+ 1324 0018 7047     		bx	lr
+ 1325              	.L70:
+ 1326 001a 00BF     		.align	2
+ 1327              	.L69:
+ 1328 001c 00000140 		.word	1073807360
+ 1329              		.cfi_endproc
+ 1330              	.LFE130:
+ 1332              		.section	.text.gpio_event_output_disable,"ax",%progbits
+ 1333              		.align	1
+ 1334              		.global	gpio_event_output_disable
+ 1335              		.syntax unified
+ 1336              		.thumb
+ 1337              		.thumb_func
+ 1338              		.fpu fpv4-sp-d16
+ 1340              	gpio_event_output_disable:
+ 1341              	.LFB131:
+ 518:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 519:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 520:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      disable GPIO pin event output
+ 521:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  none
+ 522:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 523:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     none
+ 524:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+ 525:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** void gpio_event_output_disable(void)
+ 526:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 1342              		.loc 1 526 0
+ 1343              		.cfi_startproc
+ 1344              		@ args = 0, pretend = 0, frame = 0
+ 1345              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1346              		@ link register save eliminated.
+ 1347 0000 80B4     		push	{r7}
+ 1348              	.LCFI83:
+ 1349              		.cfi_def_cfa_offset 4
+ 1350              		.cfi_offset 7, -4
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 34
+
+
+ 1351 0002 00AF     		add	r7, sp, #0
+ 1352              	.LCFI84:
+ 1353              		.cfi_def_cfa_register 7
+ 527:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     AFIO_EC &= (uint32_t)(~AFIO_EC_EOE);
+ 1354              		.loc 1 527 0
+ 1355 0004 054B     		ldr	r3, .L72
+ 1356 0006 1B68     		ldr	r3, [r3]
+ 1357 0008 044A     		ldr	r2, .L72
+ 1358 000a 23F08003 		bic	r3, r3, #128
+ 1359 000e 1360     		str	r3, [r2]
+ 528:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 1360              		.loc 1 528 0
+ 1361 0010 00BF     		nop
+ 1362 0012 BD46     		mov	sp, r7
+ 1363              	.LCFI85:
+ 1364              		.cfi_def_cfa_register 13
+ 1365              		@ sp needed
+ 1366 0014 5DF8047B 		ldr	r7, [sp], #4
+ 1367              	.LCFI86:
+ 1368              		.cfi_restore 7
+ 1369              		.cfi_def_cfa_offset 0
+ 1370 0018 7047     		bx	lr
+ 1371              	.L73:
+ 1372 001a 00BF     		.align	2
+ 1373              	.L72:
+ 1374 001c 00000140 		.word	1073807360
+ 1375              		.cfi_endproc
+ 1376              	.LFE131:
+ 1378              		.section	.text.gpio_pin_lock,"ax",%progbits
+ 1379              		.align	1
+ 1380              		.global	gpio_pin_lock
+ 1381              		.syntax unified
+ 1382              		.thumb
+ 1383              		.thumb_func
+ 1384              		.fpu fpv4-sp-d16
+ 1386              	gpio_pin_lock:
+ 1387              	.LFB132:
+ 529:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 530:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 531:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      lock GPIO pin
+ 532:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  gpio_periph: GPIOx(x = A,B,C,D,E,F,G)
+ 533:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  pin: GPIO pin
+ 534:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 one or more parameters can be selected which are shown as below:
+ 535:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_PIN_x(x=0..15), GPIO_PIN_ALL
+ 536:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 537:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     none
+ 538:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+ 539:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** void gpio_pin_lock(uint32_t gpio_periph,uint32_t pin)
+ 540:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 1388              		.loc 1 540 0
+ 1389              		.cfi_startproc
+ 1390              		@ args = 0, pretend = 0, frame = 16
+ 1391              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1392              		@ link register save eliminated.
+ 1393 0000 80B4     		push	{r7}
+ 1394              	.LCFI87:
+ 1395              		.cfi_def_cfa_offset 4
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 35
+
+
+ 1396              		.cfi_offset 7, -4
+ 1397 0002 85B0     		sub	sp, sp, #20
+ 1398              	.LCFI88:
+ 1399              		.cfi_def_cfa_offset 24
+ 1400 0004 00AF     		add	r7, sp, #0
+ 1401              	.LCFI89:
+ 1402              		.cfi_def_cfa_register 7
+ 1403 0006 7860     		str	r0, [r7, #4]
+ 1404 0008 3960     		str	r1, [r7]
+ 541:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     uint32_t lock = 0x00010000U;
+ 1405              		.loc 1 541 0
+ 1406 000a 4FF48033 		mov	r3, #65536
+ 1407 000e FB60     		str	r3, [r7, #12]
+ 542:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     lock |= pin;
+ 1408              		.loc 1 542 0
+ 1409 0010 FA68     		ldr	r2, [r7, #12]
+ 1410 0012 3B68     		ldr	r3, [r7]
+ 1411 0014 1343     		orrs	r3, r3, r2
+ 1412 0016 FB60     		str	r3, [r7, #12]
+ 543:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 544:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     /* lock key writing sequence: write 1 -> write 0 -> write 1 -> read 0 -> read 1 */
+ 545:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     GPIO_LOCK(gpio_periph) = (uint32_t)lock;
+ 1413              		.loc 1 545 0
+ 1414 0018 7B68     		ldr	r3, [r7, #4]
+ 1415 001a 1833     		adds	r3, r3, #24
+ 1416 001c 1A46     		mov	r2, r3
+ 1417 001e FB68     		ldr	r3, [r7, #12]
+ 1418 0020 1360     		str	r3, [r2]
+ 546:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     GPIO_LOCK(gpio_periph) = (uint32_t)pin;
+ 1419              		.loc 1 546 0
+ 1420 0022 7B68     		ldr	r3, [r7, #4]
+ 1421 0024 1833     		adds	r3, r3, #24
+ 1422 0026 1A46     		mov	r2, r3
+ 1423 0028 3B68     		ldr	r3, [r7]
+ 1424 002a 1360     		str	r3, [r2]
+ 547:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     GPIO_LOCK(gpio_periph) = (uint32_t)lock;
+ 1425              		.loc 1 547 0
+ 1426 002c 7B68     		ldr	r3, [r7, #4]
+ 1427 002e 1833     		adds	r3, r3, #24
+ 1428 0030 1A46     		mov	r2, r3
+ 1429 0032 FB68     		ldr	r3, [r7, #12]
+ 1430 0034 1360     		str	r3, [r2]
+ 548:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     lock = GPIO_LOCK(gpio_periph);
+ 1431              		.loc 1 548 0
+ 1432 0036 7B68     		ldr	r3, [r7, #4]
+ 1433 0038 1833     		adds	r3, r3, #24
+ 1434 003a 1B68     		ldr	r3, [r3]
+ 1435 003c FB60     		str	r3, [r7, #12]
+ 549:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     lock = GPIO_LOCK(gpio_periph);
+ 1436              		.loc 1 549 0
+ 1437 003e 7B68     		ldr	r3, [r7, #4]
+ 1438 0040 1833     		adds	r3, r3, #24
+ 1439 0042 1B68     		ldr	r3, [r3]
+ 1440 0044 FB60     		str	r3, [r7, #12]
+ 550:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 1441              		.loc 1 550 0
+ 1442 0046 00BF     		nop
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 36
+
+
+ 1443 0048 1437     		adds	r7, r7, #20
+ 1444              	.LCFI90:
+ 1445              		.cfi_def_cfa_offset 4
+ 1446 004a BD46     		mov	sp, r7
+ 1447              	.LCFI91:
+ 1448              		.cfi_def_cfa_register 13
+ 1449              		@ sp needed
+ 1450 004c 5DF8047B 		ldr	r7, [sp], #4
+ 1451              	.LCFI92:
+ 1452              		.cfi_restore 7
+ 1453              		.cfi_def_cfa_offset 0
+ 1454 0050 7047     		bx	lr
+ 1455              		.cfi_endproc
+ 1456              	.LFE132:
+ 1458              		.section	.text.gpio_compensation_config,"ax",%progbits
+ 1459              		.align	1
+ 1460              		.global	gpio_compensation_config
+ 1461              		.syntax unified
+ 1462              		.thumb
+ 1463              		.thumb_func
+ 1464              		.fpu fpv4-sp-d16
+ 1466              	gpio_compensation_config:
+ 1467              	.LFB133:
+ 551:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 552:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 553:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      configure the I/O compensation cell
+ 554:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  compensation: specifies the I/O compensation cell mode
+ 555:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****                 only one parameter can be selected which are shown as below:
+ 556:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_COMPENSATION_ENABLE: I/O compensation cell is enabled
+ 557:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****       \arg        GPIO_COMPENSATION_DISABLE: I/O compensation cell is disabled
+ 558:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 559:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     none
+ 560:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** */
+ 561:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** void gpio_compensation_config(uint32_t compensation)
+ 562:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 1468              		.loc 1 562 0
+ 1469              		.cfi_startproc
+ 1470              		@ args = 0, pretend = 0, frame = 16
+ 1471              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1472              		@ link register save eliminated.
+ 1473 0000 80B4     		push	{r7}
+ 1474              	.LCFI93:
+ 1475              		.cfi_def_cfa_offset 4
+ 1476              		.cfi_offset 7, -4
+ 1477 0002 85B0     		sub	sp, sp, #20
+ 1478              	.LCFI94:
+ 1479              		.cfi_def_cfa_offset 24
+ 1480 0004 00AF     		add	r7, sp, #0
+ 1481              	.LCFI95:
+ 1482              		.cfi_def_cfa_register 7
+ 1483 0006 7860     		str	r0, [r7, #4]
+ 563:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     uint32_t reg;
+ 564:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     reg = AFIO_CPSCTL;
+ 1484              		.loc 1 564 0
+ 1485 0008 084B     		ldr	r3, .L76
+ 1486 000a 1B68     		ldr	r3, [r3]
+ 1487 000c FB60     		str	r3, [r7, #12]
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 37
+
+
+ 565:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 566:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     /* reset the AFIO_CPSCTL_CPS_EN bit and set according to gpio_compensation */
+ 567:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     reg &= ~AFIO_CPSCTL_CPS_EN;
+ 1488              		.loc 1 567 0
+ 1489 000e FB68     		ldr	r3, [r7, #12]
+ 1490 0010 23F00103 		bic	r3, r3, #1
+ 1491 0014 FB60     		str	r3, [r7, #12]
+ 568:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     AFIO_CPSCTL = (reg | compensation);
+ 1492              		.loc 1 568 0
+ 1493 0016 0549     		ldr	r1, .L76
+ 1494 0018 FA68     		ldr	r2, [r7, #12]
+ 1495 001a 7B68     		ldr	r3, [r7, #4]
+ 1496 001c 1343     		orrs	r3, r3, r2
+ 1497 001e 0B60     		str	r3, [r1]
+ 569:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 1498              		.loc 1 569 0
+ 1499 0020 00BF     		nop
+ 1500 0022 1437     		adds	r7, r7, #20
+ 1501              	.LCFI96:
+ 1502              		.cfi_def_cfa_offset 4
+ 1503 0024 BD46     		mov	sp, r7
+ 1504              	.LCFI97:
+ 1505              		.cfi_def_cfa_register 13
+ 1506              		@ sp needed
+ 1507 0026 5DF8047B 		ldr	r7, [sp], #4
+ 1508              	.LCFI98:
+ 1509              		.cfi_restore 7
+ 1510              		.cfi_def_cfa_offset 0
+ 1511 002a 7047     		bx	lr
+ 1512              	.L77:
+ 1513              		.align	2
+ 1514              	.L76:
+ 1515 002c 20000140 		.word	1073807392
+ 1516              		.cfi_endproc
+ 1517              	.LFE133:
+ 1519              		.section	.text.gpio_compensation_flag_get,"ax",%progbits
+ 1520              		.align	1
+ 1521              		.global	gpio_compensation_flag_get
+ 1522              		.syntax unified
+ 1523              		.thumb
+ 1524              		.thumb_func
+ 1525              		.fpu fpv4-sp-d16
+ 1527              	gpio_compensation_flag_get:
+ 1528              	.LFB134:
+ 570:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** 
+ 571:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** /*!
+ 572:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \brief      check the I/O compensation cell is ready or not
+ 573:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[in]  none
+ 574:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \param[out] none
+ 575:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     \retval     FlagStatus: SET or RESET
+ 576:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****   */
+ 577:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** FlagStatus gpio_compensation_flag_get(void)
+ 578:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** {
+ 1529              		.loc 1 578 0
+ 1530              		.cfi_startproc
+ 1531              		@ args = 0, pretend = 0, frame = 0
+ 1532              		@ frame_needed = 1, uses_anonymous_args = 0
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 38
+
+
+ 1533              		@ link register save eliminated.
+ 1534 0000 80B4     		push	{r7}
+ 1535              	.LCFI99:
+ 1536              		.cfi_def_cfa_offset 4
+ 1537              		.cfi_offset 7, -4
+ 1538 0002 00AF     		add	r7, sp, #0
+ 1539              	.LCFI100:
+ 1540              		.cfi_def_cfa_register 7
+ 579:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     if(((uint32_t)RESET) != (AFIO_CPSCTL & AFIO_CPSCTL_CPS_RDY)){
+ 1541              		.loc 1 579 0
+ 1542 0004 064B     		ldr	r3, .L81
+ 1543 0006 1B68     		ldr	r3, [r3]
+ 1544 0008 03F48073 		and	r3, r3, #256
+ 1545 000c 002B     		cmp	r3, #0
+ 1546 000e 01D0     		beq	.L79
+ 580:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         return SET;
+ 1547              		.loc 1 580 0
+ 1548 0010 0123     		movs	r3, #1
+ 1549 0012 00E0     		b	.L80
+ 1550              	.L79:
+ 581:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }else{
+ 582:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****         return RESET;
+ 1551              		.loc 1 582 0
+ 1552 0014 0023     		movs	r3, #0
+ 1553              	.L80:
+ 583:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c ****     }
+ 584:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_gpio.c **** }
+ 1554              		.loc 1 584 0
+ 1555 0016 1846     		mov	r0, r3
+ 1556 0018 BD46     		mov	sp, r7
+ 1557              	.LCFI101:
+ 1558              		.cfi_def_cfa_register 13
+ 1559              		@ sp needed
+ 1560 001a 5DF8047B 		ldr	r7, [sp], #4
+ 1561              	.LCFI102:
+ 1562              		.cfi_restore 7
+ 1563              		.cfi_def_cfa_offset 0
+ 1564 001e 7047     		bx	lr
+ 1565              	.L82:
+ 1566              		.align	2
+ 1567              	.L81:
+ 1568 0020 20000140 		.word	1073807392
+ 1569              		.cfi_endproc
+ 1570              	.LFE134:
+ 1572              		.text
+ 1573              	.Letext0:
+ 1574              		.file 2 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 1575              		.file 3 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 1576              		.file 4 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 1577              		.file 5 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 1578              		.file 6 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 1579              		.file 7 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 1580              		.file 8 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 1581              		.file 9 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 1582              		.file 10 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\lib\\gcc\\a
+ 1583              		.file 11 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ 1584              		.file 12 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 39
+
+
+ 1585              		.file 13 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s 			page 40
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gd32f30x_gpio.c
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:18     .text.gpio_deinit:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:25     .text.gpio_deinit:00000000 gpio_deinit
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:153    .text.gpio_deinit:000000c4 $d
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:164    .text.gpio_afio_deinit:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:171    .text.gpio_afio_deinit:00000000 gpio_afio_deinit
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:198    .text.gpio_init:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:205    .text.gpio_init:00000000 gpio_init
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:450    .text.gpio_bit_set:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:457    .text.gpio_bit_set:00000000 gpio_bit_set
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:500    .text.gpio_bit_reset:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:507    .text.gpio_bit_reset:00000000 gpio_bit_reset
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:550    .text.gpio_bit_write:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:557    .text.gpio_bit_write:00000000 gpio_bit_write
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:616    .text.gpio_port_write:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:623    .text.gpio_port_write:00000000 gpio_port_write
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:667    .text.gpio_input_bit_get:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:674    .text.gpio_input_bit_get:00000000 gpio_input_bit_get
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:726    .text.gpio_input_port_get:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:733    .text.gpio_input_port_get:00000000 gpio_input_port_get
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:774    .text.gpio_output_bit_get:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:781    .text.gpio_output_bit_get:00000000 gpio_output_bit_get
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:833    .text.gpio_output_port_get:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:840    .text.gpio_output_port_get:00000000 gpio_output_port_get
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:881    .text.gpio_pin_remap_config:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:888    .text.gpio_pin_remap_config:00000000 gpio_pin_remap_config
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1042   .text.gpio_pin_remap_config:000000e0 $d
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1048   .text.gpio_exti_source_select:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1055   .text.gpio_exti_source_select:00000000 gpio_exti_source_select
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1202   .text.gpio_exti_source_select:000000e0 $d
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1210   .text.gpio_event_output_config:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1217   .text.gpio_event_output_config:00000000 gpio_event_output_config
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1282   .text.gpio_event_output_config:00000048 $d
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1287   .text.gpio_event_output_enable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1294   .text.gpio_event_output_enable:00000000 gpio_event_output_enable
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1328   .text.gpio_event_output_enable:0000001c $d
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1333   .text.gpio_event_output_disable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1340   .text.gpio_event_output_disable:00000000 gpio_event_output_disable
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1374   .text.gpio_event_output_disable:0000001c $d
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1379   .text.gpio_pin_lock:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1386   .text.gpio_pin_lock:00000000 gpio_pin_lock
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1459   .text.gpio_compensation_config:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1466   .text.gpio_compensation_config:00000000 gpio_compensation_config
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1515   .text.gpio_compensation_config:0000002c $d
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1520   .text.gpio_compensation_flag_get:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1527   .text.gpio_compensation_flag_get:00000000 gpio_compensation_flag_get
+C:\Users\49542\AppData\Local\Temp\ccKGBcLw.s:1568   .text.gpio_compensation_flag_get:00000020 $d
+
+UNDEFINED SYMBOLS
+rcu_periph_reset_enable
+rcu_periph_reset_disable

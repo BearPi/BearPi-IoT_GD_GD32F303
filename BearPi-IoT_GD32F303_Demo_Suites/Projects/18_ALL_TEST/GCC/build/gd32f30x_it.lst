@@ -1,0 +1,601 @@
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gd32f30x_it.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.NMI_Handler,"ax",%progbits
+  18              		.align	1
+  19              		.global	NMI_Handler
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv4-sp-d16
+  25              	NMI_Handler:
+  26              	.LFB116:
+  27              		.file 1 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT
+   1:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** /*!
+   2:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \file  gd32f30x_it.c
+   3:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \brief interrupt service routines
+   4:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+   5:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \version 2019-10-30, V1.0.0, demo for BearPi-IoT_GD32F30x
+   6:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+   7:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** */
+   8:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+   9:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** /*
+  10:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     Copyright (c) 2019, BearPi LIMITED.
+  11:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+  12:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     All rights reserved.
+  13:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+  14:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     Redistribution and use in source and binary forms, with or without modification, 
+  15:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** are permitted provided that the following conditions are met:
+  16:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+  17:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     1. Redistributions of source code must retain the above copyright notice, this 
+  18:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****        list of conditions and the following disclaimer.
+  19:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     2. Redistributions in binary form must reproduce the above copyright notice, 
+  20:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****        this list of conditions and the following disclaimer in the documentation 
+  21:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****        and/or other materials provided with the distribution.
+  22:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     3. Neither the name of the copyright holder nor the names of its contributors 
+  23:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****        may be used to endorse or promote products derived from this software without 
+  24:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****        specific prior written permission.
+  25:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+  26:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+  27:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  28:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  29:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  30:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  31:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s 			page 2
+
+
+  32:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+  33:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  34:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+  35:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** OF SUCH DAMAGE.
+  36:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** */
+  37:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+  38:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** #include "gd32f30x_it.h"
+  39:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** #include "sdcard.h"
+  40:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** #include "systick.h"
+  41:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** #include "BearPi-IoT_gd32f303.h"
+  42:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** #include "lcd.h"
+  43:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+  44:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** extern uint8_t   AT_tx_buffer[];
+  45:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** extern uint8_t   rx_buffer[] ;
+  46:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** extern uint32_t  nbr_data_to_read, nbr_data_to_send;
+  47:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** extern volatile uint16_t  tx_counter, rx_counter;
+  48:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+  49:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** /*!
+  50:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \brief      this function handles NMI exception
+  51:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[in]  none
+  52:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[out] none
+  53:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \retval     none
+  54:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** */
+  55:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** void NMI_Handler(void)
+  56:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** {
+  28              		.loc 1 56 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  57:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** }
+  33              		.loc 1 57 0
+  34 0000 7047     		bx	lr
+  35              		.cfi_endproc
+  36              	.LFE116:
+  38              		.section	.text.HardFault_Handler,"ax",%progbits
+  39              		.align	1
+  40              		.global	HardFault_Handler
+  41              		.syntax unified
+  42              		.thumb
+  43              		.thumb_func
+  44              		.fpu fpv4-sp-d16
+  46              	HardFault_Handler:
+  47              	.LFB117:
+  58:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+  59:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** /*!
+  60:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \brief      this function handles HardFault exception
+  61:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[in]  none
+  62:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[out] none
+  63:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \retval     none
+  64:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** */
+  65:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** void HardFault_Handler(void)
+  66:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** {
+  48              		.loc 1 66 0
+  49              		.cfi_startproc
+  50              		@ Volatile: function does not return.
+  51              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s 			page 3
+
+
+  52              		@ frame_needed = 0, uses_anonymous_args = 0
+  53              		@ link register save eliminated.
+  54              	.L3:
+  55 0000 FEE7     		b	.L3
+  56              		.cfi_endproc
+  57              	.LFE117:
+  59              		.section	.text.MemManage_Handler,"ax",%progbits
+  60              		.align	1
+  61              		.global	MemManage_Handler
+  62              		.syntax unified
+  63              		.thumb
+  64              		.thumb_func
+  65              		.fpu fpv4-sp-d16
+  67              	MemManage_Handler:
+  68              	.LFB118:
+  67:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     /* if Hard Fault exception occurs, go to infinite loop */
+  68:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     while (1){
+  69:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     }
+  70:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** }
+  71:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+  72:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** /*!
+  73:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \brief      this function handles MemManage exception
+  74:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[in]  none
+  75:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[out] none
+  76:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \retval     none
+  77:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** */
+  78:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** void MemManage_Handler(void)
+  79:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** {
+  69              		.loc 1 79 0
+  70              		.cfi_startproc
+  71              		@ Volatile: function does not return.
+  72              		@ args = 0, pretend = 0, frame = 0
+  73              		@ frame_needed = 0, uses_anonymous_args = 0
+  74              		@ link register save eliminated.
+  75              	.L5:
+  76 0000 FEE7     		b	.L5
+  77              		.cfi_endproc
+  78              	.LFE118:
+  80              		.section	.text.BusFault_Handler,"ax",%progbits
+  81              		.align	1
+  82              		.global	BusFault_Handler
+  83              		.syntax unified
+  84              		.thumb
+  85              		.thumb_func
+  86              		.fpu fpv4-sp-d16
+  88              	BusFault_Handler:
+  89              	.LFB119:
+  80:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     /* if Memory Manage exception occurs, go to infinite loop */
+  81:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     while (1){
+  82:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     }
+  83:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** }
+  84:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+  85:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** /*!
+  86:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \brief      this function handles BusFault exception
+  87:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[in]  none
+  88:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[out] none
+  89:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \retval     none
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s 			page 4
+
+
+  90:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** */
+  91:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** void BusFault_Handler(void)
+  92:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** {
+  90              		.loc 1 92 0
+  91              		.cfi_startproc
+  92              		@ Volatile: function does not return.
+  93              		@ args = 0, pretend = 0, frame = 0
+  94              		@ frame_needed = 0, uses_anonymous_args = 0
+  95              		@ link register save eliminated.
+  96              	.L7:
+  97 0000 FEE7     		b	.L7
+  98              		.cfi_endproc
+  99              	.LFE119:
+ 101              		.section	.text.UsageFault_Handler,"ax",%progbits
+ 102              		.align	1
+ 103              		.global	UsageFault_Handler
+ 104              		.syntax unified
+ 105              		.thumb
+ 106              		.thumb_func
+ 107              		.fpu fpv4-sp-d16
+ 109              	UsageFault_Handler:
+ 110              	.LFB120:
+  93:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     /* if Bus Fault exception occurs, go to infinite loop */
+  94:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     while (1){
+  95:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     }
+  96:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** }
+  97:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+  98:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** /*!
+  99:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \brief      this function handles UsageFault exception
+ 100:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[in]  none
+ 101:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[out] none
+ 102:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \retval     none
+ 103:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** */
+ 104:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** void UsageFault_Handler(void)
+ 105:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** {
+ 111              		.loc 1 105 0
+ 112              		.cfi_startproc
+ 113              		@ Volatile: function does not return.
+ 114              		@ args = 0, pretend = 0, frame = 0
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116              		@ link register save eliminated.
+ 117              	.L9:
+ 118 0000 FEE7     		b	.L9
+ 119              		.cfi_endproc
+ 120              	.LFE120:
+ 122              		.section	.text.SVC_Handler,"ax",%progbits
+ 123              		.align	1
+ 124              		.global	SVC_Handler
+ 125              		.syntax unified
+ 126              		.thumb
+ 127              		.thumb_func
+ 128              		.fpu fpv4-sp-d16
+ 130              	SVC_Handler:
+ 131              	.LFB121:
+ 106:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     /* if Usage Fault exception occurs, go to infinite loop */
+ 107:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     while (1){
+ 108:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     }
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s 			page 5
+
+
+ 109:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** }
+ 110:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+ 111:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** /*!
+ 112:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \brief      this function handles SVC exception
+ 113:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[in]  none
+ 114:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[out] none
+ 115:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \retval     none
+ 116:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** */
+ 117:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** void SVC_Handler(void)
+ 118:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** {
+ 132              		.loc 1 118 0
+ 133              		.cfi_startproc
+ 134              		@ args = 0, pretend = 0, frame = 0
+ 135              		@ frame_needed = 0, uses_anonymous_args = 0
+ 136              		@ link register save eliminated.
+ 119:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** }
+ 137              		.loc 1 119 0
+ 138 0000 7047     		bx	lr
+ 139              		.cfi_endproc
+ 140              	.LFE121:
+ 142              		.section	.text.DebugMon_Handler,"ax",%progbits
+ 143              		.align	1
+ 144              		.global	DebugMon_Handler
+ 145              		.syntax unified
+ 146              		.thumb
+ 147              		.thumb_func
+ 148              		.fpu fpv4-sp-d16
+ 150              	DebugMon_Handler:
+ 151              	.LFB122:
+ 120:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+ 121:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** /*!
+ 122:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \brief      this function handles DebugMon exception
+ 123:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[in]  none
+ 124:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[out] none
+ 125:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \retval     none
+ 126:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** */
+ 127:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** void DebugMon_Handler(void)
+ 128:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** {
+ 152              		.loc 1 128 0
+ 153              		.cfi_startproc
+ 154              		@ args = 0, pretend = 0, frame = 0
+ 155              		@ frame_needed = 0, uses_anonymous_args = 0
+ 156              		@ link register save eliminated.
+ 129:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** }
+ 157              		.loc 1 129 0
+ 158 0000 7047     		bx	lr
+ 159              		.cfi_endproc
+ 160              	.LFE122:
+ 162              		.section	.text.PendSV_Handler,"ax",%progbits
+ 163              		.align	1
+ 164              		.global	PendSV_Handler
+ 165              		.syntax unified
+ 166              		.thumb
+ 167              		.thumb_func
+ 168              		.fpu fpv4-sp-d16
+ 170              	PendSV_Handler:
+ 171              	.LFB123:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s 			page 6
+
+
+ 130:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+ 131:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** /*!
+ 132:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \brief      this function handles PendSV exception
+ 133:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[in]  none
+ 134:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[out] none
+ 135:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \retval     none
+ 136:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** */
+ 137:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** void PendSV_Handler(void)
+ 138:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** {
+ 172              		.loc 1 138 0
+ 173              		.cfi_startproc
+ 174              		@ args = 0, pretend = 0, frame = 0
+ 175              		@ frame_needed = 0, uses_anonymous_args = 0
+ 176              		@ link register save eliminated.
+ 139:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** }
+ 177              		.loc 1 139 0
+ 178 0000 7047     		bx	lr
+ 179              		.cfi_endproc
+ 180              	.LFE123:
+ 182              		.section	.text.SysTick_Handler,"ax",%progbits
+ 183              		.align	1
+ 184              		.global	SysTick_Handler
+ 185              		.syntax unified
+ 186              		.thumb
+ 187              		.thumb_func
+ 188              		.fpu fpv4-sp-d16
+ 190              	SysTick_Handler:
+ 191              	.LFB124:
+ 140:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+ 141:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** /*!
+ 142:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \brief      this function handles SysTick exception
+ 143:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[in]  none
+ 144:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[out] none
+ 145:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \retval     none
+ 146:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** */
+ 147:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** void SysTick_Handler(void)
+ 148:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** {
+ 192              		.loc 1 148 0
+ 193              		.cfi_startproc
+ 194              		@ args = 0, pretend = 0, frame = 0
+ 195              		@ frame_needed = 0, uses_anonymous_args = 0
+ 196 0000 08B5     		push	{r3, lr}
+ 197              	.LCFI0:
+ 198              		.cfi_def_cfa_offset 8
+ 199              		.cfi_offset 3, -8
+ 200              		.cfi_offset 14, -4
+ 149:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     delay_decrement();
+ 201              		.loc 1 149 0
+ 202 0002 FFF7FEFF 		bl	delay_decrement
+ 203              	.LVL0:
+ 150:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** }
+ 204              		.loc 1 150 0
+ 205 0006 08BD     		pop	{r3, pc}
+ 206              		.cfi_endproc
+ 207              	.LFE124:
+ 209              		.section	.text.SDIO_IRQHandler,"ax",%progbits
+ 210              		.align	1
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s 			page 7
+
+
+ 211              		.global	SDIO_IRQHandler
+ 212              		.syntax unified
+ 213              		.thumb
+ 214              		.thumb_func
+ 215              		.fpu fpv4-sp-d16
+ 217              	SDIO_IRQHandler:
+ 218              	.LFB125:
+ 151:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** /*!
+ 152:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \brief      this function handles SDIO interrupt request
+ 153:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[in]  none
+ 154:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[out] none
+ 155:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \retval     none
+ 156:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** */
+ 157:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** void SDIO_IRQHandler(void)
+ 158:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** {
+ 219              		.loc 1 158 0
+ 220              		.cfi_startproc
+ 221              		@ args = 0, pretend = 0, frame = 0
+ 222              		@ frame_needed = 0, uses_anonymous_args = 0
+ 223 0000 08B5     		push	{r3, lr}
+ 224              	.LCFI1:
+ 225              		.cfi_def_cfa_offset 8
+ 226              		.cfi_offset 3, -8
+ 227              		.cfi_offset 14, -4
+ 159:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     sd_interrupts_process();
+ 228              		.loc 1 159 0
+ 229 0002 FFF7FEFF 		bl	sd_interrupts_process
+ 230              	.LVL1:
+ 160:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** }
+ 231              		.loc 1 160 0
+ 232 0006 08BD     		pop	{r3, pc}
+ 233              		.cfi_endproc
+ 234              	.LFE125:
+ 236              		.section	.text.USART1_IRQHandler,"ax",%progbits
+ 237              		.align	1
+ 238              		.global	USART1_IRQHandler
+ 239              		.syntax unified
+ 240              		.thumb
+ 241              		.thumb_func
+ 242              		.fpu fpv4-sp-d16
+ 244              	USART1_IRQHandler:
+ 245              	.LFB126:
+ 161:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+ 162:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** /*!
+ 163:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \brief      this function handles USART1 exception
+ 164:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[in]  none
+ 165:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \param[out] none
+ 166:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     \retval     none
+ 167:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** */
+ 168:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** void USART1_IRQHandler(void)
+ 169:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** {
+ 246              		.loc 1 169 0
+ 247              		.cfi_startproc
+ 248              		@ args = 0, pretend = 0, frame = 0
+ 249              		@ frame_needed = 0, uses_anonymous_args = 0
+ 250 0000 10B5     		push	{r4, lr}
+ 251              	.LCFI2:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s 			page 8
+
+
+ 252              		.cfi_def_cfa_offset 8
+ 253              		.cfi_offset 4, -8
+ 254              		.cfi_offset 14, -4
+ 170:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     if(RESET != usart_interrupt_flag_get(USART1, USART_INT_FLAG_RBNE)){
+ 255              		.loc 1 170 0
+ 256 0002 1C49     		ldr	r1, .L23
+ 257 0004 1C48     		ldr	r0, .L23+4
+ 258 0006 FFF7FEFF 		bl	usart_interrupt_flag_get
+ 259              	.LVL2:
+ 260 000a 28B9     		cbnz	r0, .L21
+ 261              	.L18:
+ 171:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****         /* read one byte from the receive data register */
+ 172:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****         rx_buffer[rx_counter++] = (uint8_t)usart_data_receive(USART1);
+ 173:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+ 174:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****         if(rx_counter >= nbr_data_to_read)
+ 175:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****         {
+ 176:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****             /* disable the USART1 receive interrupt */
+ 177:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****             usart_interrupt_disable(USART1, USART_INT_RBNE);
+ 178:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****         }
+ 179:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     }
+ 180:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****        
+ 181:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     if(RESET != usart_interrupt_flag_get(USART1, USART_INT_FLAG_TBE)){
+ 262              		.loc 1 181 0
+ 263 000c 1B49     		ldr	r1, .L23+8
+ 264 000e 1A48     		ldr	r0, .L23+4
+ 265 0010 FFF7FEFF 		bl	usart_interrupt_flag_get
+ 266              	.LVL3:
+ 267 0014 B8B9     		cbnz	r0, .L22
+ 268              	.L17:
+ 182:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****         /* write one byte to the transmit data register */
+ 183:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****         usart_data_transmit(USART1, AT_tx_buffer[tx_counter++]);
+ 184:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+ 185:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****         if(tx_counter >= nbr_data_to_send)
+ 186:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****         {
+ 187:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****             /* disable the USART1 transmit interrupt */
+ 188:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****             usart_interrupt_disable(USART1, USART_INT_TBE);
+ 189:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****         }
+ 190:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****     }
+ 191:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** }
+ 269              		.loc 1 191 0
+ 270 0016 10BD     		pop	{r4, pc}
+ 271              	.L21:
+ 172:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+ 272              		.loc 1 172 0
+ 273 0018 1748     		ldr	r0, .L23+4
+ 274 001a FFF7FEFF 		bl	usart_data_receive
+ 275              	.LVL4:
+ 276 001e 184A     		ldr	r2, .L23+12
+ 277 0020 1388     		ldrh	r3, [r2]
+ 278 0022 9BB2     		uxth	r3, r3
+ 279 0024 591C     		adds	r1, r3, #1
+ 280 0026 89B2     		uxth	r1, r1
+ 281 0028 1180     		strh	r1, [r2]	@ movhi
+ 282 002a 1649     		ldr	r1, .L23+16
+ 283 002c C854     		strb	r0, [r1, r3]
+ 174:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****         {
+ 284              		.loc 1 174 0
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s 			page 9
+
+
+ 285 002e 1388     		ldrh	r3, [r2]
+ 286 0030 9BB2     		uxth	r3, r3
+ 287 0032 154A     		ldr	r2, .L23+20
+ 288 0034 1268     		ldr	r2, [r2]
+ 289 0036 9342     		cmp	r3, r2
+ 290 0038 E8D3     		bcc	.L18
+ 177:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****         }
+ 291              		.loc 1 177 0
+ 292 003a 40F20531 		movw	r1, #773
+ 293 003e 0E48     		ldr	r0, .L23+4
+ 294 0040 FFF7FEFF 		bl	usart_interrupt_disable
+ 295              	.LVL5:
+ 296 0044 E2E7     		b	.L18
+ 297              	.L22:
+ 183:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c **** 
+ 298              		.loc 1 183 0
+ 299 0046 114C     		ldr	r4, .L23+24
+ 300 0048 2388     		ldrh	r3, [r4]
+ 301 004a 9BB2     		uxth	r3, r3
+ 302 004c 5A1C     		adds	r2, r3, #1
+ 303 004e 92B2     		uxth	r2, r2
+ 304 0050 2280     		strh	r2, [r4]	@ movhi
+ 305 0052 0F4A     		ldr	r2, .L23+28
+ 306 0054 D15C     		ldrb	r1, [r2, r3]	@ zero_extendqisi2
+ 307 0056 0848     		ldr	r0, .L23+4
+ 308 0058 FFF7FEFF 		bl	usart_data_transmit
+ 309              	.LVL6:
+ 185:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****         {
+ 310              		.loc 1 185 0
+ 311 005c 2388     		ldrh	r3, [r4]
+ 312 005e 9BB2     		uxth	r3, r3
+ 313 0060 0C4A     		ldr	r2, .L23+32
+ 314 0062 1268     		ldr	r2, [r2]
+ 315 0064 9342     		cmp	r3, r2
+ 316 0066 D6D3     		bcc	.L17
+ 188:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST\gd32f30x_it.c ****         }
+ 317              		.loc 1 188 0
+ 318 0068 40F20731 		movw	r1, #775
+ 319 006c 0248     		ldr	r0, .L23+4
+ 320 006e FFF7FEFF 		bl	usart_interrupt_disable
+ 321              	.LVL7:
+ 322              		.loc 1 191 0
+ 323 0072 D0E7     		b	.L17
+ 324              	.L24:
+ 325              		.align	2
+ 326              	.L23:
+ 327 0074 05030500 		.word	328453
+ 328 0078 00440040 		.word	1073759232
+ 329 007c 07030700 		.word	459527
+ 330 0080 00000000 		.word	rx_counter
+ 331 0084 00000000 		.word	rx_buffer
+ 332 0088 00000000 		.word	nbr_data_to_read
+ 333 008c 00000000 		.word	tx_counter
+ 334 0090 00000000 		.word	AT_tx_buffer
+ 335 0094 00000000 		.word	nbr_data_to_send
+ 336              		.cfi_endproc
+ 337              	.LFE126:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s 			page 10
+
+
+ 339              		.text
+ 340              	.Letext0:
+ 341              		.file 2 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 342              		.file 3 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 343              		.file 4 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 344              		.file 5 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 345              		.file 6 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 346              		.file 7 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 347              		.file 8 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 348              		.file 9 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 349              		.file 10 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\lib\\gcc\\a
+ 350              		.file 11 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ 351              		.file 12 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ 352              		.file 13 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-Io
+ 353              		.file 14 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-Io
+ 354              		.file 15 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-Io
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s 			page 11
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gd32f30x_it.c
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:18     .text.NMI_Handler:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:25     .text.NMI_Handler:00000000 NMI_Handler
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:39     .text.HardFault_Handler:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:46     .text.HardFault_Handler:00000000 HardFault_Handler
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:60     .text.MemManage_Handler:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:67     .text.MemManage_Handler:00000000 MemManage_Handler
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:81     .text.BusFault_Handler:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:88     .text.BusFault_Handler:00000000 BusFault_Handler
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:102    .text.UsageFault_Handler:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:109    .text.UsageFault_Handler:00000000 UsageFault_Handler
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:123    .text.SVC_Handler:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:130    .text.SVC_Handler:00000000 SVC_Handler
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:143    .text.DebugMon_Handler:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:150    .text.DebugMon_Handler:00000000 DebugMon_Handler
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:163    .text.PendSV_Handler:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:170    .text.PendSV_Handler:00000000 PendSV_Handler
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:183    .text.SysTick_Handler:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:190    .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:210    .text.SDIO_IRQHandler:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:217    .text.SDIO_IRQHandler:00000000 SDIO_IRQHandler
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:237    .text.USART1_IRQHandler:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:244    .text.USART1_IRQHandler:00000000 USART1_IRQHandler
+C:\Users\49542\AppData\Local\Temp\ccqsGHTg.s:327    .text.USART1_IRQHandler:00000074 $d
+
+UNDEFINED SYMBOLS
+delay_decrement
+sd_interrupts_process
+usart_interrupt_flag_get
+usart_data_receive
+usart_interrupt_disable
+usart_data_transmit
+rx_counter
+rx_buffer
+nbr_data_to_read
+tx_counter
+AT_tx_buffer
+nbr_data_to_send

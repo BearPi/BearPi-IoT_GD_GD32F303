@@ -1,0 +1,379 @@
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccnDHb06.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.led_config,"ax",%progbits
+  18              		.align	1
+  19              		.global	led_config
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv4-sp-d16
+  25              	led_config:
+  26              	.LFB119:
+  27              		.file 1 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT
+   1:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** /*!
+   2:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     \file  main.c
+   3:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     \brief use the I2C bus to write and read EEPROM
+   4:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     
+   5:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     \version 2019-10-30, V1.0.0, demo for BearPi-IoT_GD32F30x
+   6:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** */
+   7:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** 
+   8:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** /*
+   9:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     Copyright (c) 2019, BearPi LIMITED.
+  10:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** 
+  11:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     All rights reserved.
+  12:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** 
+  13:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     Redistribution and use in source and binary forms, with or without modification, 
+  14:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** are permitted provided that the following conditions are met:
+  15:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** 
+  16:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     1. Redistributions of source code must retain the above copyright notice, this 
+  17:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****        list of conditions and the following disclaimer.
+  18:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     2. Redistributions in binary form must reproduce the above copyright notice, 
+  19:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****        this list of conditions and the following disclaimer in the documentation 
+  20:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****        and/or other materials provided with the distribution.
+  21:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     3. Neither the name of the copyright holder nor the names of its contributors 
+  22:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****        may be used to endorse or promote products derived from this software without 
+  23:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****        specific prior written permission.
+  24:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** 
+  25:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+  26:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  27:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  28:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  29:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  30:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+  31:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccnDHb06.s 			page 2
+
+
+  32:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  33:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+  34:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** OF SUCH DAMAGE.
+  35:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** */
+  36:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** 
+  37:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** #include <stdio.h>
+  38:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** #include "gd32f30x.h"
+  39:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** #include "BearPi-IoT_gd32f303.h"
+  40:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** #include "systick.h"
+  41:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** #include "i2c.h"
+  42:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** #include "at24cxx.h"
+  43:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** 
+  44:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** 
+  45:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** void led_config(void);
+  46:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** 
+  47:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** /*!
+  48:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     \brief      configure the LEDs
+  49:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     \param[in]  none
+  50:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     \param[out] none
+  51:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     \retval     none
+  52:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** */
+  53:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** void led_config(void)
+  54:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** {
+  28              		.loc 1 54 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 3, -8
+  36              		.cfi_offset 14, -4
+  55:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     gd_eval_led_init(LED);
+  37              		.loc 1 55 0
+  38 0002 0020     		movs	r0, #0
+  39 0004 FFF7FEFF 		bl	gd_eval_led_init
+  40              	.LVL0:
+  56:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** 
+  57:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     /* turn off LED */
+  58:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     gd_eval_led_off(LED);
+  41              		.loc 1 58 0
+  42 0008 0020     		movs	r0, #0
+  43 000a FFF7FEFF 		bl	gd_eval_led_off
+  44              	.LVL1:
+  59:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** }
+  45              		.loc 1 59 0
+  46 000e 08BD     		pop	{r3, pc}
+  47              		.cfi_endproc
+  48              	.LFE119:
+  50              		.section	.text.main,"ax",%progbits
+  51              		.align	1
+  52              		.global	main
+  53              		.syntax unified
+  54              		.thumb
+  55              		.thumb_func
+  56              		.fpu fpv4-sp-d16
+  58              	main:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccnDHb06.s 			page 3
+
+
+  59              	.LFB120:
+  60:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** 
+  61:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** /*!
+  62:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     \brief      main function
+  63:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     \param[in]  none
+  64:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     \param[out] none
+  65:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     \retval     none
+  66:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** */
+  67:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** int main(void)
+  68:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** {   
+  60              		.loc 1 68 0
+  61              		.cfi_startproc
+  62              		@ Volatile: function does not return.
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65 0000 08B5     		push	{r3, lr}
+  66              	.LCFI1:
+  67              		.cfi_def_cfa_offset 8
+  68              		.cfi_offset 3, -8
+  69              		.cfi_offset 14, -4
+  69:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     /* configure systick */
+  70:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     systick_config();
+  70              		.loc 1 70 0
+  71 0002 FFF7FEFF 		bl	systick_config
+  72              	.LVL2:
+  71:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     
+  72:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     /* configure LEDs */
+  73:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     led_config();
+  73              		.loc 1 73 0
+  74 0006 FFF7FEFF 		bl	led_config
+  75              	.LVL3:
+  74:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     
+  75:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     /* configure USART */
+  76:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     gd_eval_com_init(EVAL_COM0);
+  76              		.loc 1 76 0
+  77 000a 1248     		ldr	r0, .L8
+  78 000c FFF7FEFF 		bl	gd_eval_com_init
+  79              	.LVL4:
+  77:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** 
+  78:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     printf("I2C-24C02 configured....\n\r");
+  80              		.loc 1 78 0
+  81 0010 1148     		ldr	r0, .L8+4
+  82 0012 FFF7FEFF 		bl	printf
+  83              	.LVL5:
+  79:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     
+  80:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     /* configure GPIO */
+  81:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     gpio_config();
+  84              		.loc 1 81 0
+  85 0016 FFF7FEFF 		bl	gpio_config
+  86              	.LVL6:
+  82:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     
+  83:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     /* configure I2C */
+  84:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     i2c_config();
+  87              		.loc 1 84 0
+  88 001a FFF7FEFF 		bl	i2c_config
+  89              	.LVL7:
+  85:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccnDHb06.s 			page 4
+
+
+  86:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     /* initialize EEPROM  */
+  87:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     i2c_eeprom_init();
+  90              		.loc 1 87 0
+  91 001e FFF7FEFF 		bl	i2c_eeprom_init
+  92              	.LVL8:
+  88:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** 
+  89:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     printf("\r\nThe I2C0 is hardware interface ");
+  93              		.loc 1 89 0
+  94 0022 0E48     		ldr	r0, .L8+8
+  95 0024 FFF7FEFF 		bl	printf
+  96              	.LVL9:
+  90:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     printf("\r\nThe speed is %d", I2C0_SPEED);
+  97              		.loc 1 90 0
+  98 0028 0D49     		ldr	r1, .L8+12
+  99 002a 0E48     		ldr	r0, .L8+16
+ 100 002c FFF7FEFF 		bl	printf
+ 101              	.LVL10:
+  91:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     
+  92:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     if(I2C_OK == i2c_24c02_test()){
+ 102              		.loc 1 92 0
+ 103 0030 FFF7FEFF 		bl	i2c_24c02_test
+ 104              	.LVL11:
+ 105 0034 50B9     		cbnz	r0, .L4
+ 106              	.L5:
+  93:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****         while(1){
+  94:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****            /* turn off all LED */
+  95:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****            gd_eval_led_off(LED);
+ 107              		.loc 1 95 0 discriminator 1
+ 108 0036 0020     		movs	r0, #0
+ 109 0038 FFF7FEFF 		bl	gd_eval_led_off
+ 110              	.LVL12:
+  96:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****            /* turn on a LED */
+  97:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****            gd_eval_led_off(LED);
+ 111              		.loc 1 97 0 discriminator 1
+ 112 003c 0020     		movs	r0, #0
+ 113 003e FFF7FEFF 		bl	gd_eval_led_off
+ 114              	.LVL13:
+  98:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** 
+  99:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****            delay_1ms(500);
+ 115              		.loc 1 99 0 discriminator 1
+ 116 0042 4FF4FA70 		mov	r0, #500
+ 117 0046 FFF7FEFF 		bl	delay_1ms
+ 118              	.LVL14:
+ 119 004a F4E7     		b	.L5
+ 120              	.L4:
+ 100:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****         }
+ 101:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     }
+ 102:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     /* turn on all LED */
+ 103:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     gd_eval_led_on(LED);
+ 121              		.loc 1 103 0
+ 122 004c 0020     		movs	r0, #0
+ 123 004e FFF7FEFF 		bl	gd_eval_led_on
+ 124              	.LVL15:
+ 125              	.L6:
+ 126 0052 FEE7     		b	.L6
+ 127              	.L9:
+ 128              		.align	2
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccnDHb06.s 			page 5
+
+
+ 129              	.L8:
+ 130 0054 00380140 		.word	1073821696
+ 131 0058 00000000 		.word	.LC0
+ 132 005c 1C000000 		.word	.LC1
+ 133 0060 801A0600 		.word	400000
+ 134 0064 40000000 		.word	.LC2
+ 135              		.cfi_endproc
+ 136              	.LFE120:
+ 138              		.section	.text.fputc,"ax",%progbits
+ 139              		.align	1
+ 140              		.global	fputc
+ 141              		.syntax unified
+ 142              		.thumb
+ 143              		.thumb_func
+ 144              		.fpu fpv4-sp-d16
+ 146              	fputc:
+ 147              	.LFB121:
+ 104:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     
+ 105:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     while(1);
+ 106:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** }
+ 107:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** 
+ 108:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** 
+ 109:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** /* retarget the C library printf function to the usart */
+ 110:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** int fputc(int ch, FILE *f)
+ 111:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** {
+ 148              		.loc 1 111 0
+ 149              		.cfi_startproc
+ 150              		@ args = 0, pretend = 0, frame = 0
+ 151              		@ frame_needed = 0, uses_anonymous_args = 0
+ 152              	.LVL16:
+ 153 0000 10B5     		push	{r4, lr}
+ 154              	.LCFI2:
+ 155              		.cfi_def_cfa_offset 8
+ 156              		.cfi_offset 4, -8
+ 157              		.cfi_offset 14, -4
+ 158 0002 0446     		mov	r4, r0
+ 112:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     usart_data_transmit(EVAL_COM0, (uint8_t) ch);
+ 159              		.loc 1 112 0
+ 160 0004 C1B2     		uxtb	r1, r0
+ 161              	.LVL17:
+ 162 0006 0548     		ldr	r0, .L13
+ 163              	.LVL18:
+ 164 0008 FFF7FEFF 		bl	usart_data_transmit
+ 165              	.LVL19:
+ 166              	.L11:
+ 113:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     while (RESET == usart_flag_get(EVAL_COM0,USART_FLAG_TBE));
+ 167              		.loc 1 113 0 discriminator 1
+ 168 000c 0721     		movs	r1, #7
+ 169 000e 0348     		ldr	r0, .L13
+ 170 0010 FFF7FEFF 		bl	usart_flag_get
+ 171              	.LVL20:
+ 172 0014 0028     		cmp	r0, #0
+ 173 0016 F9D0     		beq	.L11
+ 114:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c ****     return ch;
+ 115:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/13_I2C_EEPROM\main.c **** }
+ 174              		.loc 1 115 0
+ 175 0018 2046     		mov	r0, r4
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccnDHb06.s 			page 6
+
+
+ 176 001a 10BD     		pop	{r4, pc}
+ 177              	.LVL21:
+ 178              	.L14:
+ 179              		.align	2
+ 180              	.L13:
+ 181 001c 00380140 		.word	1073821696
+ 182              		.cfi_endproc
+ 183              	.LFE121:
+ 185              		.section	.rodata.main.str1.4,"aMS",%progbits,1
+ 186              		.align	2
+ 187              	.LC0:
+ 188 0000 4932432D 		.ascii	"I2C-24C02 configured....\012\015\000"
+ 188      32344330 
+ 188      3220636F 
+ 188      6E666967 
+ 188      75726564 
+ 189 001b 00       		.space	1
+ 190              	.LC1:
+ 191 001c 0D0A5468 		.ascii	"\015\012The I2C0 is hardware interface \000"
+ 191      65204932 
+ 191      43302069 
+ 191      73206861 
+ 191      72647761 
+ 192 003e 0000     		.space	2
+ 193              	.LC2:
+ 194 0040 0D0A5468 		.ascii	"\015\012The speed is %d\000"
+ 194      65207370 
+ 194      65656420 
+ 194      69732025 
+ 194      6400
+ 195              		.text
+ 196              	.Letext0:
+ 197              		.file 2 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 198              		.file 3 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 199              		.file 4 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 200              		.file 5 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\lib\\gcc\\ar
+ 201              		.file 6 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 202              		.file 7 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 203              		.file 8 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 204              		.file 9 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 205              		.file 10 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_
+ 206              		.file 11 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_
+ 207              		.file 12 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_
+ 208              		.file 13 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-Io
+ 209              		.file 14 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-Io
+ 210              		.file 15 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-Io
+ 211              		.file 16 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-Io
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccnDHb06.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\49542\AppData\Local\Temp\ccnDHb06.s:18     .text.led_config:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccnDHb06.s:25     .text.led_config:00000000 led_config
+C:\Users\49542\AppData\Local\Temp\ccnDHb06.s:51     .text.main:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccnDHb06.s:58     .text.main:00000000 main
+C:\Users\49542\AppData\Local\Temp\ccnDHb06.s:130    .text.main:00000054 $d
+C:\Users\49542\AppData\Local\Temp\ccnDHb06.s:139    .text.fputc:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccnDHb06.s:146    .text.fputc:00000000 fputc
+C:\Users\49542\AppData\Local\Temp\ccnDHb06.s:181    .text.fputc:0000001c $d
+C:\Users\49542\AppData\Local\Temp\ccnDHb06.s:186    .rodata.main.str1.4:00000000 $d
+
+UNDEFINED SYMBOLS
+gd_eval_led_init
+gd_eval_led_off
+systick_config
+gd_eval_com_init
+printf
+gpio_config
+i2c_config
+i2c_eeprom_init
+i2c_24c02_test
+delay_1ms
+gd_eval_led_on
+usart_data_transmit
+usart_flag_get

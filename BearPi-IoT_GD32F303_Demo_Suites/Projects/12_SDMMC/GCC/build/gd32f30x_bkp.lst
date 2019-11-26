@@ -1,0 +1,1157 @@
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gd32f30x_bkp.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.bkp_deinit,"ax",%progbits
+  18              		.align	1
+  19              		.global	bkp_deinit
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv4-sp-d16
+  25              	bkp_deinit:
+  26              	.LFB116:
+  27              		.file 1 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+   1:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+   2:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \file  gd32f30x_bkp.c
+   3:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief BKP driver
+   4:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+   5:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \version 2017-02-10, V1.0.0, firmware for GD32F30x
+   6:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \version 2018-10-10, V1.1.0, firmware for GD32F30x
+   7:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \version 2018-12-25, V2.0.0, firmware for GD32F30x
+   8:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+   9:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+  10:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*
+  11:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     Copyright (c) 2018, GigaDevice Semiconductor Inc.
+  12:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+  13:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     All rights reserved.
+  14:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+  15:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     Redistribution and use in source and binary forms, with or without modification, 
+  16:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** are permitted provided that the following conditions are met:
+  17:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+  18:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     1. Redistributions of source code must retain the above copyright notice, this 
+  19:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****        list of conditions and the following disclaimer.
+  20:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     2. Redistributions in binary form must reproduce the above copyright notice, 
+  21:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****        this list of conditions and the following disclaimer in the documentation 
+  22:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****        and/or other materials provided with the distribution.
+  23:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     3. Neither the name of the copyright holder nor the names of its contributors 
+  24:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****        may be used to endorse or promote products derived from this software without 
+  25:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****        specific prior written permission.
+  26:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+  27:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+  28:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  29:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  30:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  31:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 2
+
+
+  32:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+  33:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+  34:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  35:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+  36:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** OF SUCH DAMAGE.
+  37:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+  38:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+  39:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** #include "gd32f30x_bkp.h"
+  40:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+  41:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** #define TAMPER_FLAG_SHIFT          ((uint8_t)8U)
+  42:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+  43:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+  44:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      reset BKP registers
+  45:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  none
+  46:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+  47:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     none
+  48:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+  49:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** void bkp_deinit(void)
+  50:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+  28              		.loc 1 50 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 3, -8
+  36              		.cfi_offset 14, -4
+  51:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     /* reset BKP domain register*/
+  52:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     rcu_bkp_reset_enable();
+  37              		.loc 1 52 0
+  38 0002 FFF7FEFF 		bl	rcu_bkp_reset_enable
+  39              	.LVL0:
+  53:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     rcu_bkp_reset_disable();
+  40              		.loc 1 53 0
+  41 0006 FFF7FEFF 		bl	rcu_bkp_reset_disable
+  42              	.LVL1:
+  54:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+  43              		.loc 1 54 0
+  44 000a 08BD     		pop	{r3, pc}
+  45              		.cfi_endproc
+  46              	.LFE116:
+  48              		.section	.text.bkp_write_data,"ax",%progbits
+  49              		.align	1
+  50              		.global	bkp_write_data
+  51              		.syntax unified
+  52              		.thumb
+  53              		.thumb_func
+  54              		.fpu fpv4-sp-d16
+  56              	bkp_write_data:
+  57              	.LFB117:
+  55:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+  56:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+  57:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      write BKP data register
+  58:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  register_number: refer to bkp_data_register_enum, only one parameter can be selecte
+  59:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****       \arg        BKP_DATA_x(x = 0..41): bkp data register number x
+  60:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  data: the data to be write in BKP data register
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 3
+
+
+  61:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+  62:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     none
+  63:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+  64:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** void bkp_write_data(bkp_data_register_enum register_number, uint16_t data)
+  65:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+  58              		.loc 1 65 0
+  59              		.cfi_startproc
+  60              		@ args = 0, pretend = 0, frame = 0
+  61              		@ frame_needed = 0, uses_anonymous_args = 0
+  62              		@ link register save eliminated.
+  63              	.LVL2:
+  66:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     if((register_number >= BKP_DATA_10) && (register_number <= BKP_DATA_41)){
+  64              		.loc 1 66 0
+  65 0000 A0F10B03 		sub	r3, r0, #11
+  66 0004 DBB2     		uxtb	r3, r3
+  67 0006 1F2B     		cmp	r3, #31
+  68 0008 0AD9     		bls	.L6
+  67:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****         BKP_DATA10_41(register_number-1U) = data;
+  68:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     }else if((register_number >= BKP_DATA_0) && (register_number <= BKP_DATA_9)){
+  69              		.loc 1 68 0
+  70 000a 431E     		subs	r3, r0, #1
+  71 000c DBB2     		uxtb	r3, r3
+  72 000e 092B     		cmp	r3, #9
+  73 0010 05D8     		bhi	.L3
+  69:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****         BKP_DATA0_9(register_number-1U) = data;
+  74              		.loc 1 69 0
+  75 0012 00F18050 		add	r0, r0, #268435456
+  76              	.LVL3:
+  77 0016 00F5D850 		add	r0, r0, #6912
+  78 001a 8000     		lsls	r0, r0, #2
+  79 001c 0180     		strh	r1, [r0]	@ movhi
+  80              	.L3:
+  70:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     }else{
+  71:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****         /* illegal parameters */
+  72:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     }
+  73:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+  81              		.loc 1 73 0
+  82 001e 7047     		bx	lr
+  83              	.LVL4:
+  84              	.L6:
+  67:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     }else if((register_number >= BKP_DATA_0) && (register_number <= BKP_DATA_9)){
+  85              		.loc 1 67 0
+  86 0020 024B     		ldr	r3, .L7
+  87 0022 0344     		add	r3, r3, r0
+  88 0024 9B00     		lsls	r3, r3, #2
+  89 0026 1980     		strh	r1, [r3]	@ movhi
+  90 0028 7047     		bx	lr
+  91              	.L8:
+  92 002a 00BF     		.align	2
+  93              	.L7:
+  94 002c 051B0010 		.word	268442373
+  95              		.cfi_endproc
+  96              	.LFE117:
+  98              		.section	.text.bkp_read_data,"ax",%progbits
+  99              		.align	1
+ 100              		.global	bkp_read_data
+ 101              		.syntax unified
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 4
+
+
+ 102              		.thumb
+ 103              		.thumb_func
+ 104              		.fpu fpv4-sp-d16
+ 106              	bkp_read_data:
+ 107              	.LFB118:
+  74:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+  75:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+  76:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      read BKP data register
+  77:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  register_number: refer to bkp_data_register_enum, only one parameter can be selecte
+  78:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****       \arg        BKP_DATA_x(x = 0..41): bkp data register number x
+  79:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+  80:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     data of BKP data register
+  81:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+  82:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** uint16_t bkp_read_data(bkp_data_register_enum register_number)
+  83:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+ 108              		.loc 1 83 0
+ 109              		.cfi_startproc
+ 110              		@ args = 0, pretend = 0, frame = 0
+ 111              		@ frame_needed = 0, uses_anonymous_args = 0
+ 112              		@ link register save eliminated.
+ 113              	.LVL5:
+  84:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     uint16_t data = 0U;
+  85:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     
+  86:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     /* get the data from the BKP data register */
+  87:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     if((register_number >= BKP_DATA_10) && (register_number <= BKP_DATA_41)){
+ 114              		.loc 1 87 0
+ 115 0000 A0F10B03 		sub	r3, r0, #11
+ 116 0004 DBB2     		uxtb	r3, r3
+ 117 0006 1F2B     		cmp	r3, #31
+ 118 0008 0BD9     		bls	.L13
+  88:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****         data = BKP_DATA10_41(register_number-1U);
+  89:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     }else if((register_number >= BKP_DATA_0) && (register_number <= BKP_DATA_9)){
+ 119              		.loc 1 89 0
+ 120 000a 431E     		subs	r3, r0, #1
+ 121 000c DBB2     		uxtb	r3, r3
+ 122 000e 092B     		cmp	r3, #9
+ 123 0010 0DD8     		bhi	.L12
+  90:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****         data = BKP_DATA0_9(register_number-1U);
+ 124              		.loc 1 90 0
+ 125 0012 00F18050 		add	r0, r0, #268435456
+ 126              	.LVL6:
+ 127 0016 00F5D850 		add	r0, r0, #6912
+ 128 001a 8000     		lsls	r0, r0, #2
+ 129 001c 0088     		ldrh	r0, [r0]
+ 130 001e 80B2     		uxth	r0, r0
+ 131              	.LVL7:
+ 132 0020 7047     		bx	lr
+ 133              	.LVL8:
+ 134              	.L13:
+  88:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****         data = BKP_DATA10_41(register_number-1U);
+ 135              		.loc 1 88 0
+ 136 0022 044B     		ldr	r3, .L14
+ 137 0024 0344     		add	r3, r3, r0
+ 138 0026 9B00     		lsls	r3, r3, #2
+ 139 0028 1888     		ldrh	r0, [r3]
+ 140              	.LVL9:
+ 141 002a 80B2     		uxth	r0, r0
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 5
+
+
+ 142              	.LVL10:
+ 143 002c 7047     		bx	lr
+ 144              	.LVL11:
+ 145              	.L12:
+  84:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     uint16_t data = 0U;
+ 146              		.loc 1 84 0
+ 147 002e 0020     		movs	r0, #0
+ 148              	.LVL12:
+  91:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     }else{
+  92:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****         /* illegal parameters */
+  93:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     }
+  94:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     return data;
+  95:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+ 149              		.loc 1 95 0
+ 150 0030 7047     		bx	lr
+ 151              	.L15:
+ 152 0032 00BF     		.align	2
+ 153              	.L14:
+ 154 0034 051B0010 		.word	268442373
+ 155              		.cfi_endproc
+ 156              	.LFE118:
+ 158              		.section	.text.bkp_rtc_calibration_output_enable,"ax",%progbits
+ 159              		.align	1
+ 160              		.global	bkp_rtc_calibration_output_enable
+ 161              		.syntax unified
+ 162              		.thumb
+ 163              		.thumb_func
+ 164              		.fpu fpv4-sp-d16
+ 166              	bkp_rtc_calibration_output_enable:
+ 167              	.LFB119:
+  96:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+  97:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+  98:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      enable RTC clock calibration output
+  99:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  none
+ 100:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+ 101:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     none
+ 102:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+ 103:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** void bkp_rtc_calibration_output_enable(void)
+ 104:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+ 168              		.loc 1 104 0
+ 169              		.cfi_startproc
+ 170              		@ args = 0, pretend = 0, frame = 0
+ 171              		@ frame_needed = 0, uses_anonymous_args = 0
+ 172              		@ link register save eliminated.
+ 105:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     BKP_OCTL |= (uint16_t)BKP_OCTL_COEN;
+ 173              		.loc 1 105 0
+ 174 0000 024A     		ldr	r2, .L17
+ 175 0002 1388     		ldrh	r3, [r2]
+ 176 0004 43F08003 		orr	r3, r3, #128
+ 177 0008 1380     		strh	r3, [r2]	@ movhi
+ 106:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+ 178              		.loc 1 106 0
+ 179 000a 7047     		bx	lr
+ 180              	.L18:
+ 181              		.align	2
+ 182              	.L17:
+ 183 000c 2C6C0040 		.word	1073769516
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 6
+
+
+ 184              		.cfi_endproc
+ 185              	.LFE119:
+ 187              		.section	.text.bkp_rtc_calibration_output_disable,"ax",%progbits
+ 188              		.align	1
+ 189              		.global	bkp_rtc_calibration_output_disable
+ 190              		.syntax unified
+ 191              		.thumb
+ 192              		.thumb_func
+ 193              		.fpu fpv4-sp-d16
+ 195              	bkp_rtc_calibration_output_disable:
+ 196              	.LFB120:
+ 107:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+ 108:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+ 109:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      disable RTC clock calibration output
+ 110:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  none
+ 111:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+ 112:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     none
+ 113:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+ 114:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** void bkp_rtc_calibration_output_disable(void)
+ 115:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+ 197              		.loc 1 115 0
+ 198              		.cfi_startproc
+ 199              		@ args = 0, pretend = 0, frame = 0
+ 200              		@ frame_needed = 0, uses_anonymous_args = 0
+ 201              		@ link register save eliminated.
+ 116:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     BKP_OCTL &= (uint16_t)~BKP_OCTL_COEN;
+ 202              		.loc 1 116 0
+ 203 0000 034A     		ldr	r2, .L20
+ 204 0002 1388     		ldrh	r3, [r2]
+ 205 0004 9BB2     		uxth	r3, r3
+ 206 0006 23F08003 		bic	r3, r3, #128
+ 207 000a 9BB2     		uxth	r3, r3
+ 208 000c 1380     		strh	r3, [r2]	@ movhi
+ 117:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+ 209              		.loc 1 117 0
+ 210 000e 7047     		bx	lr
+ 211              	.L21:
+ 212              		.align	2
+ 213              	.L20:
+ 214 0010 2C6C0040 		.word	1073769516
+ 215              		.cfi_endproc
+ 216              	.LFE120:
+ 218              		.section	.text.bkp_rtc_signal_output_enable,"ax",%progbits
+ 219              		.align	1
+ 220              		.global	bkp_rtc_signal_output_enable
+ 221              		.syntax unified
+ 222              		.thumb
+ 223              		.thumb_func
+ 224              		.fpu fpv4-sp-d16
+ 226              	bkp_rtc_signal_output_enable:
+ 227              	.LFB121:
+ 118:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+ 119:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+ 120:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      enable RTC alarm or second signal output
+ 121:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  none
+ 122:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+ 123:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     none
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 7
+
+
+ 124:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+ 125:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** void bkp_rtc_signal_output_enable(void)
+ 126:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+ 228              		.loc 1 126 0
+ 229              		.cfi_startproc
+ 230              		@ args = 0, pretend = 0, frame = 0
+ 231              		@ frame_needed = 0, uses_anonymous_args = 0
+ 232              		@ link register save eliminated.
+ 127:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     BKP_OCTL |= (uint16_t)BKP_OCTL_ASOEN;
+ 233              		.loc 1 127 0
+ 234 0000 024A     		ldr	r2, .L23
+ 235 0002 1388     		ldrh	r3, [r2]
+ 236 0004 43F48073 		orr	r3, r3, #256
+ 237 0008 1380     		strh	r3, [r2]	@ movhi
+ 128:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+ 238              		.loc 1 128 0
+ 239 000a 7047     		bx	lr
+ 240              	.L24:
+ 241              		.align	2
+ 242              	.L23:
+ 243 000c 2C6C0040 		.word	1073769516
+ 244              		.cfi_endproc
+ 245              	.LFE121:
+ 247              		.section	.text.bkp_rtc_signal_output_disable,"ax",%progbits
+ 248              		.align	1
+ 249              		.global	bkp_rtc_signal_output_disable
+ 250              		.syntax unified
+ 251              		.thumb
+ 252              		.thumb_func
+ 253              		.fpu fpv4-sp-d16
+ 255              	bkp_rtc_signal_output_disable:
+ 256              	.LFB122:
+ 129:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+ 130:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+ 131:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      disable RTC alarm or second signal output
+ 132:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  none
+ 133:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+ 134:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     none
+ 135:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+ 136:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** void bkp_rtc_signal_output_disable(void)
+ 137:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+ 257              		.loc 1 137 0
+ 258              		.cfi_startproc
+ 259              		@ args = 0, pretend = 0, frame = 0
+ 260              		@ frame_needed = 0, uses_anonymous_args = 0
+ 261              		@ link register save eliminated.
+ 138:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     BKP_OCTL &= (uint16_t)~BKP_OCTL_ASOEN;
+ 262              		.loc 1 138 0
+ 263 0000 034A     		ldr	r2, .L26
+ 264 0002 1388     		ldrh	r3, [r2]
+ 265 0004 9BB2     		uxth	r3, r3
+ 266 0006 23F48073 		bic	r3, r3, #256
+ 267 000a 9BB2     		uxth	r3, r3
+ 268 000c 1380     		strh	r3, [r2]	@ movhi
+ 139:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+ 269              		.loc 1 139 0
+ 270 000e 7047     		bx	lr
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 8
+
+
+ 271              	.L27:
+ 272              		.align	2
+ 273              	.L26:
+ 274 0010 2C6C0040 		.word	1073769516
+ 275              		.cfi_endproc
+ 276              	.LFE122:
+ 278              		.section	.text.bkp_rtc_output_select,"ax",%progbits
+ 279              		.align	1
+ 280              		.global	bkp_rtc_output_select
+ 281              		.syntax unified
+ 282              		.thumb
+ 283              		.thumb_func
+ 284              		.fpu fpv4-sp-d16
+ 286              	bkp_rtc_output_select:
+ 287              	.LFB123:
+ 140:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+ 141:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+ 142:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      select RTC output
+ 143:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  outputsel: RTC output selection
+ 144:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****       \arg        RTC_OUTPUT_ALARM_PULSE: RTC alarm pulse is selected as the RTC output
+ 145:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****       \arg        RTC_OUTPUT_SECOND_PULSE: RTC second pulse is selected as the RTC output
+ 146:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+ 147:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     none
+ 148:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+ 149:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** void bkp_rtc_output_select(uint16_t outputsel)
+ 150:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+ 288              		.loc 1 150 0
+ 289              		.cfi_startproc
+ 290              		@ args = 0, pretend = 0, frame = 0
+ 291              		@ frame_needed = 0, uses_anonymous_args = 0
+ 292              		@ link register save eliminated.
+ 293              	.LVL13:
+ 151:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     uint16_t ctl = 0U;
+ 152:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     
+ 153:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     ctl = BKP_OCTL;
+ 294              		.loc 1 153 0
+ 295 0000 034A     		ldr	r2, .L29
+ 296 0002 1388     		ldrh	r3, [r2]
+ 297 0004 9BB2     		uxth	r3, r3
+ 298              	.LVL14:
+ 154:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     ctl &= (uint16_t)~BKP_OCTL_ROSEL;
+ 299              		.loc 1 154 0
+ 300 0006 23F40073 		bic	r3, r3, #512
+ 301              	.LVL15:
+ 155:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     ctl |= outputsel;
+ 302              		.loc 1 155 0
+ 303 000a 1843     		orrs	r0, r0, r3
+ 304              	.LVL16:
+ 156:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     BKP_OCTL = ctl;
+ 305              		.loc 1 156 0
+ 306 000c 1080     		strh	r0, [r2]	@ movhi
+ 157:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+ 307              		.loc 1 157 0
+ 308 000e 7047     		bx	lr
+ 309              	.L30:
+ 310              		.align	2
+ 311              	.L29:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 9
+
+
+ 312 0010 2C6C0040 		.word	1073769516
+ 313              		.cfi_endproc
+ 314              	.LFE123:
+ 316              		.section	.text.bkp_rtc_clock_output_select,"ax",%progbits
+ 317              		.align	1
+ 318              		.global	bkp_rtc_clock_output_select
+ 319              		.syntax unified
+ 320              		.thumb
+ 321              		.thumb_func
+ 322              		.fpu fpv4-sp-d16
+ 324              	bkp_rtc_clock_output_select:
+ 325              	.LFB124:
+ 158:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+ 159:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+ 160:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      select RTC clock output
+ 161:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  clocksel: RTC clock output selection
+ 162:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****       \arg        RTC_CLOCK_DIV_64: RTC clock div 64
+ 163:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****       \arg        RTC_CLOCK_DIV_1: RTC clock
+ 164:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+ 165:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     none
+ 166:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+ 167:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** void bkp_rtc_clock_output_select(uint16_t clocksel)
+ 168:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+ 326              		.loc 1 168 0
+ 327              		.cfi_startproc
+ 328              		@ args = 0, pretend = 0, frame = 0
+ 329              		@ frame_needed = 0, uses_anonymous_args = 0
+ 330              		@ link register save eliminated.
+ 331              	.LVL17:
+ 169:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     uint16_t ctl = 0U;
+ 170:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     
+ 171:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     ctl = BKP_OCTL;
+ 332              		.loc 1 171 0
+ 333 0000 034A     		ldr	r2, .L32
+ 334 0002 1388     		ldrh	r3, [r2]
+ 335 0004 9BB2     		uxth	r3, r3
+ 336              	.LVL18:
+ 172:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     ctl &= (uint16_t)~BKP_OCTL_CCOSEL;
+ 337              		.loc 1 172 0
+ 338 0006 23F48043 		bic	r3, r3, #16384
+ 339              	.LVL19:
+ 173:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     ctl |= clocksel;
+ 340              		.loc 1 173 0
+ 341 000a 1843     		orrs	r0, r0, r3
+ 342              	.LVL20:
+ 174:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     BKP_OCTL = ctl;
+ 343              		.loc 1 174 0
+ 344 000c 1080     		strh	r0, [r2]	@ movhi
+ 175:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+ 345              		.loc 1 175 0
+ 346 000e 7047     		bx	lr
+ 347              	.L33:
+ 348              		.align	2
+ 349              	.L32:
+ 350 0010 2C6C0040 		.word	1073769516
+ 351              		.cfi_endproc
+ 352              	.LFE124:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 10
+
+
+ 354              		.section	.text.bkp_rtc_clock_calibration_direction,"ax",%progbits
+ 355              		.align	1
+ 356              		.global	bkp_rtc_clock_calibration_direction
+ 357              		.syntax unified
+ 358              		.thumb
+ 359              		.thumb_func
+ 360              		.fpu fpv4-sp-d16
+ 362              	bkp_rtc_clock_calibration_direction:
+ 363              	.LFB125:
+ 176:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+ 177:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+ 178:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      RTC clock calibration direction
+ 179:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  direction: RTC clock calibration direction
+ 180:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****       \arg        RTC_CLOCK_SLOWED_DOWN: RTC clock slow down
+ 181:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****       \arg        RTC_CLOCK_SPEED_UP: RTC clock speed up
+ 182:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+ 183:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     none
+ 184:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+ 185:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** void bkp_rtc_clock_calibration_direction(uint16_t direction)
+ 186:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+ 364              		.loc 1 186 0
+ 365              		.cfi_startproc
+ 366              		@ args = 0, pretend = 0, frame = 0
+ 367              		@ frame_needed = 0, uses_anonymous_args = 0
+ 368              		@ link register save eliminated.
+ 369              	.LVL21:
+ 187:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     uint16_t ctl = 0U;
+ 188:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     
+ 189:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     ctl = BKP_OCTL;
+ 370              		.loc 1 189 0
+ 371 0000 034A     		ldr	r2, .L35
+ 372 0002 1388     		ldrh	r3, [r2]
+ 373              	.LVL22:
+ 190:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     ctl &= (uint16_t)~BKP_OCTL_CALDIR;
+ 374              		.loc 1 190 0
+ 375 0004 C3F30E03 		ubfx	r3, r3, #0, #15
+ 376              	.LVL23:
+ 191:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     ctl |= direction;
+ 377              		.loc 1 191 0
+ 378 0008 1843     		orrs	r0, r0, r3
+ 379              	.LVL24:
+ 192:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     BKP_OCTL = ctl;
+ 380              		.loc 1 192 0
+ 381 000a 1080     		strh	r0, [r2]	@ movhi
+ 193:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+ 382              		.loc 1 193 0
+ 383 000c 7047     		bx	lr
+ 384              	.L36:
+ 385 000e 00BF     		.align	2
+ 386              	.L35:
+ 387 0010 2C6C0040 		.word	1073769516
+ 388              		.cfi_endproc
+ 389              	.LFE125:
+ 391              		.section	.text.bkp_rtc_calibration_value_set,"ax",%progbits
+ 392              		.align	1
+ 393              		.global	bkp_rtc_calibration_value_set
+ 394              		.syntax unified
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 11
+
+
+ 395              		.thumb
+ 396              		.thumb_func
+ 397              		.fpu fpv4-sp-d16
+ 399              	bkp_rtc_calibration_value_set:
+ 400              	.LFB126:
+ 194:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+ 195:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+ 196:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      set RTC clock calibration value 
+ 197:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  value: RTC clock calibration value
+ 198:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****       \arg        0x00 - 0x7F
+ 199:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+ 200:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     none
+ 201:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+ 202:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** void bkp_rtc_calibration_value_set(uint8_t value)
+ 203:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+ 401              		.loc 1 203 0
+ 402              		.cfi_startproc
+ 403              		@ args = 0, pretend = 0, frame = 0
+ 404              		@ frame_needed = 0, uses_anonymous_args = 0
+ 405              		@ link register save eliminated.
+ 406              	.LVL25:
+ 204:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     uint16_t ctl;
+ 205:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     
+ 206:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     ctl = BKP_OCTL;
+ 407              		.loc 1 206 0
+ 408 0000 024B     		ldr	r3, .L38
+ 409 0002 1A88     		ldrh	r2, [r3]
+ 410              	.LVL26:
+ 207:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     ctl &= (uint16_t)OCTL_RCCV(0);
+ 208:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     ctl |= (uint16_t)OCTL_RCCV(value);
+ 411              		.loc 1 208 0
+ 412 0004 00F07F00 		and	r0, r0, #127
+ 413              	.LVL27:
+ 209:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     BKP_OCTL = ctl;
+ 414              		.loc 1 209 0
+ 415 0008 1880     		strh	r0, [r3]	@ movhi
+ 210:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+ 416              		.loc 1 210 0
+ 417 000a 7047     		bx	lr
+ 418              	.L39:
+ 419              		.align	2
+ 420              	.L38:
+ 421 000c 2C6C0040 		.word	1073769516
+ 422              		.cfi_endproc
+ 423              	.LFE126:
+ 425              		.section	.text.bkp_tamper_detection_enable,"ax",%progbits
+ 426              		.align	1
+ 427              		.global	bkp_tamper_detection_enable
+ 428              		.syntax unified
+ 429              		.thumb
+ 430              		.thumb_func
+ 431              		.fpu fpv4-sp-d16
+ 433              	bkp_tamper_detection_enable:
+ 434              	.LFB127:
+ 211:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+ 212:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+ 213:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      enable tamper detection
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 12
+
+
+ 214:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  none
+ 215:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+ 216:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     none
+ 217:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+ 218:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** void bkp_tamper_detection_enable(void)
+ 219:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+ 435              		.loc 1 219 0
+ 436              		.cfi_startproc
+ 437              		@ args = 0, pretend = 0, frame = 0
+ 438              		@ frame_needed = 0, uses_anonymous_args = 0
+ 439              		@ link register save eliminated.
+ 220:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     BKP_TPCTL |= (uint16_t)BKP_TPCTL_TPEN;
+ 440              		.loc 1 220 0
+ 441 0000 024A     		ldr	r2, .L41
+ 442 0002 1388     		ldrh	r3, [r2]
+ 443 0004 43F00103 		orr	r3, r3, #1
+ 444 0008 1380     		strh	r3, [r2]	@ movhi
+ 221:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+ 445              		.loc 1 221 0
+ 446 000a 7047     		bx	lr
+ 447              	.L42:
+ 448              		.align	2
+ 449              	.L41:
+ 450 000c 306C0040 		.word	1073769520
+ 451              		.cfi_endproc
+ 452              	.LFE127:
+ 454              		.section	.text.bkp_tamper_detection_disable,"ax",%progbits
+ 455              		.align	1
+ 456              		.global	bkp_tamper_detection_disable
+ 457              		.syntax unified
+ 458              		.thumb
+ 459              		.thumb_func
+ 460              		.fpu fpv4-sp-d16
+ 462              	bkp_tamper_detection_disable:
+ 463              	.LFB128:
+ 222:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+ 223:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+ 224:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      disable tamper detection
+ 225:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  none
+ 226:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+ 227:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     none
+ 228:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+ 229:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** void bkp_tamper_detection_disable(void)
+ 230:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+ 464              		.loc 1 230 0
+ 465              		.cfi_startproc
+ 466              		@ args = 0, pretend = 0, frame = 0
+ 467              		@ frame_needed = 0, uses_anonymous_args = 0
+ 468              		@ link register save eliminated.
+ 231:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     BKP_TPCTL &= (uint16_t)~BKP_TPCTL_TPEN;
+ 469              		.loc 1 231 0
+ 470 0000 034A     		ldr	r2, .L44
+ 471 0002 1388     		ldrh	r3, [r2]
+ 472 0004 9BB2     		uxth	r3, r3
+ 473 0006 23F00103 		bic	r3, r3, #1
+ 474 000a 9BB2     		uxth	r3, r3
+ 475 000c 1380     		strh	r3, [r2]	@ movhi
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 13
+
+
+ 232:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+ 476              		.loc 1 232 0
+ 477 000e 7047     		bx	lr
+ 478              	.L45:
+ 479              		.align	2
+ 480              	.L44:
+ 481 0010 306C0040 		.word	1073769520
+ 482              		.cfi_endproc
+ 483              	.LFE128:
+ 485              		.section	.text.bkp_tamper_active_level_set,"ax",%progbits
+ 486              		.align	1
+ 487              		.global	bkp_tamper_active_level_set
+ 488              		.syntax unified
+ 489              		.thumb
+ 490              		.thumb_func
+ 491              		.fpu fpv4-sp-d16
+ 493              	bkp_tamper_active_level_set:
+ 494              	.LFB129:
+ 233:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+ 234:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+ 235:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      set tamper pin active level
+ 236:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  level: tamper active level
+ 237:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****       \arg        TAMPER_PIN_ACTIVE_HIGH: the tamper pin is active high
+ 238:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****       \arg        TAMPER_PIN_ACTIVE_LOW: the tamper pin is active low
+ 239:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+ 240:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     none
+ 241:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+ 242:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** void bkp_tamper_active_level_set(uint16_t level)
+ 243:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+ 495              		.loc 1 243 0
+ 496              		.cfi_startproc
+ 497              		@ args = 0, pretend = 0, frame = 0
+ 498              		@ frame_needed = 0, uses_anonymous_args = 0
+ 499              		@ link register save eliminated.
+ 500              	.LVL28:
+ 244:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     uint16_t ctl = 0U;
+ 245:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     
+ 246:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     ctl = BKP_TPCTL;
+ 501              		.loc 1 246 0
+ 502 0000 034A     		ldr	r2, .L47
+ 503 0002 1388     		ldrh	r3, [r2]
+ 504 0004 9BB2     		uxth	r3, r3
+ 505              	.LVL29:
+ 247:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     ctl &= (uint16_t)~BKP_TPCTL_TPAL;
+ 506              		.loc 1 247 0
+ 507 0006 23F00203 		bic	r3, r3, #2
+ 508              	.LVL30:
+ 248:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     ctl |= level;
+ 509              		.loc 1 248 0
+ 510 000a 1843     		orrs	r0, r0, r3
+ 511              	.LVL31:
+ 249:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     BKP_TPCTL = ctl;
+ 512              		.loc 1 249 0
+ 513 000c 1080     		strh	r0, [r2]	@ movhi
+ 250:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+ 514              		.loc 1 250 0
+ 515 000e 7047     		bx	lr
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 14
+
+
+ 516              	.L48:
+ 517              		.align	2
+ 518              	.L47:
+ 519 0010 306C0040 		.word	1073769520
+ 520              		.cfi_endproc
+ 521              	.LFE129:
+ 523              		.section	.text.bkp_tamper_interrupt_enable,"ax",%progbits
+ 524              		.align	1
+ 525              		.global	bkp_tamper_interrupt_enable
+ 526              		.syntax unified
+ 527              		.thumb
+ 528              		.thumb_func
+ 529              		.fpu fpv4-sp-d16
+ 531              	bkp_tamper_interrupt_enable:
+ 532              	.LFB130:
+ 251:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+ 252:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+ 253:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      enable tamper interrupt
+ 254:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  none
+ 255:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+ 256:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     none
+ 257:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+ 258:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** void bkp_tamper_interrupt_enable(void)
+ 259:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+ 533              		.loc 1 259 0
+ 534              		.cfi_startproc
+ 535              		@ args = 0, pretend = 0, frame = 0
+ 536              		@ frame_needed = 0, uses_anonymous_args = 0
+ 537              		@ link register save eliminated.
+ 260:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     BKP_TPCS |= (uint16_t)BKP_TPCS_TPIE;
+ 538              		.loc 1 260 0
+ 539 0000 024A     		ldr	r2, .L50
+ 540 0002 1388     		ldrh	r3, [r2]
+ 541 0004 43F00403 		orr	r3, r3, #4
+ 542 0008 1380     		strh	r3, [r2]	@ movhi
+ 261:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+ 543              		.loc 1 261 0
+ 544 000a 7047     		bx	lr
+ 545              	.L51:
+ 546              		.align	2
+ 547              	.L50:
+ 548 000c 346C0040 		.word	1073769524
+ 549              		.cfi_endproc
+ 550              	.LFE130:
+ 552              		.section	.text.bkp_tamper_interrupt_disable,"ax",%progbits
+ 553              		.align	1
+ 554              		.global	bkp_tamper_interrupt_disable
+ 555              		.syntax unified
+ 556              		.thumb
+ 557              		.thumb_func
+ 558              		.fpu fpv4-sp-d16
+ 560              	bkp_tamper_interrupt_disable:
+ 561              	.LFB131:
+ 262:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+ 263:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+ 264:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      disable tamper interrupt
+ 265:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  none
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 15
+
+
+ 266:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+ 267:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     none
+ 268:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+ 269:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** void bkp_tamper_interrupt_disable(void)
+ 270:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+ 562              		.loc 1 270 0
+ 563              		.cfi_startproc
+ 564              		@ args = 0, pretend = 0, frame = 0
+ 565              		@ frame_needed = 0, uses_anonymous_args = 0
+ 566              		@ link register save eliminated.
+ 271:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     BKP_TPCS &= (uint16_t)~BKP_TPCS_TPIE;
+ 567              		.loc 1 271 0
+ 568 0000 034A     		ldr	r2, .L53
+ 569 0002 1388     		ldrh	r3, [r2]
+ 570 0004 9BB2     		uxth	r3, r3
+ 571 0006 23F00403 		bic	r3, r3, #4
+ 572 000a 9BB2     		uxth	r3, r3
+ 573 000c 1380     		strh	r3, [r2]	@ movhi
+ 272:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+ 574              		.loc 1 272 0
+ 575 000e 7047     		bx	lr
+ 576              	.L54:
+ 577              		.align	2
+ 578              	.L53:
+ 579 0010 346C0040 		.word	1073769524
+ 580              		.cfi_endproc
+ 581              	.LFE131:
+ 583              		.section	.text.bkp_flag_get,"ax",%progbits
+ 584              		.align	1
+ 585              		.global	bkp_flag_get
+ 586              		.syntax unified
+ 587              		.thumb
+ 588              		.thumb_func
+ 589              		.fpu fpv4-sp-d16
+ 591              	bkp_flag_get:
+ 592              	.LFB132:
+ 273:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+ 274:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+ 275:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      get bkp flag state
+ 276:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  flag
+ 277:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****       \arg        BKP_FLAG_TAMPER: tamper event flag
+ 278:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+ 279:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     FlagStatus: SET or RESET
+ 280:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+ 281:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** FlagStatus bkp_flag_get(uint16_t flag)
+ 282:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+ 593              		.loc 1 282 0
+ 594              		.cfi_startproc
+ 595              		@ args = 0, pretend = 0, frame = 0
+ 596              		@ frame_needed = 0, uses_anonymous_args = 0
+ 597              		@ link register save eliminated.
+ 598              	.LVL32:
+ 283:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     if(RESET != (BKP_TPCS & flag)){
+ 599              		.loc 1 283 0
+ 600 0000 034B     		ldr	r3, .L59
+ 601 0002 1B88     		ldrh	r3, [r3]
+ 602 0004 1842     		tst	r0, r3
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 16
+
+
+ 603 0006 01D1     		bne	.L58
+ 284:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****         return SET;
+ 285:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     }else{
+ 286:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****         return RESET;
+ 604              		.loc 1 286 0
+ 605 0008 0020     		movs	r0, #0
+ 606              	.LVL33:
+ 287:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     }
+ 288:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+ 607              		.loc 1 288 0
+ 608 000a 7047     		bx	lr
+ 609              	.LVL34:
+ 610              	.L58:
+ 284:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****         return SET;
+ 611              		.loc 1 284 0
+ 612 000c 0120     		movs	r0, #1
+ 613              	.LVL35:
+ 614 000e 7047     		bx	lr
+ 615              	.L60:
+ 616              		.align	2
+ 617              	.L59:
+ 618 0010 346C0040 		.word	1073769524
+ 619              		.cfi_endproc
+ 620              	.LFE132:
+ 622              		.section	.text.bkp_flag_clear,"ax",%progbits
+ 623              		.align	1
+ 624              		.global	bkp_flag_clear
+ 625              		.syntax unified
+ 626              		.thumb
+ 627              		.thumb_func
+ 628              		.fpu fpv4-sp-d16
+ 630              	bkp_flag_clear:
+ 631              	.LFB133:
+ 289:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+ 290:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+ 291:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      clear bkp flag state
+ 292:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  flag
+ 293:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****       \arg        BKP_FLAG_TAMPER: tamper event flag
+ 294:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+ 295:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     none
+ 296:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+ 297:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** void bkp_flag_clear(uint16_t flag)
+ 298:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+ 632              		.loc 1 298 0
+ 633              		.cfi_startproc
+ 634              		@ args = 0, pretend = 0, frame = 0
+ 635              		@ frame_needed = 0, uses_anonymous_args = 0
+ 636              		@ link register save eliminated.
+ 637              	.LVL36:
+ 299:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****         BKP_TPCS |= (uint16_t)(flag >> TAMPER_FLAG_SHIFT);
+ 638              		.loc 1 299 0
+ 639 0000 024A     		ldr	r2, .L62
+ 640 0002 1388     		ldrh	r3, [r2]
+ 641 0004 43EA1020 		orr	r0, r3, r0, lsr #8
+ 642              	.LVL37:
+ 643 0008 1080     		strh	r0, [r2]	@ movhi
+ 300:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 17
+
+
+ 644              		.loc 1 300 0
+ 645 000a 7047     		bx	lr
+ 646              	.L63:
+ 647              		.align	2
+ 648              	.L62:
+ 649 000c 346C0040 		.word	1073769524
+ 650              		.cfi_endproc
+ 651              	.LFE133:
+ 653              		.section	.text.bkp_interrupt_flag_get,"ax",%progbits
+ 654              		.align	1
+ 655              		.global	bkp_interrupt_flag_get
+ 656              		.syntax unified
+ 657              		.thumb
+ 658              		.thumb_func
+ 659              		.fpu fpv4-sp-d16
+ 661              	bkp_interrupt_flag_get:
+ 662              	.LFB134:
+ 301:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+ 302:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+ 303:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      get bkp interrupt flag state
+ 304:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  flag
+ 305:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****       \arg        BKP_INT_FLAG_TAMPER: tamper interrupt flag
+ 306:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+ 307:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     FlagStatus: SET or RESET
+ 308:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+ 309:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** FlagStatus bkp_interrupt_flag_get(uint16_t flag)
+ 310:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+ 663              		.loc 1 310 0
+ 664              		.cfi_startproc
+ 665              		@ args = 0, pretend = 0, frame = 0
+ 666              		@ frame_needed = 0, uses_anonymous_args = 0
+ 667              		@ link register save eliminated.
+ 668              	.LVL38:
+ 311:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     if(RESET != (BKP_TPCS & flag)){
+ 669              		.loc 1 311 0
+ 670 0000 034B     		ldr	r3, .L68
+ 671 0002 1B88     		ldrh	r3, [r3]
+ 672 0004 1842     		tst	r0, r3
+ 673 0006 01D1     		bne	.L67
+ 312:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****         return SET;
+ 313:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     }else{
+ 314:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****         return RESET;
+ 674              		.loc 1 314 0
+ 675 0008 0020     		movs	r0, #0
+ 676              	.LVL39:
+ 315:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     }
+ 316:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+ 677              		.loc 1 316 0
+ 678 000a 7047     		bx	lr
+ 679              	.LVL40:
+ 680              	.L67:
+ 312:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****         return SET;
+ 681              		.loc 1 312 0
+ 682 000c 0120     		movs	r0, #1
+ 683              	.LVL41:
+ 684 000e 7047     		bx	lr
+ 685              	.L69:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 18
+
+
+ 686              		.align	2
+ 687              	.L68:
+ 688 0010 346C0040 		.word	1073769524
+ 689              		.cfi_endproc
+ 690              	.LFE134:
+ 692              		.section	.text.bkp_interrupt_flag_clear,"ax",%progbits
+ 693              		.align	1
+ 694              		.global	bkp_interrupt_flag_clear
+ 695              		.syntax unified
+ 696              		.thumb
+ 697              		.thumb_func
+ 698              		.fpu fpv4-sp-d16
+ 700              	bkp_interrupt_flag_clear:
+ 701              	.LFB135:
+ 317:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** 
+ 318:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** /*!
+ 319:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \brief      clear bkp interrupt flag state
+ 320:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[in]  flag
+ 321:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****       \arg        BKP_INT_FLAG_TAMPER: tamper interrupt flag
+ 322:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \param[out] none
+ 323:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     \retval     none
+ 324:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** */
+ 325:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** void bkp_interrupt_flag_clear(uint16_t flag)
+ 326:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** {
+ 702              		.loc 1 326 0
+ 703              		.cfi_startproc
+ 704              		@ args = 0, pretend = 0, frame = 0
+ 705              		@ frame_needed = 0, uses_anonymous_args = 0
+ 706              		@ link register save eliminated.
+ 707              	.LVL42:
+ 327:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c ****     BKP_TPCS |= (uint16_t)(flag >> TAMPER_FLAG_SHIFT);
+ 708              		.loc 1 327 0
+ 709 0000 024A     		ldr	r2, .L71
+ 710 0002 1388     		ldrh	r3, [r2]
+ 711 0004 43EA1020 		orr	r0, r3, r0, lsr #8
+ 712              	.LVL43:
+ 713 0008 1080     		strh	r0, [r2]	@ movhi
+ 328:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source\gd32f30x_bkp.c **** }
+ 714              		.loc 1 328 0
+ 715 000a 7047     		bx	lr
+ 716              	.L72:
+ 717              		.align	2
+ 718              	.L71:
+ 719 000c 346C0040 		.word	1073769524
+ 720              		.cfi_endproc
+ 721              	.LFE135:
+ 723              		.text
+ 724              	.Letext0:
+ 725              		.file 2 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 726              		.file 3 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 727              		.file 4 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 728              		.file 5 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 729              		.file 6 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 730              		.file 7 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 731              		.file 8 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 732              		.file 9 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\lib\\gcc\\ar
+ 733              		.file 10 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 19
+
+
+ 734              		.file 11 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ 735              		.file 12 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_
+ 736              		.file 13 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 20
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gd32f30x_bkp.c
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:18     .text.bkp_deinit:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:25     .text.bkp_deinit:00000000 bkp_deinit
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:49     .text.bkp_write_data:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:56     .text.bkp_write_data:00000000 bkp_write_data
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:94     .text.bkp_write_data:0000002c $d
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:99     .text.bkp_read_data:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:106    .text.bkp_read_data:00000000 bkp_read_data
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:154    .text.bkp_read_data:00000034 $d
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:159    .text.bkp_rtc_calibration_output_enable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:166    .text.bkp_rtc_calibration_output_enable:00000000 bkp_rtc_calibration_output_enable
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:183    .text.bkp_rtc_calibration_output_enable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:188    .text.bkp_rtc_calibration_output_disable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:195    .text.bkp_rtc_calibration_output_disable:00000000 bkp_rtc_calibration_output_disable
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:214    .text.bkp_rtc_calibration_output_disable:00000010 $d
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:219    .text.bkp_rtc_signal_output_enable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:226    .text.bkp_rtc_signal_output_enable:00000000 bkp_rtc_signal_output_enable
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:243    .text.bkp_rtc_signal_output_enable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:248    .text.bkp_rtc_signal_output_disable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:255    .text.bkp_rtc_signal_output_disable:00000000 bkp_rtc_signal_output_disable
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:274    .text.bkp_rtc_signal_output_disable:00000010 $d
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:279    .text.bkp_rtc_output_select:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:286    .text.bkp_rtc_output_select:00000000 bkp_rtc_output_select
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:312    .text.bkp_rtc_output_select:00000010 $d
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:317    .text.bkp_rtc_clock_output_select:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:324    .text.bkp_rtc_clock_output_select:00000000 bkp_rtc_clock_output_select
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:350    .text.bkp_rtc_clock_output_select:00000010 $d
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:355    .text.bkp_rtc_clock_calibration_direction:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:362    .text.bkp_rtc_clock_calibration_direction:00000000 bkp_rtc_clock_calibration_direction
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:387    .text.bkp_rtc_clock_calibration_direction:00000010 $d
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:392    .text.bkp_rtc_calibration_value_set:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:399    .text.bkp_rtc_calibration_value_set:00000000 bkp_rtc_calibration_value_set
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:421    .text.bkp_rtc_calibration_value_set:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:426    .text.bkp_tamper_detection_enable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:433    .text.bkp_tamper_detection_enable:00000000 bkp_tamper_detection_enable
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:450    .text.bkp_tamper_detection_enable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:455    .text.bkp_tamper_detection_disable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:462    .text.bkp_tamper_detection_disable:00000000 bkp_tamper_detection_disable
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:481    .text.bkp_tamper_detection_disable:00000010 $d
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:486    .text.bkp_tamper_active_level_set:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:493    .text.bkp_tamper_active_level_set:00000000 bkp_tamper_active_level_set
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:519    .text.bkp_tamper_active_level_set:00000010 $d
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:524    .text.bkp_tamper_interrupt_enable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:531    .text.bkp_tamper_interrupt_enable:00000000 bkp_tamper_interrupt_enable
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:548    .text.bkp_tamper_interrupt_enable:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:553    .text.bkp_tamper_interrupt_disable:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:560    .text.bkp_tamper_interrupt_disable:00000000 bkp_tamper_interrupt_disable
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:579    .text.bkp_tamper_interrupt_disable:00000010 $d
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:584    .text.bkp_flag_get:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:591    .text.bkp_flag_get:00000000 bkp_flag_get
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:618    .text.bkp_flag_get:00000010 $d
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:623    .text.bkp_flag_clear:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:630    .text.bkp_flag_clear:00000000 bkp_flag_clear
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:649    .text.bkp_flag_clear:0000000c $d
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:654    .text.bkp_interrupt_flag_get:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:661    .text.bkp_interrupt_flag_get:00000000 bkp_interrupt_flag_get
+ARM GAS  C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s 			page 21
+
+
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:688    .text.bkp_interrupt_flag_get:00000010 $d
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:693    .text.bkp_interrupt_flag_clear:00000000 $t
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:700    .text.bkp_interrupt_flag_clear:00000000 bkp_interrupt_flag_clear
+C:\Users\49542\AppData\Local\Temp\ccO1hzwk.s:719    .text.bkp_interrupt_flag_clear:0000000c $d
+
+UNDEFINED SYMBOLS
+rcu_bkp_reset_enable
+rcu_bkp_reset_disable

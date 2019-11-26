@@ -1,0 +1,1737 @@
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.nvic_config,"ax",%progbits
+  18              		.align	1
+  19              		.global	nvic_config
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv4-sp-d16
+  25              	nvic_config:
+  26              	.LFB120:
+  27              		.file 1 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT
+   1:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** /*!
+   2:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \file  main.c
+   3:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \brief USART printf demo
+   4:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     
+   5:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \version 2019-10-30, V1.0.0, demo for BearPi-IoT_GD32F30x
+   6:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 
+   7:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** */
+   8:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 
+   9:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** /*
+  10:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     Copyright (c) 2019, BearPi LIMITED.
+  11:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 
+  12:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     All rights reserved.
+  13:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 
+  14:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     Redistribution and use in source and binary forms, with or without modification, 
+  15:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** are permitted provided that the following conditions are met:
+  16:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 
+  17:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     1. Redistributions of source code must retain the above copyright notice, this 
+  18:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****        list of conditions and the following disclaimer.
+  19:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     2. Redistributions in binary form must reproduce the above copyright notice, 
+  20:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****        this list of conditions and the following disclaimer in the documentation 
+  21:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****        and/or other materials provided with the distribution.
+  22:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     3. Neither the name of the copyright holder nor the names of its contributors 
+  23:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****        may be used to endorse or promote products derived from this software without 
+  24:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****        specific prior written permission.
+  25:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 
+  26:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+  27:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  28:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  29:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  30:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  31:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 2
+
+
+  32:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+  33:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  34:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+  35:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** OF SUCH DAMAGE.
+  36:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** */
+  37:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 
+  38:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** #include "gd32f30x.h"
+  39:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** #include "BearPi-IoT_gd32f303.h"
+  40:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** #include "systick.h"
+  41:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** #include "sdcard.h"
+  42:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** #include <stdio.h>
+  43:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 
+  44:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 
+  45:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** sd_card_info_struct sd_cardinfo;                            /* information of SD card */
+  46:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** uint32_t buf_write[512];                                    /* store the data written to the card *
+  47:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** uint32_t buf_read[512];                                     /* store the data read from the card */
+  48:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** void nvic_config(void);
+  49:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** sd_error_enum sd_io_init(void);
+  50:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** void card_info_get(void);
+  51:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** /*!
+  52:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \brief      main function
+  53:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \param[in]  none
+  54:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \param[out] none
+  55:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \retval     none
+  56:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** */
+  57:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** int main(void)
+  58:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** {
+  59:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****  sd_error_enum sd_error;
+  60:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     uint16_t i = 5;
+  61:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** #ifdef DATA_PRINT
+  62:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     uint8_t *pdata;
+  63:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** #endif /* DATA_PRINT */
+  64:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     
+  65:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     /* configure the NVIC, USART and LED */
+  66:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     nvic_config();
+  67:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     gd_eval_com_init(EVAL_COM0);
+  68:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 		gd_eval_led_init(LED);
+  69:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     /* initialize the card */
+  70:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     do{
+  71:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         sd_error = sd_io_init();
+  72:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }while((SD_OK != sd_error) && (--i));
+  73:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     
+  74:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(i){
+  75:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n Card init success!\r\n");
+  76:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }else{
+  77:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n Card init failed!\r\n");
+  78:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 		}
+  79:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 		
+  80:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 		 /* get the information of the card and print it out by USART */
+  81:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     card_info_get();
+  82:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     
+  83:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     /* init the write buffer */
+  84:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     for(i=0; i<512; i++){
+  85:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         buf_write[i] = i;
+  86:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+  87:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     
+  88:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     printf("\r\n\r\n Card test:");
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 3
+
+
+  89:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     
+  90:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     /* single block operation test */
+  91:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     sd_error = sd_block_write(buf_write, 100*512, 512);
+  92:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(SD_OK != sd_error){
+  93:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n Block write fail!");
+  94:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         /* turn off LED*/
+  95:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         gd_eval_led_off(LED);
+  96:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         while (1){
+  97:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+  98:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }else{
+  99:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n Block write success!");
+ 100:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 101:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     sd_error = sd_block_read(buf_read, 100*512, 512);
+ 102:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(SD_OK != sd_error){
+ 103:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n Block read fail!");
+ 104:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         /* turn off LED*/
+ 105:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         gd_eval_led_off(LED);
+ 106:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         while (1){
+ 107:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 108:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }else{
+ 109:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n Block read success!");
+ 110:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** #ifdef DATA_PRINT
+ 111:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         pdata = (uint8_t *)buf_read;
+ 112:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         /* print data by USART */
+ 113:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n");
+ 114:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         for(i = 0; i < 128; i++){
+ 115:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf(" %3d %3d %3d %3d ", *pdata, *(pdata+1), *(pdata+2), *(pdata+3));
+ 116:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             pdata += 4;
+ 117:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             if(0 == (i + 1) % 4){
+ 118:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****                 printf("\r\n");
+ 119:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             }
+ 120:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 121:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** #endif /* DATA_PRINT */
+ 122:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 123:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     
+ 124:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     /* lock and unlock operation test */
+ 125:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(SD_CCC_LOCK_CARD & sd_cardinfo.card_csd.ccc){
+ 126:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         /* lock the card */
+ 127:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         sd_error = sd_lock_unlock(SD_LOCK);
+ 128:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         if(SD_OK != sd_error){
+ 129:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf("\r\n Lock failed!");
+ 130:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 						/* turn off LED*/
+ 131:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 						gd_eval_led_off(LED);
+ 132:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             while (1){
+ 133:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             }
+ 134:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }else{
+ 135:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf("\r\n The card is locked!");
+ 136:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 137:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         sd_error = sd_erase(100*512, 101*512);
+ 138:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         if(SD_OK != sd_error){
+ 139:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf("\r\n Erase failed!");
+ 140:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }else{
+ 141:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf("\r\n Erase success!");
+ 142:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 143:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         
+ 144:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         /* unlock the card */
+ 145:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         sd_error = sd_lock_unlock(SD_UNLOCK);
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 4
+
+
+ 146:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         if(SD_OK != sd_error){
+ 147:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf("\r\n Unlock failed!");
+ 148:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 						/* turn off LED*/
+ 149:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 						gd_eval_led_off(LED);
+ 150:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             while (1){
+ 151:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             }
+ 152:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }else{
+ 153:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf("\r\n The card is unlocked!");
+ 154:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 155:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         sd_error = sd_erase(100*512, 101*512);
+ 156:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         if(SD_OK != sd_error){
+ 157:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf("\r\n Erase failed!");
+ 158:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }else{
+ 159:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf("\r\n Erase success!");
+ 160:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 161:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         
+ 162:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         sd_error = sd_block_read(buf_read, 100*512, 512);
+ 163:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         if(SD_OK != sd_error){
+ 164:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf("\r\n Block read fail!");
+ 165:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 						/* turn off LED*/
+ 166:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 						gd_eval_led_off(LED);
+ 167:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             while (1){
+ 168:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             }
+ 169:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }else{
+ 170:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf("\r\n Block read success!");
+ 171:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** #ifdef DATA_PRINT
+ 172:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         pdata = (uint8_t *)buf_read;
+ 173:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         /* print data by USART */
+ 174:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n");
+ 175:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         for(i = 0; i < 128; i++){
+ 176:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf(" %3d %3d %3d %3d ", *pdata, *(pdata+1), *(pdata+2), *(pdata+3));
+ 177:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             pdata += 4;
+ 178:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             if(0 == (i + 1) % 4){
+ 179:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****                 printf("\r\n");
+ 180:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             }
+ 181:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 182:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** #endif /* DATA_PRINT */
+ 183:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 184:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 185:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     
+ 186:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     /* multiple blocks operation test */
+ 187:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     sd_error = sd_multiblocks_write(buf_write, 200*512, 512, 3);
+ 188:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(SD_OK != sd_error){
+ 189:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n Multiple block write fail!");
+ 190:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         /* turn off LED*/
+ 191:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         gd_eval_led_off(LED);
+ 192:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         while (1){
+ 193:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 194:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }else{
+ 195:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n Multiple block write success!");
+ 196:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 197:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     sd_error = sd_multiblocks_read(buf_read, 200*512, 512, 3);
+ 198:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(SD_OK != sd_error){
+ 199:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n Multiple block read fail!");
+ 200:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         /* turn off LED*/
+ 201:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         gd_eval_led_off(LED);
+ 202:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         while (1){
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 5
+
+
+ 203:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 204:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }else{
+ 205:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n Multiple block read success!");
+ 206:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** #ifdef DATA_PRINT
+ 207:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         pdata = (uint8_t *)buf_read;
+ 208:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         /* print data by USART */
+ 209:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n");
+ 210:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         for(i = 0; i < 512; i++){
+ 211:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf(" %3d %3d %3d %3d ", *pdata, *(pdata+1), *(pdata+2), *(pdata+3));
+ 212:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             pdata += 4;
+ 213:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             if(0 == (i + 1) % 4){
+ 214:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****                 printf("\r\n");
+ 215:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             }
+ 216:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 217:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** #endif /* DATA_PRINT */
+ 218:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 219:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     
+ 220:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     /* turn on LED */
+ 221:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     gd_eval_led_on(LED);
+ 222:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     while (1){
+ 223:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 224:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** }
+ 225:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 
+ 226:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 
+ 227:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** /*!
+ 228:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \brief      configure the NVIC
+ 229:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \param[in]  none
+ 230:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \param[out] none
+ 231:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \retval     none
+ 232:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** */
+ 233:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** void nvic_config(void)
+ 234:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** {
+  28              		.loc 1 234 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 3, -8
+  36              		.cfi_offset 14, -4
+ 235:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     nvic_priority_group_set(NVIC_PRIGROUP_PRE1_SUB3);
+  37              		.loc 1 235 0
+  38 0002 4FF4C060 		mov	r0, #1536
+  39 0006 FFF7FEFF 		bl	nvic_priority_group_set
+  40              	.LVL0:
+ 236:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     nvic_irq_enable(SDIO_IRQn, 0, 0);
+  41              		.loc 1 236 0
+  42 000a 0022     		movs	r2, #0
+  43 000c 1146     		mov	r1, r2
+  44 000e 3120     		movs	r0, #49
+  45 0010 FFF7FEFF 		bl	nvic_irq_enable
+  46              	.LVL1:
+ 237:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** }
+  47              		.loc 1 237 0
+  48 0014 08BD     		pop	{r3, pc}
+  49              		.cfi_endproc
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 6
+
+
+  50              	.LFE120:
+  52              		.section	.text.sd_io_init,"ax",%progbits
+  53              		.align	1
+  54              		.global	sd_io_init
+  55              		.syntax unified
+  56              		.thumb
+  57              		.thumb_func
+  58              		.fpu fpv4-sp-d16
+  60              	sd_io_init:
+  61              	.LFB121:
+ 238:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 
+ 239:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** /*!
+ 240:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \brief      initialize the card, get the card information, set the bus mode and transfer mode
+ 241:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \param[in]  none
+ 242:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \param[out] none
+ 243:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \retval     sd_error_enum
+ 244:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** */
+ 245:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** sd_error_enum sd_io_init(void)
+ 246:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** {
+  62              		.loc 1 246 0
+  63              		.cfi_startproc
+  64              		@ args = 0, pretend = 0, frame = 8
+  65              		@ frame_needed = 0, uses_anonymous_args = 0
+  66 0000 00B5     		push	{lr}
+  67              	.LCFI1:
+  68              		.cfi_def_cfa_offset 4
+  69              		.cfi_offset 14, -4
+  70 0002 83B0     		sub	sp, sp, #12
+  71              	.LCFI2:
+  72              		.cfi_def_cfa_offset 16
+  73              	.LVL2:
+ 247:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     sd_error_enum status = SD_OK;
+ 248:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     uint32_t cardstate = 0;
+  74              		.loc 1 248 0
+  75 0004 0023     		movs	r3, #0
+  76 0006 0193     		str	r3, [sp, #4]
+ 249:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     status = sd_init();
+  77              		.loc 1 249 0
+  78 0008 FFF7FEFF 		bl	sd_init
+  79              	.LVL3:
+ 250:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(SD_OK == status){
+  80              		.loc 1 250 0
+  81 000c 1D28     		cmp	r0, #29
+  82 000e 0FD0     		beq	.L11
+  83              	.L4:
+ 251:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         status = sd_card_information_get(&sd_cardinfo);
+ 252:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 253:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(SD_OK == status){
+  84              		.loc 1 253 0
+  85 0010 1D28     		cmp	r0, #29
+  86 0012 11D0     		beq	.L12
+  87              	.LVL4:
+  88              	.L5:
+ 254:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         status = sd_card_select_deselect(sd_cardinfo.card_rca);
+ 255:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 256:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     status = sd_cardstatus_get(&cardstate);
+  89              		.loc 1 256 0
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 7
+
+
+  90 0014 01A8     		add	r0, sp, #4
+  91 0016 FFF7FEFF 		bl	sd_cardstatus_get
+  92              	.LVL5:
+ 257:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(cardstate & 0x02000000){
+  93              		.loc 1 257 0
+  94 001a 019B     		ldr	r3, [sp, #4]
+  95 001c 13F0007F 		tst	r3, #33554432
+  96 0020 10D1     		bne	.L13
+ 258:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n the card is locked!");
+ 259:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         while (1){
+ 260:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 261:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 262:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if ((SD_OK == status) && (!(cardstate & 0x02000000)))
+  97              		.loc 1 262 0
+  98 0022 1D28     		cmp	r0, #29
+  99 0024 12D0     		beq	.L14
+ 100              	.L8:
+ 263:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     {
+ 264:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         /* set bus mode */
+ 265:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         //status = sd_bus_mode_config(SDIO_BUSMODE_4BIT);
+ 266:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         status = sd_bus_mode_config( SDIO_BUSMODE_1BIT );
+ 267:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 268:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if (SD_OK == status)
+ 101              		.loc 1 268 0
+ 102 0026 1D28     		cmp	r0, #29
+ 103 0028 14D0     		beq	.L15
+ 104              	.L9:
+ 269:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     {
+ 270:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         /* set data transfer mode */
+ 271:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****        status = sd_transfer_mode_config( SD_DMA_MODE );
+ 272:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** //         status = sd_transfer_mode_config( SD_POLLING_MODE );
+ 273:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 274:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     return status;
+ 275:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** }
+ 105              		.loc 1 275 0
+ 106 002a 03B0     		add	sp, sp, #12
+ 107              	.LCFI3:
+ 108              		.cfi_remember_state
+ 109              		.cfi_def_cfa_offset 4
+ 110              		@ sp needed
+ 111 002c 5DF804FB 		ldr	pc, [sp], #4
+ 112              	.L11:
+ 113              	.LCFI4:
+ 114              		.cfi_restore_state
+ 251:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 115              		.loc 1 251 0
+ 116 0030 0A48     		ldr	r0, .L16
+ 117              	.LVL6:
+ 118 0032 FFF7FEFF 		bl	sd_card_information_get
+ 119              	.LVL7:
+ 120 0036 EBE7     		b	.L4
+ 121              	.L12:
+ 254:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 122              		.loc 1 254 0
+ 123 0038 084B     		ldr	r3, .L16
+ 124 003a B3F84400 		ldrh	r0, [r3, #68]
+ 125              	.LVL8:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 8
+
+
+ 126 003e FFF7FEFF 		bl	sd_card_select_deselect
+ 127              	.LVL9:
+ 128 0042 E7E7     		b	.L5
+ 129              	.LVL10:
+ 130              	.L13:
+ 258:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         while (1){
+ 131              		.loc 1 258 0
+ 132 0044 0648     		ldr	r0, .L16+4
+ 133              	.LVL11:
+ 134 0046 FFF7FEFF 		bl	printf
+ 135              	.LVL12:
+ 136              	.L7:
+ 137 004a FEE7     		b	.L7
+ 138              	.LVL13:
+ 139              	.L14:
+ 266:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 140              		.loc 1 266 0
+ 141 004c 0020     		movs	r0, #0
+ 142              	.LVL14:
+ 143 004e FFF7FEFF 		bl	sd_bus_mode_config
+ 144              	.LVL15:
+ 145 0052 E8E7     		b	.L8
+ 146              	.L15:
+ 271:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** //         status = sd_transfer_mode_config( SD_POLLING_MODE );
+ 147              		.loc 1 271 0
+ 148 0054 0020     		movs	r0, #0
+ 149              	.LVL16:
+ 150 0056 FFF7FEFF 		bl	sd_transfer_mode_config
+ 151              	.LVL17:
+ 152 005a E6E7     		b	.L9
+ 153              	.L17:
+ 154              		.align	2
+ 155              	.L16:
+ 156 005c 00000000 		.word	sd_cardinfo
+ 157 0060 00000000 		.word	.LC0
+ 158              		.cfi_endproc
+ 159              	.LFE121:
+ 161              		.section	.text.card_info_get,"ax",%progbits
+ 162              		.align	1
+ 163              		.global	card_info_get
+ 164              		.syntax unified
+ 165              		.thumb
+ 166              		.thumb_func
+ 167              		.fpu fpv4-sp-d16
+ 169              	card_info_get:
+ 170              	.LFB122:
+ 276:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 
+ 277:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** /*!
+ 278:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \brief      get the card information and print it out by USRAT
+ 279:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \param[in]  none
+ 280:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \param[out] none
+ 281:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     \retval     none
+ 282:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** */
+ 283:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** void card_info_get(void)
+ 284:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** {
+ 171              		.loc 1 284 0
+ 172              		.cfi_startproc
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 9
+
+
+ 173              		@ args = 0, pretend = 0, frame = 0
+ 174              		@ frame_needed = 0, uses_anonymous_args = 0
+ 175 0000 38B5     		push	{r3, r4, r5, lr}
+ 176              	.LCFI5:
+ 177              		.cfi_def_cfa_offset 16
+ 178              		.cfi_offset 3, -16
+ 179              		.cfi_offset 4, -12
+ 180              		.cfi_offset 5, -8
+ 181              		.cfi_offset 14, -4
+ 285:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     uint8_t sd_spec, sd_spec3, sd_spec4, sd_security;
+ 286:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     uint32_t block_count, block_size;
+ 287:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     uint16_t temp_ccc;
+ 288:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     printf("\r\n Card information:");
+ 182              		.loc 1 288 0
+ 183 0002 4D48     		ldr	r0, .L52
+ 184 0004 FFF7FEFF 		bl	printf
+ 185              	.LVL18:
+ 289:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     sd_spec = (sd_scr[1] & 0x0F000000) >> 24;
+ 186              		.loc 1 289 0
+ 187 0008 4C4B     		ldr	r3, .L52+4
+ 188 000a 5B68     		ldr	r3, [r3, #4]
+ 189 000c C3F30362 		ubfx	r2, r3, #24, #4
+ 190              	.LVL19:
+ 290:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     sd_spec3 = (sd_scr[1] & 0x00008000) >> 15;
+ 191              		.loc 1 290 0
+ 192 0010 C3F3C031 		ubfx	r1, r3, #15, #1
+ 193              	.LVL20:
+ 291:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     sd_spec4 = (sd_scr[1] & 0x00000400) >> 10;
+ 194              		.loc 1 291 0
+ 195 0014 C3F38023 		ubfx	r3, r3, #10, #1
+ 196              	.LVL21:
+ 292:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(2 == sd_spec)
+ 197              		.loc 1 292 0
+ 198 0018 022A     		cmp	r2, #2
+ 199 001a 46D0     		beq	.L37
+ 293:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     {
+ 294:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         if(1 == sd_spec3)
+ 295:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         {
+ 296:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             if(1 == sd_spec4) 
+ 297:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             {
+ 298:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****                 printf("\r\n## Card version 4.xx ##");
+ 299:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             }
+ 300:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             else 
+ 301:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             {
+ 302:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****                 printf("\r\n## Card version 3.0x ##");
+ 303:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             }
+ 304:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 305:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         else 
+ 306:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         {
+ 307:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf("\r\n## Card version 2.00 ##");
+ 308:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 309:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 310:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     else if(1 == sd_spec) 
+ 200              		.loc 1 310 0
+ 201 001c 012A     		cmp	r2, #1
+ 202 001e 52D0     		beq	.L38
+ 311:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     {
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 10
+
+
+ 312:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n## Card version 1.10 ##");
+ 313:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 314:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     else if(0 == sd_spec) 
+ 203              		.loc 1 314 0
+ 204 0020 002A     		cmp	r2, #0
+ 205 0022 54D0     		beq	.L39
+ 206              	.LVL22:
+ 207              	.L22:
+ 315:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     {
+ 316:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n## Card version 1.0x ##");
+ 317:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 318:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     
+ 319:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     sd_security = (sd_scr[1] & 0x00700000) >> 20;
+ 208              		.loc 1 319 0
+ 209 0024 454B     		ldr	r3, .L52+4
+ 210 0026 5B68     		ldr	r3, [r3, #4]
+ 211 0028 C3F30253 		ubfx	r3, r3, #20, #3
+ 212              	.LVL23:
+ 320:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(2 == sd_security) 
+ 213              		.loc 1 320 0
+ 214 002c 022B     		cmp	r3, #2
+ 215 002e 52D0     		beq	.L40
+ 321:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     {
+ 322:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n## SDSC card ##");
+ 323:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 324:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     else if(3 == sd_security) 
+ 216              		.loc 1 324 0
+ 217 0030 032B     		cmp	r3, #3
+ 218 0032 54D0     		beq	.L41
+ 325:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     {   
+ 326:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n## SDHC card ##");
+ 327:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 328:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     else if(4 == sd_security) 
+ 219              		.loc 1 328 0
+ 220 0034 042B     		cmp	r3, #4
+ 221 0036 56D0     		beq	.L42
+ 222              	.LVL24:
+ 223              	.L25:
+ 329:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     {
+ 330:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n## SDXC card ##");
+ 331:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 332:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     
+ 333:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     block_count = (sd_cardinfo.card_csd.c_size + 1)*1024;
+ 224              		.loc 1 333 0
+ 225 0038 414D     		ldr	r5, .L52+8
+ 226 003a 2C6A     		ldr	r4, [r5, #32]
+ 227 003c 0134     		adds	r4, r4, #1
+ 228 003e A402     		lsls	r4, r4, #10
+ 229              	.LVL25:
+ 334:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     block_size = 512;
+ 335:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     printf("\r\n## Device size is %dKB ##", sd_card_capacity_get());
+ 230              		.loc 1 335 0
+ 231 0040 FFF7FEFF 		bl	sd_card_capacity_get
+ 232              	.LVL26:
+ 233 0044 0146     		mov	r1, r0
+ 234 0046 3F48     		ldr	r0, .L52+12
+ 235 0048 FFF7FEFF 		bl	printf
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 11
+
+
+ 236              	.LVL27:
+ 336:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     printf("\r\n## Block size is %dB ##", block_size);
+ 237              		.loc 1 336 0
+ 238 004c 4FF40071 		mov	r1, #512
+ 239 0050 3D48     		ldr	r0, .L52+16
+ 240 0052 FFF7FEFF 		bl	printf
+ 241              	.LVL28:
+ 337:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     printf("\r\n## Block count is %d ##", block_count);
+ 242              		.loc 1 337 0
+ 243 0056 2146     		mov	r1, r4
+ 244 0058 3C48     		ldr	r0, .L52+20
+ 245 005a FFF7FEFF 		bl	printf
+ 246              	.LVL29:
+ 338:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     
+ 339:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(sd_cardinfo.card_csd.read_bl_partial){
+ 247              		.loc 1 339 0
+ 248 005e EB7E     		ldrb	r3, [r5, #27]	@ zero_extendqisi2
+ 249 0060 002B     		cmp	r3, #0
+ 250 0062 44D1     		bne	.L43
+ 251              	.L27:
+ 340:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n## Partial blocks for read allowed ##" );
+ 341:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 342:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(sd_cardinfo.card_csd.write_bl_partial){
+ 252              		.loc 1 342 0
+ 253 0064 364B     		ldr	r3, .L52+8
+ 254 0066 93F82F30 		ldrb	r3, [r3, #47]	@ zero_extendqisi2
+ 255 006a 002B     		cmp	r3, #0
+ 256 006c 43D1     		bne	.L44
+ 257              	.L28:
+ 343:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n## Partial blocks for write allowed ##" );
+ 344:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 345:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     temp_ccc = sd_cardinfo.card_csd.ccc;
+ 258              		.loc 1 345 0
+ 259 006e 344B     		ldr	r3, .L52+8
+ 260 0070 1C8B     		ldrh	r4, [r3, #24]
+ 261              	.LVL30:
+ 262 0072 A4B2     		uxth	r4, r4
+ 263              	.LVL31:
+ 346:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     printf("\r\n## CardCommandClasses is: %x ##", temp_ccc);
+ 264              		.loc 1 346 0
+ 265 0074 2146     		mov	r1, r4
+ 266 0076 3648     		ldr	r0, .L52+24
+ 267 0078 FFF7FEFF 		bl	printf
+ 268              	.LVL32:
+ 347:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if((SD_CCC_BLOCK_READ & temp_ccc) && (SD_CCC_BLOCK_WRITE & temp_ccc)){
+ 269              		.loc 1 347 0
+ 270 007c 04F01403 		and	r3, r4, #20
+ 271 0080 142B     		cmp	r3, #20
+ 272 0082 3CD0     		beq	.L45
+ 273              	.L29:
+ 348:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n## Block operation supported ##");
+ 349:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 350:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(SD_CCC_ERASE & temp_ccc){
+ 274              		.loc 1 350 0
+ 275 0084 14F0200F 		tst	r4, #32
+ 276 0088 3DD1     		bne	.L46
+ 277              	.L30:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 12
+
+
+ 351:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n## Erase supported ##");
+ 352:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 353:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(SD_CCC_WRITE_PROTECTION & temp_ccc){
+ 278              		.loc 1 353 0
+ 279 008a 14F0400F 		tst	r4, #64
+ 280 008e 3ED1     		bne	.L47
+ 281              	.L31:
+ 354:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n## Write protection supported ##");
+ 355:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 356:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(SD_CCC_LOCK_CARD & temp_ccc){
+ 282              		.loc 1 356 0
+ 283 0090 14F0800F 		tst	r4, #128
+ 284 0094 3FD1     		bne	.L48
+ 285              	.L32:
+ 357:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n## Lock unlock supported ##");
+ 358:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 359:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(SD_CCC_APPLICATION_SPECIFIC & temp_ccc){
+ 286              		.loc 1 359 0
+ 287 0096 14F4807F 		tst	r4, #256
+ 288 009a 40D1     		bne	.L49
+ 289              	.L33:
+ 360:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n## Application specific supported ##");
+ 361:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 362:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(SD_CCC_IO_MODE & temp_ccc){
+ 290              		.loc 1 362 0
+ 291 009c 14F4007F 		tst	r4, #512
+ 292 00a0 41D1     		bne	.L50
+ 293              	.L34:
+ 363:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n## I/O mode supported ##");
+ 364:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 365:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(SD_CCC_SWITCH & temp_ccc){
+ 294              		.loc 1 365 0
+ 295 00a2 14F4806F 		tst	r4, #1024
+ 296 00a6 42D1     		bne	.L51
+ 297              	.L18:
+ 366:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n## Switch function supported ##");
+ 367:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 368:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** }
+ 298              		.loc 1 368 0
+ 299 00a8 38BD     		pop	{r3, r4, r5, pc}
+ 300              	.LVL33:
+ 301              	.L37:
+ 294:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         {
+ 302              		.loc 1 294 0
+ 303 00aa 41B1     		cbz	r1, .L20
+ 296:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             {
+ 304              		.loc 1 296 0
+ 305 00ac 1BB1     		cbz	r3, .L21
+ 298:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             }
+ 306              		.loc 1 298 0
+ 307 00ae 2948     		ldr	r0, .L52+28
+ 308 00b0 FFF7FEFF 		bl	printf
+ 309              	.LVL34:
+ 310 00b4 B6E7     		b	.L22
+ 311              	.LVL35:
+ 312              	.L21:
+ 302:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             }
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 13
+
+
+ 313              		.loc 1 302 0
+ 314 00b6 2848     		ldr	r0, .L52+32
+ 315 00b8 FFF7FEFF 		bl	printf
+ 316              	.LVL36:
+ 317 00bc B2E7     		b	.L22
+ 318              	.LVL37:
+ 319              	.L20:
+ 307:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 320              		.loc 1 307 0
+ 321 00be 2748     		ldr	r0, .L52+36
+ 322 00c0 FFF7FEFF 		bl	printf
+ 323              	.LVL38:
+ 324 00c4 AEE7     		b	.L22
+ 325              	.LVL39:
+ 326              	.L38:
+ 312:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 327              		.loc 1 312 0
+ 328 00c6 2648     		ldr	r0, .L52+40
+ 329 00c8 FFF7FEFF 		bl	printf
+ 330              	.LVL40:
+ 331 00cc AAE7     		b	.L22
+ 332              	.LVL41:
+ 333              	.L39:
+ 316:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 334              		.loc 1 316 0
+ 335 00ce 2548     		ldr	r0, .L52+44
+ 336 00d0 FFF7FEFF 		bl	printf
+ 337              	.LVL42:
+ 338 00d4 A6E7     		b	.L22
+ 339              	.LVL43:
+ 340              	.L40:
+ 322:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 341              		.loc 1 322 0
+ 342 00d6 2448     		ldr	r0, .L52+48
+ 343 00d8 FFF7FEFF 		bl	printf
+ 344              	.LVL44:
+ 345 00dc ACE7     		b	.L25
+ 346              	.LVL45:
+ 347              	.L41:
+ 326:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 348              		.loc 1 326 0
+ 349 00de 2348     		ldr	r0, .L52+52
+ 350 00e0 FFF7FEFF 		bl	printf
+ 351              	.LVL46:
+ 352 00e4 A8E7     		b	.L25
+ 353              	.LVL47:
+ 354              	.L42:
+ 330:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 355              		.loc 1 330 0
+ 356 00e6 2248     		ldr	r0, .L52+56
+ 357 00e8 FFF7FEFF 		bl	printf
+ 358              	.LVL48:
+ 359 00ec A4E7     		b	.L25
+ 360              	.LVL49:
+ 361              	.L43:
+ 340:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 362              		.loc 1 340 0
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 14
+
+
+ 363 00ee 2148     		ldr	r0, .L52+60
+ 364 00f0 FFF7FEFF 		bl	printf
+ 365              	.LVL50:
+ 366 00f4 B6E7     		b	.L27
+ 367              	.L44:
+ 343:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 368              		.loc 1 343 0
+ 369 00f6 2048     		ldr	r0, .L52+64
+ 370 00f8 FFF7FEFF 		bl	printf
+ 371              	.LVL51:
+ 372 00fc B7E7     		b	.L28
+ 373              	.LVL52:
+ 374              	.L45:
+ 348:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 375              		.loc 1 348 0
+ 376 00fe 1F48     		ldr	r0, .L52+68
+ 377 0100 FFF7FEFF 		bl	printf
+ 378              	.LVL53:
+ 379 0104 BEE7     		b	.L29
+ 380              	.L46:
+ 351:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 381              		.loc 1 351 0
+ 382 0106 1E48     		ldr	r0, .L52+72
+ 383 0108 FFF7FEFF 		bl	printf
+ 384              	.LVL54:
+ 385 010c BDE7     		b	.L30
+ 386              	.L47:
+ 354:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 387              		.loc 1 354 0
+ 388 010e 1D48     		ldr	r0, .L52+76
+ 389 0110 FFF7FEFF 		bl	printf
+ 390              	.LVL55:
+ 391 0114 BCE7     		b	.L31
+ 392              	.L48:
+ 357:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 393              		.loc 1 357 0
+ 394 0116 1C48     		ldr	r0, .L52+80
+ 395 0118 FFF7FEFF 		bl	printf
+ 396              	.LVL56:
+ 397 011c BBE7     		b	.L32
+ 398              	.L49:
+ 360:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 399              		.loc 1 360 0
+ 400 011e 1B48     		ldr	r0, .L52+84
+ 401 0120 FFF7FEFF 		bl	printf
+ 402              	.LVL57:
+ 403 0124 BAE7     		b	.L33
+ 404              	.L50:
+ 363:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 405              		.loc 1 363 0
+ 406 0126 1A48     		ldr	r0, .L52+88
+ 407 0128 FFF7FEFF 		bl	printf
+ 408              	.LVL58:
+ 409 012c B9E7     		b	.L34
+ 410              	.L51:
+ 366:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 411              		.loc 1 366 0
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 15
+
+
+ 412 012e 1948     		ldr	r0, .L52+92
+ 413 0130 FFF7FEFF 		bl	printf
+ 414              	.LVL59:
+ 415              		.loc 1 368 0
+ 416 0134 B8E7     		b	.L18
+ 417              	.L53:
+ 418 0136 00BF     		.align	2
+ 419              	.L52:
+ 420 0138 00000000 		.word	.LC1
+ 421 013c 00000000 		.word	sd_scr
+ 422 0140 00000000 		.word	sd_cardinfo
+ 423 0144 E0000000 		.word	.LC10
+ 424 0148 FC000000 		.word	.LC11
+ 425 014c 18010000 		.word	.LC12
+ 426 0150 88010000 		.word	.LC15
+ 427 0154 18000000 		.word	.LC2
+ 428 0158 34000000 		.word	.LC3
+ 429 015c 50000000 		.word	.LC4
+ 430 0160 6C000000 		.word	.LC5
+ 431 0164 88000000 		.word	.LC6
+ 432 0168 A4000000 		.word	.LC7
+ 433 016c B8000000 		.word	.LC8
+ 434 0170 CC000000 		.word	.LC9
+ 435 0174 34010000 		.word	.LC13
+ 436 0178 5C010000 		.word	.LC14
+ 437 017c AC010000 		.word	.LC16
+ 438 0180 D0010000 		.word	.LC17
+ 439 0184 E8010000 		.word	.LC18
+ 440 0188 0C020000 		.word	.LC19
+ 441 018c 2C020000 		.word	.LC20
+ 442 0190 54020000 		.word	.LC21
+ 443 0194 70020000 		.word	.LC22
+ 444              		.cfi_endproc
+ 445              	.LFE122:
+ 447              		.section	.text.main,"ax",%progbits
+ 448              		.align	1
+ 449              		.global	main
+ 450              		.syntax unified
+ 451              		.thumb
+ 452              		.thumb_func
+ 453              		.fpu fpv4-sp-d16
+ 455              	main:
+ 456              	.LFB119:
+  58:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****  sd_error_enum sd_error;
+ 457              		.loc 1 58 0
+ 458              		.cfi_startproc
+ 459              		@ args = 0, pretend = 0, frame = 0
+ 460              		@ frame_needed = 0, uses_anonymous_args = 0
+ 461 0000 10B5     		push	{r4, lr}
+ 462              	.LCFI6:
+ 463              		.cfi_def_cfa_offset 8
+ 464              		.cfi_offset 4, -8
+ 465              		.cfi_offset 14, -4
+ 466              	.LVL60:
+  66:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     gd_eval_com_init(EVAL_COM0);
+ 467              		.loc 1 66 0
+ 468 0002 FFF7FEFF 		bl	nvic_config
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 16
+
+
+ 469              	.LVL61:
+  67:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 		gd_eval_led_init(LED);
+ 470              		.loc 1 67 0
+ 471 0006 6648     		ldr	r0, .L82
+ 472 0008 FFF7FEFF 		bl	gd_eval_com_init
+ 473              	.LVL62:
+  68:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     /* initialize the card */
+ 474              		.loc 1 68 0
+ 475 000c 0020     		movs	r0, #0
+ 476 000e FFF7FEFF 		bl	gd_eval_led_init
+ 477              	.LVL63:
+  60:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** #ifdef DATA_PRINT
+ 478              		.loc 1 60 0
+ 479 0012 0524     		movs	r4, #5
+ 480              	.LVL64:
+ 481              	.L56:
+  71:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }while((SD_OK != sd_error) && (--i));
+ 482              		.loc 1 71 0 discriminator 2
+ 483 0014 FFF7FEFF 		bl	sd_io_init
+ 484              	.LVL65:
+  72:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     
+ 485              		.loc 1 72 0 discriminator 2
+ 486 0018 1D28     		cmp	r0, #29
+ 487 001a 03D0     		beq	.L55
+  72:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     
+ 488              		.loc 1 72 0 is_stmt 0 discriminator 1
+ 489 001c 013C     		subs	r4, r4, #1
+ 490              	.LVL66:
+ 491 001e A4B2     		uxth	r4, r4
+ 492              	.LVL67:
+ 493 0020 002C     		cmp	r4, #0
+ 494 0022 F7D1     		bne	.L56
+ 495              	.L55:
+  74:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n Card init success!\r\n");
+ 496              		.loc 1 74 0 is_stmt 1
+ 497 0024 34B1     		cbz	r4, .L57
+  75:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }else{
+ 498              		.loc 1 75 0
+ 499 0026 5F48     		ldr	r0, .L82+4
+ 500              	.LVL68:
+ 501 0028 FFF7FEFF 		bl	puts
+ 502              	.LVL69:
+ 503              	.L58:
+  81:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     
+ 504              		.loc 1 81 0
+ 505 002c FFF7FEFF 		bl	card_info_get
+ 506              	.LVL70:
+  84:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         buf_write[i] = i;
+ 507              		.loc 1 84 0
+ 508 0030 0023     		movs	r3, #0
+ 509 0032 08E0     		b	.L59
+ 510              	.LVL71:
+ 511              	.L57:
+  77:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 		}
+ 512              		.loc 1 77 0
+ 513 0034 5C48     		ldr	r0, .L82+8
+ 514              	.LVL72:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 17
+
+
+ 515 0036 FFF7FEFF 		bl	puts
+ 516              	.LVL73:
+ 517 003a F7E7     		b	.L58
+ 518              	.LVL74:
+ 519              	.L60:
+  85:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 520              		.loc 1 85 0 discriminator 3
+ 521 003c 5B4A     		ldr	r2, .L82+12
+ 522 003e 42F82330 		str	r3, [r2, r3, lsl #2]
+  84:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         buf_write[i] = i;
+ 523              		.loc 1 84 0 discriminator 3
+ 524 0042 0133     		adds	r3, r3, #1
+ 525              	.LVL75:
+ 526 0044 9BB2     		uxth	r3, r3
+ 527              	.LVL76:
+ 528              	.L59:
+  84:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         buf_write[i] = i;
+ 529              		.loc 1 84 0 is_stmt 0 discriminator 1
+ 530 0046 B3F5007F 		cmp	r3, #512
+ 531 004a F7D3     		bcc	.L60
+  88:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     
+ 532              		.loc 1 88 0 is_stmt 1
+ 533 004c 5848     		ldr	r0, .L82+16
+ 534 004e FFF7FEFF 		bl	printf
+ 535              	.LVL77:
+  91:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(SD_OK != sd_error){
+ 536              		.loc 1 91 0
+ 537 0052 4FF40072 		mov	r2, #512
+ 538 0056 4FF44841 		mov	r1, #51200
+ 539 005a 5448     		ldr	r0, .L82+12
+ 540 005c FFF7FEFF 		bl	sd_block_write
+ 541              	.LVL78:
+  92:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n Block write fail!");
+ 542              		.loc 1 92 0
+ 543 0060 1D28     		cmp	r0, #29
+ 544 0062 06D0     		beq	.L61
+  93:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         /* turn off LED*/
+ 545              		.loc 1 93 0
+ 546 0064 5348     		ldr	r0, .L82+20
+ 547              	.LVL79:
+ 548 0066 FFF7FEFF 		bl	printf
+ 549              	.LVL80:
+  95:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         while (1){
+ 550              		.loc 1 95 0
+ 551 006a 0020     		movs	r0, #0
+ 552 006c FFF7FEFF 		bl	gd_eval_led_off
+ 553              	.LVL81:
+ 554              	.L62:
+ 555 0070 FEE7     		b	.L62
+ 556              	.LVL82:
+ 557              	.L61:
+  99:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 558              		.loc 1 99 0
+ 559 0072 5148     		ldr	r0, .L82+24
+ 560              	.LVL83:
+ 561 0074 FFF7FEFF 		bl	printf
+ 562              	.LVL84:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 18
+
+
+ 101:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(SD_OK != sd_error){
+ 563              		.loc 1 101 0
+ 564 0078 4FF40072 		mov	r2, #512
+ 565 007c 4FF44841 		mov	r1, #51200
+ 566 0080 4E48     		ldr	r0, .L82+28
+ 567 0082 FFF7FEFF 		bl	sd_block_read
+ 568              	.LVL85:
+ 102:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n Block read fail!");
+ 569              		.loc 1 102 0
+ 570 0086 1D28     		cmp	r0, #29
+ 571 0088 06D0     		beq	.L63
+ 103:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         /* turn off LED*/
+ 572              		.loc 1 103 0
+ 573 008a 4D48     		ldr	r0, .L82+32
+ 574              	.LVL86:
+ 575 008c FFF7FEFF 		bl	printf
+ 576              	.LVL87:
+ 105:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         while (1){
+ 577              		.loc 1 105 0
+ 578 0090 0020     		movs	r0, #0
+ 579 0092 FFF7FEFF 		bl	gd_eval_led_off
+ 580              	.LVL88:
+ 581              	.L64:
+ 582 0096 FEE7     		b	.L64
+ 583              	.LVL89:
+ 584              	.L63:
+ 109:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** #ifdef DATA_PRINT
+ 585              		.loc 1 109 0
+ 586 0098 4A48     		ldr	r0, .L82+36
+ 587              	.LVL90:
+ 588 009a FFF7FEFF 		bl	printf
+ 589              	.LVL91:
+ 125:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         /* lock the card */
+ 590              		.loc 1 125 0
+ 591 009e 4A4B     		ldr	r3, .L82+40
+ 592 00a0 1B8B     		ldrh	r3, [r3, #24]
+ 593 00a2 13F0800F 		tst	r3, #128
+ 594 00a6 4ED0     		beq	.L65
+ 127:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         if(SD_OK != sd_error){
+ 595              		.loc 1 127 0
+ 596 00a8 0520     		movs	r0, #5
+ 597 00aa FFF7FEFF 		bl	sd_lock_unlock
+ 598              	.LVL92:
+ 128:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf("\r\n Lock failed!");
+ 599              		.loc 1 128 0
+ 600 00ae 1D28     		cmp	r0, #29
+ 601 00b0 06D0     		beq	.L66
+ 129:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 						/* turn off LED*/
+ 602              		.loc 1 129 0
+ 603 00b2 4648     		ldr	r0, .L82+44
+ 604              	.LVL93:
+ 605 00b4 FFF7FEFF 		bl	printf
+ 606              	.LVL94:
+ 131:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             while (1){
+ 607              		.loc 1 131 0
+ 608 00b8 0020     		movs	r0, #0
+ 609 00ba FFF7FEFF 		bl	gd_eval_led_off
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 19
+
+
+ 610              	.LVL95:
+ 611              	.L67:
+ 612 00be FEE7     		b	.L67
+ 613              	.LVL96:
+ 614              	.L66:
+ 135:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 615              		.loc 1 135 0
+ 616 00c0 4348     		ldr	r0, .L82+48
+ 617              	.LVL97:
+ 618 00c2 FFF7FEFF 		bl	printf
+ 619              	.LVL98:
+ 137:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         if(SD_OK != sd_error){
+ 620              		.loc 1 137 0
+ 621 00c6 4FF44A41 		mov	r1, #51712
+ 622 00ca 4FF44840 		mov	r0, #51200
+ 623 00ce FFF7FEFF 		bl	sd_erase
+ 624              	.LVL99:
+ 138:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf("\r\n Erase failed!");
+ 625              		.loc 1 138 0
+ 626 00d2 1D28     		cmp	r0, #29
+ 627 00d4 0ED0     		beq	.L68
+ 139:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }else{
+ 628              		.loc 1 139 0
+ 629 00d6 3F48     		ldr	r0, .L82+52
+ 630              	.LVL100:
+ 631 00d8 FFF7FEFF 		bl	printf
+ 632              	.LVL101:
+ 633              	.L69:
+ 145:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         if(SD_OK != sd_error){
+ 634              		.loc 1 145 0
+ 635 00dc 0220     		movs	r0, #2
+ 636 00de FFF7FEFF 		bl	sd_lock_unlock
+ 637              	.LVL102:
+ 146:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf("\r\n Unlock failed!");
+ 638              		.loc 1 146 0
+ 639 00e2 1D28     		cmp	r0, #29
+ 640 00e4 0AD0     		beq	.L70
+ 147:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 						/* turn off LED*/
+ 641              		.loc 1 147 0
+ 642 00e6 3C48     		ldr	r0, .L82+56
+ 643              	.LVL103:
+ 644 00e8 FFF7FEFF 		bl	printf
+ 645              	.LVL104:
+ 149:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             while (1){
+ 646              		.loc 1 149 0
+ 647 00ec 0020     		movs	r0, #0
+ 648 00ee FFF7FEFF 		bl	gd_eval_led_off
+ 649              	.LVL105:
+ 650              	.L71:
+ 651 00f2 FEE7     		b	.L71
+ 652              	.LVL106:
+ 653              	.L68:
+ 141:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 654              		.loc 1 141 0
+ 655 00f4 3948     		ldr	r0, .L82+60
+ 656              	.LVL107:
+ 657 00f6 FFF7FEFF 		bl	printf
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 20
+
+
+ 658              	.LVL108:
+ 659 00fa EFE7     		b	.L69
+ 660              	.LVL109:
+ 661              	.L70:
+ 153:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 662              		.loc 1 153 0
+ 663 00fc 3848     		ldr	r0, .L82+64
+ 664              	.LVL110:
+ 665 00fe FFF7FEFF 		bl	printf
+ 666              	.LVL111:
+ 155:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         if(SD_OK != sd_error){
+ 667              		.loc 1 155 0
+ 668 0102 4FF44A41 		mov	r1, #51712
+ 669 0106 4FF44840 		mov	r0, #51200
+ 670 010a FFF7FEFF 		bl	sd_erase
+ 671              	.LVL112:
+ 156:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf("\r\n Erase failed!");
+ 672              		.loc 1 156 0
+ 673 010e 1D28     		cmp	r0, #29
+ 674 0110 12D0     		beq	.L72
+ 157:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }else{
+ 675              		.loc 1 157 0
+ 676 0112 3048     		ldr	r0, .L82+52
+ 677              	.LVL113:
+ 678 0114 FFF7FEFF 		bl	printf
+ 679              	.LVL114:
+ 680              	.L73:
+ 162:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         if(SD_OK != sd_error){
+ 681              		.loc 1 162 0
+ 682 0118 4FF40072 		mov	r2, #512
+ 683 011c 4FF44841 		mov	r1, #51200
+ 684 0120 2648     		ldr	r0, .L82+28
+ 685 0122 FFF7FEFF 		bl	sd_block_read
+ 686              	.LVL115:
+ 163:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             printf("\r\n Block read fail!");
+ 687              		.loc 1 163 0
+ 688 0126 1D28     		cmp	r0, #29
+ 689 0128 0AD0     		beq	.L74
+ 164:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** 						/* turn off LED*/
+ 690              		.loc 1 164 0
+ 691 012a 2548     		ldr	r0, .L82+32
+ 692              	.LVL116:
+ 693 012c FFF7FEFF 		bl	printf
+ 694              	.LVL117:
+ 166:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****             while (1){
+ 695              		.loc 1 166 0
+ 696 0130 0020     		movs	r0, #0
+ 697 0132 FFF7FEFF 		bl	gd_eval_led_off
+ 698              	.LVL118:
+ 699              	.L75:
+ 700 0136 FEE7     		b	.L75
+ 701              	.LVL119:
+ 702              	.L72:
+ 159:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         }
+ 703              		.loc 1 159 0
+ 704 0138 2848     		ldr	r0, .L82+60
+ 705              	.LVL120:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 21
+
+
+ 706 013a FFF7FEFF 		bl	printf
+ 707              	.LVL121:
+ 708 013e EBE7     		b	.L73
+ 709              	.LVL122:
+ 710              	.L74:
+ 170:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** #ifdef DATA_PRINT
+ 711              		.loc 1 170 0
+ 712 0140 2048     		ldr	r0, .L82+36
+ 713              	.LVL123:
+ 714 0142 FFF7FEFF 		bl	printf
+ 715              	.LVL124:
+ 716              	.L65:
+ 187:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(SD_OK != sd_error){
+ 717              		.loc 1 187 0
+ 718 0146 0323     		movs	r3, #3
+ 719 0148 4FF40072 		mov	r2, #512
+ 720 014c 4FF4C831 		mov	r1, #102400
+ 721 0150 1648     		ldr	r0, .L82+12
+ 722 0152 FFF7FEFF 		bl	sd_multiblocks_write
+ 723              	.LVL125:
+ 188:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n Multiple block write fail!");
+ 724              		.loc 1 188 0
+ 725 0156 1D28     		cmp	r0, #29
+ 726 0158 06D0     		beq	.L76
+ 189:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         /* turn off LED*/
+ 727              		.loc 1 189 0
+ 728 015a 2248     		ldr	r0, .L82+68
+ 729              	.LVL126:
+ 730 015c FFF7FEFF 		bl	printf
+ 731              	.LVL127:
+ 191:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         while (1){
+ 732              		.loc 1 191 0
+ 733 0160 0020     		movs	r0, #0
+ 734 0162 FFF7FEFF 		bl	gd_eval_led_off
+ 735              	.LVL128:
+ 736              	.L77:
+ 737 0166 FEE7     		b	.L77
+ 738              	.LVL129:
+ 739              	.L76:
+ 195:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     }
+ 740              		.loc 1 195 0
+ 741 0168 1F48     		ldr	r0, .L82+72
+ 742              	.LVL130:
+ 743 016a FFF7FEFF 		bl	printf
+ 744              	.LVL131:
+ 197:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     if(SD_OK != sd_error){
+ 745              		.loc 1 197 0
+ 746 016e 0323     		movs	r3, #3
+ 747 0170 4FF40072 		mov	r2, #512
+ 748 0174 4FF4C831 		mov	r1, #102400
+ 749 0178 1048     		ldr	r0, .L82+28
+ 750 017a FFF7FEFF 		bl	sd_multiblocks_read
+ 751              	.LVL132:
+ 198:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         printf("\r\n Multiple block read fail!");
+ 752              		.loc 1 198 0
+ 753 017e 1D28     		cmp	r0, #29
+ 754 0180 06D0     		beq	.L78
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 22
+
+
+ 199:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         /* turn off LED*/
+ 755              		.loc 1 199 0
+ 756 0182 1A48     		ldr	r0, .L82+76
+ 757              	.LVL133:
+ 758 0184 FFF7FEFF 		bl	printf
+ 759              	.LVL134:
+ 201:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****         while (1){
+ 760              		.loc 1 201 0
+ 761 0188 0020     		movs	r0, #0
+ 762 018a FFF7FEFF 		bl	gd_eval_led_off
+ 763              	.LVL135:
+ 764              	.L79:
+ 765 018e FEE7     		b	.L79
+ 766              	.LVL136:
+ 767              	.L78:
+ 205:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** #ifdef DATA_PRINT
+ 768              		.loc 1 205 0
+ 769 0190 1748     		ldr	r0, .L82+80
+ 770              	.LVL137:
+ 771 0192 FFF7FEFF 		bl	printf
+ 772              	.LVL138:
+ 221:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     while (1){
+ 773              		.loc 1 221 0
+ 774 0196 0020     		movs	r0, #0
+ 775 0198 FFF7FEFF 		bl	gd_eval_led_on
+ 776              	.LVL139:
+ 777              	.L80:
+ 778 019c FEE7     		b	.L80
+ 779              	.L83:
+ 780 019e 00BF     		.align	2
+ 781              	.L82:
+ 782 01a0 00380140 		.word	1073821696
+ 783 01a4 00000000 		.word	.LC23
+ 784 01a8 18000000 		.word	.LC24
+ 785 01ac 00000000 		.word	buf_write
+ 786 01b0 30000000 		.word	.LC25
+ 787 01b4 40000000 		.word	.LC26
+ 788 01b8 58000000 		.word	.LC27
+ 789 01bc 00000000 		.word	buf_read
+ 790 01c0 70000000 		.word	.LC28
+ 791 01c4 84000000 		.word	.LC29
+ 792 01c8 00000000 		.word	sd_cardinfo
+ 793 01cc 9C000000 		.word	.LC30
+ 794 01d0 AC000000 		.word	.LC31
+ 795 01d4 C4000000 		.word	.LC32
+ 796 01d8 EC000000 		.word	.LC34
+ 797 01dc D8000000 		.word	.LC33
+ 798 01e0 00010000 		.word	.LC35
+ 799 01e4 1C010000 		.word	.LC36
+ 800 01e8 3C010000 		.word	.LC37
+ 801 01ec 60010000 		.word	.LC38
+ 802 01f0 80010000 		.word	.LC39
+ 803              		.cfi_endproc
+ 804              	.LFE119:
+ 806              		.section	.text.fputc,"ax",%progbits
+ 807              		.align	1
+ 808              		.global	fputc
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 23
+
+
+ 809              		.syntax unified
+ 810              		.thumb
+ 811              		.thumb_func
+ 812              		.fpu fpv4-sp-d16
+ 814              	fputc:
+ 815              	.LFB123:
+ 369:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** /* retarget the C library printf function to the USART */
+ 370:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** int fputc(int ch, FILE *f)
+ 371:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** {
+ 816              		.loc 1 371 0
+ 817              		.cfi_startproc
+ 818              		@ args = 0, pretend = 0, frame = 0
+ 819              		@ frame_needed = 0, uses_anonymous_args = 0
+ 820              	.LVL140:
+ 821 0000 10B5     		push	{r4, lr}
+ 822              	.LCFI7:
+ 823              		.cfi_def_cfa_offset 8
+ 824              		.cfi_offset 4, -8
+ 825              		.cfi_offset 14, -4
+ 826 0002 0446     		mov	r4, r0
+ 372:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     usart_data_transmit(EVAL_COM0, (uint8_t)ch);
+ 827              		.loc 1 372 0
+ 828 0004 C1B2     		uxtb	r1, r0
+ 829              	.LVL141:
+ 830 0006 0548     		ldr	r0, .L87
+ 831              	.LVL142:
+ 832 0008 FFF7FEFF 		bl	usart_data_transmit
+ 833              	.LVL143:
+ 834              	.L85:
+ 373:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     while(RESET == usart_flag_get(EVAL_COM0, USART_FLAG_TBE));
+ 835              		.loc 1 373 0 discriminator 1
+ 836 000c 0721     		movs	r1, #7
+ 837 000e 0348     		ldr	r0, .L87
+ 838 0010 FFF7FEFF 		bl	usart_flag_get
+ 839              	.LVL144:
+ 840 0014 0028     		cmp	r0, #0
+ 841 0016 F9D0     		beq	.L85
+ 374:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c ****     return ch;
+ 375:C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-IoT_GD32F303_Demo_Suites/Projects/12_SDMMC\main.c **** }
+ 842              		.loc 1 375 0
+ 843 0018 2046     		mov	r0, r4
+ 844 001a 10BD     		pop	{r4, pc}
+ 845              	.LVL145:
+ 846              	.L88:
+ 847              		.align	2
+ 848              	.L87:
+ 849 001c 00380140 		.word	1073821696
+ 850              		.cfi_endproc
+ 851              	.LFE123:
+ 853              		.comm	buf_read,2048,4
+ 854              		.comm	buf_write,2048,4
+ 855              		.comm	sd_cardinfo,72,4
+ 856              		.section	.rodata.card_info_get.str1.4,"aMS",%progbits,1
+ 857              		.align	2
+ 858              	.LC1:
+ 859 0000 0D0A2043 		.ascii	"\015\012 Card information:\000"
+ 859      61726420 
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 24
+
+
+ 859      696E666F 
+ 859      726D6174 
+ 859      696F6E3A 
+ 860 0015 000000   		.space	3
+ 861              	.LC2:
+ 862 0018 0D0A2323 		.ascii	"\015\012## Card version 4.xx ##\000"
+ 862      20436172 
+ 862      64207665 
+ 862      7273696F 
+ 862      6E20342E 
+ 863 0032 0000     		.space	2
+ 864              	.LC3:
+ 865 0034 0D0A2323 		.ascii	"\015\012## Card version 3.0x ##\000"
+ 865      20436172 
+ 865      64207665 
+ 865      7273696F 
+ 865      6E20332E 
+ 866 004e 0000     		.space	2
+ 867              	.LC4:
+ 868 0050 0D0A2323 		.ascii	"\015\012## Card version 2.00 ##\000"
+ 868      20436172 
+ 868      64207665 
+ 868      7273696F 
+ 868      6E20322E 
+ 869 006a 0000     		.space	2
+ 870              	.LC5:
+ 871 006c 0D0A2323 		.ascii	"\015\012## Card version 1.10 ##\000"
+ 871      20436172 
+ 871      64207665 
+ 871      7273696F 
+ 871      6E20312E 
+ 872 0086 0000     		.space	2
+ 873              	.LC6:
+ 874 0088 0D0A2323 		.ascii	"\015\012## Card version 1.0x ##\000"
+ 874      20436172 
+ 874      64207665 
+ 874      7273696F 
+ 874      6E20312E 
+ 875 00a2 0000     		.space	2
+ 876              	.LC7:
+ 877 00a4 0D0A2323 		.ascii	"\015\012## SDSC card ##\000"
+ 877      20534453 
+ 877      43206361 
+ 877      72642023 
+ 877      2300
+ 878 00b6 0000     		.space	2
+ 879              	.LC8:
+ 880 00b8 0D0A2323 		.ascii	"\015\012## SDHC card ##\000"
+ 880      20534448 
+ 880      43206361 
+ 880      72642023 
+ 880      2300
+ 881 00ca 0000     		.space	2
+ 882              	.LC9:
+ 883 00cc 0D0A2323 		.ascii	"\015\012## SDXC card ##\000"
+ 883      20534458 
+ 883      43206361 
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 25
+
+
+ 883      72642023 
+ 883      2300
+ 884 00de 0000     		.space	2
+ 885              	.LC10:
+ 886 00e0 0D0A2323 		.ascii	"\015\012## Device size is %dKB ##\000"
+ 886      20446576 
+ 886      69636520 
+ 886      73697A65 
+ 886      20697320 
+ 887              	.LC11:
+ 888 00fc 0D0A2323 		.ascii	"\015\012## Block size is %dB ##\000"
+ 888      20426C6F 
+ 888      636B2073 
+ 888      697A6520 
+ 888      69732025 
+ 889 0116 0000     		.space	2
+ 890              	.LC12:
+ 891 0118 0D0A2323 		.ascii	"\015\012## Block count is %d ##\000"
+ 891      20426C6F 
+ 891      636B2063 
+ 891      6F756E74 
+ 891      20697320 
+ 892 0132 0000     		.space	2
+ 893              	.LC13:
+ 894 0134 0D0A2323 		.ascii	"\015\012## Partial blocks for read allowed ##\000"
+ 894      20506172 
+ 894      7469616C 
+ 894      20626C6F 
+ 894      636B7320 
+ 895              	.LC14:
+ 896 015c 0D0A2323 		.ascii	"\015\012## Partial blocks for write allowed ##\000"
+ 896      20506172 
+ 896      7469616C 
+ 896      20626C6F 
+ 896      636B7320 
+ 897 0185 000000   		.space	3
+ 898              	.LC15:
+ 899 0188 0D0A2323 		.ascii	"\015\012## CardCommandClasses is: %x ##\000"
+ 899      20436172 
+ 899      64436F6D 
+ 899      6D616E64 
+ 899      436C6173 
+ 900 01aa 0000     		.space	2
+ 901              	.LC16:
+ 902 01ac 0D0A2323 		.ascii	"\015\012## Block operation supported ##\000"
+ 902      20426C6F 
+ 902      636B206F 
+ 902      70657261 
+ 902      74696F6E 
+ 903 01ce 0000     		.space	2
+ 904              	.LC17:
+ 905 01d0 0D0A2323 		.ascii	"\015\012## Erase supported ##\000"
+ 905      20457261 
+ 905      73652073 
+ 905      7570706F 
+ 905      72746564 
+ 906              	.LC18:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 26
+
+
+ 907 01e8 0D0A2323 		.ascii	"\015\012## Write protection supported ##\000"
+ 907      20577269 
+ 907      74652070 
+ 907      726F7465 
+ 907      6374696F 
+ 908 020b 00       		.space	1
+ 909              	.LC19:
+ 910 020c 0D0A2323 		.ascii	"\015\012## Lock unlock supported ##\000"
+ 910      204C6F63 
+ 910      6B20756E 
+ 910      6C6F636B 
+ 910      20737570 
+ 911 022a 0000     		.space	2
+ 912              	.LC20:
+ 913 022c 0D0A2323 		.ascii	"\015\012## Application specific supported ##\000"
+ 913      20417070 
+ 913      6C696361 
+ 913      74696F6E 
+ 913      20737065 
+ 914 0253 00       		.space	1
+ 915              	.LC21:
+ 916 0254 0D0A2323 		.ascii	"\015\012## I/O mode supported ##\000"
+ 916      20492F4F 
+ 916      206D6F64 
+ 916      65207375 
+ 916      70706F72 
+ 917 026f 00       		.space	1
+ 918              	.LC22:
+ 919 0270 0D0A2323 		.ascii	"\015\012## Switch function supported ##\000"
+ 919      20537769 
+ 919      74636820 
+ 919      66756E63 
+ 919      74696F6E 
+ 920              		.section	.rodata.main.str1.4,"aMS",%progbits,1
+ 921              		.align	2
+ 922              	.LC23:
+ 923 0000 0D0A2043 		.ascii	"\015\012 Card init success!\015\000"
+ 923      61726420 
+ 923      696E6974 
+ 923      20737563 
+ 923      63657373 
+ 924 0017 00       		.space	1
+ 925              	.LC24:
+ 926 0018 0D0A2043 		.ascii	"\015\012 Card init failed!\015\000"
+ 926      61726420 
+ 926      696E6974 
+ 926      20666169 
+ 926      6C656421 
+ 927 002e 0000     		.space	2
+ 928              	.LC25:
+ 929 0030 0D0A0D0A 		.ascii	"\015\012\015\012 Card test:\000"
+ 929      20436172 
+ 929      64207465 
+ 929      73743A00 
+ 930              	.LC26:
+ 931 0040 0D0A2042 		.ascii	"\015\012 Block write fail!\000"
+ 931      6C6F636B 
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 27
+
+
+ 931      20777269 
+ 931      74652066 
+ 931      61696C21 
+ 932 0055 000000   		.space	3
+ 933              	.LC27:
+ 934 0058 0D0A2042 		.ascii	"\015\012 Block write success!\000"
+ 934      6C6F636B 
+ 934      20777269 
+ 934      74652073 
+ 934      75636365 
+ 935              	.LC28:
+ 936 0070 0D0A2042 		.ascii	"\015\012 Block read fail!\000"
+ 936      6C6F636B 
+ 936      20726561 
+ 936      64206661 
+ 936      696C2100 
+ 937              	.LC29:
+ 938 0084 0D0A2042 		.ascii	"\015\012 Block read success!\000"
+ 938      6C6F636B 
+ 938      20726561 
+ 938      64207375 
+ 938      63636573 
+ 939 009b 00       		.space	1
+ 940              	.LC30:
+ 941 009c 0D0A204C 		.ascii	"\015\012 Lock failed!\000"
+ 941      6F636B20 
+ 941      6661696C 
+ 941      65642100 
+ 942              	.LC31:
+ 943 00ac 0D0A2054 		.ascii	"\015\012 The card is locked!\000"
+ 943      68652063 
+ 943      61726420 
+ 943      6973206C 
+ 943      6F636B65 
+ 944 00c3 00       		.space	1
+ 945              	.LC32:
+ 946 00c4 0D0A2045 		.ascii	"\015\012 Erase failed!\000"
+ 946      72617365 
+ 946      20666169 
+ 946      6C656421 
+ 946      00
+ 947 00d5 000000   		.space	3
+ 948              	.LC33:
+ 949 00d8 0D0A2045 		.ascii	"\015\012 Erase success!\000"
+ 949      72617365 
+ 949      20737563 
+ 949      63657373 
+ 949      2100
+ 950 00ea 0000     		.space	2
+ 951              	.LC34:
+ 952 00ec 0D0A2055 		.ascii	"\015\012 Unlock failed!\000"
+ 952      6E6C6F63 
+ 952      6B206661 
+ 952      696C6564 
+ 952      2100
+ 953 00fe 0000     		.space	2
+ 954              	.LC35:
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 28
+
+
+ 955 0100 0D0A2054 		.ascii	"\015\012 The card is unlocked!\000"
+ 955      68652063 
+ 955      61726420 
+ 955      69732075 
+ 955      6E6C6F63 
+ 956 0119 000000   		.space	3
+ 957              	.LC36:
+ 958 011c 0D0A204D 		.ascii	"\015\012 Multiple block write fail!\000"
+ 958      756C7469 
+ 958      706C6520 
+ 958      626C6F63 
+ 958      6B207772 
+ 959 013a 0000     		.space	2
+ 960              	.LC37:
+ 961 013c 0D0A204D 		.ascii	"\015\012 Multiple block write success!\000"
+ 961      756C7469 
+ 961      706C6520 
+ 961      626C6F63 
+ 961      6B207772 
+ 962 015d 000000   		.space	3
+ 963              	.LC38:
+ 964 0160 0D0A204D 		.ascii	"\015\012 Multiple block read fail!\000"
+ 964      756C7469 
+ 964      706C6520 
+ 964      626C6F63 
+ 964      6B207265 
+ 965 017d 000000   		.space	3
+ 966              	.LC39:
+ 967 0180 0D0A204D 		.ascii	"\015\012 Multiple block read success!\000"
+ 967      756C7469 
+ 967      706C6520 
+ 967      626C6F63 
+ 967      6B207265 
+ 968              		.section	.rodata.sd_io_init.str1.4,"aMS",%progbits,1
+ 969              		.align	2
+ 970              	.LC0:
+ 971 0000 0D0A2074 		.ascii	"\015\012 the card is locked!\000"
+ 971      68652063 
+ 971      61726420 
+ 971      6973206C 
+ 971      6F636B65 
+ 972              		.text
+ 973              	.Letext0:
+ 974              		.file 2 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 975              		.file 3 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 976              		.file 4 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 977              		.file 5 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 978              		.file 6 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 979              		.file 7 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 980              		.file 8 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_F
+ 981              		.file 9 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-eab
+ 982              		.file 10 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ 983              		.file 11 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\lib\\gcc\\a
+ 984              		.file 12 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ 985              		.file 13 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ 986              		.file 14 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-Io
+ 987              		.file 15 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/BearPi-Io
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 29
+
+
+ 988              		.file 16 "c:\\users\\49542\\opensourcetools\\gnu tools arm embedded\\7 2018-q2-update\\arm-none-ea
+ 989              		.file 17 "C:/Users/49542/Desktop/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_Demo_Suites_V2.0.0/GD32F30x_
+ 990              		.file 18 "<built-in>"
+ARM GAS  C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s 			page 30
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s:18     .text.nvic_config:00000000 $t
+C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s:25     .text.nvic_config:00000000 nvic_config
+C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s:53     .text.sd_io_init:00000000 $t
+C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s:60     .text.sd_io_init:00000000 sd_io_init
+C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s:156    .text.sd_io_init:0000005c $d
+                            *COM*:00000048 sd_cardinfo
+C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s:162    .text.card_info_get:00000000 $t
+C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s:169    .text.card_info_get:00000000 card_info_get
+C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s:420    .text.card_info_get:00000138 $d
+C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s:448    .text.main:00000000 $t
+C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s:455    .text.main:00000000 main
+C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s:782    .text.main:000001a0 $d
+                            *COM*:00000800 buf_write
+                            *COM*:00000800 buf_read
+C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s:807    .text.fputc:00000000 $t
+C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s:814    .text.fputc:00000000 fputc
+C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s:849    .text.fputc:0000001c $d
+C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s:857    .rodata.card_info_get.str1.4:00000000 $d
+C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s:921    .rodata.main.str1.4:00000000 $d
+C:\Users\49542\AppData\Local\Temp\cc7Miqqb.s:969    .rodata.sd_io_init.str1.4:00000000 $d
+
+UNDEFINED SYMBOLS
+nvic_priority_group_set
+nvic_irq_enable
+sd_init
+sd_cardstatus_get
+sd_card_information_get
+sd_card_select_deselect
+printf
+sd_bus_mode_config
+sd_transfer_mode_config
+sd_card_capacity_get
+sd_scr
+gd_eval_com_init
+gd_eval_led_init
+puts
+sd_block_write
+gd_eval_led_off
+sd_block_read
+sd_lock_unlock
+sd_erase
+sd_multiblocks_write
+sd_multiblocks_read
+gd_eval_led_on
+usart_data_transmit
+usart_flag_get
