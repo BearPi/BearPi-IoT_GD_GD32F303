@@ -48,11 +48,11 @@ DRIVER_SRC =  \
 		${wildcard $(TOP_DIR)/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Source/*.c}
         C_SOURCES += $(DRIVER_SRC)        
 USER_SRC =  \
-		${wildcard $(TOP_DIR)/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST/*.c} 
+		${wildcard $(TOP_DIR)/BearPi-IoT_GD32F303_Demo_Suites/Projects/18_ALL_TEST/*.c} 
         C_SOURCES += $(USER_SRC)  
 
 HARDWARE_SRC =  \
-		${wildcard $(TOP_DIR)/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST/Soft_Drive/*.c} 
+		${wildcard $(TOP_DIR)/BearPi-IoT_GD32F303_Demo_Suites/Projects/18_ALL_TEST/Soft_Drive/*.c} 
         C_SOURCES += $(HARDWARE_SRC)
 
 BOARD_SRC =  \
@@ -116,10 +116,10 @@ DRIVER_INC=  \
 		-I $(TOP_DIR)/GD32F30x_Firmware_Library/GD32F30x_standard_peripheral/Include
         C_INCLUDES += $(DRIVER_INC)        
 USER_INC =  \
-		-I $(TOP_DIR)/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST
+		-I $(TOP_DIR)/BearPi-IoT_GD32F303_Demo_Suites/Projects/18_ALL_TEST
         C_INCLUDES += $(USER_INC)
 HARDWARE_INC =  \
-		-I $(TOP_DIR)/BearPi-IoT_GD32F303_Demo_Suites/Projects/25_ALL_TEST/Soft_Drive
+		-I $(TOP_DIR)/BearPi-IoT_GD32F303_Demo_Suites/Projects/18_ALL_TEST/Soft_Drive
         C_INCLUDES += $(HARDWARE_INC)    
 BOARD_INC =  \
 		-I $(TOP_DIR)/BearPi-IoT_GD32F303_Demo_Suites/Utilities

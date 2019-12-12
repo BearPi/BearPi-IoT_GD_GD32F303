@@ -58,9 +58,9 @@ int main(void)
 
     /* LCD configuration*/
     LCD_Init();
-    LCD_Clear(WHITE); //����Ϊ��ɫ
+    LCD_Clear(WHITE);
 
-    LCD_ShowString(5, 10, 240, 32, 32, "BearPi LCDTest"); //��ʾ�ַ����������С32*32
+    LCD_ShowString(5, 10, 240, 32, 32, "BearPi LCDTest");
 
     while (1)
     {

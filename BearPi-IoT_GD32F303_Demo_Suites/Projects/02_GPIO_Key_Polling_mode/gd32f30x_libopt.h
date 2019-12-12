@@ -2,7 +2,7 @@
     \file  gd32f30x_libopt.h
     \brief library optional for gd32f30x
 
-    \version 2019-10-30, V1.0.0, demo for BearPi-IoT_GD32F30x
+    \version 2017-02-10, V1.0.0, demo for GD32F30x
     \version 2018-10-10, V1.1.0, demo for GD32F30x
     \version 2018-12-25, V2.0.0, demo for GD32F30x
 */
@@ -61,7 +61,9 @@ OF SUCH DAMAGE.
 #include "gd32f30x_usart.h"
 #include "gd32f30x_wwdgt.h"
 #include "gd32f30x_misc.h"
-#include "gd32f30x_enet.h"
 #include "gd32f30x_exmc.h"
+#ifdef GD32F30X_CL
+#include "gd32f30x_enet.h"
+#endif /* GD32F30X_CL */
 
 #endif /* GD32F30X_LIBOPT_H */

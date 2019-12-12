@@ -74,7 +74,7 @@ int main(void)
     led_flash(1);
     
     /* configure EVAL_COM0 */
-    gd_eval_com_init(EVAL_COM0);
+    gd_eval_com_init(EVAL_COM0,115200);
     
     /* enable USART0 receive interrupt */
     usart_interrupt_enable(USART0, USART_INT_RBNE);

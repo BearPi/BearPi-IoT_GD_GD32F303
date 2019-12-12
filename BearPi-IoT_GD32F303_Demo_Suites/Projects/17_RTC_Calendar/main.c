@@ -49,7 +49,7 @@ OF SUCH DAMAGE.
 int main(void)
 {
     /* COM1 config */
-    gd_eval_com_init(EVAL_COM0);
+    gd_eval_com_init(EVAL_COM0,115200);
 
     /* NVIC config */
     nvic_configuration();

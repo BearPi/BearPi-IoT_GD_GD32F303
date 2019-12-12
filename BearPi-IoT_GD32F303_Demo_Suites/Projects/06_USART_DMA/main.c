@@ -70,7 +70,7 @@ int main(void)
     led_flash(1);
     
     /* configure EVAL_COM0 */
-    gd_eval_com_init(EVAL_COM0);
+    gd_eval_com_init(EVAL_COM0,115200);
     
     /* configure USART DMA */
     usart_dma_config();

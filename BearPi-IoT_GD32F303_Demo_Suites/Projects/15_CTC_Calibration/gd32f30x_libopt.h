@@ -61,7 +61,9 @@ OF SUCH DAMAGE.
 #include "gd32f30x_usart.h"
 #include "gd32f30x_wwdgt.h"
 #include "gd32f30x_misc.h"
-#include "gd32f30x_enet.h"
 #include "gd32f30x_exmc.h"
+#ifdef GD32F30X_CL
+#include "gd32f30x_enet.h"
+#endif /* GD32F30X_CL */
 
 #endif /* GD32F30X_LIBOPT_H */

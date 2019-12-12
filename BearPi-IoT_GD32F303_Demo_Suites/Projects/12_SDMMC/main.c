@@ -64,7 +64,7 @@ int main(void)
 
     /* configure the NVIC, USART and LED */
     nvic_config();
-    gd_eval_com_init(EVAL_COM0);
+    gd_eval_com_init(EVAL_COM0,115200);
     gd_eval_led_init(LED);
     /* initialize the card */
     do

@@ -42,14 +42,13 @@ OF SUCH DAMAGE.
 /* private variables */
 static uint32_t GPIO_PORT[LEDn] = {LED_GPIO_PORT};
 static uint32_t GPIO_PIN[LEDn] = {LED_PIN};
-
-static rcu_periph_enum COM_CLK[COMn] = {EVAL_COM0_CLK, EVAL_COM1_CLK};
-static uint32_t COM_TX_PIN[COMn] = {EVAL_COM0_TX_PIN, EVAL_COM1_TX_PIN};
-static uint32_t COM_RX_PIN[COMn] = {EVAL_COM0_RX_PIN, EVAL_COM1_RX_PIN};
-static uint32_t COM_GPIO_PORT[COMn] = {EVAL_COM0_GPIO_PORT, EVAL_COM1_GPIO_PORT};
-static rcu_periph_enum COM_GPIO_CLK[COMn] = {EVAL_COM0_GPIO_CLK, EVAL_COM1_GPIO_CLK};
-
 static rcu_periph_enum GPIO_CLK[LEDn] = {LED_GPIO_CLK};
+
+static rcu_periph_enum COM_CLK[COMn] = {EVAL_COM0_CLK, EVAL_COM1_CLK, EVAL_COM2_CLK, EVAL_COM3_CLK};
+static uint32_t COM_TX_PIN[COMn] = {EVAL_COM0_TX_PIN, EVAL_COM1_TX_PIN, EVAL_COM2_TX_PIN, EVAL_COM3_TX_PIN};
+static uint32_t COM_RX_PIN[COMn] = {EVAL_COM0_RX_PIN, EVAL_COM1_RX_PIN, EVAL_COM2_RX_PIN, EVAL_COM3_RX_PIN};
+static uint32_t COM_GPIO_PORT[COMn] = {EVAL_COM0_GPIO_PORT, EVAL_COM1_GPIO_PORT, EVAL_COM2_GPIO_PORT, EVAL_COM3_GPIO_PORT};
+static rcu_periph_enum COM_GPIO_CLK[COMn] = {EVAL_COM0_GPIO_CLK, EVAL_COM1_GPIO_CLK,EVAL_COM2_GPIO_CLK, EVAL_COM3_GPIO_CLK};
 
 static uint32_t KEY_PORT[KEYn] = {F1_KEY_GPIO_PORT, F2_KEY_GPIO_PORT};
 static uint32_t KEY_PIN[KEYn] = {F1_KEY_PIN, F2_KEY_PIN};
@@ -158,18 +157,19 @@ uint8_t gd_eval_key_state_get(key_typedef_enum key) { return gpio_input_bit_get(
     \param[out] none
     \retval     none
 */
-void gd_eval_com_init(uint32_t com)
+void gd_eval_com_init(uint32_t com, uint32_t baud)
 {
     uint32_t com_id = 0U;
-    if (EVAL_COM0 == com)
-    {
+    if(EVAL_COM0 == com){
         com_id = 0U;
-    }
-    else if (EVAL_COM1 == com)
-    {
+    }else if(EVAL_COM1 == com){
         com_id = 1U;
+    }else if(EVAL_COM2 == com){
+        com_id = 2U;
+    }else if(EVAL_COM3 == com){
+        com_id = 3U;
     }
-
+    
     /* enable GPIO clock */
     rcu_periph_clock_enable(COM_GPIO_CLK[com_id]);
 
@@ -184,14 +184,12 @@ void gd_eval_com_init(uint32_t com)
 
     /* USART configure */
     usart_deinit(com);
-    if (EVAL_COM0 == com)
-    {
-        usart_baudrate_set(com, 115200U);
-    }
-    else if (EVAL_COM1 == com)
-    {
-        usart_baudrate_set(com, 9600U);
-    }
+    usart_baudrate_set(com, baud);
+    usart_word_length_set(com, USART_WL_8BIT);
+    usart_stop_bit_set(com, USART_STB_1BIT);
+    usart_parity_config(com, USART_PM_NONE);
+    usart_hardware_flow_rts_config(com, USART_RTS_DISABLE);
+    usart_hardware_flow_cts_config(com, USART_CTS_DISABLE);
     usart_receive_config(com, USART_RECEIVE_ENABLE);
     usart_transmit_config(com, USART_TRANSMIT_ENABLE);
     usart_enable(com);

@@ -60,7 +60,7 @@ int main(void)
     led_flash(1);
     
     /* configure EVAL_COM0 */
-    gd_eval_com_init(EVAL_COM0);
+    gd_eval_com_init(EVAL_COM0,115200);
     
     /* configure F1 key */
     gd_eval_key_init(F1_KEY, KEY_MODE_GPIO);

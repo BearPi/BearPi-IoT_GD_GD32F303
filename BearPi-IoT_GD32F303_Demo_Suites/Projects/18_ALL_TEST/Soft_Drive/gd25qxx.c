@@ -54,7 +54,7 @@ OF SUCH DAMAGE.
 #define DUMMY_BYTE       0xA5
 
 /*!
-    \brief      initialize SPI2 GPIO and parameter
+    \brief      initialize SPI1 GPIO and parameter
     \param[in]  none
     \param[out] none
     \retval     none
@@ -62,21 +62,20 @@ OF SUCH DAMAGE.
 void spi_flash_init(void)
 {
     spi_parameter_struct spi_init_struct;
-		rcu_periph_clock_enable(RCU_AF);
+	rcu_periph_clock_enable(RCU_AF);
     rcu_periph_clock_enable(RCU_GPIOB);
     rcu_periph_clock_enable(RCU_GPIOA);
-    rcu_periph_clock_enable(RCU_SPI2);
-		gpio_pin_remap_config(GPIO_SWJ_SWDPENABLE_REMAP,ENABLE);
-    /* SPI2_SCK(PB3), SPI2_MISO(PB4) and SPI2_MOSI(PB5) GPIO pin configuration */
-    gpio_init(GPIOB, GPIO_MODE_AF_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_3 | GPIO_PIN_5);
-    gpio_init(GPIOB, GPIO_MODE_IN_FLOATING, GPIO_OSPEED_50MHZ, GPIO_PIN_4);
-    /* SPI2_CS(PA12) GPIO pin configuration */
+    rcu_periph_clock_enable(RCU_SPI1);
+    /* SPI1_SCK(PB13), SPI1_MISO(PB14) and SPI1_MOSI(PB15) GPIO pin configuration */
+    gpio_init(GPIOB, GPIO_MODE_AF_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_13 | GPIO_PIN_15);
+    gpio_init(GPIOB, GPIO_MODE_IN_FLOATING, GPIO_OSPEED_50MHZ, GPIO_PIN_14);
+    /* SPI1_CS(PA12) GPIO pin configuration */
     gpio_init(GPIOA, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_12);
 		
     /* chip select invalid*/
     SPI_FLASH_CS_HIGH();
 
-    /* SPI2 parameter config */
+    /* SPI1 parameter config */
     spi_init_struct.trans_mode           = SPI_TRANSMODE_FULLDUPLEX;
     spi_init_struct.device_mode          = SPI_MASTER;;
     spi_init_struct.frame_size           = SPI_FRAMESIZE_8BIT;;
@@ -84,12 +83,12 @@ void spi_flash_init(void)
     spi_init_struct.nss                  = SPI_NSS_SOFT;
     spi_init_struct.prescale             = SPI_PSC_8 ;
     spi_init_struct.endian               = SPI_ENDIAN_MSB;;
-    spi_init(SPI2, &spi_init_struct);
+    spi_init(SPI1, &spi_init_struct);
 
     /* set crc polynomial */
-    spi_crc_polynomial_set(SPI2,7);
-    /* enable SPI2 */
-    spi_enable(SPI2);
+    spi_crc_polynomial_set(SPI1,7);
+    /* enable SPI1 */
+    spi_enable(SPI1);
 }
 
 /*!
@@ -360,16 +359,16 @@ uint8_t spi_flash_read_byte(void)
 uint8_t spi_flash_send_byte(uint8_t byte)
 {
     /* loop while data register in not emplty */
-    while (RESET == spi_i2s_flag_get(SPI2,SPI_FLAG_TBE));
+    while (RESET == spi_i2s_flag_get(SPI1,SPI_FLAG_TBE));
 
-    /* send byte through the SPI2 peripheral */
-    spi_i2s_data_transmit(SPI2,byte);
+    /* send byte through the SPI1 peripheral */
+    spi_i2s_data_transmit(SPI1,byte);
 
     /* wait to receive a byte */
-    while(RESET == spi_i2s_flag_get(SPI2,SPI_FLAG_RBNE));
+    while(RESET == spi_i2s_flag_get(SPI1,SPI_FLAG_RBNE));
 
     /* return the byte read from the SPI bus */
-    return(spi_i2s_data_receive(SPI2));
+    return(spi_i2s_data_receive(SPI1));
 }
 
 /*!
@@ -381,16 +380,16 @@ uint8_t spi_flash_send_byte(uint8_t byte)
 uint16_t spi_flash_send_halfword(uint16_t half_word)
 {
     /* loop while data register in not emplty */
-    while(RESET == spi_i2s_flag_get(SPI2,SPI_FLAG_TBE));
+    while(RESET == spi_i2s_flag_get(SPI1,SPI_FLAG_TBE));
 
-    /* send half word through the SPI2 peripheral */
-    spi_i2s_data_transmit(SPI2,half_word);
+    /* send half word through the SPI1 peripheral */
+    spi_i2s_data_transmit(SPI1,half_word);
 
     /* wait to receive a half word */
-    while(RESET == spi_i2s_flag_get(SPI2,SPI_FLAG_RBNE));
+    while(RESET == spi_i2s_flag_get(SPI1,SPI_FLAG_RBNE));
 
     /* return the half word read from the SPI bus */
-    return spi_i2s_data_receive(SPI2);
+    return spi_i2s_data_receive(SPI1);
 }
 
 /*!

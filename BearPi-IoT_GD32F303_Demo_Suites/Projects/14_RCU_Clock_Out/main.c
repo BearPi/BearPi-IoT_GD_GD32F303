@@ -68,7 +68,7 @@ int main(void)
     uint8_t func_seq = 0;
     
     /* initialize the USART */
-    gd_eval_com_init(EVAL_COM0);
+    gd_eval_com_init(EVAL_COM0,115200);
     
     printf("\r\n /=========== Gigadevice Clock output Demo ===========/ \r\n");
     printf("press F1 key to select clock output source \r\n");

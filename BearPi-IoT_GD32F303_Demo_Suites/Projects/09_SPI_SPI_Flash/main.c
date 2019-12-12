@@ -46,7 +46,7 @@ OF SUCH DAMAGE.
 #define RX_BUFFER_SIZE BUFFER_SIZE
 
 #define VERSION_ID "1.0.0"
-#define SFLASH_ID 0xC84015
+#define SFLASH_ID 0xC84017
 #define FLASH_WRITE_ADDRESS 0x000000
 #define FLASH_READ_ADDRESS FLASH_WRITE_ADDRESS
 
@@ -79,7 +79,7 @@ int main(void)
     test_status_led_init();
 
     /* USART parameter configuration */
-    gd_eval_com_init(EVAL_COM0);
+    gd_eval_com_init(EVAL_COM0,115200);
 
     /* configure SPI0 GPIO and parameter */
     spi_flash_init();
@@ -95,7 +95,7 @@ int main(void)
     /* printf CPU unique device id */
     printf("\n\rBearPi-IoT_gd32f303 The CPU Unique Device ID:[%X-%X-%X]\n\r", int_device_serial[2], int_device_serial[1], int_device_serial[0]);
 
-    printf("\n\rBearPi-IoT_gd32f303 SPI Flash:GD25Q16 configured...\n\r");
+    printf("\n\rBearPi-IoT_gd32f303 SPI Flash:GD25Q64 configured...\n\r");
 
     /* get flash id */
     flash_id = spi_flash_read_id();
@@ -144,7 +144,7 @@ int main(void)
         /* spi flash test passed */
         if (0 == is_successful)
         {
-            printf("\n\rSPI-GD25Q16 Test Passed!\n\r");
+            printf("\n\rSPI-GD25Q64 Test Passed!\n\r");
         }
     }
     else

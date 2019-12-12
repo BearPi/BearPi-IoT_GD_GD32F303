@@ -60,7 +60,7 @@ int main(void)
     rcu_periph_clock_enable(RCU_PMU);
     /* USART interrupt configuration */
     /* configure EVAL_COM0 */
-    gd_eval_com_init(EVAL_COM0);
+    gd_eval_com_init(EVAL_COM0,115200);
 
     nvic_irq_enable(USART0_IRQn, 0, 0);
     /* enable USART0 receive interrupt */

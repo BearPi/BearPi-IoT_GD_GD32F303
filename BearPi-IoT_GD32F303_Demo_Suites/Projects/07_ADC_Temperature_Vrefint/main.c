@@ -59,7 +59,7 @@ int main(void)
     /* ADC configuration */
     adc_config();
     /* USART configuration */
-    gd_eval_com_init(EVAL_COM0);
+    gd_eval_com_init(EVAL_COM0,115200);
 
     while(1){
         /* ADC software trigger enable */

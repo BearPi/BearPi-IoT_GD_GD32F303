@@ -73,7 +73,7 @@ int main(void)
     led_config();
 
     /* configure USART */
-    gd_eval_com_init(EVAL_COM0);
+    gd_eval_com_init(EVAL_COM0,115200);
 
     printf("I2C-24C02 configured....\n\r");
 

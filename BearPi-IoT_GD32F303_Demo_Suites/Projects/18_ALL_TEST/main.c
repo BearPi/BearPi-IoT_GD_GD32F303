@@ -57,7 +57,7 @@ volatile uint16_t tx_counter = 0, rx_counter = 0;
 uint32_t nbr_data_to_read = BUFFER_SIZE, nbr_data_to_send = BUFFER_SIZE;
 
 #define VERSION_ID "1.0.0"
-#define SFLASH_ID 0xC84015
+#define SFLASH_ID 0xC84017
 #define FLASH_WRITE_ADDRESS 0x000002
 #define FLASH_READ_ADDRESS FLASH_WRITE_ADDRESS
 
@@ -93,8 +93,8 @@ int main(void)
     systick_config();
     /* configure the NVIC, USART and LED */
     nvic_config();
-    gd_eval_com_init(EVAL_COM0);
-    gd_eval_com_init(EVAL_COM1);
+    gd_eval_com_init(EVAL_COM0,115200);
+    gd_eval_com_init(EVAL_COM1,9600);
     gd_eval_led_init(LED);
 
     //	  /* USART interrupt configuration */
@@ -223,15 +223,15 @@ void SPI_FLASH_TEST(void)
         /* spi flash test passed */
         if (0 == is_successful)
         {
-            printf("\n\rSPI-GD25Q16 Test Passed!\n\r");
-            LCD_ShowString(0, 0, 240, 24, 24, "GD25Q16 Test Passed!");
+            printf("\n\rSPI-GD25Q64 Test Passed!\n\r");
+            LCD_ShowString(0, 0, 240, 24, 24, "GD25Q64 Test Passed!");
         }
     }
     else
     {
         /* spi flash read id fail */
         printf("\n\rSPI Flash: Read ID Fail!\n\r");
-        LCD_ShowString(0, 0, 240, 24, 24, "GD25Q16 Test Failed!");
+        LCD_ShowString(0, 0, 240, 24, 24, "GD25Q64 Test Failed!");
     }
 }
 
